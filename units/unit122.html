@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 122 - အချိန်နှင့်အချိန်မီ၊ အဆုံးနှင့်အဆုံး | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 122 - အချိန်နှင့်အချိန်မီ · အဆုံးနှင့်အဆုံး </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း ၅၆ ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> ဤယူနစ်တွင်- <b> အလွယ်တကူ ရှုပ်ထွေးနေသောအတွဲ နှစ်ခု </b> ဝိဘတ်တစ်ခုသာ ကွဲပြားသည်- <b> အချိန်မှန် </b> (အချိန်မှန်) ↔ <b> အချိန်မီ </b> (ဒိဋ္ဌိ) နှင့် <b> (အဆုံး) မှာ </b> (အချိန်/ဖြစ်ရပ်တစ်ခု၏ အဆုံးတွင်) ↔ <b> အဆုံးသတ်မှာ </b> (နောက်ဆုံး-ရလဒ်)။ ဝိဘတ်ပြောင်းခြင်းဆိုသည်မှာ အဓိပ္ပါယ်ကို လုံးဝပြောင်းလဲခြင်း ဖြစ်သည်။ </p>
+      <div class="ex"> <b class="en">The train left  <mark>on time</mark> . — I got to the station  <mark>in time</mark>  for the train.</b> <br> မေးခွန်း 1- ရထားသည် အချိန်ဇယားတွင် ဖော်ပြထားသည့်အတိုင်း အချိန်မှန် ပြေးဆွဲသည်။ မေးခွန်း 2- ရထားစီးဖို့ စောစောရောက်တယ်။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> on time = အချိန်မှန်၊ မနောက်ကျ (↔ နောက်ကျ)
+in time (for sth / to do sth) = အချိန်မှန်၊ စောလွန်းသည် (↔ နောက်ကျလွန်းသည်)
+Just in time = အချိန်မီ (နောက်ကျလုနီးပါး)
+
+at the end (of sth) = အဆုံးမှာ ... (↔ အစမှာ (of))၊
+in the end = နောက်ဆုံး (ရလဒ်) (↔ အစပိုင်းတွင်) </div>
+      <div class="scroll"><table>
+        <tr><th> Group </th><th> Meaning </th><th> Antonym </th><th> For example </th></tr>
+        <tr><td> on time </td><td> on time </td><td> Late </td><td> Be it. <b> on time </b>.</td></tr>
+        <tr><td> On time </td><td> Immediately </td><td> too late </td><td> I came home. <b> On time </b> To watch the game. </td></tr>
+        <tr><td> at the end of </td><td> at the end </td><td> At the beginning of </td><td><b> at the end of </b> January </td></tr>
+        <tr><td> in the end </td><td> after all </td><td> at first </td><td><b> in the end </b> We sell. </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A - အချိန်မှန် </h2>
+      <ul>
+        <li> တစ်ခုခုဖြစ်သွားတယ်။ <b> အတိအကျအချိန်ဇယား </b> : <i>The 11.45 train left on time.</i> </li>
+        <li> <i>Everything began and finished on time.</i> — ကောင်းမွန်စွာ ဖွဲ့စည်းထားသော ညီလာခံ။ </li>
+      </ul>
+
+      <h2> 1.4 · B – အချိန်မီ / အချိန်မီ </h2>
+      <ul>
+        <li><b> in time for + noun </b> : <i>Will you be home in time for dinner?</i> </li>
+        <li><b> အချိန်မီ + V </b> : <i>I want to get home in time to see the match.</i> </li>
+        <li><b> အချိန်မီ </b> = အချိန်မီ: <i>I managed to stop just in time.</i> </li>
+        <li> သင်္ကေတ- <i>I got home <b>too late</b> to see the match.</i> </li>
+      </ul>
+
+      <h2> 1.5·C – အဆုံး (၏) </h2>
+      <ul>
+        <li> <i>at the end of the month / the film / the course / the game</i> </li>
+        <li><b> မဟုတ်ပါလား။ </b> စကားပြောပါ။ <s> ဇန်နဝါရီလကုန်တွင် </s> . "of" တွင် အောက်ပါ → သေချာသလောက် ရှိပါသည် <b> မှာ </b>.</li>
+        <li> အတိုက်အခံ- <i><b>at the beginning of</b> January</i> (မပြောပါ။ <s> ၏အစ၌ </s>).</li>
+      </ul>
+
+      <h2> 1.6 · D – နောက်ဆုံး </h2>
+      <ul>
+        <li> စကားပြောရာတွင်သုံးသည်။ <b> နောက်ဆုံးရလဒ် </b> အခြေအနေတစ်ခု၏ (များသောအားဖြင့် အခက်အခဲ သို့မဟုတ် ရှုပ်ထွေးမှုများပြီးနောက်): <i>He got angrier and angrier. In the end he walked out.</i> </li>
+        <li> တွဲသွားတတ်တဲ့အတွဲများ- <i><b>At first</b> we didn't get on, but <b>in the end</b> we became friends.</i> </li>
+      </ul>
+
+      <h2> 1.7 · ဘုံအမှားများ &amp; နှိုင်းယှဉ် </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> at the end </th><th> in the end </th></tr>
+        <tr><td> Answer the question. </td><td> when? (time) </td><td> What are the results? </td></tr>
+        <tr><td> Theosophy </td><td> There are often. <b> of + noun </b></td><td> No </td></tr>
+        <tr><td> For example </td><td> left. <b> at the end of </b> the film. </td><td><b> in the end </b> We don't go. </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> at the end of the month </td><td class="yes"><b> at </b> End of the month </td></tr>
+        <tr><td class="no"> At the beginning of July </td><td class="yes"><b> at </b> Beginning of July </td></tr>
+        <tr><td class="no"> The bus arrived on time. (on time), </td><td class="yes"> The bus arrived. <b> on time </b>.</td></tr>
+        <tr><td class="no"> Will you be home in time for dinner? </td><td class="yes">... <b> On time </b> Dinner? </td></tr>
+        <tr><td class="no"> In the end, we sold the car. (meaning: last) </td><td class="yes"><b> in the end </b> We have sold our car. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၁၂၁ </b> (အချိန်/ဖွင့်/ဖော်ပြသည်) · <b> ယူနစ် ၁၂၀ </b> (by / သည်အထိ)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> ⏱️ <b class="en">Please be  <mark>on time</mark>  for the interview.</b> <span class="note"> (အလုပ် - အင်တာဗျူးဖိတ်စာအီးမေးလ်) </span></div>
+      <div class="ex"> 🚄 <b class="en">Our train arrived  <mark>on time</mark>  for once!</b> <span class="note"> (ခရီးသွား - ပုံပြင်များပြောပြသည်) </span></div>
+      <div class="ex"> 🍲 <b class="en">I'll be home  <mark>in time for</mark>  dinner.</b> <span class="note"> (မိသားစု-သတင်းစကား) </span></div>
+      <div class="ex"> ✈️ <b class="en">We got to the gate  <mark>just in time</mark> .</b> <span class="note"> (ခရီးသွား - ငါ့လေယာဉ်ကို လွတ်လုနီးပါး) </span></div>
+      <div class="ex"> 💰 <b class="en">Salaries are paid  <mark>at the end of</mark>  the month.</b> <span class="note"> (အလုပ်စာချုပ်) </span></div>
+      <div class="ex"> 🎓 <b class="en">There's a test  <mark>at the end of</mark>  the course.</b> <span class="note"> (စာမေးပွဲ - သင်တန်းအချက်အလက်) </span></div>
+      <div class="ex"> 🚗 <b class="en">The car kept breaking down.  <mark>In the end</mark>  we sold it.</b> <span class="note"> (ပုံပြင်ပြောခြင်း - ရလဒ်များ) </span></div>
+      <div class="ex"> 🤝 <b class="en"> <mark>At first</mark>  I hated the job, but  <mark>in the end</mark>  I loved it.</b> <span class="note"> (IELTS Speaking — အတွေ့အကြုံများကို ပြောပြခြင်း) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> ON time = အချိန်ဇယားအတိုင်း </b> (အချိန်ဇယားအတိုင်း)။ <b> အချိန် = ကန့်သတ်ချက်အတွင်း </b> (ကန့်သတ်ချက်မပြည့်မီ)။ </li>
+        <li><b> ၏အဆုံးမှာ </b> - "a-o" စာလုံးများကိုအတွဲလိုက်; <i>of</i> ကိုတွေ့တာနဲ့ ချက်ချင်းစဉ်းစားမိတယ်။ <b> မှာ </b>.</li>
+        <li><b> In the end = နောက်ဆုံး </b> - "in" နှင့်အတူတူပင်။ </li>
+        <li> ဆန့်ကျင်ဘက်အတွဲ- <b> ↔ အချိန်မှန်နောက်ကျ </b>, <b> ↔ အချိန်မီလွန်းတယ်။ </b>, <b> ပထမတွင် ↔ အဆုံးတွင် </b>.</li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> လွတ်သွားတဲ့ဟာတွေရှိတယ်။ <b> + N အတွက် </b> သို့မဟုတ် <b> to + V </b> → သေချာပေါက်နီးပါး <b> အချိန်မီ </b>.</li>
+        <li> ဝါကျအကြောင်း <b> အချိန်ဇယား၊ အချိန်၊ အချိန်/နောက်ကျ </b> (ရထား၊ အစည်းအဝေး၊ ဘယ်တော့မှ နောက်မကျဘူး) → <b> အချိန်မှန် </b>.</li>
+        <li> ရှိသည် <b> of + နာမ် </b> ngay sau "the end" → <b> မှာ </b>.</li>
+        <li> ဇာတ်လမ်းတွင် တုံ့ဆိုင်းခြင်း/ခက်ခဲမှုဖြစ်စဉ်တစ်ခုရှိပြီး ရလဒ်ကို အပြီးသတ်ခြင်း → <b> အဆုံးသတ်မှာ </b>.</li>
+        <li> အဖြေ <i>"in the beginning of"</i> သည် timeline တစ်ခု၏အခြေအနေတွင် အမြဲမှားနေသည် → <i>at the beginning of</i> ကိုရွေးချယ်ပါ။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> At the end of the year </td><td class="yes"><b> at </b> End of the year </td><td class="why"> → has at </td></tr>
+        <tr><td class="no"> At the beginning of May </td><td class="yes"><b> at </b> The beginning of May </td><td class="why"> timeline → at </td></tr>
+        <tr><td class="no"> Come on time. (on time), </td><td class="yes"> come <b> on time </b>.</td><td class="why"> On time → On time </td></tr>
+        <tr><td class="no"> Arrived just in time to start viewing. </td><td class="yes"> I arrived. <b> On time </b> To start watching. </td><td class="why"> In time to do something → in time </td></tr>
+        <tr><td class="no"> In the end, I chose red. </td><td class="yes"><b> in the end </b> I chose red. </td><td class="why"> Result → end </td></tr>
+        <tr><td class="no"> I was late to see her. </td><td class="yes"> I came. <b> too late </b> to see her. </td><td class="why"> late → very late </td></tr>
+        <tr><td class="no"> on time </td><td class="yes"><b> On time </b></td><td class="why"> On time → on time </td></tr>
+        <tr><td class="no"> After the game, they shook hands. </td><td class="yes"><b> at </b> End of the game... </td><td class="why"> End time </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြောခြင်း (တစ်နေ့လျှင် ၂ မိနစ်)။ </b> နောက်ကျခါနီးအချိန်ကို ပြောပြပါ- <i>"I almost missed the bus, but I got there just in time."</i> </li>
+        <li><b> ရေးပါ </b> <i>At first ... Then ... In the end ...</i> မူဘောင်အရ ခက်ခဲသော ဆုံးဖြတ်ချက်တစ်ခုအကြောင်း ပြောပြပါ။ </li>
+        <li><b> အလုပ်- </b> <i>"The report will be ready at the end of the week."</i> / <i>"Let's start on time."</i> </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> တိတ်တိတ်လေးမေးတယ်။ <i> ” လို့ ပြောပါတယ်။ <b> ဘယ်တော့လဲ </b> စကားပြောတတ်သော <b> ရလဒ် </b>?"</i> နှင့် <i>"<b> အချိန်မှန် </b> မြက်ပင် <b> ချက်ခြင်း </b>?"</i></li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> 4-cluster table ကို 3 ရက်အကြာတွင်ပြန်လည်သုံးသပ်ပါ၊ 7 ရက်အကြာတွင်မှားယွင်းသောဝါကျကိုပြန်လုပ်ပါ၊ 14 ရက်အကြာတွင် "At first … in the end" ဇာတ်လမ်းကိုပြန်လည်ရေးသားပါ။ ဆက်စပ်- <b> ယူနစ် ၁၂၁ </b> (အချိန်/တွင်/အချိန်မီ)၊ <b> ယူနစ် ၁၂၀ </b> (အားဖြင့်/အထိ)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit122.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 122 · အော့ဖ်လိုင်း ကိုယ်တိုင်လေ့လာရေးဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> အစုအဖွဲ့ \u003c/th>\u003cth> အဓိပ္ပါယ် \u003c/th>\u003cth> Antonym \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အချိန်မှန် \u003c/td>\u003ctd> အချိန်မှန် \u003c/td>\u003ctd> နောက်ကျ \u003c/td>\u003ctd> ဖြစ်ပါစေ။ \u003cb> အချိန်မှန် \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အချိန်မီ \u003c/td>\u003ctd> ချက်ခြင်း \u003c/td>\u003ctd> သိပ်နောက်ကျသွားပြီ \u003c/td>\u003ctd> အိမ်ပြန်ရောက်တယ်။ \u003cb> အချိန်မီ \u003c/b> ဂိမ်းကိုကြည့်ရှုရန်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ၏အဆုံးမှာ \u003c/td>\u003ctd> အဆုံးမှာ \u003c/td>\u003ctd> ၏အစမှာ \u003c/td>\u003ctd>\u003cb> ၏အဆုံးမှာ \u003c/b> ဇန်နဝါရီလ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အဆုံးသတ်မှာ \u003c/td>\u003ctd> နောက်ဆုံးတော့ \u003c/td>\u003ctd> အစဦးတွင် \u003c/td>\u003ctd>\u003cb> အဆုံးသတ်မှာ \u003c/b> ငါတို့ကရောင်းတယ်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> အဆုံးမှာ \u003c/th>\u003cth> အဆုံးသတ်မှာ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> မေးခွန်းကိုဖြေပါ။ \u003c/td>\u003ctd> ဘယ်တော့လဲ? (အချိန်) \u003c/td>\u003ctd> ရလဒ်တွေက ဘာတွေလဲ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သီအိုဆော့ \u003c/td>\u003ctd> ရှိတတ်သည်။ \u003cb> of + နာမ် \u003c/b>\u003c/td>\u003ctd> နံပါတ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဥပမာအားဖြင့် \u003c/td>\u003ctd> ထားခဲ့တယ်။ \u003cb> ၏အဆုံးမှာ \u003c/b> ရုပ်ရှင်။ \u003c/td>\u003ctd>\u003cb> အဆုံးသတ်မှာ \u003c/b> ငါတို့မသွားဘူး။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လ၏အဆုံး၌ \u003c/td>\u003ctd class=\"yes\">\u003cb> မှာ \u003c/b> လကုန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဇူလိုင်လအစတွင် \u003c/td>\u003ctd class=\"yes\">\u003cb> မှာ \u003c/b> ဇူလိုင်လ၏အစ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဘတ်စ်ကားက အချိန်မီရောက်လာတယ်။ (အချိန်မှန်)၊ \u003c/td>\u003ctd class=\"yes\"> ဘတ်စကား ရောက်လာသည်။ \u003cb> အချိန်မှန် \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ညစာစားဖို့ အချိန်မှန် အိမ်ပြန်မှာလား။ \u003c/td>\u003ctd class=\"yes\">... \u003cb> အချိန်မီ \u003c/b> ညစာ? \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အဆုံးမှာတော့ ကျွန်တော်တို့ ကားကို ရောင်းလိုက်တယ်။ (အဓိပ္ပါယ်- နောက်ဆုံး) \u003c/td>\u003ctd class=\"yes\">\u003cb> အဆုံးသတ်မှာ \u003c/b> ငါတို့ကားကို ရောင်းလိုက်ပြီ။ \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ယခုနှစ်ကုန်တွင် \u003c/td>\u003ctd class=\"yes\">\u003cb> မှာ \u003c/b> ယခုနှစ်ကုန် \u003c/td>\u003ctd class=\"why\"> → at ရှိသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မေလအစတွင် \u003c/td>\u003ctd class=\"yes\">\u003cb> မှာ \u003c/b> မေလ၏အစ \u003c/td>\u003ctd class=\"why\"> timeline → at \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အချိန်မီလာပါ။ (အချိန်မှန်)၊ \u003c/td>\u003ctd class=\"yes\"> လာခဲ့ပါ။ \u003cb> အချိန်မှန် \u003c/b>.\u003c/td>\u003ctd class=\"why\"> အချိန်မှန် → အချိန်မှန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စတင်ကြည့်ရှုရန် အချိန်မီရောက်လာခဲ့သည်။ \u003c/td>\u003ctd class=\"yes\"> ငါရောက်ခဲ့တယ်။ \u003cb> အချိန်မီ \u003c/b> စတင်ကြည့်ရှုရန်။ \u003c/td>\u003ctd class=\"why\"> တစ်ခုခုလုပ်ရန် အချိန်မီ → အချိန်မီ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အဆုံးမှာတော့ အနီရောင်ကို ရွေးလိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\">\u003cb> အဆုံးသတ်မှာ \u003c/b> အနီရောင်ကို ရွေးလိုက်တယ်။ \u003c/td>\u003ctd class=\"why\"> ရလဒ် → အဆုံး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါသူမကိုတွေ့ဖို့နောက်ကျသွားတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါလာခဲ့တယ်။ \u003cb> သိပ်နောက်ကျသွားပြီ \u003c/b> သူမကိုတွေ့ဖို့။ \u003c/td>\u003ctd class=\"why\"> နောက်ကျ → အရမ်းနောက်ကျတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အချိန်မှန် \u003c/td>\u003ctd class=\"yes\">\u003cb> အချိန်မီ \u003c/b>\u003c/td>\u003ctd class=\"why\"> အချိန်မီ → အချိန်မီ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပွဲအပြီးတွင် လက်ဆွဲနှုတ်ဆက်ကြသည်။ \u003c/td>\u003ctd class=\"yes\">\u003cb> မှာ \u003c/b> ဂိမ်းရဲ့အဆုံး... \u003c/td>\u003ctd class=\"why\"> ကုန်ဆုံးချိန် \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 122 - အချိန်မှန် / အချိန်မီ၊ အဆုံး / အဆုံး | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit122.html';
+  var KEY = 'egu4_unit122_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. အချိန် / အချိန် / အချိန် / at / in', desc:'မှန်ကန်သော စကားလုံး သို့မဟုတ် စကားစုဖြင့် ဗလာကို ဖြည့်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 122 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 122 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 122.1 → 122.5 သည် Murphy ၏ စာအုပ်ပုံစံ (စာကြောင်းများကို ပြန်လည်ရေးသားထားသည်) တွင် သော့များပါ၀င်သည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'The 7.15 train left exactly ______. Not a minute late.',
+      opts:['in time','on time','at the end','in the end'], a:1,
+      exp:'on time = အချိန်မှန်၊ စီစဉ်ထားသည့်အတိုင်း (မနောက်ကျ)။' },
+    { id:'a2', sec:'A', type:'mcq', q:'Will you be home ______ for dinner?',
+      opts:['on time','at time','in time','by time'], a:2,
+      exp:'in time (for something) = တစ်ခုခုအတွက် အချိန် (စောစောလုံလောက်သည်)။ ညစာစားချိန်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'I\'m moving to Da Nang ______ of this month.',
+      opts:['in the end','at the end','on the end','at end'], a:1,
+      exp:'at the end of + milestone = (လ၊ သင်တန်း၊ ပွဲ...) "in the end of" မပြောပါနဲ့။' },
+    { id:'a4', sec:'A', type:'mcq', q:'We argued for hours, but ______ we agreed to share the cost.',
+      opts:['at the end','in the end','on time','at last of'], a:1,
+      exp:'in the end = အဆုံး (လုပ်ငန်းစဉ်တစ်ခုပြီးနောက်ရလဒ်)။ "of" အောက်ပါအတိုင်းမရှိပါ။' },
+    { id:'a5', sec:'A', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['I\'m going on holiday in the beginning of July.','I\'m going on holiday at the beginning of July.'], a:1,
+      exp:'အဆုံး (၏) ၏ အဓိပ္ပါယ်မှာ အစ (အစ) တွင် ရှိသည်။' },
+    { id:'a6', sec:'A', type:'mcq', q:'The bus braked and stopped ______ — just a metre from the dog.',
+      opts:['just on time','just in time','in the end','at the end'], a:1,
+      exp:'just in time = အချိန်မီ (နောက်ကျလုနီးပါး)။' },
+    { id:'a7', sec:'A', type:'mcq', q:'"in time" ၏ အဓိပ္ပါယ်မှာ-',
+      opts:['late','too late','on time','early'], a:1,
+      exp:'in time ↔ အရမ်းနောက်ကျတယ် (ဘာမှလုပ်လို့မရတာနောက်ကျတယ်)။ အချိန်မှန်၏ အဓိပ္ပါယ်မှာ နောက်ကျနေပြီဖြစ်သည်။' },
+    { id:'a8', sec:'A', type:'mcq', q:'______ I didn\'t like my new job, but in the end I loved it.',
+      opts:['At the end','At first','In the beginning of','On time'], a:1,
+      exp:'ဆန့်ကျင်ဘက်တစ်စုံ- ပထမ (အစ) … အဆုံး (နောက်ဆုံး)။' },
+
+    /*===== B။ ဖြည့် =====*/
+    { id:'b1', sec:'B', type:'fill', q:'မနက်ဖြန် ______ ______ ဖြစ်ပါစေ — စာမေးပွဲသည် ၈ နာရီတွင် စတင်ပါသည်။ စကားလုံး (၂)လုံး၊',
+      acc:['on time'], ans:'on time',
+      exp:'အချိန်မှန်၊ မနောက်ကျ → အချိန်မှန်။' },
+    { id:'b2', sec:'B', type:'fill', q:'သူ့မွေးနေ့အတွက် ပါဆယ်ထုပ် _________ ______ ရောက်ရှိလာမည်ဟု မျှော်လင့်ပါသည်။ စကားလုံး (၂)လုံး၊',
+      acc:['in time'], ans:'in time',
+      exp:'in time for what အခါသမယ → in time for.' },
+    { id:'b3', sec:'B', type:'fill', q:'Everyone clapped ______ the end of the show.',
+      acc:['at'], ans:'at',
+      exp:'at the end of the show = ပွဲ၏အဆုံး။' },
+    { id:'b4', sec:'B', type:'fill', q:'We looked everywhere for a hotel. ______ the end we slept in the car.',
+      acc:['in'], ans:'In',
+      exp:'နောက်ဆုံးရလဒ် → နောက်ဆုံး။' },
+    { id:'b5', sec:'B', type:'fill', q:'ဤနေရာ၌ လေယာဉ်ခရီးစဉ်များ ______ ______ ရှားပါးသည်။ သူတို့က များသောအားဖြင့် နောက်ကျတယ်။ စကားလုံး (၂)လုံး၊',
+      acc:['on time'], ans:'on time',
+      exp:'ခရီးစဉ်သည် အချိန်ဇယားအတိုင်း → အချိန်မှန်ဖြစ်သည်။' },
+    { id:'b6', sec:'B', type:'fill', q:'ငါ ______ ______ ဆိုင်ကိုရောက်ပြီ — ဆိုင်ပိတ်တော့မည်။ စကားလုံး (၂)လုံး၊',
+      acc:['in time'], ans:'in time',
+      exp:'just in time = အချိန်မီ။' },
+    { id:'b7', sec:'B', type:'fill', q:'Our rent is paid ______ the end of each month.',
+      acc:['at'], ans:'at',
+      exp:'+ timeline အဆုံးမှာ။' },
+    { id:'b8', sec:'B', type:'fill', q:'I arrived too ______ to say goodbye to her.',
+      acc:['late'], ans:'late',
+      exp:'too late to do something = တစ်ခုခုလုပ်ရန် နောက်ကျသည် (အချိန်နှင့် ဆန့်ကျင်ဘက်)။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (the meeting / started / and / finished / on time)',
+      tokens:['The','meeting','started','and','finished','on','time'],
+      acc:['the meeting started and finished on time'], ans:'The meeting started and finished on time.',
+      exp:'on time = မျှော်လင့်ထားသည့်အတိုင်း အချိန်မှန်။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (we / got / to the airport / just / in time)',
+      tokens:['We','got','to','the','airport','just','in','time'],
+      acc:['we got to the airport just in time'], ans:'We got to the airport just in time.',
+      exp:'just in time = အချိန်မီ။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (in the end / she / decided / to stay)',
+      tokens:['In','the','end','she','decided','to','stay'],
+      acc:['in the end she decided to stay'], ans:'In the end she decided to stay.',
+      exp:'In the end သည် ဝါကျ၏အစတွင် = နောက်ဆုံးဖြစ်သည်။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (I\'ll / pay you / at / the end / of the week)',
+      tokens:["I'll",'pay','you','at','the','end','of','the','week'],
+      acc:["i'll pay you at the end of the week"], ans:'I\'ll pay you at the end of the week.',
+      exp:'at the end of the week = ရက်သတ္တပတ်၏အဆုံး။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (at first / I / was nervous / but / I relaxed / in the end)',
+      tokens:['At','first','I','was','nervous','but','I','relaxed','in','the','end'],
+      acc:['at first i was nervous but i relaxed in the end'], ans:'At first I was nervous, but I relaxed in the end.',
+      exp:'အစမှာ… အဆုံး၊ အစမှာ… နောက်ဆုံး။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: The film starts at 8.  B: OK, I\'ll leave now so I\'m there ______ time to get a seat.',
+      acc:['in'], ans:'in',
+      exp:'in time to do something = တစ်ခုခုလုပ်ရန် အချိန်စောသည် ။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: You couldn\'t choose between the two phones. Which one did you buy ______ the end?  B: The cheaper one.',
+      acc:['in'], ans:'in',
+      exp:'နောက်ဆုံးရလဒ် → အဆုံးတွင် မေးပါ။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: When does the course finish?  B: ______ the end of June.',
+      acc:['at'], ans:'At',
+      exp:'ကြားကာလတစ်ခု၏အဆုံး → ဇွန်လကုန်။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Was the boss angry?  B: Yes, because I wasn\'t ______ time for the meeting again.',
+      acc:['on'], ans:'on',
+      exp:'အစည်းအဝေးသို့ အချိန်မှန်ရောက်ရှိ → အစည်းအဝေးအတွက် အချိန်မှန်ရောက်ပါစေ။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'စာကြောင်း ၂ ကြောင်းရေးပါ- အချိန်မှန်ပါဝါကျ ၁ ကြောင်း၊ အချိန်မီ စာကြောင်း ၁ ကြောင်း (for/to do)။',
+      sample:'My English class always starts on time. I left early so I arrived in time to have a coffee first.',
+      exp:'အချိန်မှန် = on time; အချိန်မီ = in time (+ to do)။' },
+    { id:'e2', sec:'E', type:'self', q:'"In the end ..." ဝါကျဖြင့်အဆုံးသတ်ပြီး သင်ပြုလုပ်ခဲ့သော ခက်ခဲသောဆုံးဖြတ်ချက်တစ်ခုအကြောင်း ကျွန်ုပ်တို့အား ပြောပြပါ။',
+      sample:'I couldn\'t decide whether to study abroad or work. In the end I took a job in Ho Chi Minh City.',
+      exp:'အဆုံးတွင် = တုံ့ဆိုင်းခြင်း/ခက်ခဲသော ကာလတစ်ခုပြီးနောက် နောက်ဆုံးရလဒ်။' },
+    { id:'e3', sec:'E', type:'self', q:'အစနဲ့အဆုံးမှာ စာကြောင်း ၂ ကြောင်းရေးပါ။',
+      sample:'We have a team meeting at the beginning of every month. I get paid at the end of the month.',
+      exp:'၏အစ / အဆုံးတွင် + အချိန်ကာလ / အဖြစ်အပျက်။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'fill', q:'Hurry up or we won\'t get there ______ time to see the start.',
+      acc:['in'], ans:'in',
+      exp:'in time to see = အချိန်မီ မြင်နိုင်သည် ။' },
+    { id:'f2', sec:'F', type:'fill', q:'The trains in Japan almost always run ______ time.',
+      acc:['on'], ans:'on',
+      exp:'အချိန်မှန် → အချိန်မှန် လုပ်ဆောင်ပါ။' },
+    { id:'f3', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['In the end of the film, the hero dies.','At the end of the film, the hero dies.'], a:1,
+      exp:'"in the end of" မပြောနဲ့။ အဆုံးမှာ သုံးတယ်။' },
+    { id:'f4', sec:'F', type:'fill', q:'ဘာသာပြန်- "နောက်ဆုံးတော့ ငါတို့အိမ်ကို ရောင်းလိုက်ပြီ။"  (We sold the house ...)',
+      acc:['we sold the house in the end','in the end we sold the house'], ans:'We sold the house in the end.',
+      exp:'နောက်ဆုံး (ရလဒ်) → နောက်ဆုံး။' },
+    { id:'f5', sec:'F', type:'mcq', q:'He kept losing money, and ______ he closed the shop.',
+      opts:['at the end','in the end','on time','at first'], a:1,
+      exp:'လုပ်ငန်းစဉ်တစ်ခုပြီးနောက်ရလဒ် → အဆုံး၌။' },
+    { id:'f6', sec:'F', type:'mcq', q:'I saw the cyclist ______ and stopped the car.',
+      opts:['just in time','just on time','at the end','in the end of'], a:0,
+      exp:'မတော်တဆမှု → အချိန်မီ ရှောင်ပါ။' },
+    { id:'f7', sec:'F', type:'fill', q:'The teacher gives us a test ______ the end of every unit.',
+      acc:['at'], ans:'at',
+      exp:'ယူနစ်တိုင်းရဲ့အဆုံးမှာ။' },
+    { id:'f8', sec:'F', type:'mcq', q:'"Be on time" ဆိုသည်မှာ-',
+      opts:['နောက်ကျမနေပါနဲ့။','စောစောလာပါ။','တစ်ခုခုအတွက် အချိန်ကိုက်','နောက်ဆုံး'], a:0,
+      exp:'on time = အချိန်မှန်၊ မနောက်ကျ → နောက်ကျမနေပါနဲ့။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'The concert was supposed to begin at 7, but it didn\'t start ______.',
+      acc:['on time'], ans:'on time',
+      exp:'အချိန်မီ → အချိန်မီ မစတင်ပါ။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'I like to wake up early ______ to go for a run before work.',
+      acc:['in time'], ans:'in time',
+      exp:'တစ်ခုခုလုပ်ရန် စောစော → အချိန်မီလုပ်ပါ။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'We\'d like to finish the workshop ______, so please keep your questions short.',
+      acc:['on time'], ans:'on time',
+      exp:'စီစဉ်ထားသည့်အတိုင်း အချိန်မီ → အချိန်မှန် ပြီးသွားသည်။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'I\'ve just washed my jeans. I need them tomorrow, so I hope they\'ll be dry ______.',
+      acc:['in time'], ans:'in time',
+      exp:'လိုအပ်တဲ့အခါ → အချိန်မီ အခြောက်ခံပါ။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'This airline has a bad reputation. Its planes are hardly ever ______.',
+      acc:['on time'], ans:'on time',
+      exp:'လေယာဉ်သည် အချိန်မှန် → အချိန်မှန်။' },
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'I almost forgot Mum\'s birthday, but luckily I remembered ______.',
+      acc:['in time'], ans:'in time',
+      exp:'အချိန်မီ → အချိန်မီ အမှတ်ရပါ။' },
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.1 – အချိန်မှန် သို့မဟုတ် အချိန်မီ',
+      q:'Why are you never ______? We always have to wait for you.',
+      acc:['on time'], ans:'on time',
+      exp:'ဘယ်တော့မှ အချိန်မမီဘူး → ဘယ်တော့မှ အချိန်မမီဘူး။' },
+
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.2 – အချိန်တိုအတွင်း စာကြောင်းများကို ဖန်တီးပါ။',
+      q:'အိမ်ထဲဝင်ပြီးတာနဲ့ မိုးက သည်းထန်စွာရွာလာတယ်။  (get / home) → ငါ ______ ။',
+      acc:['got home just in time',"i got home just in time"], ans:'got home just in time',
+      exp:'အချိန်မီ အိမ်ပြန်ရောက်တယ် (မိုးမရွာခင်) → အချိန်မီ အိမ်ပြန်ရောက်တယ်။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.2 – အချိန်တိုအတွင်း စာကြောင်းများကို ဖန်တီးပါ။',
+      q:'ကလေးက ပူနေတဲ့ မီးဖိုကို ထိတော့မှာဘဲ၊ ဒါပေမယ့် မင်းသူ့လက်ကို အချိန်မီ ပြန်ဆွဲထုတ်လိုက်တယ်။  (stop / her) → ငါ ______ ။',
+      acc:['stopped her just in time','i stopped her just in time'], ans:'stopped her just in time',
+      exp:'အချိန်မီရပ်လိုက်သည် → ငါသူမကို အချိန်မီရပ်လိုက်သည် ။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.2 – အချိန်တိုအတွင်း စာကြောင်းများကို ဖန်တီးပါ။',
+      q:'မင်း ဘူတာကို နောက်ကျမှ ရောက်ပေမယ့် ရထားက မထွက်သေးဘူး၊ ရထားပေါ် ရောက်နေပြီ ။  (catch / train) → ငါ ______ ။',
+      acc:['caught the train just in time','i caught the train just in time','caught my train just in time'], ans:'caught the train just in time',
+      exp:'ရထားကိုဖမ်း → ငါရထားကို အချိန်မီဖမ်းတယ်။' },
+
+    { id:'h11', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 122.3 – အဆုံးတွင် + ပေးထားသော စကားစု',
+      q:'Most people get their salary ______. (the month)',
+      acc:['at the end of the month'], ans:'at the end of the month',
+      exp:'+ လကုန်မှာ။' },
+    { id:'h12', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 122.3 – အဆုံးတွင် + ပေးထားသော စကားစု',
+      q:'All the students received a certificate ______. (the course)',
+      acc:['at the end of the course'], ans:'at the end of the course',
+      exp:'at the end of the course = သင်တန်း၏အဆုံး။' },
+    { id:'h13', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 122.3 – အဆုံးတွင် + ပေးထားသော စကားစု',
+      q:'One of the runners fell over ______. (the race)',
+      acc:['at the end of the race'], ans:'at the end of the race',
+      exp:'ပြိုင်ပွဲရဲ့အဆုံးမှာ။' },
+    { id:'h14', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 122.3 – အဆုံးတွင် + ပေးထားသော စကားစု',
+      q:'They asked me if I had any questions ______. (the interview)',
+      acc:['at the end of the interview'], ans:'at the end of the interview',
+      exp:'အင်တာဗျူးရဲ့အဆုံးမှာ။' },
+
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.4 – အဆုံးတွင် စာကြောင်းများရေးပါ။',
+      q:'Tuan got more and more stressed at his job. (resign) → ______.',
+      acc:['in the end he resigned','in the end he resigned from his job','he resigned in the end'], ans:'In the end he resigned.',
+      exp:'အဆုံးတွင် + အတိတ်ရိုးရှင်းသော- နောက်ဆုံးရလဒ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.4 – အဆုံးတွင် စာကြောင်းများရေးပါ။',
+      q:'I tried to learn the guitar, but it was too hard for me. (give up) → ______.',
+      acc:['in the end i gave up','in the end i gave up trying','i gave up in the end','in the end i gave up learning the guitar','in the end i gave up trying to learn the guitar'], ans:'In the end I gave up.',
+      exp:'အဆုံးတွင် ငါအရှုံးပေး = နောက်ဆုံးတွင် ငါအရှုံးပေးခဲ့သည်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.4 – အဆုံးတွင် စာကြောင်းများရေးပါ။',
+      q:'We couldn\'t decide whether to go to the beach or not. (not / go) → ______.',
+      acc:["in the end we didn't go",'in the end we did not go','in the end we decided not to go',"we didn't go in the end"], ans:'In the end we didn\'t go.',
+      exp:'နိဂုံးချုပ် + ရိုးရှင်းတဲ့ အတိတ်က အနုတ်လက္ခဏာ။' },
+
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.5 – တွင် သို့မဟုတ် အတွင်းထည့်ပါ။',
+      q:'It took us ages to find a flat. ______ the end we found one near the river.',
+      acc:['in'], ans:'In',
+      exp:'နောက်ဆုံးရလဒ် → နောက်ဆုံး။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.5 – တွင် သို့မဟုတ် အတွင်းထည့်ပါ။',
+      q:'မင်းရဲ့အလုပ်သစ်ကို ______ မေလရဲ့အစ ဒါမှမဟုတ် ______ ကုန်ဆုံးမှာလား။ (ထိုင်ခုံ ၂ လုံး၊ " / " ခြားထားသည်)',
+      acc:['at / at','at at'], ans:'at / at',
+      exp:'အစ (of) / အဆုံး (of) — အချိန်ကို အမှတ်။' },
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.5 – တွင် သို့မဟုတ် အတွင်းထည့်ပါ။',
+      q:'I couldn\'t choose a present for him, so I didn\'t buy anything ______ the end.',
+      acc:['in'], ans:'in',
+      exp:'နောက်ဆုံးရလဒ် → အဆုံး။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.5 – တွင် သို့မဟုတ် အတွင်းထည့်ပါ။',
+      q:'We\'re moving house ______ the end of October.',
+      acc:['at'], ans:'at',
+      exp:'အောက်တိုဘာလကုန်တွင်။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.5 – တွင် သို့မဟုတ် အတွင်းထည့်ပါ။',
+      q:'There were some difficulties at first, but ______ the end it all worked out.',
+      acc:['in'], ans:'in',
+      exp:'ပထမတော့… အဆုံးမှာ။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ 122.5 – တွင် သို့မဟုတ် အတွင်းထည့်ပါ။',
+      q:'A: I didn\'t know whether to tell her.  B: That was hard. What did you do ______ the end?',
+      acc:['in'], ans:'in',
+      exp:'နောက်ဆုံးရလဒ် → အဆုံးတွင် မေးပါ။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

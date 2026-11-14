@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 105 – နှိုင်းယှဉ် 1 (စျေးသက်သာ၊ ပိုစျေးကြီး စသည်ဖြင့်) | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 105 – နှိုင်းယှဉ် 1 (စျေးသက်သာ၊ ပိုစျေးကြီး စသည်ဖြင့်) </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> ရမှတ် ၅၇ မှတ် + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p><b> ပိုနှိုင်းယှဥ်ပါ။ </b> (နှိုင်းယှဥ်ပြခြင်း) သည် လူနှစ်ဦး/အရာ/လုပ်ရပ်များကို တစ်ခုနှင့်တစ်ခု ဘေးတွင်ထားသောအခါ၊ <b> ထက် </b> . ဖန်တီးရန် နည်းလမ်းနှစ်ခုရှိသည်။ <b> -er </b> (အတိုကောက်) သို့မဟုတ် သုံးသည်။ <b> နောက်ထပ် ... </b> (စကားရှည်)။ ဒီယူနစ်ကိုအာရုံစိုက် <b> ပုံသဏ္ဍာန်ဖန်တီးနည်း </b> မမှန်သောပုံစံများအပါအဝင် မှန်ကန်သည်။ </p>
+      <div class="ex"> <b class="en">Let's drive. It's  <mark>cheaper</mark> . — Don't go by train. It's  <mark>more expensive</mark> .</b> <br> ဈေးပေါသော (၁ဝဏ္ဏ) → <u> စျေးသက်သာသည်။ </u> ; စျေးကြီး (၃ လုံး) → <u> ပိုစျေးကြီးတယ်။ </u>.</div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> စာလုံးတစ်လုံး + -er စျေးပေါ → စျေးသက်သာ မြန် → ပိုမြန်သည်။
+                                        ကြီးသော → ပိုကြီးသော ပါးလွှာ → ပါးလွှာသည်။
+စာလုံး 2 လုံးမှ -y y → အဆုံးသတ် -ier easy → စောစောပိုင်း → ပိုလွယ်သည်။
+စကားလုံး 2+ syllables more + adj ပိုလေးနက် ပိုစျေးကြီးသည်။
+ကြိယာဝိသေသနအဆုံးသတ် -ly more + adv ဖြည်းဖြည်းချင်း ပို၍ တိုးတိုးတိတ်တိတ်
+
+အရာဝတ္ထုနှင့် နှိုင်းယှဉ်ပါ- ... + ထက် ... (ယူနစ် 107 ကိုကြည့်ပါ)
+ရထားနဲ့သွားရတာထက် ကားမောင်းရတာ ပိုသက်သာတယ်။ </div>
+      <div class="scroll"><table>
+        <tr><th> word type </th><th> How to create </th><th> For example </th></tr>
+        <tr><td> Syllable 1 </td><td> -er </td><td> Old → older → bigger </td></tr>
+        <tr><td> 2 letters ending in -y </td><td> - More </td><td> lucky → lucky Beautiful → more beautiful. </td></tr>
+        <tr><td> 2 more letters; 3+ syllables </td><td> More </td><td> more patient It's more convenient. </td></tr>
+        <tr><td> -ly adverb </td><td> More </td><td> easier More serious. </td></tr>
+        <tr><td> clever, narrow quiet What about the clouds? It's simple. </td><td> -er or more. </td><td> quieter / quieter. </td></tr>
+      </table></div>
+      <p class="note">⚠️ <b> နှစ်ခုလုံးကို ဘယ်တော့မှ မသုံးပါနဲ့ </b> <i>more cheaper</i> ❌ , <i>more easier</i> ❌ ။ </p>
+
+      <h2> 1.3 · A–B။ - ဟေး ပို? </h2>
+      <ul>
+        <li> <i>You're <b>older</b> than me.</i> ↔ <i>You're <b>more patient</b> than me.</i> </li>
+        <li> <i>Can you walk a bit <b>faster</b>?</i> ↔ <i>Can you walk a bit <b>more slowly</b>?</i> </li>
+        <li> <i>I went to bed <b>earlier</b> than usual.</i> (အစောပိုင်း → အစောပိုင်း၊ ကြိယာဝိသေသနတစ်ခုဖြစ်သော်လည်း၊ ၎င်းသည် adj + ly မဟုတ်သောကြောင့်) </li>
+        <li> <i>I used to play <b>more often</b>.</i> </li>
+      </ul>
+
+      <h2> 1.4 · C. နာမ်နာမ်နှစ်လုံးကို နှစ်မျိုးလုံးသုံးနိုင်သည်။ </h2>
+      <p> <span class="chip">clever</span> <span class="chip">narrow</span> <span class="chip">quiet</span> <span class="chip">shallow</span> <span class="chip">simple</span> </p>
+      <div class="formula"> ပိုတိတ်ဆိတ်တယ်/ ပိုတိတ်ဆိတ်တဲ့နေရာကို သွားလို့ရမလား။ </div>
+
+      <h2> 1.5 · D. ပုံမမှန်ပုံစံ </h2>
+      <div class="scroll"><table>
+        <tr><th> origin </th><th> Compare more. </th><th> For example </th></tr>
+        <tr><td> good / good </td><td><b> It's better. </b></td><td> The garden is more beautiful now. </td></tr>
+        <tr><td> bad / bad </td><td><b> It's worse. </b></td><td> It was worse than he expected. </td></tr>
+        <tr><td> away </td><td><b> more/far </b></td><td> More than I thought. </td></tr>
+      </table></div>
+      <p><b> နောက်ထပ် </b> (မဝေးဘူး) ဆိုတဲ့ အဓိပ္ပါယ်လည်း ရှိပါတယ်။ <b> add, supplement </b> : <i>any <b>further</b> news / information</i> </p>
+
+      <h2> 1.6 စာလုံးပေါင်း (နောက်ဆက်တွဲ 6) </h2>
+      <div class="scroll"><table>
+        <tr><th> Rules </th><th> For example </th></tr>
+        <tr><td> Just add -e → end -r. </td><td> big → bigger good → better. </td></tr>
+        <tr><td> 1 vowel + 1 consonant → double consonant </td><td> thin → thinner; bigger → bigger hot → hotter </td></tr>
+        <tr><td> Consonant + y → ier </td><td> easy → easier; Jobs → Busy dry → dry </td></tr>
+      </table></div>
+
+      <h2> 1.7 · သက်သေခံလက္ခဏာများ </h2>
+      <div class="scroll"><table>
+        <tr><th> Token </th><th> For example </th></tr>
+        <tr><td> Than </td><td> old age <b> Than </b> me </td></tr>
+        <tr><td> More than usual / more than expected / more than expected </td><td> Busy. <b> than usual </b></td></tr>
+        <tr><td> a few / a few / a lot + comparative (unit 106) </td><td><b> A little </b> Faster </td></tr>
+        <tr><td> Opposite content (too cold → somewhere warmer) </td><td> I want it somewhere. <b> It's hotter. </b>.</td></tr>
+      </table></div>
+
+      <h2> 1.8 · အလွယ်တကူ ရှုပ်ထွေးနေသော ဖွဲ့စည်းပုံများနှင့် နှိုင်းယှဉ်ပါ။ </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> Comparisons (Unit 105) </th><th> Superlative (Unit 108) </th></tr>
+        <tr><td> Number of objects </td><td>2</td><td> 3 or more (in a group) </td></tr>
+        <tr><td> form </td><td> -er / more </td><td> the -est / the most </td></tr>
+        <tr><td> For example </td><td> Hanoi <b> cooler than </b> Saigon. </td><td> That's it <b> The coldest </b> Month of the year. </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> It's cheaper. </td><td class="yes"> That's it <b> Cheaper. </b>.</td></tr>
+        <tr><td class="no"> He is taller than me. </td><td class="yes"> He <b> higher. </b> than me </td></tr>
+        <tr><td class="no"> She speaks more slowly. </td><td class="yes"> She speaks. <b> It's slower. </b>.</td></tr>
+        <tr><td class="no"> Worse than yesterday. </td><td class="yes"> That's it <b> It's worse. </b> than yesterday </td></tr>
+        <tr><td class="no"> Any more information? </td><td class="yes"> Something <b> More </b> Information </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၁၀၆ </b> (ပိုကောင်း၊ ပိုကောင်း၊ ပိုကောင်း) · <b> ယူနစ် ၁၀၇ </b> (as ... as / than) · <b> ယူနစ် ၁၀၈ </b> (superlative) · <b> နောက်ဆက်တွဲ ၆ </b> (စာလုံးပေါင်း)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🛵 <b class="en">A motorbike is  <mark>cheaper</mark>  and  <mark>faster</mark>  in the city.</b> <span class="note"> (ဘဝခရီး) </span></div>
+      <div class="ex"> 🏙️ <b class="en">Ho Chi Minh City is  <mark>hotter than</mark>  Hanoi in winter.</b> <span class="note"> (IELTS Speaking — မြို့ နှိုင်းယှဉ်မှု) </span></div>
+      <div class="ex"> 💻 <b class="en">This laptop is  <mark>more expensive</mark> , but it's  <mark>more reliable</mark> .</b> <span class="note"> (ဈေးဝယ်) </span></div>
+      <div class="ex"> 🗣️ <b class="en">Could you speak  <mark>more slowly</mark> , please?</b> <span class="note"> (ဖြည်းညှင်းစွာပြောဆိုခြင်း)၊ </span></div>
+      <div class="ex"> 🤒 <b class="en">I felt  <mark>worse</mark>  yesterday, but I'm  <mark>better</mark>  today.</b> <span class="note"> (ကျန်းမာရေး) </span></div>
+      <div class="ex"> 📈 <b class="en">Sales were  <mark>higher than</mark>  expected this quarter.</b> <span class="note"> (အလုပ် — အစီရင်ခံစာ; IELTS Task 1) </span></div>
+      <div class="ex"> 📧 <b class="en">Please contact me if you need any  <mark>further</mark>  information.</b> <span class="note"> (အလုပ်အီးမေးလ်) </span></div>
+      <div class="ex"> ⏰ <b class="en">I got to the office  <mark>earlier than</mark>  usual.</b> <span class="note"> (ဘဝ) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> စာလုံးရေတွက်ခြင်း- </b> 1 → -er; 2 အဆုံးသတ် -y → -ier; ကျန် → နောက်ထပ်။ </li>
+        <li><b> -ly = နောက်ထပ် </b> : မြန်မြန် → ပိုမြန်တယ်။ ခြွင်းချက်- <i>early → earlier</i> (အစောပိုင်းကိုယ်တိုင်က root ဖြစ်သောကြောင့်)။ </li>
+        <li><b> မမှန်သောဒန်း- </b> ကောင်း/ကောင်း → ပိုကောင်း · မကောင်း/မကောင်း → ပိုဆိုး · အဝေး → နောက်ထပ်/ဝေးသည်။ </li>
+        <li><b> "more" နှင့် "-er" အတူတူမနေပါ။ </b> : နှစ်ခုထဲက တစ်ခုကို ရွေးပါ။ </li>
+        <li><b> further = နောက်ထပ် </b> နောက်ထပ်အချက်အလက်များ၊ နောက်ထပ်အသေးစိတ်အချက်အလက်များ၊ နောက်ထပ်မေးခွန်းများ။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> ကြည့်ပါ။ <b> ထက် </b> → နှိုင်းယှဥ်မှုပိုမိုလိုအပ်ပါသည်။ </li>
+        <li> မှန်ကန်သောပုံစံဖြင့်ဝါကျ- ဆန့်ကျင်ဘက်အကြောင်းအရာ (<i>too noisy → quieter</i>၊ <i>too weak → stronger</i>) ကိုဖတ်ပါ။ </li>
+        <li> ထည့်လိုက်ရုံပါပဲ။ <b> ထက် </b> ဒုတိယအရာတစ်ခုကို ဖော်ပြသောအခါ၊ မဟုတ်ရင် မထည့်ပါနဲ့။ </li>
+        <li> စာလုံးပေါင်းစစ်ဆေးခြင်း- <i>bigger, thinner, hotter</i> (နှစ်ထပ်)၊ <i>easier, busier</i> (y → i)။ </li>
+        <li> IELTS Writing Task 1- <i>higher than, lower than, more popular than</i> ကို လေ့ကျင့်ပါ။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> My house is bigger. </td><td class="yes"> My house <b> bigger. </b>.</td><td class="why"> 1 syllable → -er </td></tr>
+        <tr><td class="no"> She is more beautiful. </td><td class="yes"> she is <b> more beautiful </b>.</td><td class="why"> + Do not use extra -er. </td></tr>
+        <tr><td class="no"> He is more beautiful. </td><td class="yes"> He <b> more beautiful </b>.</td><td class="why"> Long words → more </td></tr>
+        <tr><td class="no"> It's better now. </td><td class="yes"> That's it <b> It's better. </b> Now </td><td class="why"> Not true </td></tr>
+        <tr><td class="no"> I'm worse at math. </td><td class="yes"> I <b> It's worse. </b> In mathematics. </td><td class="why"> bad → worse. </td></tr>
+        <tr><td class="no"> He is faster. </td><td class="yes"> He ran. <b> faster. </b>.</td><td class="why"> Adverb -ly → more </td></tr>
+        <tr><td class="no"> The bus is cheaper than the train. </td><td class="yes"> The bus is cheaper. <b> Than </b> Train. </td><td class="why"> Lack of coal. </td></tr>
+        <tr><td class="no"> He is thinner now. </td><td class="yes"> He <b> thinner. </b> Now </td><td class="why"> A double consonant </td></tr>
+        <tr><td class="no"> It's easier. </td><td class="yes"> That's it <b> Easier </b>.</td><td class="why"> 2 syllables ending in -y → -ier </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြောခြင်း (တစ်နေ့လျှင် ၂ မိနစ်)။ </b> ရင်းနှီးသောအရာနှစ်ခုကို နှိုင်းယှဉ်ပါ- <i>"Tea is cheaper than coffee, but coffee is stronger."</i> </li>
+        <li><b> စာရေးခြင်း (တစ်နေ့လျှင် စာကြောင်း ၅ ကြောင်း) </b> သင့်မွေးရပ်မြေနှင့် သင်နေထိုင်သောမြို့ကို နှိုင်းယှဉ်ပါ။ </li>
+        <li><b> အလုပ်တွင်- </b> <i>"This option is more expensive, but it's faster and more reliable."</i> </li>
+        <li><b> IELTS- </b> မက်ထရစ်ဖော်ပြချက်- <i>"Car use was higher than bus use in 2020."</i> </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> စကားမပြောမီ ဝဏ္ဏများကို ရေတွက်ပါ။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> ၃ ရက်၊ ၇ ရက်နှင့် ၁၄ ရက်ပြီးနောက် လေ့ကျင့်ခန်းများကို ပြန်လုပ်ပါ။ စာလုံးပေါင်းဇယားနှင့် မမှန်သောပုံစံများကို ဂရုတစိုက်သုံးသပ်ပါ။ ဆက်စပ်- <b> ယူနစ် ၁၀၆ </b> (အများကြီး/ပိုကောင်းတာပေါ့)၊ <b> ယူနစ် ၁၀၇ </b> (as ... as/than)၊ <b> ယူနစ် ၁၀၈ </b> (superlative)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit105.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 105 · အော့ဖ်လိုင်း ကိုယ်တိုင်လေ့လာရေးဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> စကားလုံးအမျိုးအစား \u003c/th>\u003cth> ဖန်တီးနည်း \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ဝဏ္ဏ ၁ \u003c/td>\u003ctd> -er \u003c/td>\u003ctd> အဟောင်း → ပိုကြီးသည် → ပိုကြီးသည် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> -y ဖြင့်အဆုံးသတ်သော စာလုံး 2 လုံး \u003c/td>\u003ctd> - ပို \u003c/td>\u003ctd> ကံကောင်း → ကံကောင်းသည်၊ လှသည် → ပိုလှသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> နောက်ထပ် စာလုံး 2 လုံး၊ 3+ syllables \u003c/td>\u003ctd> နောက်ထပ် \u003c/td>\u003ctd> ပိုစိတ်ရှည်တယ်၊ ပိုအဆင်ပြေတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> -ly ကြိယာဝိသေသန \u003c/td>\u003ctd> နောက်ထပ် \u003c/td>\u003ctd> ပိုလွယ်တယ်၊ ပိုလေးနက်တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> လိမ္မာပါးနပ်သော၊ ကျဉ်းမြောင်းသော၊ ဆိတ်ငြိမ်၊ တိမ်ကော၊ ရိုးရှင်းသည်။ \u003c/td>\u003ctd> -er သို့မဟုတ် ပိုများသည်။ \u003c/td>\u003ctd> ပိုတိတ်ဆိတ်/ ပိုတိတ်ဆိတ်တယ်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> ဇာစ်မြစ် \u003c/th>\u003cth> ပိုနှိုင်းယှဥ်ပါ။ \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ကောင်း / ကောင်း \u003c/td>\u003ctd>\u003cb> ပိုကောင်းပါတယ်။ \u003c/b>\u003c/td>\u003ctd> ဥယျာဉ်က အခုမှ ပိုလှတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> မကောင်း/မကောင်း \u003c/td>\u003ctd>\u003cb> ပိုဆိုးတယ်။ \u003c/b>\u003c/td>\u003ctd> သူမျှော်လင့်ထားတာထက် ပိုဆိုးတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အဝေး \u003c/td>\u003ctd>\u003cb> ပို/ဝေး \u003c/b>\u003c/td>\u003ctd> ထင်ထားတာထက် ပိုပါတယ်။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> စည်းကမ်းများ \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> -e → အဆုံး -r ထည့်ရုံပါပဲ။ \u003c/td>\u003ctd> ကြီး → ပိုကြီးသည်၊ ကောင်းသော → ပိုကောင်းသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သရ ၁ လုံး + ဗျည်း ၁ လုံး → ဗျည်းနှစ်ထပ် \u003c/td>\u003ctd> ပါးလွှာ → ပိုပါးသည်၊ ကြီးသည် → ပိုကြီးသည်၊ ပူသည် → ပိုပူသည် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဗျည်း + y → ier \u003c/td>\u003ctd> လွယ်သည် → ပိုလွယ်သည်၊ အလုပ်များ → အလုပ်များသည်၊ ခြောက်သွေ့သည် → ခြောက်သွေ့သည် \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> တိုကင် \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ထက် \u003c/td>\u003ctd> အသက်ကြီးသည်။ \u003cb> ထက် \u003c/b> ငါ့ကို \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပုံမှန်ထက် / မျှော်လင့်ထားတာထက် / ထင်ထားတာထက် \u003c/td>\u003ctd> အလုပ်များသည်။ \u003cb> ပုံမှန်ထက် \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အနည်းငယ် / အနည်းငယ် / အများကြီး + နှိုင်းယှဉ် (ယူနစ် 106) \u003c/td>\u003ctd>\u003cb> နည်းနည်း \u003c/b> မြန်မြန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဆန့်ကျင်ဘက် အကြောင်းအရာ (အေးလွန်း → ပိုပူသော တစ်နေရာ) \u003c/td>\u003ctd> တစ်နေရာရာမှာ လိုချင်ပါတယ်။ \u003cb> ပိုပူတယ်။ \u003c/b>.\u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> နှိုင်းယှဉ်ချက်များ (ယူနစ် ၁၀၅) \u003c/th>\u003cth> Superlative (ယူနစ် 108) \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အရာဝတ္ထုအရေအတွက် \u003c/td>\u003ctd>2\u003c/td>\u003ctd> 3 သို့မဟုတ် ထို့ထက်ပို၍ (အုပ်စုတစ်စုတွင်) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပုံစံ \u003c/td>\u003ctd> -er / နောက်ထပ် \u003c/td>\u003ctd> the -est / အများဆုံး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဥပမာအားဖြင့် \u003c/td>\u003ctd> ဟနွိုင်း \u003cb> ထက် ပိုအေးတယ်။ \u003c/b> ဆိုင်ဂုံ။ \u003c/td>\u003ctd> အဲဒါ \u003cb> အအေးဆုံး \u003c/b> တစ်နှစ်တာ၏လ။ \u003c/td>\u003c/tr>\n      ","t5":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပိုစျေးသက်သာတယ်။ \u003c/td>\u003ctd class=\"yes\"> အဲဒါ \u003cb> စျေးသက်သာသည်။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက ငါ့ထက် ပိုမြင့်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူသည် \u003cb> ပိုမြင့်တယ်။ \u003c/b> ငါ့ထက် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမက ပိုနှေးကွေးစွာပြောတတ်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူမပြောတတ်ပါသည်။ \u003cb> ပိုနှေးတယ်။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မနေ့ကထက် ပိုဆိုးတယ်။ \u003c/td>\u003ctd class=\"yes\"> အဲဒါ \u003cb> ပိုဆိုးတယ်။ \u003c/b> မနေ့ကထက် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နောက်ထပ်အချက်အလက်တွေရှိသေးလား။ \u003c/td>\u003ctd class=\"yes\"> တစ်ခုခု \u003cb> နောက်ထပ် \u003c/b> အချက်အလက် \u003c/td>\u003c/tr>\n      ","t6":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့အိမ်က ပိုကြီးတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ့အိမ်က \u003cb> ပိုကြီးတယ်။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> 1 syllable → -er \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမက ပိုလှတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူမမှာ \u003cb> ပိုလှတယ်။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> + -er အပိုမသုံးပါနဲ့။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက ပိုလှတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူသည် \u003cb> ပိုလှတယ်။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> ရှည်လျားသောစကားလုံးများ → နောက်ထပ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အခု ပိုကောင်းပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> အဲဒါ \u003cb> ပိုကောင်းပါတယ်။ \u003c/b> ယခု \u003c/td>\u003ctd class=\"why\"> မမှန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါသင်္ချာမှာ ပိုညံ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> ပိုဆိုးတယ်။ \u003c/b> သင်္ချာမှာ။ \u003c/td>\u003ctd class=\"why\"> မကောင်း → ပိုဆိုးသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက ပိုမြန်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူပြေးတယ်။ \u003cb> ပိုမြန်တယ်။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> ကြိယာဝိသေသန -ly → နောက်ထပ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဘတ်စ်ကားက ရထားထက် ပိုဈေးသက်သာတယ်။ \u003c/td>\u003ctd class=\"yes\"> ဘတ်စ်ကားက ပိုဈေးသက်သာတယ်။ \u003cb> ထက် \u003c/b> ရထား။ \u003c/td>\u003ctd class=\"why\"> ကျောက်မီးသွေးမရှိခြင်း။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက အခုပိုပါးတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူသည် \u003cb> ပိုပါးတယ်။ \u003c/b> ယခု \u003c/td>\u003ctd class=\"why\"> ဗျည်းနှစ်ဆ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပိုလွယ်ပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> အဲဒါ \u003cb> ပိုလွယ်လိုက်တာ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> -y → -ier ဖြင့်အဆုံးသတ်သော syllable 2 ခု \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 105 – နှိုင်းယှဉ် 1 | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit105.html';
+  var KEY = 'egu4_unit105_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'မှန်ကန်သော နှိုင်းယှဉ်မှုပုံစံကို ရွေးပါ-er သို့မဟုတ် ထို့ထက်ပို၍…?' },
+    { id:'B', title:'B. နှိုင်းယှဉ်ပုံစံကိုဖြည့်ပါ။',     desc:'ကွင်းကွင်းများတွင် စကားလုံး၏ နှိုင်းယှဉ်ပုံစံကို ရေးပါ (လိုအပ်ပါက အာမေဋိတ်ထည့်ပါ)။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 105 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် ၁၀၅ လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 105.1 → 105.3 သည် Murphy ၏ စာအုပ်၏ အတိအကျ သင်ခန်းစာပုံစံကို လိုက်နာပြီး၊ စာကြောင်းများကို ရှင်းလင်းချက်ဖြင့် ပြန်လည်ပြင်ဆင်ထားသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'Let\'s take the bus. It\'s ______ than a taxi.',
+      opts:['more cheap','cheaper','cheapper','more cheaper'], a:1,
+      exp:'cheap သည် 1-syllable adjective → add -er: cheaper ဖြစ်သည်။ တစ်ချိန်တည်းတွင် + -er အပိုမသုံးပါနှင့်။' },
+    { id:'a2', sec:'A', type:'mcq', q:'This sofa is ______ than the old one.',
+      opts:['comfortabler','more comfortable','most comfortable','comfortable more'], a:1,
+      exp:'သက်သောင့်သက်သာ ရှည်လျားခြင်း (စာကြောင်းများစွာ) → ပိုအဆင်ပြေသည်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'The exam was ______ than I expected.',
+      opts:['easier','more easy','easyer','more easier'], a:0,
+      exp:'-y → y ကို ier တွင်အဆုံးသတ်သော နာမဝိသေသနနှစ်ခုပါသော နာမဝိသေသနများ- လွယ်ကူသည် → ပိုလွယ်သည်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'Can you speak ______? I can\'t follow you.',
+      opts:['slowlier','more slow','more slowly','slowerly'], a:2,
+      exp:'ကြိယာဝိသေသန -ly → more + ကြိယာဝိသေသန - အဆုံးသတ်သည် ပို၍နှေးကွေးသည်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'"How\'s your cold?" "Oh, it\'s ______. I feel terrible."',
+      opts:['badder','more bad','worse','worst'], a:2,
+      exp:'မကောင်း/မကောင်း → ပိုဆိုး (မမှန်)။ အဆိုးဆုံးမှာ superlative ဖြစ်သည်။' },
+    { id:'a6', sec:'A', type:'mcq', q:'The station was ______ than I thought. We walked for 40 minutes.',
+      opts:['farer','further','more far','furthest'], a:1,
+      exp:'far → further/father (ပုံမမှန်)။' },
+    { id:'a7', sec:'A', type:'mcq', q:'Please contact us if you need ______ information.',
+      opts:['farther','more far','further','farer'], a:2,
+      exp:'အပို (NOT farther) ဆိုသည်မှာ "ပို" (= ပို၊ ထပ်လောင်း): နောက်ထပ် အချက်အလက်။' },
+    { id:'a8', sec:'A', type:'mcq', q:'She plays the piano ______ than her teacher now!',
+      opts:['gooder','more well','better','best'], a:2,
+      exp:'well (ကြိယာဝိသေသန) နှင့် ကောင်းသော (နာမဝိသေသန) နှစ်ခုစလုံးသည် သာလွန်ခြင်းထက် နှိုင်းယှဉ်မှုရှိသည်။' },
+
+    /*===== B. ===== စကားလုံးများကို ဖြည့်ပါ။*/
+    { id:'b1', sec:'B', type:'fill', q:'My brother is three years ______ (old) than me.',
+      acc:['older'], ans:'older',
+      exp:'old → အဟောင်း (၁ဝဏ္ဏ + er)။' },
+    { id:'b2', sec:'B', type:'fill', q:'You look ______ (thin) than last year.',
+      acc:['thinner'], ans:'thinner',
+      exp:'thin: ဗျည်း-သရ-ဗျည်း → နောက်ဆုံးဗျည်းနှစ်ထပ်- ပါးပါး (နောက်ဆက်တွဲ 6)။' },
+    { id:'b3', sec:'B', type:'fill', q:'This problem is ______ (serious) than we thought.',
+      acc:['more serious'], ans:'more serious',
+      exp:'လေးနက်ရှည် → ပိုလေးနက်သည်။' },
+    { id:'b4', sec:'B', type:'fill', q:'I got up ______ (early) than usual this morning.',
+      acc:['earlier'], ans:'earlier',
+      exp:'အစောပိုင်း (adj/adv) → အစောပိုင်း- အဆုံးသတ် -y → ier ။ မှတ်ချက်- အစောပိုင်းသည် ပုံမှန်-ly adverb မဟုတ်ပါ။' },
+    { id:'b5', sec:'B', type:'fill', q:'I don\'t go swimming much now. I used to go ______ (often).',
+      acc:['more often'], ans:'more often',
+      exp:'မကြာခဏ → ပိုမကြာခဏ (များသောအားဖြင့်)။ သာမန်အင်္ဂလိပ်တွင် "oftener" မရှိပါ။' },
+    { id:'b6', sec:'B', type:'fill', q:'မြို့သည် ______ (quiet) ဆောင်းရာသီဖြစ်သည်။ (ပုံစံ ၁ ဖြင့် ရေးထားသည်)',
+      acc:['quieter','more quiet'], ans:'quieter / more quiet',
+      exp:'ငြိမ်သက်ခြင်း သည် -er နှင့် ထို့ထက်ပို၍ နှစ်မျိုးလုံးသုံးနိုင်သော နာမဝိသေသန 2 လုံးပါသော အုပ်စုမှ ဖြစ်သည်- တိတ်ဆိတ်သည် / ပိုတိတ်ဆိတ်သည် ။' },
+    { id:'b7', sec:'B', type:'fill', q:'Your English is getting ______ (good) every day.',
+      acc:['better'], ans:'better',
+      exp:'ကောင်း → ပိုကောင်းတယ်။' },
+    { id:'b8', sec:'B', type:'fill', q:'Our new car is much ______ (reliable) than the old one.',
+      acc:['more reliable'], ans:'more reliable',
+      exp:'တာရှည်ယုံကြည်မှု → ပိုမိုစိတ်ချရသည်။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (it\'s / cheaper / to / cook / at / home)',
+      tokens:["It's",'cheaper','to','cook','at','home'],
+      acc:["it's cheaper to cook at home"], ans:'It\'s cheaper to cook at home.',
+      exp:'၎င်းသည် + နှိုင်းယှဉ် + V ဖြစ်သည် ။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (you\'re / more / patient / than / me)',
+      tokens:["You're",'more','patient','than','me'],
+      acc:["you're more patient than me"], ans:'You\'re more patient than me.',
+      exp:'more + adj အရှည် + ထက်။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (can / you / walk / a / bit / faster)',
+      tokens:['Can','you','walk','a','bit','faster'],
+      acc:['can you walk a bit faster'], ans:'Can you walk a bit faster?',
+      exp:'fast (adv) → ပိုမြန်သည်။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (I\'d / like / a / bigger / kitchen)',
+      tokens:["I'd",'like','a','bigger','kitchen'],
+      acc:["i'd like a bigger kitchen"], ans:'I\'d like a bigger kitchen.',
+      exp:'big → ပိုကြီး (နှစ်ဆဂရမ်)။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (the / test / was / more / difficult / than / I / expected)',
+      tokens:['The','test','was','more','difficult','than','I','expected'],
+      acc:['the test was more difficult than i expected'], ans:'The test was more difficult than I expected.',
+      exp:'+ clause ထက် ပိုခက်တယ်။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Shall we drive or take the train?  B: Let\'s drive. It\'s ______ (fast).',
+      acc:['faster'], ans:'faster',
+      exp:'မြန် → ပိုမြန်တယ်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: How\'s your back?  B: ______ (good), thanks. It doesn\'t hurt any more.',
+      acc:['better'], ans:'Better',
+      exp:'ကောင်း → ပိုကောင်းတယ်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: ဒီအခန်းက ဆူညံလွန်းတယ်။  B: ______ (quiet) တစ်နေရာရာမှာ ရှာကြည့်ရအောင်။ (ပုံစံ ၁ ဖြင့် ရေးထားသည်)',
+      acc:['quieter','more quiet'], ans:'quieter / more quiet',
+      exp:'တိတ်ဆိတ်-er သို့မဟုတ် ထို့ထက်ပိုကောင်းသည်။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Did you do well in the test?  B: No, I did ______ (badly) than last time.',
+      acc:['worse'], ans:'worse',
+      exp:'ဆိုးဆိုးရွားရွား → ပိုဆိုးသည်။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'အလုပ်/ကျောင်းသို့ သွားခြင်း၏ နည်းလမ်းနှစ်ရပ်ကို နှိုင်းယှဉ်ပါ (ဝါကျ ၃ ကြောင်း၊ -er နှင့် နောက်ထပ်...) နှစ်ခုလုံးကို နှိုင်းယှဉ်ပါ။',
+      sample:'The bus is cheaper than a taxi, but it\'s slower. A taxi is more comfortable.',
+      exp:'နာမ်အတို → -er; long adjective → နောက်ထပ်။ နှိုင်းယှဥ်မှုတစ်ခုရှိလျှင် ကျောက်မီးသွေးထည့်ပါ။' },
+    { id:'e2', sec:'E', type:'self', q:'ယခု သင့်ကိုယ်သင် လွန်ခဲ့သော ၅ နှစ်နှင့် နှိုင်းယှဉ်ကြည့်ပါ (ပိုကောင်း၊ ပိုဆိုး၊ နောက်ထပ်...)',
+      sample:'My English is better than it was five years ago. I live further from my office now.',
+      exp:'ပုံမှန်မဟုတ်သောပုံစံများကို မှတ်သားပါ- ကောင်း/ကောင်း → ပိုကောင်း၊ အဆိုး/အဆိုး → ပိုဆိုး၊ အဝေး → နောက်ထပ်/အဝေး။' },
+    { id:'e3', sec:'E', type:'self', q:'"ပို + ကြိယာဝိသေသန -ly" ကိုသုံး၍ စာကြောင်း 1 ကြောင်းနှင့် "further" ကိုအသုံးပြု၍ "ပို" ကို ဆိုလိုသော စာကြောင်း 1 ခုကိုရေးပါ။',
+      sample:'Could you speak more clearly, please? Let me know if you have any further questions.',
+      exp:'ကြိယာဝိသေသန -ly → more ... ; further = ထပ်လောင်း။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'fill', q:'The flight was ______ (expensive) than the train.',
+      acc:['more expensive'], ans:'more expensive',
+      exp:'စျေးကြီးသည် → ပိုစျေးကြီးသည်။' },
+    { id:'f2', sec:'F', type:'fill', q:'My sister is ______ (lucky) than me. She always wins.',
+      acc:['luckier'], ans:'luckier',
+      exp:'ကံကောင်းခြင်း (၂ လုံး၊ အဆုံး -y) → ကံကောင်းသည်။' },
+    { id:'f3', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['He drives more carefully than his brother.','He drives carefullier than his brother.','He drives more careful than his brother.'], a:0,
+      exp:'ဂရုတစိုက် ကြိယာဝိသေသန -ly → ပိုဂရုတစိုက်။' },
+    { id:'f4', sec:'F', type:'mcq', q:'(1) ဒီလမ်းက ထင်ထားတာထက် ပိုကျဉ်းတယ်။  (2) ဒီလမ်းက ထင်ထားတာထက် ပိုကျဉ်းတယ်။ - ဘယ်စာကြောင်းက မှန်လဲ။',
+      opts:['ဝါကျ (၁) ကြောင်းသာ မှန်ပါသည်။','စာကြောင်း (၂) ကြောင်းသာ မှန်ပါသည်။','နှစ်ခုစလုံးမှန်တယ်။'], a:2,
+      exp:'ကျဉ်းမြောင်းသည် (ပါးနပ်သော၊ ကျဉ်းမြောင်းသော၊ ဆိတ်ငြိမ်သော၊ ရေတိမ်ပိုင်း၊ ရိုးရှင်းသော) အုပ်စုနှင့်သက်ဆိုင်ပြီး -er နှင့် အခြားအရာနှစ်ခုလုံးဖြင့် အသုံးပြုနိုင်သည်။' },
+    { id:'f5', sec:'F', type:'fill', q:'ဘာသာပြန်- "ဒီနေ့ မနေ့ကထက် ပိုအေးတယ်။"  (It\'s ______ today than yesterday.)',
+      acc:['colder'], ans:'colder',
+      exp:'အအေး → ပိုအေးသည်။' },
+    { id:'f6', sec:'F', type:'mcq', q:'I know Mai well — probably ______ than anyone else.',
+      opts:['weller','more well','better','best'], a:2,
+      exp:'ကောင်းပြီ → ပိုကောင်းတယ်။' },
+    { id:'f7', sec:'F', type:'fill', q:'Going by train is ______ (relaxing) than driving.',
+      acc:['more relaxing'], ans:'more relaxing',
+      exp:'ရှည်လျားစွာ အနားယူခြင်း → ပိုမို ပြေလျော့စေခြင်း။' },
+    { id:'f8', sec:'F', type:'mcq', q:'FALSE ထုတ်ပြန်ချက်ကို ရွေးပါ-',
+      opts:['She is more taller than me.','She is taller than me.','She is more intelligent than me.'], a:0,
+      exp:'-er: more taller ❌ → အရပ်ပို ✅ မသုံးပါနှင့်။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'1. This tea is very weak. I like it ______.', acc:['stronger'], ans:'stronger',
+      exp:'အားနည်းခြင်း ↔ သန်မာခြင်း → အားကောင်းခြင်း။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'2. The apartment was surprisingly large. I expected it to be ______.', acc:['smaller'], ans:'smaller',
+      exp:'အကြီးကြီး → ပိုသေးတယ်လို့ ထင်တဲ့အတွက် အံ့သြသွားတယ်။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'3. The restaurant was surprisingly cheap. I expected it to be ______.', acc:['more expensive'], ans:'more expensive',
+      exp:'စျေးပေါ ↔ ဈေးကြီး → ပိုစျေးကြီးတယ်။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'4. It\'s too wet here in winter. I\'d like to live somewhere ______.', acc:['drier','dryer','warmer','sunnier'], ans:'drier / warmer',
+      exp:'စို ↔ ခြောက်သွေ့ → ခြောက်သွေ့သည် (y → ier)။ အခြေအနေပေါ်မူတည်၍ ပူသည်/နေပူသည် လက်ခံနိုင်သည်။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'5. It\'s a pity you live so far away. I wish you lived ______.', acc:['nearer','closer'], ans:'nearer / closer',
+      exp:'ဝေး ↔ နီး/နီး → ပိုနီး/နီး။' },
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'6. The interview was easy. I thought it would be ______.', acc:['more difficult','harder','more complicated'], ans:'more difficult / harder',
+      exp:'လွယ်ကူသော ↔ ခက်ခဲ → ပိုခက်ခဲ (သို့မဟုတ် ပိုခက်သည်)။' },
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'7. Don\'t panic. Things aren\'t so bad. They could be ______.', acc:['worse'], ans:'worse',
+      exp:'မကောင်း → ပိုဆိုးသည်။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'8. We arrived so quickly! I expected the drive to take ______.', acc:['longer'], ans:'longer',
+      exp:'take long = ပိုကြာသည် ။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'9. You\'re shouting. Can you speak ______?', acc:['more quietly','more softly'], ans:'more quietly',
+      exp:'ငြိမ်သက်စွာ ဆိုသည်မှာ ကြိယာဝိသေသန -ly → ပိုတိတ်ဆိတ်စွာ ဖြစ်သည် ။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'10. You almost never visit us. Why don\'t you visit us ______?', acc:['more often'], ans:'more often',
+      exp:'မကြာခဏ → ပိုမကြာခဏ။' },
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.1 – နှိုင်းယှဉ်ပုံစံဖြင့် ဖြည့်စွက်ပါ။',
+      q:'11. You\'re too close to the screen. Can you sit a bit ______ away?', acc:['further','farther'], ans:'further / farther',
+      exp:'far → ပို/ဝေး။' },
+
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'1. The damage was ______ (serious) we thought at first.', acc:['more serious than'], ans:'more serious than',
+      exp:'(ငါတို့ထင်သည်) → နှိုင်းယှဉ်ခြင်းထက် ပိုလေးနက်သော အရာတစ်ခုရှိသည်။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'2. We need a ______ (big) house. The children have no space to play.', acc:['bigger'], ans:'bigger',
+      exp:'နှိုင်းယှဥ်စရာအကြောင်းမရှိ → တိုင်ကြားရန်မလိုအပ်ပါ- ပိုကြီးသောအိမ်။' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'3. He isn\'t very keen on work. He\'s ______ (interested) in football.', acc:['more interested'], ans:'more interested',
+      exp:'ရှည်လျားသောစိတ်ဝင်စားမှု → ပိုစိတ်ဝင်စား; နှိုင်းယှဉ်စရာ → ကျောက်မီးသွေး မလိုအပ်ပါ။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'4. Friends are ______ (important) money.', acc:['more important than'], ans:'more important than',
+      exp:'သူငယ်ချင်း → ပိုက်ဆံထက် ပိုအရေးကြီးတယ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'5. ပုံစံသည် ရှုပ်ထွေးနေပါသည်။ ______ (simple) ဖြစ်နိုင်သည်။ (ပုံစံ ၁ ဖြင့် ရေးထားသည်)', acc:['simpler','more simple'], ans:'simpler / more simple',
+      exp:'ရိုးရှင်းသော -er နှင့်အခြားအရာနှစ်ခုလုံးကိုသုံးနိုင်သည်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'6. The train was packed today. It was ______ (crowded) usual.', acc:['more crowded than'], ans:'more crowded than',
+      exp:'ပုံမှန်ထက် → ပုံမှန်ထက် ပိုစည်ကားသည်။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'7. You\'ll learn the words ______ (easily) if you use flashcards.', acc:['more easily'], ans:'more easily',
+      exp:'easy is an adverb -ly → ပိုမိုလွယ်ကူသည်။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.2 – လိုအပ်သောနေရာတွင် နှိုင်းယှဉ် +',
+      q:'8. In the north, rents are ______ (high) in the south.', acc:['higher than'], ans:'higher than',
+      exp:'မြင့် → မြင့်သည် ။' },
+
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.3 – အခြေအနေကိုဖတ်ပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'1. The journey takes three hours by coach and two hours by train. → It takes ______ by coach than by train.', acc:['longer'], ans:'longer',
+      exp:'take long = ပိုကြာသည် ။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.3 – အခြေအနေကိုဖတ်ပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'2. I swam 2 km. Linh stopped after 1 km. → I swam ______ Linh.', acc:['further than','farther than'], ans:'further / farther than',
+      exp:'အဝေး → ဝေး/ဝေး။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.3 – အခြေအနေကိုဖတ်ပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'3. Both teams played badly, but Team B lost 0–5 and Team A only 1–3. → Team B played ______ Team A.', acc:['worse than'], ans:'worse than',
+      exp:'badly → ပိုဆိုးသည် ။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.3 – အခြေအနေကိုဖတ်ပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'4. I expected the package on Friday. It came on Tuesday. → The package came ______ I expected.', acc:['earlier than','sooner than'], ans:'earlier than',
+      exp:'စောစော → ထက်စောသည်။' },
+    { id:'h24', sec:'G', type:'fill', sub:'သင်ခန်းစာ 105.3 – အခြေအနေကိုဖတ်ပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'5. The shop is usually quiet, but today it was very busy. → The shop was ______ usual today.', acc:['busier than'], ans:'busier than',
+      exp:'အလုပ်များ → အလုပ်များ (y → ier) + ပုံမှန်ထက်။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

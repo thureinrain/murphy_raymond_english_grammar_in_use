@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 145 – Phrasal ကြိယာ 9: အဝေး/နောက် | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 145 – Phrasal ကြိယာ 9: အဝေး/နောက် </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း ၅၆ ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> phrasal verbs ၏နောက်ဆုံးယူနစ်ကို နှိုင်းယှဉ်သည်။ <b> ကွာ </b> (ထွက်သွား၊ အိမ် / နေရာ / လူတစ်ဦးကိုထားခဲ့ပါ) နှင့် <b> ကျော </b> (အိမ်/နေရာဟောင်း/လူဟောင်း) သို့ ပြန်သွားရန်။ ထို့နောက် ချဲ့ထွင်မှုအစုများ ရှိသည်- <i>get away (with), keep away, give away, put away, throw away</i> နှင့် <i>wave/smile back, call back, get back to, look back, pay back</i>။ </p>
+      <div class="ex"> <b class="en">We're  <mark>going away</mark>  for the weekend. We'll  <mark>be back</mark>  on Monday.</b> <br> <i>go away</i> = အိမ်မှထွက်သွားခြင်း၊  <i>be back</i> = ပြန်ရန်။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> away = ထွက်ခွာ (အိမ် / နေရာ / လူ ) back = ပြန်လာ ( အိမ် / နေရာ / လူ )
+   ထွက်သွား · ဝေးရာသို့ ပြန်လာပါ · ပြန်သွား · ပြန်သွား · ပြန်လာပါ
+   drive / walk / run / fly / blow away walk back · take sth back · give sth back
+   အဝေးကိုကြည့် · take sth away put sth back (နေရာဟောင်းသို့ ပြန်သွား)
+
+away (other): get away · get away with sth · keep away (from) · give sth away
+              put sth away · စွန့်ပစ်ပါ။
+back (other): wave / smile / shout / write back · hit sb back
+              ဖုန်းခေါ်ဆိုမှု / ဖုန်း / ဖုန်းမြည်သံ sb ပြန်ရန် · get back to sb · look back (on) · pay sb back
+
+နာမ်စား စွန့်ပစ်ပါ · သူတို့ကို ပြန်ပေးပါ · ပြန်ခေါ်ပါ (NO: စွန့်ပစ်ပါ) </div>
+      <div class="scroll"><table>
+        <tr><th> Far away </th><th> Back </th></tr>
+        <tr><td> I <b> get lost </b> Holiday. </td><td> I will follow. <b> come back </b> next week. </td></tr>
+        <tr><td> A bird <b> I ran away. </b>.</td><td> We are short <b> I went back. </b> to the hotel </td></tr>
+        <tr><td> Police <b> took </b> His laptop </td><td> I forgot. <b> give me. </b> Keys <b> Back </b>.</td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. အဝေးနှင့် နောက်ကြောင်း — မူရင်းအဓိပ္ပါယ် </h2>
+      <ul>
+        <li><b> ကွာ </b> = အိမ်နှင့်ဝေးရာ- <i>She's away on a business trip.</i> · နေရာ/လူနှင့်ဝေးရာ- <i>He started the car and drove away.</i> </li>
+        <li> ပုံစံတူ- <b> ဝေးဝေးပြေး၊ အဝေးကိုကြည့်၊ ပြေးသွား၊ မှုတ်ထုတ် </b> (လေက လွင့်သွားတယ်)၊ <b> ဘာပဲလုပ်လုပ်ကွာ </b> (ထုတ်ယူသွားမည်)။ </li>
+        <li><b> ကျော </b> = အိမ်ပြန် / ပြန်လာ / ပြန်လာ: <i>What time will you be back?</i> / <i>Put the book back on the shelf.</i> </li>
+        <li> ပုံစံတူ- <b> ပြန်သွား၊ ပြန်လာ၊ ပြန်လာ၊ ဘာပဲလုပ်လုပ် ပြန်သွား </b> (ဆိုင်သို့ပြန်ယူသွားပါ။) </li>
+      </ul>
+
+      <h2> 1.4 · B. <i>away</i> မှလွဲ၍ အခြားသော အစုအဝေးများ </h2>
+      <ul>
+        <li><b> အားလပ်ခွင့်ယူသည် </b> = လွတ်မြောက်ရန်၊ ထွက်ခွာရန် (အခက်အခဲရှိ): <i>The thief got away on a motorbike.</i> </li>
+        <li><b> get away with sth </b> = ပြစ်ဒဏ်မပေးဘဲ အမှားလုပ်ပါ <i>He cheated, and he got away with it.</i> </li>
+        <li><b> ဝေးဝေးရှောင်ပါ (…) </b> = <i>Keep away from the dog — it bites.</i> နှင့် ခပ်ဝေးဝေးနေပါ။ </li>
+        <li><b> ဘာပဲလုပ်လုပ်ကွာ </b> = give away (ပိုက်ဆံမယူဘဲ) : <i>I gave my old clothes away.</i> </li>
+        <li><b> ဘာပဲလုပ်လုပ် ဖယ်လိုက်ပါ။ </b> = မှန်ကန်သောနေရာတွင် ထားလိုက်ပါ- <i>Put your toys away, please.</i> </li>
+        <li><b> ဘာပဲလုပ်လုပ် စွန့်ပစ်လိုက်ပါ။ </b> =စွန့်ပစ်ရန်- <i>Don't throw that box away.</i> </li>
+      </ul>
+
+      <h2> 1.5 · C. <i>back</i> မှလွဲ၍ အခြားပြွတ်များ </h2>
+      <ul>
+        <li><b> လှိုင်းပြန် / ပြုံးရယ် / ပြန်အော်သည် / ပြန်ရေးသည် / sb ပြန်ရိုက်သည်။ </b> = တူညီသောလုပ်ဆောင်ချက်ကို တုံ့ပြန်ပါ- <i>I smiled at her and she smiled back.</i> </li>
+        <li><b> call/phone/ring (sb) back </b> = ပြန်ခေါ်ရန်- <i>I'm busy — I'll call you back.</i> </li>
+        <li><b> sb သို့ ပြန်သွားရန် </b> = အဖြေ (အချက်အလက်ရရှိပြီးနောက်): <i>I'll get back to you tomorrow.</i> </li>
+        <li><b> ပြန်ကြည့်ပါ (on sth) </b> = ပြန်ကြည့်ခြင်း- <i>Looking back, I made the right choice.</i> </li>
+        <li><b> pay sth back / pay sb ပြန်ပေးသည်။ </b> = ပြန်ပေးငွေ- <i>I'll pay you back on Friday.</i> </li>
+      </ul>
+
+      <h2> 1.6 · သက်သေခံလက္ခဏာများ </h2>
+      <div class="scroll"><table>
+        <tr><th> Context </th><th> Matching sets </th></tr>
+        <tr><td> travel the work, away from home </td><td> go away / be away ↔ come back / come back </td></tr>
+        <tr><td> thief A fugitive </td><td> run away </td></tr>
+        <tr><td> Do something wrong without getting caught. </td><td> Far away </td></tr>
+        <tr><td> Unused materials </td><td> throw away (garbage) / throw away (to someone else) </td></tr>
+        <tr><td> phone Email </td><td> call back, go back </td></tr>
+        <tr><td> Borrow money </td><td> Give it back. </td></tr>
+        <tr><td> memories The past </td><td> Look back </td></tr>
+      </table></div>
+
+      <h2> 1.7 · အလွယ်တကူ ရှုပ်ထွေးနေသော အမှားများအတွက် &amp; နှိုင်းယှဉ်ပါ။ </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> Cluster A </th><th> Cluster B </th></tr>
+        <tr><td> Give/throw </td><td><b> give away </b> : for others </td><td><b> throw away </b> : Add garbage. </td></tr>
+        <tr><td> Give it back. </td><td><b> Give it back. </b> : The item is returned to the owner. </td><td><b> Take it back </b> : return (store) </td></tr>
+        <tr><td> Remove/Reset. </td><td><b> Leave it. </b> : keep in (hidden) place. </td><td><b> Put it back </b> : Reposition. </td></tr>
+        <tr><td> Go </td><td><b> go away </b> : Leave the house </td><td><b> go out </b> Step outside for a while (Unit 138); </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I'll call again later. </td><td class="yes"> I will follow. <b> call back. </b> later </td></tr>
+        <tr><td class="no"> Don't throw it away. </td><td class="yes"> Don't do it <b> Throw it away. </b>.</td></tr>
+        <tr><td class="no"> I will return the money next week. </td><td class="yes"> I will follow. <b> Give it back to you. </b> next week. </td></tr>
+        <tr><td class="no"> He missed it. </td><td class="yes"> He missed it. <b> together </b> That's it. </td></tr>
+        <tr><td class="no"> Avoid fire. </td><td class="yes"> keep away <b> from </b> Fire. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၁၃၇ </b> (အထွေထွေစည်းမျဉ်း) · <b> ယူနစ် ၁၃၈ </b> (ဝင်/ထွက်) · <b> ယူနစ် ၁၄၀ </b> (ဝေး / ပြေး ≈ လမ်းလျှောက် / ပြေး ) ။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🧳 <b class="en">We're  <mark>going away</mark>  for Tet. We'll  <mark>be back</mark>  on the 5th.</b> <span class="note"> (ဘဝ - အိမ်​မှာမရှိ​သော) </span></div>
+      <div class="ex"> 📞 <b class="en">I'm in a meeting. Can I  <mark>call you back</mark>  in ten minutes?</b> <span class="note"> (အလုပ် - ဖုန်း) </span></div>
+      <div class="ex"> 📧 <b class="en">I'll check with my manager and  <mark>get back to</mark>  you tomorrow.</b> <span class="note"> (ပရော်ဖက်ရှင်နယ်အီးမေးလ်) </span></div>
+      <div class="ex"> 💵 <b class="en">Thanks for the loan. I'll  <mark>pay you back</mark>  at the end of the month.</b> <span class="note"> (သူငယ်ချင်း - ပိုက်ဆံချေး) </span></div>
+      <div class="ex"> ♻️ <b class="en">Don't  <mark>throw away</mark>  plastic bottles — recycle them.</b> <span class="note"> (IELTS — ပတ်ဝန်းကျင်) </span></div>
+      <div class="ex"> 🎁 <b class="en">When I moved, I  <mark>gave away</mark>  most of my books.</b> <span class="note"> (ဘဝ - အိမ်သန့်ရှင်းရေး) </span></div>
+      <div class="ex"> 🚓 <b class="en">The thief tried to  <mark>get away</mark> , but the police caught him.</b> <span class="note"> (သတင်း) </span></div>
+      <div class="ex"> 🎓 <b class="en"> <mark>Looking back</mark> , university was the best time of my life.</b> <span class="note"> (IELTS Speaking Part 2 — အမှတ်တရများကို ပြောပြခြင်း) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> away = မြှားကွာ ➡️ </b>, <b> back = မြှားပြန်လာသည် ⬅️ </b> . အရာတွေ၊ လူတွေ၊ ငွေတွေ အားလုံးက အဲဒီ ဦးတည်ရာကို လိုက်နေကြတယ်။ </li>
+        <li><b> "ပစ္စည်းပစ္စယ" ကို ဖယ်ရှားရန် နည်းလမ်း ၃ သွယ်။ </b> <i>throw away</i> (အမှိုက်ပုံး)၊ <i>give away</i> (လူများအတွက်)၊ <i>put away</i> (စွန့်ပစ်ရန်)။ </li>
+        <li><b> "ပြန်ကြားသည်" = V + နောက်ကြောင်း </b> ပြန်လှည့်ပါ၊ ပြုံးပါ၊ ပြန်ရေးပါ၊ ပြန်ခေါ်ပါ၊ ပြန်ပြောပါ။ </li>
+        <li><b> ဝေးဝေး </b> = "ပြစ်မှားခြင်းမှ ကင်းဝေးပါစေ" → အပြစ်ပေးခံရခြင်းမရှိဘဲ အမှားလုပ်ပါ။ </li>
+        <li><b> ပြန်ပေးပါ။ </b> = ပိုက်ဆံပြန်ပေး။ <b> ပြန်ပေးပါ။ </b> = ပစ္စည်းကို ပြန်ပေးပါ။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> နာမ်စား- <i>throw it away, give them back, pay you back, call me back, put it back</i> ကြားတွင် ညှပ်ထားသည်။ </li>
+        <li> နောက်ခံတွင် နေရာ/လူ ရှိသည်- <i>keep away <b>from</b>, get back <b>to</b> sb, get away <b>with</b> sth, look back <b>on</b></i> . </li>
+        <li> "When will you ___ back?" → <b> ဖြစ် </b> (be back = ပြန်သွားသည်)။ </li>
+        <li> "Return" ပန်းချီ → <i>take them back to the shop</i> ။ </li>
+        <li> "အတိတ်မှာမနေပါနဲ့" → <i>don't look back</i> အကြံပြုချက်။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I will call you back. </td><td class="yes"> I will follow. <b> call back. </b>.</td><td class="why"> sandwiched between pronouns. </td></tr>
+        <tr><td class="no"> I'll refund your money for you. </td><td class="yes"> I will follow. <b> Give it back to you. </b>.</td><td class="why"> pay debt = pay back sb. </td></tr>
+        <tr><td class="no"> Throw it in the trash. </td><td class="yes"><b> Throw it away. </b>.</td><td class="why"> throw away = disposal. </td></tr>
+        <tr><td class="no"> I will reply later. </td><td class="yes"> I will follow. <b> go back </b> after you </td><td class="why"> answer later = return to sb </td></tr>
+        <tr><td class="no"> When did you come home? </td><td class="yes"> when are you <b> come back </b>?</td><td class="why"> be back </td></tr>
+        <tr><td class="no"> Stay away from the edge. </td><td class="yes"><b> Stay away. </b> Edge! </td><td class="why"> keep away </td></tr>
+        <tr><td class="no"> He was freed from the penalty of deception. </td><td class="yes"> He cheated <b> gone far </b>.</td><td class="why"> No punishment = free. </td></tr>
+        <tr><td class="no"> Then put your clothes in the closet. </td><td class="yes"> please <b> Leave </b> Your clothes <b> Far away </b>.</td><td class="why"> put away = thrown away. </td></tr>
+        <tr><td class="no"> She waved at me again. </td><td class="yes"> she <b> I retreated. </b>.</td><td class="why"> Reaction = V + reverse </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> အလုပ်အီးမေးလ်- </b> <i>"Thanks for your message. I'll get back to you by Friday."</i> </li>
+        <li><b> ဖုန်း- </b> <i>"Sorry, I missed your call. Can you call me back?"</i> </li>
+        <li><b> IELTS Writing (ပတ်ဝန်းကျင်) </b> <i>"People throw away huge amounts of plastic every day."</i> </li>
+        <li><b> IELTS Speaking အပိုင်း 2- </b> <i>"Looking back on it, I realise that experience taught me a lot."</i> </li>
+        <li><b> အကြံပြုချက်- </b> အိမ်သန့်ရှင်းရေးလုပ်တဲ့အခါ <i>throw away / give away / put away / put back</i> အသံကျယ်ကျယ်ပြောပါ။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> 3/7/14 ရက်ပြီးနောက် ပြန်လည်သုံးသပ်ပါ။ ဤသည်မှာ phrasal verbs series ၏ နောက်ဆုံးယူနစ်ဖြစ်သည် — ပေါင်းစပ်မှုကို ပြန်လည်သုံးသပ်ကြပါစို့ <b> ယူနစ် ၁၃၇-၁၄၅ </b> (အဝင်/အထွက်၊ အဖွင့်/အပိတ်၊ အပေါ်/အောက်၊ အဝေး/နောက်)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit145.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 145 · အော့ဖ်လိုင်း ကိုယ်တိုင်လေ့လာရေးဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> ကွာ \u003c/th>\u003cth> ကျော \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ငါ \u003cb> ထွက်သွား \u003c/b> အားလပ်ရက်။ \u003c/td>\u003ctd> ငါလိုက်မယ်။ \u003cb> ပြန်လာပါ။ \u003c/b> လာမည့်အပတ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ငှက်ကလေး \u003cb> ပြေးသွားတယ်။ \u003c/b>.\u003c/td>\u003ctd> ကျွန်တော်တို \u003cb> ပြန်သွားခဲ့တယ်။ \u003c/b> ဟိုတယ်သို့ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ရဲ \u003cb> ယူသွားသည် \u003c/b> သူ့လက်တော့ပ် \u003c/td>\u003ctd> ကျွန်တော် မေ့သွားတယ်။ \u003cb> ပေးပါ။ \u003c/b> သော့များ \u003cb> ကျော \u003c/b>.\u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> စကားစပ် \u003c/th>\u003cth> ကိုက်ညီသောအစုများ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ခရီး၊ အလုပ်၊ အိမ်နှင့်ဝေး \u003c/td>\u003ctd> go away / be away ↔ ပြန်လာပါ / ပြန်လာပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သူခိုး၊ ဝရမ်းပြေး \u003c/td>\u003ctd> ရှောင်ပြေး၊ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> မဖမ်းမိဘဲ အမှားတစ်ခုခုလုပ်ပါ။ \u003c/td>\u003ctd> ဝေးဝေး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အသုံးမပြုသောပစ္စည်းများ \u003c/td>\u003ctd> စွန့်ပစ် (အမှိုက်) / စွန့်ပစ် (အခြားသူအား) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဖုန်း၊ အီးမေးလ် \u003c/td>\u003ctd> ပြန်ခေါ်ပါ၊ ပြန်သွားပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပိုက်ဆံချေး \u003c/td>\u003ctd> ပြန်ပေးပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အမှတ်တရတွေ၊ အတိတ်တွေ \u003c/td>\u003ctd> ပြန်ကြည့် \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> အစုအဖွဲ့ A \u003c/th>\u003cth> အစုအဖွဲ့ B \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ပေး/ပစ် \u003c/td>\u003ctd>\u003cb> စွန့်ကြဲသည် \u003c/b> : အခြားသူများအတွက် \u003c/td>\u003ctd>\u003cb> လွှင့်ပစ်သည် \u003c/b> : အမှိုက်ထည့်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပြန်ပေးပါ။ \u003c/td>\u003ctd>\u003cb> ပြန်ပေးပါ။ \u003c/b> : ပစ္စည်းကို ပိုင်ရှင်ထံ ပြန်ပေးသည်။ \u003c/td>\u003ctd>\u003cb> ပြန်ယူ \u003c/b> : ပြန်လာ (စတိုး) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဖယ်/ပြန်သတ်မှတ်ပါ။ \u003c/td>\u003ctd>\u003cb> ထားလိုက်ပါ။ \u003c/b> : (သိုဝှက်) နေရာတွင်ထားပါ။ \u003c/td>\u003ctd>\u003cb> ပြန်ထား \u003c/b> : နေရာပြန်ချထားပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သွားတော့ \u003c/td>\u003ctd>\u003cb> သွားပါ \u003c/b> : အိမ်ကနေထွက်သွား \u003c/td>\u003ctd>\u003cb> အပြင်ထွက်သည် \u003c/b> ခဏလောက် အပြင်ထွက်ပါ (ယူနစ် ၁၃၈)၊ \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နောက်မှ ပြန်ခေါ်မယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါလိုက်မယ်။ \u003cb> ပြန်ခေါ်ပါ။ \u003c/b> နောက်ပိုင်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မစွန့်ပစ်ပါနှင့်။ \u003c/td>\u003ctd class=\"yes\"> မလုပ်နဲ့ \u003cb> စွန့်ပစ်လိုက်ပါ။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နောက်တစ်ပတ်ကျရင် ပိုက်ဆံပြန်ပေးမယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါလိုက်မယ်။ \u003cb> မင်းကိုပြန်ပေးပါ။ \u003c/b> လာမည့်အပတ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူလွတ်သွားတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူလွတ်သွားတယ်။ \u003cb> အတူ \u003c/b> အဲဒါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မီးကိုရှောင်ပါ။ \u003c/td>\u003ctd class=\"yes\"> အနားမကပ်နဲ့ \u003cb> ထံမှ \u003c/b> မီး။ \u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ မင်းကို ပြန်ခေါ်မယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါလိုက်မယ်။ \u003cb> ပြန်ခေါ်ပါ။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> နာမ်စားကြားတွင် ညှပ်ထားသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းအတွက် ငါ ပိုက်ဆံပြန်ပေးမယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါလိုက်မယ်။ \u003cb> မင်းကိုပြန်ပေးပါ။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> pay debt = ဆပ် sb ပြန်ပေးသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အမှိုက်ထဲ ပစ်ချပါ။ \u003c/td>\u003ctd class=\"yes\">\u003cb> လွှင့်ပစ်လိုက်ပါ။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> throw away = စွန့်ပစ်ခြင်း။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နောက်မှ အကြောင်းပြန်မယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါလိုက်မယ်။ \u003cb> ပြန်သွားပါ။ \u003c/b> မင်းနောက်မှ။ \u003c/td>\u003ctd class=\"why\"> answer later = sb သို့ ပြန်သွားရန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းဘယ်တော့အိမ်ပြန်ရောက်လဲ \u003c/td>\u003ctd class=\"yes\"> မင်းဘယ်တော့လဲ။ \u003cb> ပြန်လာပါ။ \u003c/b>?\u003c/td>\u003ctd class=\"why\"> be back = ပြန်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အစွန်းနဲ့ဝေးဝေးနေပါ။ \u003c/td>\u003ctd class=\"yes\">\u003cb> ဝေးဝေးရှောင်ပါ။ \u003c/b> အစွန်း! \u003c/td>\u003ctd class=\"why\"> keep away = ဝေးဝေးရှောင်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လှည့်စားခြင်း၏ ပြစ်ဒဏ်မှ လွတ်မြောက်ခဲ့သည်။ \u003c/td>\u003ctd class=\"yes\"> သူ လှည့်စားသည် \u003cb> ဝေးသွားပြီ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> အပြစ်ဒဏ်မရှိ = လွတ်ကင်းသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပြီးရင် မင်းရဲ့အဝတ်အစားတွေကို ဗီရိုထဲမှာထားပါ။ \u003c/td>\u003ctd class=\"yes\"> ကျေးဇူးပြု \u003cb> ထား \u003c/b> သင်၏အဝတ်အစားများ \u003cb> ကွာ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> put away = ပစ်ပယ်သည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမက ကျွန်တော့်ကို လက်ပြပြန်သည်။ \u003c/td>\u003ctd class=\"yes\"> သူမ \u003cb> နောက်ပြန်ဆုတ်သွားတယ်။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> တုံ့ပြန်မှု = V + နောက်ပြန် \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 145 – Phrasal ကြိယာ 9: အဝေး/နောက် | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit145.html';
+  var KEY = 'egu4_unit145_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. phrasal verb ကိုဖြည့်ပါ။',           desc:'ကြိယာ/အမှုန်များကို ဖြည့်ပါ၊ မှန်ကန်သောပုံစံဖြင့် ပြန်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော ကြိယာစကားစုကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 145 ၏ အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် ၁၄၅ လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 145.1 → 145.4 သည် ရှင်းလင်းချက်များဖြင့် Murphy ၏စာအုပ် (ပြန်လည်ပြင်ဆင်ထားသောစာကြောင်းများ) ၏ပုံစံကို လိုက်နာသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I\'m busy right now. Can I ______ in half an hour?',
+      opts:['call back you','call you away','call you back','get you back'], a:2,
+      exp:'call somebody back = ပြန်ခေါ်သည် ။ အလယ်အလတ်နာမ်စား- မင်းပြန်ခေါ်ပါ။' },
+    { id:'a2', sec:'A', type:'mcq', q:'The thief jumped over the wall and ______.',
+      opts:['got away','got back','gave away','put away'], a:0,
+      exp:'get away = လွတ်မြောက်ခြင်း။' },
+    { id:'a3', sec:'A', type:'mcq', q:'He copied his friend\'s homework and the teacher didn\'t notice. He ______ it.',
+      opts:['got back to','got away with','kept away from','paid back'], a:1,
+      exp:'get away with something = ဖမ်းမိခြင်း/အပြစ်ပေးခြင်းမရှိဘဲ အမှားတစ်ခုခုလုပ်ပါ။' },
+    { id:'a4', sec:'A', type:'mcq', q:'I didn\'t need my old bike, so I ______ to a student.',
+      opts:['threw it away','put it away','gave it away','took it away'], a:2,
+      exp:'give something away = ပေးသည် ။ စွန့်ပစ်ခြင်းသည် အမှိုက်ကို စွန့်ပစ်ခြင်း ဖြစ်သည်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'______ from the fire! It\'s dangerous.',
+      opts:['Keep away','Get away with','Look back','Put away'], a:0,
+      exp:'keep away from = ဝေးဝေးရှောင်ပါ။' },
+    { id:'a6', sec:'A', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['Thanks for lending me the money. I\'ll pay back you soon.','Thanks for lending me the money. I\'ll pay you back soon.'], a:1,
+      exp:'တစ်စုံတစ်ဦးကိုပြန်ပေးချေပါ။ အလယ်အလတ်နာမ်စား : မင်းကိုပြန်ပေး။' },
+    { id:'a7', sec:'A', type:'mcq', q:'I waved to Lan across the street, and she ______.',
+      opts:['waved away','waved back','looked away','went back'], a:1,
+      exp:'wave back = လှိုင်းပြန်။' },
+    { id:'a8', sec:'A', type:'mcq', q:'The shoes were too small, so I ______ to the shop.',
+      opts:['gave them away','threw them away','took them back','put them away'], a:2,
+      exp:'take something back (ဆိုင်သို့) = ယူလာပါ။' },
+
+    /*===== B။ ဖြည့် =====*/
+    { id:'b1', sec:'B', type:'fill', q:'My neighbours are ______ on holiday this week. (away / back)',
+      acc:['away'], ans:'away',
+      exp:'be away = အိမ်မှာမနေဘဲ ဝေးဝေးနေပါ။' },
+    { id:'b2', sec:'B', type:'fill', q:'When you\'ve finished with the scissors, please put them ______ in the drawer. (away / back)',
+      acc:['back','away'], ans:'ပြန်လာပါ (အဝေးမှာလည်း အဆင်ပြေပါတယ်)',
+      exp:'put something back = နေရာပြန်ချထားပါ။ put away = put away — နှစ်ခုလုံးသည် ဆက်စပ် "in the drawer" နှင့် ကိုက်ညီသည်။' },
+    { id:'b3', sec:'B', type:'fill', q:'Don\'t ______ away those boxes. We can use them when we move. (throw)',
+      acc:['throw'], ans:'throw',
+      exp:'throw something away = ပစ်ပယ်၊ Don\'t + V infinitive။' },
+    { id:'b4', sec:'B', type:'fill', q:'I sent her three messages, but she never ______ back to me. (get)',
+      acc:['got'], ans:'got',
+      exp:'get back to somebody = ပြန်ကြား/ဆက်သွယ်ပါ၊ အတိတ်က ရခဲ့တယ်။' },
+    { id:'b5', sec:'B', type:'fill', q:'The wind was so strong that my hat ______ away. (blow)',
+      acc:['blew'], ans:'blew',
+      exp:'blow away = လေဖြင့်လွင့်သွားသည်၊ မှုတ်-လွင့်-လွင့်။' },
+    { id:'b6', sec:'B', type:'fill', q:'I smiled at the baby and she ______ back. (smile)',
+      acc:['smiled'], ans:'smiled',
+      exp:'smile back = ပြန်ပြုံးပြသည်။' },
+    { id:'b7', sec:'B', type:'fill', q:'The police searched the office and ______ away several laptops. (take)',
+      acc:['took'], ans:'took',
+      exp:'take something away = ယူသွား၊ အတိတ်က ယူတယ်။' },
+    { id:'b8', sec:'B', type:'fill', q:'After the meal, we ______ back to our hotel along the beach. (walk)',
+      acc:['walked'], ans:'walked',
+      exp:'walk back = လမ်းလျှောက်ပြန်။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (I\'ll / get / back / to / you / tomorrow)',
+      tokens:["I'll",'get','back','to','you','tomorrow'],
+      acc:["i'll get back to you tomorrow"], ans:'I\'ll get back to you tomorrow.',
+      exp:'get back to somebody = နောက်မှ စာပြန်ပါ။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (what / time / will / you / be / back)',
+      tokens:['What','time','will','you','be','back'],
+      acc:['what time will you be back'], ans:'What time will you be back?',
+      exp:'be back = ပြန်လာ။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (put / your toys / away / before / dinner)',
+      tokens:['Put','your','toys','away','before','dinner'],
+      acc:['put your toys away before dinner'], ans:'Put your toys away before dinner.',
+      exp:'put something away = တစ်ခုခုကို ဖယ်ထားပါ။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (looking / back / I / learnt / a lot / from that job)',
+      tokens:['Looking','back','I','learnt','a','lot','from','that','job'],
+      acc:['looking back i learnt a lot from that job'], ans:'Looking back, I learnt a lot from that job.',
+      exp:'look back (on sth) = အတိတ်ကို ပြန်ကြည့်သည်။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (he / parked / illegally / and / got / away / with / it)',
+      tokens:['He','parked','illegally','and','got','away','with','it'],
+      acc:['he parked illegally and got away with it'], ans:'He parked illegally and got away with it.',
+      exp:'get away with it = ပြစ်ဒဏ်မရှိ။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: ငါ ဆိုင်သွားမယ်။  B: အိုကေ။ ______ ဘယ်အချိန်ပြန်မှာလဲ (၁ စကားလုံး)',
+      acc:['be'], ans:'be',
+      exp:'be back = ပြန်လာ။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: Do you still have my umbrella?  B: No, I ______ it back to you last week. (give)',
+      acc:['gave'], ans:'gave',
+      exp:'give something back = ပြန်ပေး၊ အတိတ်ကပေးခဲ့တယ်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Can you lend me 200,000 dong?  B: Sure, but ______ me back by Friday. (pay)',
+      acc:['pay'], ans:'pay',
+      exp:'pay somebody back = တစ်ယောက်ယောက်ကို ပြန်ပေးသည်။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Did you speak to the manager?  B: She was out, so I left a message asking her to ______ me back. (call)',
+      acc:['call','phone','ring'], ans:'call',
+      exp:'call/phone/ring someone back = ပြန်ခေါ်ပါ။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'မင်းထွက်သွားမယ်၊ မင်းပြန်လာမယ် (ထွက်သွားမယ်/ပြန်လာမယ်) ဆိုတဲ့ စာတိုလေးရေးပါ။',
+      sample:'Hi Minh, I\'m going away for a few days. I\'ll be back on Sunday evening, so let\'s meet next week.',
+      exp:'go away = ထွက်သွား၊ be back = ပြန်လာ။' },
+    { id:'e2', sec:'E', type:'self', q:'အိမ်ပြောင်းတဲ့အခါ ပစ္စည်းဟောင်းတွေကို ဘယ်လိုစွန့်ပစ်ရမလဲ ပြောပြပါ - စွန့်ပစ်ခြင်း၊ စွန့်ပစ်ခြင်း၊ စွန့်ပစ်ခြင်းတို့ကို ပြုလုပ်ပါ။',
+      sample:'When I moved house, I threw away a lot of old papers. I gave away my old clothes to a charity, and I put the rest of my things away in boxes.',
+      exp:'စွန့်ပစ် (စွန့်ပစ်)၊ စွန့် (ပေး)၊ ပယ် (ပယ်)။' },
+    { id:'e3', sec:'E', type:'self', q:'get back to and call back ကိုသုံး၍ အလုပ်အီးမေးလ်တွင် စာကြောင်း ၂ ကြောင်းရေးပါ။',
+      sample:'Thank you for your enquiry. I\'ll check the details and get back to you by Thursday. If it\'s urgent, please call me back on this number.',
+      exp:'get back to sb = ပြန်သွားရန်။ call sb back = ပြန်ခေါ်သည်။' },
+
+    /* ===== F. Quiz ===== */
+    { id:'f1', sec:'F', type:'fill', q:'I tried to photograph the butterfly, but it ______ away. (fly)',
+      acc:['flew'], ans:'flew',
+      exp:'fly away = ပျံသန်းသွား၊ ပျံသန်း-ပျံသန်း-ပျံသန်း။' },
+    { id:'f2', sec:'F', type:'mcq', q:'"get away with something" ဆိုသည်မှာ-',
+      opts:['မင်းနဲ့အတူ တစ်ခုခု ယူလာပါ။','ပြစ်ဒဏ်မပေးဘဲ အမှားလုပ်ပါ။','အိမ်မှထွက်ပြေးပါ။','ပစ္စည်းကို ပြန်ပေးပါ။'], a:1,
+      exp:'get away with sth = ဖမ်းမိခြင်း/အပြစ်ပေးခြင်းမရှိဘဲ အမှားတစ်ခုခုလုပ်ပါ။' },
+    { id:'f3', sec:'F', type:'fill', q:'Don\'t ______ back all the time. Think about the future. (look)',
+      acc:['look'], ans:'look',
+      exp:'look back = အတိတ်ကိုပြန်ကြည့်။' },
+    { id:'f4', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['I read the letter and threw away it.','I read the letter and threw it away.','I read the letter and threw it back away.'], a:1,
+      exp:'ကြားတွင် ကြားညှပ်ထားသော နာမ်စား : လွှင့်ပစ်လိုက်သည်။' },
+    { id:'f5', sec:'F', type:'fill', q:'ဘာသာပြန်ဆိုချက်- "အဲဒီခွေးနဲ့ ဝေးဝေးနေပါ။ → ______ ဒီခွေးနဲ့ ဝေးဝေး။ (၁ စကားလုံး)',
+      acc:['keep'], ans:'Keep',
+      exp:'keep away from = ဝေးဝေးရှောင်ပါ။' },
+    { id:'f6', sec:'F', type:'mcq', q:'He saw the police car and ______.',
+      opts:['ran away','ran back','gave away','paid back'], a:0,
+      exp:'run away = ထွက်ပြေးသည်။' },
+    { id:'f7', sec:'F', type:'fill', q:'ကောင်လေးက သူ့အစ်ကိုကို ထိတယ်ဆိုတော့ သူ့အစ်ကို ______ သူ့ကိုပြန်ရိုက်တယ်။ (အတိတ်)',
+      acc:['hit'], ans:'hit',
+      exp:'hit somebody back = ကျောကိုထိသည်; hit – hit – hit ။' },
+    { id:'f8', sec:'F', type:'mcq', q:'She was so generous that she ______ all her lottery money.',
+      opts:['gave away','threw back','took away','got away'], a:0,
+      exp:'give away = ပေးသည် ။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.1 – အခြေအနေကို ဖော်ပြပါ။',
+      q:'1. (လေထန်နေတော့ ဘေလ်က ပြုတ်ကျပြီး ပြေးသွားတယ်။) ကျွန်တော် ငွေစက္ကူကို ချလိုက်ပြီး အဲဒါ ______။ စကားလုံး (၂)လုံး၊', acc:['blew away'], ans:'blew away',
+      exp:'blow away = လေဖြင့် လွင့်ထွက်သွားသည်။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.1 – အခြေအနေကို ဖော်ပြပါ။',
+      q:'2. (သူသည် စာကိုဖတ်ပြီး စာအိတ်ထဲတွင် ပြန်ထည့်ပါ။) သူသည် စာကိုဖတ်ပြီး ______ စာအိတ်ထဲတွင် ထည့်ပါ။ စကားလုံး (၃)လုံး၊', acc:['put it back'], ans:'put it back',
+      exp:'put something back = နေရာပြန်ချထားပါ။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.1 – အခြေအနေကို ဖော်ပြပါ။',
+      q:'3. (သူမနဲ့ စကားပြောဖို့ ကြိုးစားပေမယ့် သူမ လှည့်ထွက်သွားတယ်။) သူနဲ့ စကားပြောဖို့ ကြိုးစားပေမယ့် သူမက ______ ပဲလေ။ စကားလုံး (၂)လုံး၊', acc:['walked away'], ans:'walked away',
+      exp:'walk away = ထွက်သွား။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.1 – အခြေအနေကို ဖော်ပြပါ။',
+      q:'4. (သူမက သူ့ဆီ ဘောလုံးကို ပစ်ချလိုက်တယ်၊ သူက ပြန်ပစ်တယ်။) သူက ဘောလုံးကို သူ့ဆီ ပစ်ချလိုက်ပြီး သူက ______ သူ့ဆီကို သွားတယ်။ စကားလုံး (၃)လုံး၊', acc:['threw it back'], ans:'threw it back',
+      exp:'throw something back = ပြန်ပစ်သည်။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.1 – အခြေအနေကို ဖော်ပြပါ။',
+      q:'5. (ဖိနပ်အားလုံး စုတ်ပြဲပြီး အမှိုက်ပုံးထဲ ပစ်ချလိုက်တယ်။) သူ့ဖိနပ်က ဟောင်းနေပြီမို့ ______။ စကားလုံး (၃)လုံး၊', acc:['threw them away'], ans:'threw them away',
+      exp:'throw something away = ပစ်ပယ်၊ ဖိနပ် → ၎င်းတို့။' },
+
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၁၄၅.၂ – ကြိယာ + အဝေးသို့ သို့မဟုတ် နောက်ပြန်',
+      q:'၁။ အိမ်ဘေးအိမ်က ရက်အတော်ကြာအောင် မှောင်နေတယ်။ ______ ဖြစ်မယ်ထင်ပါတယ်။ စကားလုံး (၂)လုံး၊', acc:['be away','have gone away'], ans:'be away',
+      exp:'must be away = ဝေးရမည် (သို့မဟုတ ်သွားရမည်)။' },
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၁၄၅.၂ – ကြိယာ + အဝေးသို့ သို့မဟုတ် နောက်ပြန်',
+      q:'2. "I\'m going to the gym." "OK. When will you ______?" (စကားလုံး 2 လုံး)', acc:['be back','get back','come back'], ans:'be back',
+      exp:'be back = ပြန်လာ။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၁၄၅.၂ – ကြိယာ + အဝေးသို့ သို့မဟုတ် နောက်ပြန်',
+      q:'3. ကောင်လေးတစ်ယောက် ဆိုင်ကယ်ခိုးဖို့ ကြိုးစားနေတယ်။ သူကျွန်တော့်ကိုမြင်တော့ ______။ စကားလုံး (၂)လုံး၊', acc:['ran away'], ans:'ran away',
+      exp:'run away = ထွက်ပြေး၊ ဖြတ်ပြေးသွားတယ်။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၁၄၅.၂ – ကြိယာ + အဝေးသို့ သို့မဟုတ် နောက်ပြန်',
+      q:'4. ကျွန်တော် ဧည့်ခံသူကို ပြုံးပြပေမယ့် သူမ ______ မဟုတ်ဘူး။ စကားလုံး (၂)လုံး၊', acc:['smile back'], ans:'smile back',
+      exp:'smile back = ပြန်ပြုံးပြသည်။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၁၄၅.၂ – ကြိယာ + အဝေးသို့ သို့မဟုတ် နောက်ပြန်',
+      q:'5. သင်တစ်စုံတစ်ဦး၏အလုပ်အား ကူးယူမိပါက၊ သင်သည် ၎င်းနှင့်အတူ ______ ဖြစ်နိုင်သည်၊ သို့သော် သင်ဖမ်းမိသွားနိုင်သည်။ စကားလုံး (၂)လုံး၊', acc:['get away'], ans:'get away',
+      exp:'get away with something = ပြစ်ဒဏ်မရှိ။' },
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၁၄၅.၂ – ကြိယာ + အဝေးသို့ သို့မဟုတ် နောက်ပြန်',
+      q:'6. သတိထားပါ။ အဲဒီကြိုးက အန္တရာယ်ရှိတယ်။ ______ အဲဒါကနေ။ စကားလုံး (၂)လုံး၊', acc:['keep away','keep back','stay away'], ans:'Keep away',
+      exp:'keep away from = ဝေးဝေးရှောင်ပါ။' },
+
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'1. သင်လိုချင်သောငွေ။ ______ နောက်လမှ ပြန်လာမယ်။ (၁ စကားလုံး)', acc:['pay'], ans:'Pay',
+      exp:'pay somebody back = ပိုက်ဆံပြန်ပေး။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'2. ______ ထိုပုလင်းကို မခွာပါနှင့်။ ခလုတ်တွေကို သိမ်းထားလို့ရတယ်။ (၁ စကားလုံး)', acc:['throw'], ans:'throw',
+      exp:'throw away = စွန့်ပစ်ပါ။' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'3. Hung သည် သူ့အလုပ်ကို အချိန်မီပြီးအောင် ဘယ်တော့မှ မလုပ်ပါ။ သူ ______ ဘယ်လို ထွက်သွားလဲ မသိဘူး။ (၁ စကားလုံး)', acc:['gets'], ans:'gets',
+      exp:'ဝေးဝေး၊ ရိုးရှင်းသောပစ္စုပ္ပန်, သူ → gets ။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'4. စာတိုက်ကို သွားမယ်။ ငါ ______ မိနစ်နှစ်ဆယ်အကြာတွင် ပြန်လာပါမည်။ (၁ စကားလုံး)', acc:['be'], ans:'be',
+      exp:'be back = ပြန်လာ။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'5. ပစ္စုပ္ပန်ကိုခံစားသင့်သည်။ ______ တစ်ချိန်လုံး နောက်ကြောင်းမပြန်ပါနဲ့။ (၁ စကားလုံး)', acc:['look'], ans:'look',
+      exp:'look back = အတိတ်ကိုပြန်ကြည့်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'6. ငါ့ဦးလေးက သိပ်သဘောကောင်းတယ်။ သူ့အိမ်ဟောင်းကို ရောင်းပြီး ______ ငွေတစ်ဝက်ကို ပရဟိတလုပ်ငန်းသို့ လွှဲလိုက်သည်။ (၁ စကားလုံး)', acc:['gave'], ans:'gave',
+      exp:'give something away = ပေးသည် ။ အတိတ်ကပေးခဲ့တယ်။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.3 – ကြိယာတစ်ခုသုံးပြီး ပြီးအောင်လုပ်ပါ။',
+      q:'7. စျေးနှုန်းသိသည်နှင့် ______ ကျွန်ုပ်ထံ ပြန်ပေးပါမည်။ (၁ စကားလုံး)', acc:['get'], ans:'get',
+      exp:'get back to somebody = ပြန်တုံ့ပြန်သည်။' },
+
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.4 – ကွင်းကွင်းအတွင်း ကြိယာ + အဝေး သို့မဟုတ် အနောက်',
+      q:'1. A- ဒီပြက္ခဒိန်ဟောင်းကို လိုချင်ပါသလား။ B: မဟုတ်ဘူး၊ သင် ______ နိုင်ပါတယ်။ (ပစ် – ၃ လုံး)', acc:['throw it away'], ans:'throw it away',
+      exp:'တစ်ခုခုကိုစွန့်ပစ်ပါ။ နာမ်စားကြားတွင် ညှပ်ထားသည်။' },
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.4 – ကွင်းကွင်းအတွင်း ကြိယာ + အဝေး သို့မဟုတ် အနောက်',
+      q:'2. A: ဘောင်းဘီအသစ်နဲ့ လိုက်ဖက်ပါသလား။ B: မဟုတ်ဘူး၊ ငါ ______ ဆိုင်ကိုသွားမယ်။ (စကားလုံး ၃ လုံး)', acc:['take them back'], ans:'take them back',
+      exp:'take something back (ဆိုင်သို့) = ယူဆောင်လာ; ဘောင်းဘီရှည် → ၎င်းတို့။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.4 – ကွင်းကွင်းအတွင်း ကြိယာ + အဝေး သို့မဟုတ် အနောက်',
+      q:'3. A: ဒါက မင်းတောင်းတဲ့ငွေ။ B: ကျေးဇူးတင်ပါတယ်။ ငါ ______ နောက်အပတ်မှာ လိုက်မယ်။ (လစာ - ၃ လုံး)', acc:['pay you back','pay it back'], ans:'pay you back',
+      exp:'တစ်စုံတစ်ယောက်/တစ်စုံတစ်ခုကို ပြန်ပေးချေပါ။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.4 – ကွင်းကွင်းအတွင်း ကြိယာ + အဝေး သို့မဟုတ် အနောက်',
+      q:'4. ဖြေ- မင်းရဲ့ CD အဟောင်းတွေ ဘာဖြစ်သွားတာလဲ။ B: ငါ သူတို့ကို မလိုချင်တော့ဘူး၊ ဒါကြောင့် ငါ ______။ ( ၃ လုံး ပေး )', acc:['gave them away'], ans:'gave them away',
+      exp:'give something away = ပေးသည် ။ အတိတ်ကပေးခဲ့တယ်။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ 145.4 – ကွင်းကွင်းအတွင်း ကြိယာ + အဝေး သို့မဟုတ် အနောက်',
+      q:'5. A: အိမ်ရှင်ကို စကားပြောဖူးလား။ B : သူ အလုပ်ရှုပ်နေတော့ ______ လို့ မေးလိုက်တယ်။ (ခေါ်ဆိုမှု - စကားလုံး ၂-၃ လုံး)', acc:['call me back','call back'], ans:'call me back',
+      exp:'call (somebody) back = ပြန်ခေါ်သည်။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>
