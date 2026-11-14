@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 61 – တစ်ခုခုကို အသုံးချပါ (ကျနော်က ... ) | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 61 – တစ်ခုခုကို အသုံးချပါ (ကျနော်က ... ) </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း ၅၄ ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p><b> တစ်ခုခုကို အသုံးချပါ။ </b> = တစ်ခုခု <b> မထူးဆန်းတော့ဘူး/မခက်တော့ဘူး။ </b> ငါနဲ့လည်း တူတယ်။ <b> ကျင့်သုံးတယ်။ </b>. <b> အသုံးချပါ။ </b> အကြောင်းပြောပါ။ <b> တိုးတက်မှု </b> ရင်းနှီးလာမယ်။ ဤယူနစ်သည် သင့်ကိုယ်သင် အခြားသူများနှင့် လုံးဝခွဲခြားရန် ကူညီပေးပါသည်။ <b> လုပ်လေ့ရှိတယ်။ </b> (အတိတ်က အလေ့အထ မရှိတော့ဘူး)။ </p>
+      <div class="ex"> <b class="en">Minh moved to London. At first he  <mark>wasn't used to</mark>  the cold weather.<br>After a few months he  <mark>got used to</mark>  it. Now he  <mark>is used to</mark>  wearing a coat every day.</b> <br> အသုံးမချခြင်း → တဖြည်းဖြည်း အသုံးကျလာခြင်း → ၎င်းကို အသုံးမချပါ။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> be used to + N /pronoun / V-ing = သုံးသည်။
+get used to + N / pronoun / V-ing = တဖြည်းဖြည်း အသုံးပြုရန် (လုပ်ငန်းစဉ်)
+be used to + somebody + V-ing သူမ ဝေးရာမှာ နေလေ့ရှိတယ်။
+
+≠ သုံးသည် + V infinitive = အများအားဖြင့် (ယခုမဟုတ်တော့ပါ) — ယူနစ် 18 </div>
+      <div class="scroll"><table>
+        <tr><th> status </th><th> Structure </th><th> For example </th></tr>
+        <tr><td> Not familiar yet. </td><td> Not used. </td><td> I'm useless <b> Noise </b>.</td></tr>
+        <tr><td> I/I will apply it. </td><td> Use it. </td><td> Coming soon. <b> Use it. </b> That's it. </td></tr>
+        <tr><td> I used that. </td><td> to spend </td><td> She is useful. <b> has come up </b> At 5. </td></tr>
+        <tr><td> The past became familiar. </td><td> Used to. </td><td> he <b> Used to. </b> I drive on the left. </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. ဖြစ်ရပ်ဥပမာ </h2>
+      <ul>
+        <li><b> တစ်ယောက်တည်း နေထိုင်တတ်သူပါ။ </b> - သူတစ်ယောက်တည်း 15 နှစ်ကြာအောင်နေထိုင်ခဲ့သည်။ အဲဒါနဲ့ ပတ်သက်ပြီး ဘာမှ မထူးဆန်းပါဘူး။ </li>
+        <li><b> ငါသူတို့ကို အသုံးမကျဘူး။ </b> - ဖိနပ်အသစ်က အစပိုင်းမှာ အသုံးမကျတဲ့အတွက် နည်းနည်းအဆင်မပြေဘူး။ </li>
+        <li><b> ဆူညံသံတွေကို ကျင့်သုံးရလိမ့်မယ်။ </b> - အရှေ့လမ်းရှိ တိုက်ခန်း၊ အခုမှ အဆင်မပြေသေးပေမယ့် ကျင့်သုံးသွားမယ်။ </li>
+        <li><b> သူမ စောစောထဖို့ အဆင်မပြေဘူး ။ </b> - အလုပ်သစ်က မနက် ၆ နာရီထရမယ်။ </li>
+        <li><b> သူနဲ့ဝေးရာမှာ နေလေ့ရှိတယ်။ </b> - ခင်ပွန်းသည် မကြာခဏ ဝေးကွာနေလေ့ရှိသည်။ </li>
+      </ul>
+
+      <h2> 1.4 · B. အဆုံးမရှိအသုံးမပြုရန် be/get အသုံးပြုပြီးနောက် </h2>
+      <p> <i>be/get used to</i> တွင် စကားလုံး <b> to သည် ဝိဘတ်တစ်ခုဖြစ်သည်။ </b> (ယူနစ် 60C ကဲ့သို့) အဲဒါပြီးရင် <b> noun/pronoun/V-ing </b>:</p>
+      <div class="formula"> လက်ဝဲဘက်ကားမောင်းလေ့ရှိသည်။    (NO: မောင်းနှင်ရန်အသုံးပြုသည်)
+ဆူညံသံကို ကျွန်ုပ်တို့ အသုံးမချပါ။ / ငါတို့က အသုံးမကျဘူး။
+တစ်ကိုယ်တည်းနေထိုင်ခြင်းကို ကျင့်သုံးရမည်။     (NO- နေထိုင် ကျင့်သုံးပါ) </div>
+
+      <h2> 1.5 · C. ငါလုပ်ဖူးတယ် ≠ ငါလုပ်ဖူးတယ်။ </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> + V-ing is used. </th><th> + V is used. </th></tr>
+        <tr><td> Meaning </td><td> (not strange) </td><td> have done I don't do it now. </td></tr>
+        <tr><td> Time </td><td> present/past/future (changes "be") </td><td> It's the past. </td></tr>
+        <tr><td> For example </td><td> I <b> m used to ride a bicycle. </b> to work (used) </td><td> I <b> Used to operate. </b> to work (not anymore) </td></tr>
+      </table></div>
+
+      <h2> 1.6 · သက်သေခံလက္ခဏာများ </h2>
+      <div class="scroll"><table>
+        <tr><th> see... </th><th> Use it. </th></tr>
+        <tr><td> "at first it was strange/difficult" "it's new for me" </td><td> wasn / isn't used to + V-ing </td></tr>
+        <tr><td> "after a while" "soon" "it took months" "you'll have to" </td><td> get / got used to + V-ing </td></tr>
+        <tr><td> "it's no problem now" "I've always..." </td><td> + V-ing is used. </td></tr>
+        <tr><td> "… but now I don't / no longer" </td><td> + V (unit 18) </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I usually get up early. </td><td class="yes"> I'm used to it. <b> Acquisition. </b> Get up early. </td></tr>
+        <tr><td class="no"> I used to drive on the right. </td><td class="yes"> I <b> I used to drive. </b> on the right. </td></tr>
+        <tr><td class="no"> I used to work at night. </td><td class="yes"> I <b> m is used. </b> I work at night. / I <b> I used to work. </b> at night. </td></tr>
+        <tr><td class="no"> She can't get used to food. </td><td class="yes"> She can't. <b> used </b> to the food. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၁၈ </b> (လုပ်လေ့ရှိသည်) · <b> ယူနစ် 60C </b> (to + -ing)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🛵 <b class="en">Foreign visitors aren't  <mark>used to</mark>  the traffic in Hanoi.</b> <span class="note"> (ခရီးသွားအတွေ့အကြုံ) </span></div>
+      <div class="ex"> 🌶️ <b class="en">My Australian friend soon  <mark>got used to</mark>  eating spicy food.</b> <span class="note"> (ဘဝ-ယဉ်ကျေးမှု) </span></div>
+      <div class="ex"> ⏰ <b class="en">I'm a nurse, so I'm  <mark>used to working</mark>  night shifts.</b> <span class="note"> (အလုပ် - အဆိုင်းအကြောင်းပြောခြင်း) </span></div>
+      <div class="ex"> 💻 <b class="en">It took me a month to  <mark>get used to</mark>  the new software.</b> <span class="note"> (အလုပ် - လိုက်လျောညီထွေဖြစ်အောင်) </span></div>
+      <div class="ex"> 🧥 <b class="en">I'm not  <mark>used to</mark>  such cold weather.</b> <span class="note"> (ဆက်သွယ်ရေး — ရာသီဥတု တိုင်ကြားချက်) </span></div>
+      <div class="ex"> 🎓 <b class="en">International students have to  <mark>get used to</mark>  speaking English all day.</b> <span class="note"> (IELTS — နိုင်ငံခြားတွင် ပညာသင်ကြားရန်) </span></div>
+      <div class="ex"> 🚌 <b class="en">I  <mark>used to take</mark>  the bus, but now I ride a motorbike.</b> <span class="note"> (နှိုင်းယှဉ် — လုပ်လေ့ရှိသည်၊ ယူနစ် ၁၈) </span></div>
+      <div class="ex"> 👶 <b class="en">New parents need time to  <mark>get used to</mark>  not sleeping much.</b> <span class="note"> (ဘဝ - အဆိုးမြင်ခြင်း) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> "be/get" → "quen" ဟု အဓိပ္ပါယ်ရသည်။ </b> အတူသွားပါ။ <b> -ing </b>. <b> be/get မရှိပါဘူး။ </b> → "တစ်ကြိမ်" + V အဆုံးမရှိ </li>
+        <li><b> to "used to" ၏ be/get သည် ဝိဘတ်တစ်ခုဖြစ်သည်။ </b> → ၎င်းကို နာမ်ဖြင့် အစားထိုးကြည့်ပါ- <i>I'm used to <b>the noise</b></i> ✓။ </li>
+        <li><b> ဖြစ် </b> = အဆင့်အတန်း (အသုံးပြုရန်)၊ <b> ရယူ </b> = လုပ်ငန်းစဉ် (ဖြစ်/ဖြစ်/ဖြစ်/ဖြစ်)။ </li>
+        <li> ညီတူမျှတူ ခွဲထားသည်။ <b> ဖြစ်/ဖြစ် </b> : <i>was used to, will get used to, have got used to</i> — "used" အမြဲတမ်း တူညီနေပါသည်။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> <i>am/is/are/was/get/got used to</i> → ပြီးရင် နေရာလွတ် <b> V-ing </b> သို့မဟုတ် နာမ်။ </li>
+        <li> <i>used to</i> ပြီးနောက် နေရာလွတ်သည် be/get before → မရှိပါ။ <b> V ရှေ့ပြေးပုံစံ </b>.</li>
+        <li> ဝါကျတွင် "now / no longer / but these days" → တွင်းတွင်ပါရှိသည်။ <b> လုပ်လေ့ရှိတယ်။ </b>.</li>
+        <li> "at first … but after a while" → ပါဝင်သောဝါကျ <b> အသုံးမချဘူး… အသုံးမချဘူး… သုံးတယ်။ </b>.</li>
+        <li> <i>There used to <b>be</b></i> ကိုသတိထားပါ (တစ်ခုရှိပါသည်) — "being" မဟုတ်ပါ။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I usually wake up at 5 am. </td><td class="yes"> I'm used to it. <b> Wake up </b> Up at 5. </td><td class="why"> to is a preposition → -ing. </td></tr>
+        <tr><td class="no"> I'm not used to it. </td><td class="yes"> Don't laugh <b> used </b> That. </td><td class="why"> always "used" </td></tr>
+        <tr><td class="no"> I used to live here. </td><td class="yes"> I <b> m is used. </b> Live here </td><td class="why"> Childlessness. </td></tr>
+        <tr><td class="no"> I used to play soccer when I was younger. </td><td class="yes"> I <b> often play. </b> When I was young, I played football. </td><td class="why"> old habit → used + V </td></tr>
+        <tr><td class="no"> I can't get used to the noise. </td><td class="yes"> I can't do it. <b> Get </b> I use noise. </td><td class="why"> missing get (procedure) </td></tr>
+        <tr><td class="no"> She used to live alone. </td><td class="yes"> She is useless. <b> living </b> alone </td><td class="why"> -ing sau to </td></tr>
+        <tr><td class="no"> I knew he was late. </td><td class="yes"> I'm used to it. <b> Her being. </b> Late </td><td class="why"> to + (person) + V-ing </td></tr>
+        <tr><td class="no"> Have you ever smoked? </td><td class="yes"> are you <b> Use </b> To smoke </td><td class="why"> sau did → use </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြော- </b> အပြောင်းအလဲကြီးတစ်ခု (အိမ်ပြောင်းခြင်း၊ အလုပ်ပြောင်းခြင်း)။ <i>At first I wasn't used to…, but I soon got used to it. Now I'm used to…</i> </li>
+        <li><b> အင်တာဗျူး- </b> <i>I'm used to working under pressure / working with international clients.</i> </li>
+        <li><b> IELTS Speaking အပိုင်း 2- </b> ခေါင်းစဉ် "a change in your life" — 3 အားလုံးကို အသုံးပြုပါ- <i>used to do / get used to / be used to</i> . </li>
+        <li><b> ရေးပါ </b> သင်သုံးလေ့ရှိသောအရာများအကြောင်း စာကြောင်း ၃ ကြောင်း၊ အလုပ်/လေ့လာရာတွင် သင် အသုံးမကျသောစာကြောင်း ၂ ကြောင်း။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> အောက်ပါလေ့ကျင့်ခန်းကို ပြန်လုပ်ပါ။ <b>3</b>, <b>7</b> နှင့် <b> ၁၄ ရက် </b> . ဆက်စပ်- <b> ယူနစ် ၁၈ </b> (လုပ်လေ့ရှိသည်)၊ <b> ယူနစ် ၆၀ </b> (ဝိဘတ် + -ing)၊ <b> ယူနစ် ၆၂ </b> (ကြိယာ + ဝိဘတ် + -ing)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit61.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 61 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> အဆင့်အတန်း \u003c/th>\u003cth> ဖွဲ့စည်းပုံ \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> မရင်းနှီးသေးဘူး။ \u003c/td>\u003ctd> အသုံးမချပါ။ \u003c/td>\u003ctd> ငါ အသုံးမကျဘူး \u003cb> ဆူညံသံ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ငါ/အဲဒါကို ကျင့်သုံးလိမ့်မယ်။ \u003c/td>\u003ctd> အသုံးချပါ။ \u003c/td>\u003ctd> မကြာခင် လာမယ်။ \u003cb> အသုံးချပါ။ \u003c/b> အဲဒါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အဲဒါကို သုံးတယ်။ \u003c/td>\u003ctd> သုံးစွဲရန် \u003c/td>\u003ctd> သူမ က အသုံးကျတယ်။ \u003cb> တက်လာပြီ \u003c/b> 5 မှာ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အတိတ်က ရင်းနှီးလာတယ်။ \u003c/td>\u003ctd> ကျင့်သုံးတယ်။ \u003c/td>\u003ctd> သူ \u003cb> ကျင့်သုံးတယ်။ \u003c/b> ဘယ်ဘက်မှာ မောင်းတယ်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> + V-ing ကို သုံးတယ်။ \u003c/th>\u003cth> + V ကိုသုံးတယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အဓိပ္ပါယ် \u003c/td>\u003ctd> (မထူးဆန်းပါဘူး) \u003c/td>\u003ctd> လုပ်ဖူးတယ်၊ အခုမလုပ်တော့ဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အချိန် \u003c/td>\u003ctd> ပစ္စုပ္ပန်/အတိတ်/အနာဂတ် (\"be\" ပြောင်းလဲ) \u003c/td>\u003ctd> အတိတ်ပဲ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဥပမာအားဖြင့် \u003c/td>\u003ctd> ငါ \u003cb> m စက်ဘီးစီးဖူးတယ်။ \u003c/b> အလုပ်လုပ်ရန်။ (အသုံးခံပါတယ်) \u003c/td>\u003ctd> ငါ \u003cb> လည်ပတ်ရန်အသုံးပြုသည်။ \u003c/b> အလုပ်လုပ်ရန်။ (မဟုတ်တော့ပါဘူး) \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ကြည့်… \u003c/th>\u003cth> သုံးပါ။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> \"at first it was strange/difficult\" ၊ \"it's new for me\" \u003c/td>\u003ctd> wasn / isn't used to + V-ing \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"after a while\" ၊ \"soon\" ၊ \"it took months\" ၊ \"you'll have to\" \u003c/td>\u003ctd> get / got used to + V-ing \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"it's no problem now\" ၊ \"I've always…\" \u003c/td>\u003ctd> + V-ing ကို သုံးတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"… but now I don't / no longer\" \u003c/td>\u003ctd> + V (ယူနစ် 18) \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စောစောထလေ့ရှိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါက အသုံးကျတယ်။ \u003cb> ရယူခြင်း။ \u003c/b> စောစောထ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အရင်က ညာဖက်ကို မောင်းဖူးတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> မောင်းဖူးတယ်။ \u003c/b> ညာဘက်တွင်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ညဘက်အလုပ်လုပ်ဖူးတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> m သုံးတယ်။ \u003c/b> ညဘက်မှာ အလုပ်လုပ်တယ်။ / ငါ \u003cb> အလုပ်လုပ်ဖူးတယ်။ \u003c/b> ညအခါမှာ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အစားအသောက်ကို သူမ အသုံးမချနိုင်ပါ။ \u003c/td>\u003ctd class=\"yes\"> သူမ မရနိုင်ပါ။ \u003cb> သုံးတယ်။ \u003c/b> အစားအစာဆီသို့။ \u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မနက် ၅ နာရီမှာ အိပ်ရာကထလေ့ရှိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါက အသုံးကျတယ်။ \u003cb> နိုး \u003c/b> 5 တွင်တက်။ \u003c/td>\u003ctd class=\"why\"> to သည် ဝိဘတ် → -ing ဖြစ်သည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ အဲဒါကို အသုံးမချဘူး။ \u003c/td>\u003ctd class=\"yes\"> မမရယ် \u003cb> သုံးတယ်။ \u003c/b> အဲဒါကို။ \u003c/td>\u003ctd class=\"why\"> အမြဲတမ်း \"used\" \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါဒီမှာနေခဲ့ဖူးတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> m သုံးတယ်။ \u003c/b> ဒီမှာနေထိုင် \u003c/td>\u003ctd class=\"why\"> ကလေးမရှိခြင်း။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငယ်ငယ်တုန်းက ဘောလုံးကစားဖူးတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> ကစားလေ့ရှိသည်။ \u003c/b> ငယ်ငယ်တုန်းက ဘောလုံးကန်တယ်။ \u003c/td>\u003ctd class=\"why\"> အလေ့အကျင့်ဟောင်း → သုံးသည် + V \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဆူညံသံတွေကို ငါ အသုံးမချနိုင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> ငါမလုပ်နိုင်ဘူး။ \u003cb> ရယူ \u003c/b> ဆူညံသံကို သုံးတယ်။ \u003c/td>\u003ctd class=\"why\"> ပျောက်ဆုံးနေသော get (လုပ်ငန်းစဉ်) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမသည် တစ်ယောက်တည်း နေထိုင်ခဲ့ဖူးသည်။ \u003c/td>\u003ctd class=\"yes\"> သူမအသုံးမကျဘူး။ \u003cb> နေထိုင်ခြင်း။ \u003c/b> တစ်ယောက်တည်း။ \u003c/td>\u003ctd class=\"why\"> -ing sau to \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူနောက်ကျနေပြီလို့ ငါသိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါက အသုံးကျတယ်။ \u003cb> သူမ၏ဖြစ်ခြင်း။ \u003c/b> နောက်ကျ \u003c/td>\u003ctd class=\"why\"> to + (လူ) + V-ing \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဆေးလိပ်သောက်ဖူးလား။ \u003c/td>\u003ctd class=\"yes\"> မင်းကလား။ \u003cb> အသုံးပြု \u003c/b> ဆေးလိပ်သောက်ဖို့ \u003c/td>\u003ctd class=\"why\"> sau did → သုံးပါ။ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 61 – တစ်ခုခုကို အသုံးချပါ | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit61.html';
+  var KEY = 'egu4_unit61_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. စကားလုံးများကိုဖြည့်ပါ/ကြိယာများကို ပေါင်းစပ်ပါ။',    desc:'be used to / get used to / used to ဖြင့် မှန်ကန်သောပုံစံကို ဖြည့်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz',            desc:'Unit 61 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 61 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 61.1 → 61.4 သည် Murphy ၏ စာအုပ်ပုံစံ အတိအကျကို ရှင်းပြချက်များနှင့် (စာကြောင်းများ ပြန်လည်ပြင်ဆင်ပြီးသည်) ကို လိုက်နာသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I\'ve lived in Da Lat for years, so I\'m used to ______ cold mornings.',
+      opts:['have','having','had','to have'], a:1,
+      exp:'be used to + V-ing (to is a preposition) → ရှိခြင်း။' },
+    { id:'a2', sec:'A', type:'mcq', q:'When I was a child, I ______ swim in the river every summer.',
+      opts:['am used to','was used to','used to','got used to'], a:2,
+      exp:'အရင်တုန်းက အလေ့အထတစ်ခု၊ အခုမရှိတော့ → used to + V infinitive: ရေကူးလေ့ရှိတယ်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'The new office is very noisy, but I\'m sure we\'ll ______ it.',
+      opts:['get used to','be use to','used to','use to'], a:0,
+      exp:'အနာဂတ်တွင် အကျွမ်းတဝင်ဖြစ်လာခြင်း → ၎င်းကို အသုံးပြုရလိမ့်မည်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['She is used to work long hours.','She is used to working long hours.','She used to working long hours.'], a:1,
+      exp:'be used to + V-ing → အလုပ်လုပ်ရန် အသုံးပြုသည်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'At first, Hana ______ driving on the left, but now it\'s easy for her.',
+      opts:['didn\'t use to','wasn\'t used to','isn\'t used to','not used to'], a:1,
+      exp:'ပထမ (အတိတ်) → အသုံးမချခဲ့ဘူး + V-ing ။' },
+    { id:'a6', sec:'A', type:'mcq', q:'It took me a long time to ______ my new glasses.',
+      opts:['used to','be use to','get used to','getting used'], a:2,
+      exp:'ငါ့ကိုအသုံးခံဖို့ ခေါ်သွားတယ် + N = အသုံးချဖို့ ဘယ်လောက်ကြာလဲ။' },
+    { id:'a7', sec:'A', type:'mcq', q:'There ______ a cinema in this street, but it closed down.',
+      opts:['is used to be','used to be','was used to','got used to be'], a:1,
+      exp:'အရင်တုန်းက ရှိတယ်၊ အခု မရှိတော့ဘူး → အရင်က ရှိခဲ့တယ်။' },
+    { id:'a8', sec:'A', type:'mcq', q:'Her husband travels a lot, but she\'s used to ______ away.',
+      opts:['he is','him be','him being','his to be'], a:2,
+      exp:'be used to + somebody + V-ing → သူနဲ့ဝေးရာမှာ သုံးတယ်။' },
+
+    /*===== B. ===== စကားလုံးများကို ဖြည့်ပါ။*/
+    { id:'b1', sec:'B', type:'fill', q:'I\'m not used to ______ (eat) dinner so late.',
+      acc:['eating','having'], ans:'eating',
+      exp:'+ V-ing ကို သုံးတယ်။' },
+    { id:'b2', sec:'B', type:'fill', q:'My grandfather used to ______ (work) on a farm.',
+      acc:['work'], ans:'work',
+      exp:'+ V infinitive (အတိတ်အလေ့အထ) ကိုသုံးတယ်။' },
+    { id:'b3', sec:'B', type:'fill', q:'Don\'t worry about the new job. You\'ll soon get used to ______ (be) in charge.',
+      acc:['being'], ans:'being',
+      exp:'+ V-ing → ဖြစ်ခြင်း။' },
+    { id:'b4', sec:'B', type:'fill', q:'He moved to Canada last year and he still hasn\'t got used to ______ (speak) English all day.',
+      acc:['speaking'], ans:'speaking',
+      exp:'+ V-ing ကို အသုံးပြုပါ။' },
+    { id:'b5', sec:'B', type:'fill', q:'We used to ______ (live) near the sea, but we moved to the city.',
+      acc:['live'], ans:'live',
+      exp:'သုံးသည် + V (ယခု မရနိုင်တော့ပါ)။' },
+    { id:'b6', sec:'B', type:'fill', q:'I\'m a teacher, so I\'m used to ______ (talk) in front of people.',
+      acc:['talking','speaking'], ans:'talking',
+      exp:'+ V-ing အတွက် သုံးသည်။' },
+    { id:'b7', sec:'B', type:'fill', q:'She had to get used to ______ (not / have) a car.',
+      acc:['not having'], ans:'not having',
+      exp:'+ not + V-ing ကို အသုံးချပါ။' },
+    { id:'b8', sec:'B', type:'fill', q:'Our new manager isn\'t used to ______ (wear) a suit every day.',
+      acc:['wearing'], ans:'wearing',
+      exp:'be (not) used to + V-ing။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (I\'m / used / to / getting / up / early)',
+      tokens:["I'm",'used','to','getting','up','early'],
+      acc:["i'm used to getting up early"], ans:'I\'m used to getting up early.',
+      exp:'+ V-ing အတွက် သုံးသည်။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (she / soon / got / used / to / the / food)',
+      tokens:['She','soon','got','used','to','the','food'],
+      acc:['she soon got used to the food'], ans:'She soon got used to the food.',
+      exp:'+N; မကြာမီ ကြိယာရှေ့ရောက်လာသည်။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (we / aren\'t / used / to / this / heat)',
+      tokens:['We',"aren't",'used','to','this','heat'],
+      acc:["we aren't used to this heat"], ans:'We aren\'t used to this heat.',
+      exp:'+N ကို အသုံးမချပါနဲ့။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (he / used / to / smoke / a / lot)',
+      tokens:['He','used','to','smoke','a','lot'],
+      acc:['he used to smoke a lot'], ans:'He used to smoke a lot.',
+      exp:'used to + V = အရင်က ဆေးလိပ်သောက်ဖူးတယ် (အခုတော့ မလုပ်ဘူး)။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (you\'ll / get / used / to / it / soon)',
+      tokens:["You'll",'get','used','to','it','soon'],
+      acc:["you'll get used to it soon"], ans:'You\'ll get used to it soon.',
+      exp:'+ pronoun ကို သုံးရလိမ့်မယ်။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Isn\'t it hard to work at night?  B: Not really. I\'m used to ______ (sleep) during the day.',
+      acc:['sleeping'], ans:'sleeping',
+      exp:'+ V-ing ကို သုံးတယ်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: မြို့သစ်ကို ဘယ်လိုကြိုက်လဲ။  B: အစကတော့ ထူးဆန်းတယ်၊ ဒါပေမယ့် ငါ ______ အဲဒါကို သိနေတယ်။ (၁ စကားလုံး)',
+      acc:['used'], ans:'used',
+      exp:'get used to it = တဖြည်းဖြည်းနဲ့ ကျင့်သုံးလာတယ်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Do you play the piano?  B: Not now, but I used to ______ (play) when I was at school.',
+      acc:['play','play it'], ans:'play',
+      exp:'+ V infinitive ကို သုံးတယ်။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: You look tired.  B: Yes, I\'m not used to ______ (stay) up so late.',
+      acc:['staying'], ans:'staying',
+      exp:'+ V-ing ကို အသုံးမချပါနဲ့။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'စာကြောင်း 3 ကြောင်းဖြင့် သင့်ဘဝ၏ အပြောင်းအလဲတစ်ခုအကြောင်း ပြောပြပါ- → အသုံးမချဖူး → သုံးစွဲဖူးသည် ။',
+      sample:'When I started university, I wasn\'t used to living away from home. After a few months I got used to it. Now I\'m used to cooking for myself.',
+      exp:'အသုံးမချတတ်ခြင်း → တဖြည်းဖြည်း အသုံးကျလာခြင်း → ၎င်းကို အသုံးပြုလာခြင်း၊ အမြဲတမ်း + N သို့မဟုတ် V-ing။' },
+    { id:'e2', sec:'E', type:'self', q:'ဗီယက်နမ်နိုင်ငံသို့ လာရောက်နေထိုင်မည့် နိုင်ငံခြားသားတစ်ဦး။ အသုံးကျရမည့်အရာများအကြောင်း စာကြောင်း 2 ကြောင်းကိုရေးပါ (They will be get used to…)',
+      sample:'They\'ll have to get used to the heavy traffic. They\'ll have to get used to eating rice every day.',
+      exp:'+N/V-ing ကို အသုံးပြုရပါလိမ့်မယ်။' },
+    { id:'e3', sec:'E', type:'self', q:'ခြားနားချက်ကိုကြည့်ရန် "I used to…" (အလေ့အကျင့်ဟောင်း) နှင့် 1 စာကြောင်း "I\'m used to…" (အသုံးပြုသောအရာ) တို့ကို ရေးပါ။',
+      sample:'I used to play video games every night. I\'m used to working from home now.',
+      exp:'used to + V (အတိတ်၊ မရှိတော့) ≠ be to + V-ing (အသုံးပြုသည်)။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'mcq', q:'I can\'t ______ to this new phone. The buttons are in different places.',
+      opts:['use','get used','be use','used'], a:1,
+      exp:'+N ကို အသုံးမချနိုင်ပါ။' },
+    { id:'f2', sec:'F', type:'fill', q:'ဘာသာပြန်ဆိုချက်- "ငါ ဆူညံသံကို ခံဖူးတယ်။"  (be used to)',
+      acc:["i'm used to the noise",'i am used to the noise'], ans:'I\'m used to the noise.',
+      exp:'+ N ကိုအသုံးပြုသည်။' },
+    { id:'f3', sec:'F', type:'mcq', q:'"I used to drink a lot of coffee" ဆိုသည်မှာ-',
+      opts:['ကော်ဖီအများကြီးသောက်ဖူးတယ်။','ကော်ဖီအများကြီးသောက်ဖူးတယ် (အခုတော့ မသောက်ဖြစ်တော့ဘူး)။'], a:1,
+      exp:'used to + V = အတိတ်အလေ့အထ မရှိတော့ပါ။' },
+    { id:'f4', sec:'F', type:'fill', q:'Lisa is from the USA. She wasn\'t used to ______ (drive) on the left when she came to the UK.',
+      acc:['driving'], ans:'driving',
+      exp:'+ V-ing ကို အသုံးမချခဲ့ပါ။' },
+    { id:'f5', sec:'F', type:'mcq', q:'FALSE ထုတ်ပြန်ချက်ကို ရွေးပါ-',
+      opts:['I\'m used to it.','I got used to the climate.','I\'m used to walk to school.','I used to walk to school.'], a:2,
+      exp:'be used to + V-ing → လမ်းလျှောက်ရတာ များတယ်။  "I\'m used to walk" မှားသည်။' },
+    { id:'f6', sec:'F', type:'fill', q:'Did you use to ______ (have) long hair?',
+      acc:['have'], ans:'have',
+      exp:'+V ကို သုံးဖူးလား။ (အရင်က မေးခွန်း။)' },
+    { id:'f7', sec:'F', type:'fill', q:'It\'s hard to get used to ______ (share) a room with three people.',
+      acc:['sharing'], ans:'sharing',
+      exp:'+ V-ing ကို အသုံးပြုပါ။' },
+    { id:'f8', sec:'F', type:'mcq', q:'After two years in Japan, I\'m ______ bowing when I meet people.',
+      opts:['use to','used to','using to','used'], a:1,
+      exp:'be used to +V-ing → ငါ ဦးညွှတ်ဖို့ သုံးတယ်။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.1 – အသုံးပြုထားသည့် အခြေအနေကို ဖြည့်စွက်ပါ။',
+      q:'တွမ်သည် နေ့တိုင်း အလုပ်လုပ်ရန် လူစည်ကားသော ရထားစီးသည်။ သူ ဒီအလုပ်စလုပ်တုန်းက ______ လူစည်ကားတဲ့ ရထားစီးရင်း ... (အဆိုးမြင်ပုံစံ၊ အတိတ်)၊',
+      acc:["wasn't used to",'was not used to'], ans:'wasn\'t used to',
+      exp:'စစချင်းတုန်းကတော့ အသုံးမကျဘူး → + V-ing ကို အသုံးမချဘူး။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.1 – အသုံးပြုထားသည့် အခြေအနေကို ဖြည့်စွက်ပါ။',
+      q:'...ဒါပေမယ့် ရက်သတ္တပတ်အနည်းငယ်ကြာပြီးနောက် သူ ______ အဲဒါကို လုပ်လိုက်တယ်။ (ဖြစ်စဉ်၊ အတိတ်)',
+      acc:['got used to'], ans:'got used to',
+      exp:'→ အတိတ်ကို တဖြည်းဖြည်း ကျင့်သုံးလာတယ်။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.1 – အသုံးပြုထားသည့် အခြေအနေကို ဖြည့်စွက်ပါ။',
+      q:'… Now it\'s no problem for him. He ______ a crowded train every day.',
+      acc:['is used to taking',"'s used to taking","'s used to catching",'is used to catching'], ans:'is used to taking',
+      exp:'လက်ရှိအသုံးပြုနေသော → သည် + V-ing တွင်အသုံးပြုသည်။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.1 – အသုံးပြုထားသည့် အခြေအနေကို ဖြည့်စွက်ပါ။',
+      q:'Kim is a chef. Last year she started working at weekends. At first she found it hard. She ______ at weekends, …',
+      acc:["wasn't used to working",'was not used to working'], ans:'wasn\'t used to working',
+      exp:'+ V-ing ကို အသုံးမချခဲ့ပါ။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.1 – အသုံးပြုထားသည့် အခြေအနေကို ဖြည့်စွက်ပါ။',
+      q:'… and it took her a while to ______ it.',
+      acc:['get used to'], ans:'get used to',
+      exp:'ဒါကို ကျင့်သုံးဖို့ သူမကို အချိန်တစ်ခု ယူခဲ့တယ်။' },
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.1 – အသုံးပြုထားသည့် အခြေအနေကို ဖြည့်စွက်ပါ။',
+      q:'… Now it\'s fine for her. She ______ at weekends.',
+      acc:['is used to working',"'s used to working"], ans:'is used to working',
+      exp:'+ V-ing ကိုသုံးတယ်။' },
+
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.2 – သင် ဘာပြောမလဲ။ ငါ (မ) သုံးဖူးတယ်...',
+      q:'You have always eaten very spicy food. Friend: "Isn\'t this too spicy for you?" You: "No, ______."',
+      acc:["i'm used to eating spicy food",'i am used to eating spicy food',"i'm used to it","i'm used to spicy food"], ans:'I\'m used to eating spicy food',
+      exp:'အချိန်အတော်ကြာ ရင်းနှီးပြီးသား တစ်ခုခု → ငါ အသုံးကျတယ် + V-ing/N ။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.2 – သင် ဘာပြောမလဲ။ ငါ (မ) သုံးဖူးတယ်...',
+      q:'You have always walked to work. Friend: "Isn\'t it a long way to walk every day?" You: "Yes, but ______."',
+      acc:["i'm used to walking to work",'i am used to walking to work',"i'm used to walking","i'm used to it"], ans:'I\'m used to walking to work',
+      exp:'ငါ + V-ing ကိုသုံးတယ်။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.2 – သင် ဘာပြောမလဲ။ ငါ (မ) သုံးဖူးတယ်...',
+      q:'You usually sleep a lot, but last night you slept only four hours. Friend: "You look tired." You: "Yes, ______ so little."',
+      acc:["i'm not used to sleeping",'i am not used to sleeping'], ans:'I\'m not used to sleeping',
+      exp:'အသစ်၊ မရင်းနှီးသောအလုပ် → ကျွန်ုပ် + V-ing ကို အသုံးမချပါ။' },
+
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.3 – get/got ကိုအသုံးပြု၍ အပြီးသတ်ပါ။',
+      q:'Your neighbours have a new baby who cries all night. They\'ll have to ______ the crying.',
+      acc:['get used to'], ans:'get used to',
+      exp:'+ N ကို အသုံးချရပါလိမ့်မယ်။' },
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.3 – get/got ကိုအသုံးပြု၍ အပြီးသတ်ပါ။',
+      q:'The team got a new coach with very different methods, but the players quickly ______ him.',
+      acc:['got used to'], ans:'got used to',
+      exp:'အတိတ်က မြန်မြန်ဆန်ဆန် ဖြစ်စဉ် → သူ့အတွက် အသုံးကျလာတယ်။' },
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.3 – get/got ကိုအသုံးပြု၍ အပြီးသတ်ပါ။',
+      q:'Duc moved from the countryside to a big city. He had to ______ in a crowded place. (get used to + live)',
+      acc:['get used to living'], ans:'get used to living',
+      exp:'+ V-ing ကို ကျင့်သုံးရမယ်။' },
+
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'My aunt used to ______ a lot of sweets. Now she avoids sugar.',
+      acc:['eat'], ans:'eat',
+      exp:'used to + V (အလေ့အထဟောင်း)။' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'I\'ve got a headache. I\'m not used to ______ so long in front of a screen.',
+      acc:['sitting','working','being'], ans:'sitting',
+      exp:'+ V-ing ကို အသုံးမချပါနဲ့။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'I don\'t want to share a desk. I\'m used to ______ my own desk.',
+      acc:['having'], ans:'having',
+      exp:'+ V-ing ကို သုံးတယ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'I used to ______ a motorbike, but I sold it last year.',
+      acc:['have','own','ride'], ans:'have',
+      exp:'+ V infinitive ကို သုံးတယ်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'When we were kids, we used to ______ fishing every weekend.',
+      acc:['go'], ans:'go',
+      exp:'to + go (ငါးမျှားသွားသည်)။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'There used to ______ a market here, but now it\'s a car park.',
+      acc:['be'], ans:'be',
+      exp:'ရှိခဲ့ဖူးသည် = ရှိခဲ့ဖူးသည် ။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'I\'m the manager. I\'m not used to ______ told what to do.',
+      acc:['being'], ans:'being',
+      exp:'be used to + being + V3 (passive)။' },
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'ငါတို့ ______ မြို့ငယ်လေးမှာ နေဖူးတယ်။ နောက်တော့ ငါတို့ ဟနွိုင်းကို ပြောင်းလာပြီး ကျင့်သားရခဲ့တယ်... (၁ စကားလုံး)',
+      acc:['live'], ans:'live',
+      exp:'+ V infinitive ကို သုံးတယ်။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 61.4 – စကားလုံးတစ်လုံးတည်းနဲ့ ပြီးအောင်ပါ။',
+      q:'... မြို့ကြီးပြကြီးတစ်ခုမှာ ______ နဲ့ ရင်းနှီးအောင် လုပ်ရမယ်။ (၁ စကားလုံး)',
+      acc:['living'], ans:'living',
+      exp:'+ V-ing ကို အသုံးပြုပါ။ ယခင်ဝါကျနှင့် နှိုင်းယှဥ်ပါ: used to live ↔ get used to living.' }
+  ];
+
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

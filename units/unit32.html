@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 32 – မဖြစ်မနေ၊ မဖြစ်ရဘူး၊ မလိုအပ်ဘူး | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 32 - မဖြစ်သင့်၊ မဖြစ်သင့်၊ မလိုအပ်ပါ။ </h1>
+    <div class="sub"> ကိုယ်ပိုင်လေ့လာမှုသီအိုရီ · မတူညီသော အလေ့အကျင့် · ထပ်ခါတလဲလဲ စမ်းသပ်ခြင်း။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> 54 ရမှတ်မေးခွန်းများ + 3 ကိုယ်တိုင်ရေး </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · ပန်းတိုင်နှင့် အနှစ်သာရ </h2>
+      <p> ဤယူနစ်သည် အဆင့်သုံးဆင့်ကို ဘေးချင်းကပ်ထားသည်။ <b> လုပ်ရမယ်။ </b> (လုပ်ရန်လိုသည်)၊ <b> မလုပ်ရဘူး။ </b> (မလုပ်ရန် မလိုအပ်ပါ = တားမြစ်သည်)၊ <b> မလိုအပ်ပါ။ </b> (လုပ်ရန်မလိုပါ၊ သို့သော်သင်လုပ်နိုင်သည်)။ နောက်ပြီး အတိတ်အကြောင်းပြော၊ <b> လုပ်စရာ မလိုပါဘူး။ </b> (အဲဒါက မလိုအပ်ဘူးဆိုတာ သိလိုက်ရတယ်) မတူပါဘူး။ <b> လုပ်စရာ မလိုပါဘူး။ </b> (လုပ်ရန်မလိုပါ — သင်ဖွင့်သည်ဖြစ်စေ မဖွင့်သည်ဖြစ်စေ)။ </p>
+      <div class="ex"> <b class="en">We've got plenty of time. We  <mark>needn't hurry</mark> .<br>We reserved a table, but the restaurant was empty. We  <mark>needn't have reserved</mark>  a table.</b> <br> ဝါကျ 1- ပစ္စုပ္ပန်/အနာဂတ် — မလိုအပ်ပါ။ စာကြောင်း 2- အဲဒါကို လုပ်ထားပြီးသား၊ ဒါပေမယ့် မလိုအပ်ဘဲ ဖြစ်သွားတယ်။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာများ </h2>
+      <div class="formula"> must + V = လုပ်ရမှာ မြန်မြန်လုပ်ရမယ်။
+mustn't + V = မလုပ်ရန် မလိုအပ်ပါ (တားမြစ်သည်) ဆူညံခြင်း မပြုရပါ။
+needn't + V = လုပ်စရာ မလိုဘူး မင်း လာစရာ မလိုဘူး။
+don't/doesn't need to + V = မလိုအပ်ဘူး မင်းလာဖို့ မလိုဘူး။
+needn't have + V3 = အဲဒါကို လုပ်ခဲ့တယ်၊ ဒါပေမယ့် မလိုအပ်ဘဲ မင်း စိတ်ပူနေစရာ မလိုဘူး။
+မလိုအပ်ဘူး + V = မလိုအပ်ဘူး (လုပ်နေသည်ဖြစ်စေ၊ မဖွင့်သည်ဖြစ်စေ) </div>
+      <div class="scroll"><table>
+        <tr><th> Level </th><th> present/future </th><th> The past </th></tr>
+        <tr><td> Essential </td><td> must/ have to </td><td> To fight </td></tr>
+        <tr><td> Forbidden. </td><td> You must not do it. </td><td> (not allowed/can't) </td></tr>
+        <tr><td> Not necessary. </td><td> Don't need / don't need / don't need. </td><td> I don't need/need not. </td></tr>
+        <tr><td> I did, but it wasn't necessary. </td><td>—</td><td> +V3 is not required. </td></tr>
+      </table></div>
+      <p class="note">⚠️ <b> မလိုအပ် + V </b> (<i>to</i> မဟုတ်ပါ) သို့သော် <b> TO + V မလိုပါ။ </b> : <i>You needn't worry</i> ✅ · <i>You needn't to worry</i> ❌ · <i>You don't need to worry</i> ✅ · <i>You don't need worry</i> ❌ ။ </p>
+
+      <h2> 1.3 · A. လုပ်သင့်သည်နှင့် မလုပ်ရပါ။ </h2>
+      <ul>
+        <li><b> လုပ်ရမယ်။ </b> : လုပ်ရမှာ — <i>You must keep it a secret.</i> </li>
+        <li><b> မလုပ်ရဘူး။ </b> : လုပ်ဖို့မလိုပါဘူး — <i>You mustn't tell anyone.</i> (= ဘယ်သူ့ကိုမှ မပြောနဲ့) </li>
+        <li> <i>We <b>must</b> be quiet. We <b>mustn't</b> make any noise.</i> အတွဲများပါလာတတ်သည်။ </li>
+      </ul>
+
+      <h2> 1.4 · B. မလိုအပ်ဘဲ မလိုအပ်ပါ။ </h2>
+      <ul>
+        <li><b> လုပ်စရာမလိုပါဘူး။ </b> = လုပ်ရန် မလိုအပ်ပါ (သင်လိုချင်ပါက): <i>Joe can stay here. He <b>needn't come</b> with us.</i> </li>
+        <li><b> လုပ်ဖို့မလို/မလိုပါဘူး။ </b> တူညီသော အဓိပ္ပာယ်၊ ခေတ်မီပြောသော အင်္ဂလိပ်စကားတွင် ပို၍ အသုံးများသည်- <i>We <b>don't need to</b> hurry.</i> </li>
+      </ul>
+
+      <h2> 1.5 · C. မလိုအပ်ပါ (ပြီးပါပြီ) </h2>
+      <p> အဲဒါကို ဖော်ပြတယ်။ <b> အတိတ်၌ဖြစ်ပျက်ခဲ့သည်။ </b> ဒါပေမယ့် အခုဖြစ်နေပြီဆိုတာ သိတယ်။ <b> မလိုအပ်ပါ။ </b> . အတူပါလာတတ်တယ်။ <b> +V3 ပါ၀င်နိုင်သည်။ </b> (အခြားနည်းဖြင့် လုပ်ဆောင်နိုင်သည် — Unit 27 ကိုကြည့်ပါ)။ </p>
+      <div class="formula"> အားလုံး OK ပါလိမ့်မယ်။  မင်းစိတ်မပူပါနဲ့။            (လက်ရှိ: မလိုအပ်ပါဘူး)
+အားလုံးအဆင် ပြေပါတယ်။      မင်းစိုးရိမ်နေစရာမလိုပါဘူး။      (အတိတ်- မင်းစိုးရိမ်ပေမယ့် မလိုအပ်ဘူး)
+မင်းဘာလို့ လမ်းလျှောက်လာတာလဲ။ လမ်းလျှောက်စရာမလိုပါဘူး။ မင်း တက္ကစီစီးလို့ရတယ်။ </div>
+
+      <h2> 1.6 · D. မလိုအပ်ပါ ≠ လုပ်ရန် မလိုအပ်ပါ။ </h2>
+      <div class="scroll"><table>
+        <tr><th> He doesn't have to get up early. </th><th> No need to get up early. </th></tr>
+        <tr><td> he <b> I got up early. </b> But it's not necessary. </td><td> No need to get up early: <b> whether or not It is not known whether it does or not. </b>.</td></tr>
+        <tr><td> He can stay in bed longer. </td><td> …so she didn't. /…but it was a nice morning so he did. </td></tr>
+      </table></div>
+      <p class="note"> <i>He didn't have to …</i> ကို <i>didn't need to</i> အစားလည်း သုံးနိုင်သည်။ </p>
+
+      <h2> 1.7 · အသိအမှတ်ပြုမှု သဲလွန်စများ </h2>
+      <div class="scroll"><table>
+        <tr><th> Context </th><th> select </th></tr>
+        <tr><td> indispensable important; If not... </td><td><b> I have to do it. </b></td></tr>
+        <tr><td> dangerous secret "Don't…!" </td><td><b> You must not do it. </b></td></tr>
+        <tr><td> A lot of time has passed. I can manage alone. </td><td><b> not necessary / not necessary </b></td></tr>
+        <tr><td> "Why did you...? Why didn't you...?" — done. </td><td><b> +V3 is not required. </b></td></tr>
+        <tr><td> It is not clear whether or not "…so I didn't". </td><td><b> Not necessary. </b></td></tr>
+      </table></div>
+
+      <h2> 1.8 · ဇယားအမှား ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Wrong. </th><th> ✅ That's right. </th></tr>
+        <tr><td class="no"> You don't need to worry. </td><td class="yes"> You don't have to. <b> Don't worry </b>.</td></tr>
+        <tr><td class="no"> We don't need to hurry. </td><td class="yes"> We don't need it. <b> To fight </b> Faster </td></tr>
+        <tr><td class="no"> You don't have to wait for me. (meaning: not necessary) </td><td class="yes"> you <b> not necessary / not necessary </b> wait for me. </td></tr>
+        <tr><td class="no"> I was not allowed to go out, so I stayed at home. </td><td class="yes"> I <b> Not necessary. </b> When I left, I stayed at home. </td></tr>
+        <tr><td class="no"> You don't need to worry. </td><td class="yes"> You don't have to be. <b> worried </b>.</td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၂၈ </b> (ရပါမည် = နုတ်ယူခြင်း) · <b> ယူနစ် ၃၁ </b> (ရှိရမယ်၊ လုပ်ရမယ်) · <b> ယူနစ် ၂၇ </b> (လုပ်နိုင်ခဲ့ပါတယ်) · <b> နောက်ဆက်တွဲ ၄ </b> (modal verb) · <b> နောက်ဆက်တွဲ ၇ </b> (ဗြိတိသျှ/အမေရိကန်)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (နေ့စဉ်ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🔒 <b class="en">This is confidential. You  <mark>mustn't</mark>  share it with anyone.</b> <span class="note"> (အလုပ်-တားမြစ်သည်) </span></div>
+      <div class="ex"> ⏳ <b class="en">The film starts at nine. We  <mark>needn't</mark>  leave yet.</b> <span class="note"> (နေ့စဉ်ဘဝ - မလိုအပ်ပါဘူး) </span></div>
+      <div class="ex"> 🛒 <b class="en">I can carry the bags myself. You  <mark>don't need to</mark>  help.</b> <span class="note"> (နေ့စဉ်ဘဝ - ယဉ်ကျေးစွာ ငြင်းဆိုခြင်း) </span></div>
+      <div class="ex"> 💊 <b class="en">You  <mark>must</mark>  finish all the antibiotics.</b> <span class="note"> (ကျန်းမာရေး - မဖြစ်မနေ) </span></div>
+      <div class="ex"> 🍳 <b class="en">I  <mark>needn't have bought</mark>  eggs. There were plenty in the fridge.</b> <span class="note"> (ဝယ်ပေမယ့် မလိုအပ်ပါဘူး) </span></div>
+      <div class="ex"> 🎁 <b class="en">Thank you so much! You  <mark>needn't have</mark>  brought a present.</b> <span class="note"> (လက်ဆောင်ရရှိသည့်အခါ ယဉ်ကျေးစွာ တုံ့ပြန်ခြင်း) </span></div>
+      <div class="ex"> 🚕 <b class="en">You  <mark>needn't have walked</mark> . You  <mark>could have</mark>  called me.</b> <span class="note"> ( ကဲ့ရဲ့စရာ မလိုဘူး + ရှိနိုင်သည် ) </span></div>
+      <div class="ex"> 📝 <b class="en">The test was cancelled, so I  <mark>didn't need to</mark>  study last night.</b> <span class="note"> (စာမေးပွဲတွေ မလိုအပ်တဲ့အတွက် မလေ့လာဖြစ်ဘူး) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> 🤷 / မလိုဘူး 🚫 / မလိုဘူး 🤷 </b> - အဆင့်သုံးဆင့်အတွက် သင်္ကေတသုံးခု။ </li>
+        <li><b> NO လုပ်ဖို့မလိုပါဘူး။ လုပ်ဖို့ လိုအပ်တယ်။ </b> မန္တန်- <i>"needn't worry – don't need to worry"</i>။ </li>
+        <li><b> +V3 = "did it for nothing" မလိုပါ။ </b> . <i>have + V3</i> → လုပ်ဆောင်ချက်ဖြစ်နေပြီဖြစ်သည်။ </li>
+        <li><b> = "didn't need to" မလိုအပ်ပါ။ </b> မကြာခဏ <i>so I didn't</i> နှင့်သွားလေ့ရှိသည်။ </li>
+        <li> အများအားဖြင့် ကျေးဇူးတင်စကား- <i>"You needn't have done that!"</i> = "You went to too much trouble!" ။ </li>
+      </ul>
+
+      <h2> 2.3 · စာမေးပွဲ အကြံပြုချက်များ 🎯 </h2>
+      <ul>
+        <li> <i>"They've already been washed / We've got plenty of time"</i> → အကြောင်းပြချက်များဖြင့် စာကြောင်းများ <b> မလိုအပ် / မလိုအပ်ပါ။ </b> မဖြစ်ရဘူး။ </li>
+        <li> <i>Why did you…? Why didn't you…?</i> လေ့ကျင့်ခန်း → စာကြောင်း ၂ကြောင်းရေးပါ <b> +V3 မလိုပါ။ </b> နှင့် <b> +V3 ပါ၀င်နိုင်သည်။ </b>.</li>
+        <li> <i>"…so I stayed at home / so I didn't"</i> → လုပ်ဆောင်ချက်ပါသော စာကြောင်းများ <b> မဖြစ်ခဲ့ဘူး </b> → <b> မလိုအပ်ပါ။ </b> ၊ မလိုအပ်ပါဘူး။ </li>
+        <li> <i>to</i> ဟူသော စကားလုံးကို စစ်ဆေးကြည့်ပါ- <i>needn't to</i> နှင့် <i>don't need + V</i> နှစ်ခုစလုံးသည် ထောင်ချောက်များဖြစ်သည်။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ် သင်ယူသူများ၏ အဖြစ်များသော အမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese researchers often say. </th><th> ✅ That's right. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> You don't have to come. </td><td class="yes"> You don't have to. <b> come </b>.</td><td class="why"> needn't + V </td></tr>
+        <tr><td class="no"> You don't have to come. </td><td class="yes"> It is not necessary. <b> To fight </b> come </td><td class="why"> need (normal verb) + to </td></tr>
+        <tr><td class="no"> Shouldn't. It's free. </td><td class="yes"> you <b> Not necessary. </b> Pay. It's free. </td><td class="why"> "not necessary" ≠ "forbidden" </td></tr>
+        <tr><td class="no"> No need to smoke here. (prohibition sign) </td><td class="yes"> you <b> You must not do it. </b> Smoking here. </td><td class="why"> Prohibition → Don't do. </td></tr>
+        <tr><td class="no"> She doesn't have to come. </td><td class="yes"> She didn't need it. <b> come </b>.</td><td class="why"> It is not related to people. </td></tr>
+        <tr><td class="no"> He doesn't need to cook. </td><td class="yes"> She didn't need it. <b> to cook </b>.</td><td class="why"> is missing </td></tr>
+        <tr><td class="no"> You don't have to bring it. </td><td class="yes"> You don't have to be. <b> brought. </b> That's it. </td><td class="why"> + has V3. </td></tr>
+        <tr><td class="no"> I didn't go because I didn't go. </td><td class="yes"> I <b> Not necessary. </b> Go, I won't. </td><td class="why"> needn't have = already done </td></tr>
+        <tr><td class="no"> Shouldn't I come (I mean, don't have to?) </td><td class="yes"><b> Do I need it? </b> Come? </td><td class="why"> Requesting a requirement uses a requirement. </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဉ် စကားပြောနှင့် စာရေးခြင်း ✍️ အသုံးချပါ။ </h2>
+      <ul>
+        <li><b> စကားပြောခြင်း (တစ်နေ့လျှင် 2 မိနစ်): </b> မနေ့ကအကြောင်းစဉ်းစားကြည့်ပါ - သင် <i>needn't have done</i> (ဘာမှမအတွက်လုပ်ခဲ့) နှင့်တစ်ခုသင် <i>didn't need to do</i> ။ </li>
+        <li><b> လက်ဆောင်များ/အကူအညီရယူခြင်း- </b> <i>"Oh, you needn't have done that! Thank you."</i> </li>
+        <li><b> လူသစ်ကို လမ်းညွှန်ခြင်း- </b> <i>"You must sign in every morning. You needn't wear a tie. You mustn't use the director's parking space."</i> </li>
+        <li><b> အလုပ်အီးမေးလ်- </b> <i>"You don't need to reply to this email."</i> </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> အနှုတ်မပြမီ <i>"Forbidden, or just not necessary?"</i> မေးပါ။ </li>
+      </ul>
+      <p class="note">🔁 <b> အကွာအဝေး သုံးသပ်ချက်- </b> 3၊ 7 နှင့် 14 ရက်ပြီးနောက်လေ့ကျင့်ခန်းများကိုပြန်လုပ်ပါ။ အချိန်တိုင်း "Redo wrong answers" ကို ဦးစားပေးပါ။ ဆက်စပ်- <b> ယူနစ် ၃၁ </b> (ရှိရန်/ရှိရန်)၊ <b> ယူနစ် ၂၇ </b> (ရှိနိုင်ပါတယ်)၊ <b> ယူနစ် ၃၃ </b> (သင့်)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: EXERCISES ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ ပရင့် / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit32.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy, 4th Edition · Unit 32 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    သင့်စက်တွင် သိမ်းဆည်းထားသော တိုးတက်မှု (localStorage) </footer>
+</div>
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> အဆင့် \u003c/th>\u003cth> ပစ္စုပ္ပန်/အနာဂတ် \u003c/th>\u003cth> အတိတ် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> မရှိမဖြစ် \u003c/td>\u003ctd> must/ have to \u003c/td>\u003ctd> ရန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> တားမြစ်ထားသည်။ \u003c/td>\u003ctd> မလုပ်ရဘူး။ \u003c/td>\u003ctd> (ခွင့်မပြု/မရ) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> မလိုအပ်ပါ။ \u003c/td>\u003ctd> မလိုအပ် / မလိုအပ် / မလိုပါ။ \u003c/td>\u003ctd> မလိုဘူး/မလိုဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> လုပ်ခဲ့ပေမယ့် မလိုအပ်ပါဘူး။ \u003c/td>\u003ctd>—\u003c/td>\u003ctd> +V3 မလိုပါ။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> သူ စောစောထစရာမလိုဘူး။ \u003c/th>\u003cth> စောစောထဖို့ မလိုဘူး။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> သူ \u003cb> စောစောထခဲ့တယ်။ \u003c/b> ဒါပေမယ့် မလိုအပ်ပါဘူး။ \u003c/td>\u003ctd> စောစောထဖို့ မလိုဘူး- \u003cb> လုပ်သည်ဖြစ်စေ၊ မလုပ်သည်ဖြစ်စေ မသိရပါ။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သူသည် အိပ်ရာထဲတွင် ကြာကြာနေနိုင်သည် ။ \u003c/td>\u003ctd> …ဒါကြောင့် သူမလုပ်ဘူး။ /…ဒါပေမယ့် သာယာတဲ့မနက်ခင်းလေးမို့ သူလုပ်လိုက်တယ်။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> စကားစပ် \u003c/th>\u003cth> ရွေးပါ။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> မရှိမဖြစ်၊ အရေးကြီးသည်၊ မဟုတ်ရင်... \u003c/td>\u003ctd>\u003cb> လုပ်ရမယ်။ \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အန္တရာယ်ရှိသော၊ လျှို့ဝှက်၊ \"don't…!\" \u003c/td>\u003ctd>\u003cb> မလုပ်ရဘူး။ \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အချိန်တွေ အများကြီး ပြီးသွားပြီ၊ ငါတစ်ယောက်တည်း စီမံခန့်ခွဲနိုင်တယ်။ \u003c/td>\u003ctd>\u003cb> မလိုအပ် / မလိုအပ်ပါ။ \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"Why did you …? Why didn't you …?\" — ပြီးပြီ။ \u003c/td>\u003ctd>\u003cb> +V3 မလိုပါ။ \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"…so I didn't\" ရှိ/မရှိ ရှင်းရှင်းလင်းလင်း မသိရသေးပါ။ \u003c/td>\u003ctd>\u003cb> မလိုအပ်ပါ။ \u003c/b>\u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ မှားတယ်။ \u003c/th>\u003cth> ✅ မှန်ပါတယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သင်စိုးရိမ်နေရန်မလိုအပ်ပါ။ \u003c/td>\u003ctd class=\"yes\"> မင်း မလိုဘူး။ \u003cb> စိတ်မပူနဲ့ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါတို့ အလျင်လိုနေစရာ မလိုဘူး။ \u003c/td>\u003ctd class=\"yes\"> ငါတို့ မလိုဘူး။ \u003cb> ရန် \u003c/b> မြန်မြန် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းငါ့ကိုမစောင့်ရဘူး။ (အဓိပ္ပါယ်: မလိုအပ်ပါဘူး) \u003c/td>\u003ctd class=\"yes\"> မင်း \u003cb> မလိုအပ် / မလိုအပ်ပါ။ \u003c/b> ကျွန်တော့်ကိုစောင့်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အပြင်မထွက်ရဘူးဆိုတော့ အိမ်မှာပဲနေခဲ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> မလိုအပ်ပါ။ \u003c/b> ထွက်သွားတော့ အိမ်မှာပဲနေခဲ့တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းစိုးရိမ်စရာ မလိုပါဘူး။ \u003c/td>\u003ctd class=\"yes\"> မင်းရှိဖို့ မလိုဘူး။ \u003cb> စိုးရိမ်သည်။ \u003c/b>.\u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လေ့လာသူတွေက မကြာခဏပြောလေ့ရှိတယ်။ \u003c/th>\u003cth> ✅မှန်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့်လဲ။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းလာဖို့ မလိုဘူး။ \u003c/td>\u003ctd class=\"yes\"> မင်း မလိုဘူး။ \u003cb> လာ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> needn't + V မလိုဘဲ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းလာစရာ မလိုဘူး။ \u003c/td>\u003ctd class=\"yes\"> မလိုအပ်ပါဘူး။ \u003cb> ရန် \u003c/b> လာ။ \u003c/td>\u003ctd class=\"why\"> need (normal verb) + to \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မပေးသင့်ပါ။ အခမဲ့ပါ။ \u003c/td>\u003ctd class=\"yes\"> မင်း \u003cb> မလိုအပ်ပါ။ \u003c/b> ပေးဆောင်။ အခမဲ့ပါ။ \u003c/td>\u003ctd class=\"why\"> \"not necessary\" ≠ \"forbidden\" \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဒီမှာ ဆေးလိပ်သောက်ဖို့ မလိုဘူး။ (တားမြစ်ဆိုင်းဘုတ်) \u003c/td>\u003ctd class=\"yes\"> မင်း \u003cb> မလုပ်ရဘူး။ \u003c/b> ဒီမှာ ဆေးလိပ်သောက်။ \u003c/td>\u003ctd class=\"why\"> တားမြစ်ချက် → မပြုလုပ်ရပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမ လာစရာ မလိုပါဘူး။ \u003c/td>\u003ctd class=\"yes\"> သူမ မလိုအပ်ပါ။ \u003cb> လာ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> လူနဲ့မဆိုင်ပါဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက ထမင်းချက်စရာ မလိုဘူး။ \u003c/td>\u003ctd class=\"yes\"> သူမ မလိုအပ်ပါ။ \u003cb> ချက်ပြုတ်ရန် \u003c/b>.\u003c/td>\u003ctd class=\"why\"> ပျောက်ဆုံးနေပါသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ယူလာစရာမလိုပါဘူး။ \u003c/td>\u003ctd class=\"yes\"> မင်းရှိဖို့ မလိုဘူး။ \u003cb> ယူဆောင်လာသည်။ \u003c/b> အဲဒါ။ \u003c/td>\u003ctd class=\"why\"> + V3 ရှိသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မသွားဘူးဆိုတော့ မသွားဘူး။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> မလိုအပ်ပါ။ \u003c/b> သွားတော့ ငါမလုပ်ဘူး။ \u003c/td>\u003ctd class=\"why\"> needn't have = လုပ်ထားပြီးသား \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါမလာရဘူးလား (ဆိုလိုတာက မလိုအပ်ဘူးလား?) \u003c/td>\u003ctd class=\"yes\">\u003cb> ငါလိုအပ်သလား \u003c/b> လာ? \u003c/td>\u003ctd class=\"why\"> လိုအပ်ချက်ကို တောင်းဆိုခြင်း လိုအပ်ချက်ကို အသုံးပြုသည်။ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 32 – မဖြစ်သင့်၊ မဖြစ်ရ၊ မလိုအပ်ဘူး | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit32.html';
+  var KEY = 'egu4_unit32_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. ရွေးချယ်စရာမျိုးစုံ (MCQ)',        desc:'ရွေးချယ်စရာများထဲမှ အကောင်းဆုံးအဖြေကို ရွေးချယ်ပါ။' },
+    { id:'B', title:'B. / verb ပုံစံများကို ဖြည့်ပါ။',    desc:'အရိပ်အမြွက်ကို လိုက်နာပြီး must / mustn\'t / needn\'t / needn\'t have … ကိုဖြည့်ပါ။' },
+    { id:'C', title:'ဂ။ နှုတ်ကပတ်တော်',     desc:'စကားလုံးများကို မှန်ကန်သောဝါကျအဖြစ် စီစဉ်ရန် ကိုနှိပ်ပါ၊ ထို့နောက် အဖြေကို စစ်ဆေးပါ။' },
+    { id:'D', title:'D. Dialogue gap-ဖြည့်စွက်ခြင်း။',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးထားသော အခြေအနေများ (ကိုယ်တိုင် အဆင့်သတ်မှတ်)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာနှင့် နှိုင်းယှဉ်ပါ၊ ထို့နောက် မိမိကိုယ်ကို အဆင့်သတ်မှတ်ပါ။ အလိုအလျောက်ဂိုးသွင်းခြင်းမဟုတ်ပါ။' },
+    { id:'F', title:'F. ယူနစ်၏နောက်ဆုံးမေးခွန်း (၈ မေးခွန်း)',    desc:'Unit 32 ဗဟုသုတအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ် လေ့ကျင့်ခန်းများ (ယူနစ် ၃၂ လေ့ကျင့်ခန်းများ)', desc:'လေ့ကျင့်ခန်း 32.1 → 32.4 Murphy တွင်ပါရှိသည့်အတိုင်း အတိအကျရှင်းပြချက်များနှင့် စာကြောင်းများကို ပြန်လည်ပြင်ဆင်သည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'Multiple choice', fill:'Fill in', order:'Word order',
+                     self:'Self-written', match:'Matching' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'The baby is asleep. We ______ make any noise.',
+      opts:['needn\'t','mustn\'t','don\'t need to','must'], a:1,
+      exp:'ဆူညံသံမဖြစ်စေရ → မလိုအပ်ပါ။ needn\'t/don\'t need to = မလိုအပ်၊ အဓိပ္ပါယ်မှားသည်။' },
+    { id:'a2', sec:'A', type:'mcq', q:'We\'ve got plenty of time. We ______ hurry.',
+      opts:['mustn\'t','needn\'t','must','needn\'t to'], a:1,
+      exp:'အလျင်လိုစရာမလို → needn\'t + V (no to)။' },
+    { id:'a3', sec:'A', type:'mcq', q:'You ______ to bring a towel. The hotel provides them.',
+      opts:['needn\'t','don\'t need','mustn\'t','must'], a:1,
+      exp:'"to" အောက်ပါအတိုင်း → မလိုအပ်ပါ။ မလိုအပ်ပါဘူး။' },
+    { id:'a4', sec:'A', type:'mcq', q:'I cooked a big dinner, but nobody was hungry. I ______ so much food.',
+      opts:['needn\'t cook','didn\'t need to cook','needn\'t have cooked','mustn\'t have cooked'], a:2,
+      exp:'ချက်ပြုတ်ပြီးသားဖြစ်သော်လည်း မလိုအပ်ဘဲ → မလိုအပ်ခြင်း + V3 ထွက်လာသည်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'The meeting was cancelled, so I ______ go to the office. I stayed at home.',
+      opts:['needn\'t have gone','didn\'t need to','mustn\'t','needn\'t'], a:1,
+      exp:'သွားစရာ မလိုဘူး၊ တကယ်တော့ မသွားဘူး → မလိုဘူး။ သွားပြီ = သွားပြီ။' },
+    { id:'a6', sec:'A', type:'mcq', q:'This is very important. You ______ remember to lock the door.',
+      opts:['must','needn\'t','mustn\'t','don\'t need to'], a:0,
+      exp:'အရေးကြီးတာက လုပ်ဖို့လိုတယ် → လုပ်ရမယ်။' },
+    { id:'a7', sec:'A', type:'mcq', q:'Choose the CORRECT sentence:',
+      opts:['You needn\'t to worry about me.','You needn\'t worry about me.','You don\'t need worry about me.','You needn\'t worrying about me.'], a:1,
+      exp:'မလိုအပ် + အခြေခံ V၊ မလိုပါ။' },
+    { id:'a8', sec:'A', type:'mcq', q:'Thank you for the flowers! You really ______.',
+      opts:['mustn\'t have','needn\'t have','didn\'t need','needn\'t'], a:1,
+      exp:'ယဉ်ကျေးစွာ ကျေးဇူးတင်ပါသည်- "You needn\'t have!" = မင်းသူတို့ကို ဝယ်ခဲ့တယ်၊ ဒါပေမယ့် မင်း (ဒုက္ခအများကြီးပေးစရာမလိုဘူး)။' },
+
+    /* ===== B. Fill in ===== */
+    { id:'b1', sec:'B', type:'fill', q:'I can do the washing-up. You ______ (needn\'t / help) me.',
+      acc:["needn't help"], ans:"needn't help",
+      exp:'ကူညီရန်မလိုအပ်ပါ → needn\'t + V.' },
+    { id:'b2', sec:'B', type:'fill', q:'Hoa ______ (not / need / come) to the meeting. Her boss will be there.',
+      acc:["doesn't need to come",'does not need to come',"needn't come"], ans:"doesn't need to come",
+      exp:'Hoa = သူမ → ရန်မလို + V (သို့ မလိုအပ်ပါ)။' },
+    { id:'b3', sec:'B', type:'fill', q:'We waited for an hour, but the train was on time. We ______ (needn\'t have / arrive) so early.',
+      acc:["needn't have arrived",'need not have arrived'], ans:"needn't have arrived",
+      exp:'အစောကြီးရောက်ပေမယ့် မလိုအပ်ဘဲ → မလိုအပ်တာ + V3 (ရောက်သည်)။' },
+    { id:'b4', sec:'B', type:'fill', q:'This plant is poisonous. You ______ eat it. (forbidden)',
+      acc:["mustn't",'must not'], ans:"mustn't",
+      exp:'အန္တရာယ် → တားမြစ် → မပြုရပါ။' },
+    { id:'b5', sec:'B', type:'fill', q:'It was a sunny day, so we ______ (not / need / take) umbrellas. We left them at home.',
+      acc:["didn't need to take",'did not need to take'], ans:"didn't need to take",
+      exp:'မလိုအပ်ပါ၊ မယူခဲ့ပါ → မလိုအပ်ပါ + V ။' },
+    { id:'b6', sec:'B', type:'fill', q:'You ______ (needn\'t have / worry). The exam was easy.',
+      acc:["needn't have worried",'need not have worried'], ans:"needn't have worried",
+      exp:'စိတ်ပူနေပေမယ့် → စိတ်ပူစရာမလိုပါဘူး။' },
+    { id:'b7', sec:'B', type:'fill', q:'The tickets are free, so you ______ pay. (not necessary — one negative word)',
+      acc:["needn't"], ans:"needn't",
+      exp:'ပေးချေရန်မလိုအပ်ပါ → needn\'t + V.' },
+    { id:'b8', sec:'B', type:'fill', q:'This is a secret. You ______ tell anyone. (forbidden)',
+      acc:["mustn't",'must not'], ans:"mustn't",
+      exp:'လျှို့ဝှက်ချက် → မပြောရန် တားမြစ် → မပြောသင့်ပါ။' },
+
+    /* ===== C. Word order ===== */
+    { id:'c1', sec:'C', type:'order', q:'Arrange: (needn\'t / you / tomorrow / come)',
+      tokens:['You',"needn't",'come','tomorrow'],
+      acc:["you needn't come tomorrow"], ans:'You needn\'t come tomorrow.',
+      exp:'+ အခြေခံ V မလိုပါ။' },
+    { id:'c2', sec:'C', type:'order', q:'Arrange: (don\'t / to / we / hurry / need)',
+      tokens:['We',"don't",'need','to','hurry'],
+      acc:["we don't need to hurry"], ans:'We don\'t need to hurry.',
+      exp:'+ V လုပ်ဖို့ မလိုပါဘူး။' },
+    { id:'c3', sec:'C', type:'order', q:'Arrange: (have / needn\'t / you / bought / so much)',
+      tokens:['You',"needn't",'have','bought','so','much'],
+      acc:["you needn't have bought so much"], ans:'You needn\'t have bought so much.',
+      exp:'မလိုအပ်ပါ + V3 - ဝယ်ထားပေမယ့် မလိုအပ်ပါဘူး။' },
+    { id:'c4', sec:'C', type:'order', q:'Arrange: (mustn\'t / be / we / late / again)',
+      tokens:['We',"mustn't",'be','late','again'],
+      acc:["we mustn't be late again"], ans:'We mustn\'t be late again.',
+      exp:'mustn\'t + V: နောက်ကျနေဖို့ မလိုပါဘူး။' },
+    { id:'c5', sec:'C', type:'order', q:'Arrange: (could / taken / you / have / a taxi)',
+      tokens:['You','could','have','taken','a','taxi'],
+      acc:['you could have taken a taxi'], ans:'You could have taken a taxi.',
+      exp:'could have + V3 = လုပ်နိုင်သည် (အဖော်မလိုပါ)။' },
+
+    /* ===== D. Dialogue ===== */
+    { id:'d1', sec:'D', type:'fill', q:'A: Shall I wash these cups?  B: No, you ______ wash them. I\'ve already done it.',
+      acc:["needn't","don't need to",'do not need to','need not'], ans:"needn't",
+      exp:'ဆေးပြီးသား → မလိုအပ် → မလိုအပ်/ မလိုအပ်ပါ။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: I took a taxi to get here on time.  B: You ______ (take) a taxi. The concert started late.',
+      acc:["needn't have taken",'need not have taken'], ans:"needn't have taken",
+      exp:'တက္ကစီစီးသော်လည်း မလိုအပ်ဘဲ → မလိုအပ်ပါ။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Can I tell Nam about the plan?  B: No! You ______ tell him. It\'s a surprise.',
+      acc:["mustn't",'must not'], ans:"mustn't",
+      exp:'အံ့အားသင့်စရာ → မပြောရန် တားမြစ် → မပြောရပါ။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Did you have to queue at the bank?  B: No, I ______ queue. There was nobody there.',
+      acc:["didn't need to","didn't have to",'did not need to','did not have to'], ans:"didn't need to",
+      exp:'တန်းစီရန်မလိုအပ်ပါ၊ တန်းစီခြင်းမပြုပါ → မလိုအပ်ပါ / မလိုအပ်ပါ။' },
+
+    /* ===== E. Self-written ===== */
+    { id:'e1', sec:'E', type:'self', q:'သင့်အိမ်တွင်နေနေသည့်သူငယ်ချင်းအတွက် ညွှန်ကြားချက်များရေးပါ- စာကြောင်း ၂ ကြောင်းရပါမည်၊ ၂ ကြောင်းမဖြစ်ရမည်၊ ၂ မလိုအပ်/မလိုအပ်ပါ။',
+      sample:'You must lock the door when you go out. You must feed the cat. You mustn\'t open the balcony door — the cat might escape. You mustn\'t use the old socket. You needn\'t water the plants. You don\'t need to cook — there\'s food in the fridge.',
+      exp:'must = လုပ်ရန် လိုအပ်သည်။ mustn\'t = တားမြစ်ထားသည်။ needn\'t (no to) / don\'t need to (with to) = မလိုအပ်ပါ။' },
+    { id:'e2', sec:'E', type:'self', q:'မလိုအပ်ဘဲ မကြာသေးမီက သင်ပြုလုပ်ခဲ့သော အရာ 1 ခုကို ဖော်ပြပါ — မလိုအပ်သော 1 စာကြောင်း + V3 စာကြောင်းနှင့် 1 တွင် + V3 စာကြောင်းကို ရေးပါ။',
+      sample:'I needn\'t have printed all the documents. I could have shown them on my laptop.',
+      exp:'needn\'t have + V3 = လုပ်ခဲ့ပေမယ့် မလိုအပ်ပါဘူး။ could have + V3 = အခြားနည်းဖြင့် လုပ်နိုင်သည်။' },
+    { id:'e3', sec:'E', type:'self', q:'မလိုအပ်ဘဲ စာကြောင်း ၁ ကြောင်းကို ရေးပါ… ဒါကြောင့် မလိုပါဘူး၊ 1 နဲ့ မလိုအပ်ပါဘူး… ကွာခြားချက်ကို သိနိုင်ပါတယ်။',
+      sample:'It was a holiday, so I didn\'t need to set an alarm, so I didn\'t. But I still got up at 6 — I needn\'t have got up so early.',
+      exp:'wasn\'t need to = မလိုအပ်ဘူး (ဒီမှာ မလုပ်ခဲ့ဘူး); needn\'t have = လုပ်ခဲ့ပေမယ့် မလိုအပ်ပါဘူး။' },
+
+    /* ===== F. End-of-unit quiz ===== */
+    { id:'f1', sec:'F', type:'fill', q:'There\'s a lot of food left. You ______ (needn\'t / buy) any more.',
+      acc:["needn't buy"], ans:"needn't buy",
+      exp:'ထပ်ဝယ်ရန်မလိုအပ်ပါ → needn\'t + V.' },
+    { id:'f2', sec:'F', type:'mcq', q:'You ______ swim in this river. It\'s very dangerous.',
+      opts:['needn\'t','mustn\'t'], a:1,
+      exp:'အန္တရာယ် → တားမြစ် → မပြုရပါ။' },
+    { id:'f3', sec:'F', type:'mcq', q:'I ______ an umbrella. It didn\'t rain at all. (already took it)',
+      opts:['didn\'t need to take','needn\'t have taken'], a:1,
+      exp:'ယူထားသော်လည်း မလိုအပ်သော → မလိုအပ်ပါ။' },
+    { id:'f4', sec:'F', type:'fill', q:'Translate into English (use don\'t need to): "You don\'t need to book a table."',
+      acc:["you don't need to book a table","you do not need to book a table","you don't need to reserve a table","you do not need to reserve a table"],
+      ans:'You don\'t need to book a table.',
+      exp:'မလိုအပ်ပါ → မလိုအပ်ပါ + V ။' },
+    { id:'f5', sec:'F', type:'mcq', q:'Choose the CORRECT sentence:',
+      opts:['We don\'t need hurry.','We needn\'t to hurry.','We needn\'t hurry.'], a:2,
+      exp:'မလိုအပ် + V (no to); + to + V မလိုပါဘူး။' },
+    { id:'f6', sec:'F', type:'fill', q:'Why did you shout? You ______ (needn\'t have / shout). I was listening.',
+      acc:["needn't have shouted",'need not have shouted'], ans:"needn't have shouted",
+      exp:'အော်နေပေမယ့် မလိုဘူး → အော်စရာမလိုဘူး။' },
+    { id:'f7', sec:'F', type:'fill', q:'The doctor said I ______ eat sugar for a month. It\'s very important. (forbidden)',
+      acc:["mustn't",'must not'], ans:"mustn't",
+      exp:'အရေးကြီးသော ညွှန်ကြားချက်၊ မစားရန် တားမြစ် → မစားရပါ။' },
+    { id:'f8', sec:'F', type:'mcq', q:'He ______ get up early, so he slept until ten.',
+      opts:['didn\'t need to','needn\'t have'], a:0,
+      exp:'စောစောထရန် မလိုအပ်ဘဲ → မလိုအပ်ပါ။' },
+
+    /* ===== G. Book exercises ===== */
+    { id:'h1', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'2. The bus doesn\'t leave for an hour. We mustn\'t / don\'t need to rush.',
+      opts:['mustn\'t','don\'t need to'], a:1,
+      exp:'အချိန်အများကြီး → အလျင်စလိုလုပ်စရာမလို → မလိုအပ်ပါဘူး။' },
+    { id:'h2', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'3. I have to email the bank today. I must / mustn\'t remember to do it.',
+      opts:['must','mustn\'t'], a:0,
+      exp:'→ မှတ်ထားဖို့ လိုတယ်။' },
+    { id:'h3', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'4. I have to email the bank today. I mustn\'t / needn\'t forget.',
+      opts:['mustn\'t','needn\'t'], a:0,
+      exp:'မမေ့ရန် → မမေ့သင့်ပါ။' },
+    { id:'h4', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'5. Think about it for a few days. You mustn\'t / don\'t need to give me an answer now.',
+      opts:['mustn\'t','don\'t need to'], a:1,
+      exp:'စဉ်းစားရန်အချိန် → ယခု အဖြေမလိုအပ်ပါ → မလိုအပ်ပါ။' },
+    { id:'h5', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'6. We needn\'t / mustn\'t peel these potatoes. Someone has already peeled them.',
+      opts:['needn\'t','mustn\'t'], a:0,
+      exp:'အခွံခွာပြီး → မလိုအပ် → မလိုအပ်ပါ။' },
+    { id:'h6', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'7. This camera is expensive. You must / needn\'t look after it, and you mustn\'t / don\'t need to drop it.',
+      opts:['must … mustn\'t','needn\'t … don\'t need to','must … don\'t need to'], a:0,
+      exp:'ဂရုစိုက်ရန်လိုသည် → must; မချရ → မချရဘူး ။' },
+    { id:'h7', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.1 – ဘယ်ဟာမှန်လဲ။',
+      q:'8. A: What kind of flat do you want? B: It needn\'t / mustn\'t be in the centre — that\'s not important. But it must / mustn\'t have a balcony — that\'s essential.',
+      opts:['mustn\'t … mustn\'t','needn\'t … must','needn\'t … mustn\'t'], a:1,
+      exp:'"Not important" → မလိုအပ်ပါ။  "essential" → ဖြစ်ရမည်။' },
+
+    { id:'h8', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.2 – မလိုအပ် + မေး/လာ/ရှင်းပြ/လမ်းလျှောက်ပါ။',
+      q:'2. I can go to the post office alone. You ______ with me.',
+      acc:["needn't come",'need not come'], ans:"needn't come",
+      exp:'လာရန် မလိုအပ်ပါ → လာရန် မလိုအပ်ပါ။' },
+    { id:'h9', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.2 – မလိုအပ် + မေး/လာ/ရှင်းပြ/လမ်းလျှောက်ပါ။',
+      q:'3. We ______ to the station. My dad will drive us.',
+      acc:["needn't walk",'need not walk'], ans:"needn't walk",
+      exp:'တစ်စုံတစ်ယောက် → လမ်းလျှောက်ရန် မလိုအပ်ပါ။' },
+    { id:'h10', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.2 – မလိုအပ် + မေး/လာ/ရှင်းပြ/လမ်းလျှောက်ပါ။',
+      q:'4. Use my computer whenever you want. You ______ me first.',
+      acc:["needn't ask",'need not ask'], ans:"needn't ask",
+      exp:'ခွင့်ပြုချက်တောင်းရန်မလိုအပ်ပါ → မေးရန်မလိုအပ်ပါ။' },
+    { id:'h11', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.2 – မလိုအပ် + မေး/လာ/ရှင်းပြ/လမ်းလျှောက်ပါ။',
+      q:'5. I know exactly what happened. You ______ any more.',
+      acc:["needn't explain",'need not explain'], ans:"needn't explain",
+      exp:'နားလည်ပြီးသား → ရှင်းပြနေစရာ မလိုပါဘူး။' },
+
+    { id:'h12', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.3 – မလိုအပ်ပါ…/ ရှိနိုင်သည်…',
+      q:'2. Why did you walk home in the rain? Why didn\'t you call me? → You ______ home. You could have called me.',
+      acc:["needn't have walked",'need not have walked'], ans:"needn't have walked",
+      exp:'လမ်းလျှောက်သော်လည်း မလိုအပ်ခြင်း → လမ်းလျှောက်ရန် မလိုအပ်ပါ။' },
+    { id:'h13', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.3 – မလိုအပ်ပါ…/ ရှိနိုင်သည်…',
+      q:'3. Why did you rent a flat? Why didn\'t you live with us? → You needn\'t have rented a flat. You ______ with us.',
+      acc:['could have lived','could have stayed'], ans:'could have lived',
+      exp:'လုပ်နိုင်သည် → ဖြစ်နိုင်သည် + V3 (အသက်ရှင်ခဲ့သည်)။' },
+    { id:'h14', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.3 – မလိုအပ်ပါ…/ ရှိနိုင်သည်…',
+      q:'4. Why did he wake me at 5 a.m.? Why didn\'t he wait until 7? → He ______ me at 5 a.m.',
+      acc:["needn't have woken",'need not have woken'], ans:"needn't have woken",
+      exp:'+ V3: နိုး → နိုး → နိုးသည် ။' },
+    { id:'h15', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.3 – မလိုအပ်ပါ…/ ရှိနိုင်သည်…',
+      q:'5. Why did you get angry? Why weren\'t you calmer? → You needn\'t have got angry. You ______ calmer.',
+      acc:['could have been'], ans:'could have been',
+      exp:'could have +be: ပိုငြိမ်သက်သွားနိုင်တယ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.3 – မလိုအပ်ပါ…/ ရှိနိုင်သည်…',
+      q:'6. Why did you pay for everything? Why didn\'t you let me pay half? → You ______ for everything.',
+      acc:["needn't have paid",'need not have paid'], ans:"needn't have paid",
+      exp:'အားလုံးကို ပေးချေသော်လည်း မလိုအပ်ပါ → ပေးချေရန် မလိုအပ်ပါ။' },
+
+    { id:'h17', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.4 - လိုအပ်ပါက ဝါကျများကို ပြင်ပါ။',
+      q:'3. Don\'t worry about the dishes. You needn\'t to wash them. → Fix the wrong part: You ______ them.',
+      acc:["needn't wash","don't need to wash",'do not need to wash',"don't have to wash"], ans:"needn't wash",
+      exp:'needn\'t + V without to → မလိုအပ်ဘဲ (သို့) ဆေးရန် မလိုအပ်ပါ။' },
+    { id:'h18', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.4 - လိုအပ်ပါက ဝါကျများကို ပြင်ပါ။',
+      q:'4. You mustn\'t wait for me. Go ahead and I\'ll catch up. → Fix: You ______ for me.',
+      acc:["needn't wait","don't need to wait","don't have to wait",'do not need to wait','do not have to wait'], ans:"needn't wait",
+      exp:'"don\'t need to wait" ဆိုသည်မှာ "forbidden to wait" → မလိုအပ်ခြင်း / မလိုအပ်ပါ။' },
+    { id:'h19', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.4 - လိုအပ်ပါက ဝါကျများကို ပြင်ပါ။',
+      q:'5. You don\'t need to print these photos. You can keep them on your phone.',
+      opts:['OK','Wrong → You mustn\'t print'], a:0,
+      exp:'ပရင့်ထုတ်ရန် မလိုအပ်ပါ → မလိုအပ်ပါ- ဝါကျမှန်ပါ (ပုံနှိပ်လည်း မှန်ကန်ရန် မလိုအပ်ပါ)။' },
+    { id:'h20', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 32.4 - လိုအပ်ပါက ဝါကျများကို ပြင်ပါ။',
+      q:'6. I needn\'t have cooked, so we ate at a restaurant. → Fix: I ______ cook, so we ate at a restaurant.',
+      acc:["didn't need to","didn't have to",'did not need to','did not have to'], ans:"didn't need to",
+      exp:'အမှန်တော့ မစားဘူး → မလိုအပ်ဘူး (မလိုအပ်ဘူး = ချက်ပြီးသား)။' },
+    { id:'h21', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 32.4 - လိုအပ်ပါက ဝါကျများကို ပြင်ပါ။',
+      q:'7. I needn\'t have bought milk. There were two bottles in the fridge.',
+      opts:['OK','Wrong → I didn\'t need to buy'], a:0,
+      exp:'ဝယ်ပြီးရင် မလိုအပ်တာတွေ့တယ် → needn\'t have buy: ဝါကျမှန်တယ်။' }
+  ];
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 59 – ပိုနှစ်သက်ပြီး နှစ်သက်သည် | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 59 – နှစ်သက်ပြီး နှစ်သက်သည် </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း ၅၅ ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> ဒီယူနစ်က စကားပြောနည်းတွေကို သင်ပေးတယ်။ <b> "ကြိုက်... နောက်ထပ်" </b>: <b> ပိုကြိုက်တယ်။ </b> (ဘုံအကျိုးစီးပွား)၊ <b> ပိုကြိုက်တယ်။ </b> နှင့် <b> ပြေမယ်။ </b> (အခြေအနေတခုခုမှာ လိုလားတယ်။ အခက်အခဲကတော့ ရှိတယ်။ <b> ဖွဲ့စည်းပုံမှာ အောက်ပါအတိုင်းဖြစ်သည်။ </b> : ဘယ်မှာသုံးရမလဲ။ <b> ရန် </b> ဘယ်မှာလဲ။ <b> -ing </b> ဘယ်မှာလဲ။ <b> မူရင်း V က မကြီးပါဘူး။ </b> <i>I'd rather you <b>did</b></i> သည် အတိတ်ကာလကို အဘယ်ကြောင့် အသုံးပြုသနည်း။ </p>
+      <div class="ex"> <b class="en">— Shall we take the bus? — I' <mark>d prefer to walk</mark> . / I' <mark>d rather walk</mark> .</b> <br> တူညီသော အဓိပ္ပါယ်ရှိသော စာကြောင်းနှစ်ကြောင်း : would like + <u> V သို့ </u> ၊ ကောင်းမယ် + <u> V ရှေ့ပြေးပုံစံ </u>.</div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> ပိုကြိုက် + N + to + N လက်ဖက်ရည်ကို ကော်ဖီကြိုက်တယ်။
+ပိုကြိုက် + V-ing + to + V-ing ကျွန်တော် စက်ဘီးစီးတာကို ပိုကြိုက်တယ်။
+prefer + to V + အစား + (V) သံသရာထက် လမ်းလျှောက်ရတာ ပိုကြိုက်တယ်။
+
+would like + to V (+V ထက် V) ထဲမှာနေချင်ပါတယ်။
+would rather + V (+ than V) I'd rather stay in than go out.
+မဟုတ်ဘူး + V အကြောင်းတော့ မပြောဘဲ မနေချင်ဘူး။
+would better + S + V- past I'd better you stayed. (လက်ရှိအဓိပ္ပါယ်) </div>
+      <div class="scroll"><table>
+        <tr><th> Structure </th><th> Theosophy </th><th> From comparison </th></tr>
+        <tr><td> I like it better (chunchun) </td><td> N / V-ing / to V </td><td><b> To fight </b> (with N, V-ing) · <b> rather than </b> (with a capital V) </td></tr>
+        <tr><td> would prefer (especially) </td><td> to V </td><td> rather than </td></tr>
+        <tr><td> prefer (especially) </td><td> V Prototype (not big) </td><td><b> Than </b></td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. လုပ်ချင်တာကို ဦးစားပေးပြီး လုပ်တာကို ပိုနှစ်သက်တယ်။ </h2>
+      <ul>
+        <li> ဝါသနာအကြောင်းပြောပါ။ <b> ချွန် </b> : <i>I prefer to live in the country</i> = <i>I prefer living in the country.</i> </li>
+        <li><b> A မှ B ကိုပိုနှစ်သက်သည်။ </b> : <i>I prefer this jacket <b>to</b> that one.</i> · <i>I prefer reading <b>to</b> watching TV.</i> </li>
+        <li> ဒါပေမယ့် အတူ <b> V သို့ </b> သုံးရမယ်။ <b> မည့်အစား </b> : <i>I prefer <b>to read rather than watch</b> TV.</i> </li>
+      </ul>
+
+      <h2> 1.4 · B. နှစ်သက်သည် (I'd prefer...) </h2>
+      <ul>
+        <li> အတွက်အသုံးပြုသည်။ <b> သီးခြားအခြေအနေများ </b> : <i>Would you prefer tea or coffee?</i> </li>
+        <li><b> လုပ်ဖို့ ပိုကြိုက်တယ်။ </b> (များသောအားဖြင့် မသုံးဘူး : <i>— Shall we go by bus? — I'd prefer to drive.</i> လုပ်တာ ပိုကြိုက်မယ်။ </li>
+        <li> <i>I'd prefer to stay at home tonight <b>rather than</b> go out.</i> </li>
+      </ul>
+
+      <h2> 1.5 · C. ပိုကြိုက်တယ် (I'd rather...) </h2>
+      <ul>
+        <li><b> would better do = လုပ်ချင်သည် </b> ဒါပေမယ့် သုံးပါ။ <b> မူရင်း V က မကြီးပါဘူး။ </b> : <i>I'd rather drive.</i> (မပြောပါဘူး။ <s> မောင်းချင်လိုက်တာ </s>)</li>
+        <li> အနုတ်လက္ခဏာ- <b> မကြိုက်ဘူး။ </b> + V: <i>I'd rather not go out tonight.</i> · <i>— Do you want to talk? — I'd rather not.</i> </li>
+        <li> နှိုင်းယှဉ်- <b> လုပ်ရတာထက် လုပ်ချင်သည် </b> : <i>I'd rather walk <b>than</b> take a taxi.</i> </li>
+      </ul>
+
+      <h2> 1.6 · D. တစ်စုံတစ်ယောက်က တစ်ခုခုလုပ်ခဲ့တာကို ပိုကြိုက်တယ်။ </h2>
+      <div class="formula"> I'd rather + you / he / she… + V (past) → PRESENT / အနာဂတ် အဓိပ္ပါယ်
+မောင်းရတာ ပိုကြိုက်တယ်။              (မင်းကို မောင်းချင်တယ်)
+မနက်ဖြန် သူ လာလည်တာ ပိုကြိုက်တယ်။       (မပြောနဲ့ ၊ သူ လာစေချင်တယ် )
+မင်း ဘယ်သူ့ကိုမှ မပြောခဲ့တာ ပိုကောင်းပါတယ်။ (မပြောပြဖို့ မျှော်လင့်ပါတယ်) </div>
+      <p class="note"> ⚠️ Verb at <b> အတိတ် </b> ဒါပေမယ့် အဓိပ္ပါယ် <b> ပစ္စုပ္ပန် </b> . နှိုင်းယှဉ်- <i>I'd rather <b>cook</b> now</i> (ငါချက်ပြုတ်သည်) ↔ <i>I'd rather <b>you cooked</b> now</i> (မင်းချက်ပြုတ်သည်)။ အတူ <b> ဖြစ် </b> ၊ စာအုပ်များ <i>were</i> : <i>I'd rather you were here.</i> ကိုအသုံးပြုသည်။ </p>
+
+      <h2> 1.7 · နှိုင်းယှဉ် &amp; အထောက်အထားများ </h2>
+      <div class="scroll"><table>
+        <tr><th> see... </th><th> Then use it. </th><th> For example </th></tr>
+        <tr><td><b> I like it better. </b> + Do it yourself. </td><td> V infinitive, compared with. <b> Than </b></td><td> I want to settle. <b> stay </b> Than <b> go </b>.</td></tr>
+        <tr><td><b> I like it better. </b> + Other people do it too. </td><td> S+V is over </td><td> I want to settle. <b> You stayed. </b>.</td></tr>
+        <tr><td><b> I like it. </b></td><td> Compare to V. <b> rather than </b></td><td> I like it. <b> to stay </b> Instead of going </td></tr>
+        <tr><td><b> I like it better. </b> (not would) + V-ing/N </td><td> Compare equally. <b> To fight </b></td><td> I like it. <b> staying </b> in the <b> will go </b> get out </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I want to stay in the house. </td><td class="yes"> I want to settle. <b> stay </b> at home. </td></tr>
+        <tr><td class="no"> I like tea more than coffee. </td><td class="yes"> I prefer tea. <b> To fight </b> coffee. </td></tr>
+        <tr><td class="no"> You prefer not to smoke here. </td><td class="yes"> I like you better. <b> No </b> Smoking here. </td></tr>
+        <tr><td class="no"> I don't want to go. </td><td class="yes"> I want to settle. <b> Don't go </b>.</td></tr>
+        <tr><td class="no"> I prefer walking to driving. </td><td class="yes"> I prefer to walk. <b> rather than </b> Drive. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၅၈ </b> (ကြိုက် / ကြိုက်သည်) · <b> ယူနစ် ၁၃၆ </b> (A မှ B ကိုဦးစားပေးသည် — ဝိဘတ်) · <b> ယူနစ် ၃၉ </b> (ဆန္ဒ + အတိတ် ဆိုသည်မှာ ပစ္စုပ္ပန် ၊ "logic" နှင့် အတူတူပင် ဖြစ်သည် ။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🍵 <b class="en">I prefer green tea  <mark>to</mark>  coffee.</b> <span class="note"> (IELTS Speaking — ဘုံအကျိုးစီးပွားများ) </span></div>
+      <div class="ex"> 🏡 <b class="en">I prefer  <mark>working</mark>  from home  <mark>to commuting</mark>  every day.</b> <span class="note"> (အလုပ် - လုပ်ဆောင်ချက် ၂ ခု နှိုင်းယှဉ်ပါ) </span></div>
+      <div class="ex"> 🚕 <b class="en">— Shall we take the bus? — I' <mark>d rather get</mark>  a taxi. It's raining.</b> <span class="note"> (ဘဝ - သီးခြားအခြေအနေများ) </span></div>
+      <div class="ex"> 🍽️ <b class="en">I' <mark>d prefer to eat</mark>  at home tonight  <mark>rather than</mark>  go out.</b> <span class="note"> (ဘဝ-အဆိုပြုချက်) </span></div>
+      <div class="ex"> 🙊 <b class="en">I' <mark>d rather not</mark>  talk about my salary.</b> <span class="note"> (ဆက်သွယ်ရေး - ယဉ်ကျေးစွာ ငြင်းဆိုခြင်း) </span></div>
+      <div class="ex"> 📞 <b class="en">Are you going to call the client, or would you rather I  <mark>called</mark>  her?</b> <span class="note"> (အလုပ် - အလုပ်ခွဲခြင်း) </span></div>
+      <div class="ex"> 🤫 <b class="en">I'd rather you  <mark>didn't</mark>  tell anyone about this yet.</b> <span class="note"> (ဆက်သွယ်ရေး - လျှို့ဝှက်ထားပေးလို့ ကျေးဇူးပါ) </span></div>
+      <div class="ex"> ✍️ <b class="en">Many young people prefer  <mark>to rent</mark>  a flat  <mark>rather than buy</mark>  one.</b> <span class="note"> (IELTS Writing — ခေတ်ရေစီးကြောင်းများကို မီးမောင်းထိုးပြခြင်း) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> အစား = "ဗလာ" </b> : <i>would rather</i> ပြီးရင် V ပါ။ <b> မကြီးဘူး။ </b> , နှင့်နှိုင်းယှဉ် <b> ထက် </b> → <i>rather … than</i> </li>
+        <li><b> "to" ကြိုက်ပါတယ်။ </b> : <i>prefer A <b>to</b> B</i> , <i>would prefer <b>to</b> V</i> ; V သို့ အသုံးပြုသည့်အခါမှသာ နှိုင်းယှဉ်မှုကို ပြောင်းလဲရပါမည်။ <b> မည့်အစား </b> ("to" ရှုပ်ထွေးသော စာလုံးနှစ်လုံးကို ရှောင်ကြဉ်ပါ။ </li>
+        <li><b> တစ်စုံတစ်ယောက်က ပြုလုပ်သည် → တင်းမာမှုကို ရွှေ့ဆိုင်းသည်။ </b> <i>I'd rather you <b>went</b> / he <b>stayed</b> / they <b>didn't</b></i> — <i>I wish you were here</i> နှင့် အတူတူပင်။ </li>
+        <li> အနုတ်လက္ခဏာ- <b> မကြိုက်ဘူး။ </b> (ဒိဋ္ဌိ) ↔ <b> မင်းမလုပ်ခဲ့တာကို ပိုကြိုက်တယ်။ </b> (အခြားလူများ)။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> ရှိသည် <b> ထက် </b> → ပထမဝါကျဖြစ်ရမည်။ <b> ပြေမယ်။ </b> (မကြိုက်ဘူး)။ </li>
+        <li> ရှိသည် <b> မည့်အစား </b> → ပထမဝါကျသည် အများအားဖြင့် ဖြစ်သည်။ <b> V ကိုပိုနှစ်သက် / V ကိုပိုနှစ်သက်သည်။ </b>.</li>
+        <li> ရှိသည် <b> ရန် </b> အောက်ပါအပိုဒ် → တွင် + V-ing/noun <b> A မှ B ကိုပိုနှစ်သက်သည်။ </b>.</li>
+        <li> Sau <i> I'd rather + အခြားနာမ်စား </i> (you, he, she, they…) → ကြိယာ <b> အတိတ် </b> ; လက်ရှိအဖြေများကို ချက်ချင်းဖယ်ရှားပါ။ </li>
+        <li> ဝါကျကို ပြန်ရေးပါ- <i>I'd prefer to X rather than Y</i> ⇔ <i>I'd rather X than Y</i> . </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I prefer coffee to tea. </td><td class="yes"> I like coffee. <b> To fight </b> tea. </td><td class="why"> A prefers B. </td></tr>
+        <tr><td class="no"> I want to go home. </td><td class="yes"> I want to settle. <b> go </b> house. </td><td class="why"> would better + V not to </td></tr>
+        <tr><td class="no"> I want to go home to stay here. </td><td class="yes"> I want to go home <b> Than </b> stay here </td><td class="why"> rather than </td></tr>
+        <tr><td class="no"> I prefer to stay at home. </td><td class="yes"> I like it. <b> to stay </b> house. </td><td class="why"> I prefer + V. </td></tr>
+        <tr><td class="no"> I like you better tomorrow. </td><td class="yes"> I like you better. <b> I came. </b> Tomorrow. </td><td class="why"> other person → past </td></tr>
+        <tr><td class="no"> I wish you wouldn't tell her. </td><td class="yes"> I like you better. <b> No </b> Tell her. </td><td class="why"> Negative → does not happen. </td></tr>
+        <tr><td class="no"> I don't want to answer. </td><td class="yes"> I want to settle. <b> do not answer </b>.</td><td class="why"> No + V </td></tr>
+        <tr><td class="no"> I prefer to walk rather than take the bus. </td><td class="yes"> I prefer to walk. <b> rather than </b> Take the bus. </td><td class="why"> V → instead </td></tr>
+        <tr><td class="no"> I prefer cats. </td><td class="yes"> I prefer cats ( <b> To fight </b> dogs). </td><td class="why"> prefer means "more" </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> IELTS စကားပြော </b> "Do you prefer A or B?" ကို- <i>I prefer A to B because…</i> သို့မဟုတ် <i>I'd rather A than B.</i> ဖြင့်ဖြေဆိုပါ။ </li>
+        <li><b> ယဉ်ကျေးစွာ ငြင်းဆိုခြင်း- </b> <i>I'd rather not, if you don't mind.</i> — "No, I don't want" ထက် ပိုပျော့ပါတယ်။ </li>
+        <li><b> အလုပ်- </b> <i>Would you rather I sent the report today or tomorrow?</i> </li>
+        <li><b> ရေးပါ </b> (မြို့/ကျေးလက်၊ စာအုပ်/ရုပ်ရှင်၊ ဘတ်စ်ကား/မော်တော်ဆိုင်ကယ်) အတွဲ ၃ တွဲကို ရွေးပြီး အတွဲတစ်ခုစီတွင် စာကြောင်း ၂ ကြောင်းရေးပါ- စာကြောင်းတစ်ကြောင်း <i>prefer … to</i>၊ စာကြောင်းတစ်ကြောင်း <i>would rather … than</i> . </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> အောက်ပါလေ့ကျင့်ခန်းကို ပြန်လုပ်ပါ။ <b>3</b>, <b>7</b> နှင့် <b> ၁၄ ရက် </b> မှားသောဝါကျကိုအာရုံစိုက်ပါ။ ဆက်စပ်- <b> ယူနစ် ၅၈ </b> (ကြိုက် / ကြိုက်သည်)၊ <b> ယူနစ် ၃၉ </b> (ဆန္ဒ + အတိတ်)၊ <b> ယူနစ် ၁၃၆ </b> (Preposition to after prefer)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit59.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy, 4th Edition · Unit 59 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> ဖွဲ့စည်းပုံ \u003c/th>\u003cth> သီအိုဆော့ \u003c/th>\u003cth> နှိုင်းယှဉ်မှုမှ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ပိုကြိုက်တယ် (ချွန်ချွန်) \u003c/td>\u003ctd> N / V-ing / to V \u003c/td>\u003ctd>\u003cb> ရန် \u003c/b> (N, V-ing ဖြင့်) · \u003cb> မည့်အစား \u003c/b> (V ကြီးဖြင့်) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပိုကြိုက်မယ် (အထူးသဖြင့်) \u003c/td>\u003ctd> V သို့ \u003c/td>\u003ctd> မည့်အစား \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပိုကြိုက်တယ် (အထူးသဖြင့်) \u003c/td>\u003ctd> V ရှေ့ပြေးပုံစံ (ကြီးကြီးမားမားမဟုတ်ပါ) \u003c/td>\u003ctd>\u003cb> ထက် \u003c/b>\u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> ကြည့်… \u003c/th>\u003cth> ထို့နောက် အသုံးပြုပါ။ \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> ပိုကြိုက်တယ်။ \u003c/b> + ကိုယ်တိုင်လုပ်ပါ။ \u003c/td>\u003ctd> V infinitive, ဖြင့် နှိုင်းယှဉ်သည်။ \u003cb> ထက် \u003c/b>\u003c/td>\u003ctd> ပြေချင်ပါတယ်။ \u003cb> နေပါ။ \u003c/b> ထက် \u003cb> သွား \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> ပိုကြိုက်တယ်။ \u003c/b> + တခြား​လူ​တွေ​လည်း လုပ်​တယ်။ \u003c/td>\u003ctd> S+V လွန်သွားပြီ \u003c/td>\u003ctd> ပြေချင်ပါတယ်။ \u003cb> မင်းနေခဲ့တယ်။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> ကြိုက်ပါတယ်။ \u003c/b>\u003c/td>\u003ctd> V သို့ နှိုင်းယှဉ်ပါ။ \u003cb> မည့်အစား \u003c/b>\u003c/td>\u003ctd> ကြိုက်ပါတယ်။ \u003cb> နေဖို့ \u003c/b> သွားမယ့်အစား \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> ပိုကြိုက်တယ်။ \u003c/b> (not would) + V-ing/N \u003c/td>\u003ctd> ညီတူညီမျှ နှိုင်းယှဉ်ပါ။ \u003cb> ရန် \u003c/b>\u003c/td>\u003ctd> ကြိုက်ပါတယ်။ \u003cb> နေနေ \u003c/b> ၌ \u003cb> သွားမယ်။ \u003c/b> ထွက် \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အိမ်ထဲမှာပဲနေစေချင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ပြေချင်ပါတယ်။ \u003cb> နေပါ။ \u003c/b> အိမ်မှာပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကော်ဖီထက် လက်ဖက်ရည်ကို ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> လက်ဖက်ရည်ကို ပိုကြိုက်တယ်။ \u003cb> ရန် \u003c/b> ကော်ဖီ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်း ဒီမှာ ဆေးလိပ်မသောက်တာ ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ မင်းကို ပိုကြိုက်တယ်။ \u003cb> မဟုတ်ဘူး \u003c/b> ဒီမှာ ဆေးလိပ်သောက်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မသွားချင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> ပြေချင်ပါတယ်။ \u003cb> မသွားနဲ့ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကားမောင်းတာထက် လမ်းလျှောက်ရတာ ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> လမ်းလျှောက်ရတာ ပိုကြိုက်တယ်။ \u003cb> မည့်အစား \u003c/b> မောင်း။ \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လက်ဖက်ရည်ထက် ကော်ဖီကို ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကော်ဖီကြိုက်တယ်။ \u003cb> ရန် \u003c/b> လက်ဖက်ရည်။ \u003c/td>\u003ctd class=\"why\"> A မှ B ကိုပိုနှစ်သက်သည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အိမ်ပြန်ချင်လိုက်တာ။ \u003c/td>\u003ctd class=\"yes\"> ပြေချင်ပါတယ်။ \u003cb> သွား \u003c/b> အိမ်။ \u003c/td>\u003ctd class=\"why\"> would better + V not to \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဒီမှာပဲနေဖို့ အိမ်ပြန်ချင်ပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> အိမ်ပြန်ချင်လိုက်တာ \u003cb> ထက် \u003c/b> ဒီမှာနေပါ။ \u003c/td>\u003ctd class=\"why\"> မည့်အစား \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အိမ်မှာနေရတာ ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကြိုက်ပါတယ်။ \u003cb> နေဖို့ \u003c/b> အိမ်။ \u003c/td>\u003ctd class=\"why\"> + V ကို ပိုကြိုက်တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ မနက်ဖြန် မင်းကို ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ မင်းကို ပိုကြိုက်တယ်။ \u003cb> လာခဲ့တယ်။ \u003c/b> မနက်ဖြန်။ \u003c/td>\u003ctd class=\"why\"> အခြားလူ → အတိတ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းသူမကိုမပြောဘဲနေစေချင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ မင်းကို ပိုကြိုက်တယ်။ \u003cb> မဟုတ်ဘူး \u003c/b> သူမကိုပြောပြပါ။ \u003c/td>\u003ctd class=\"why\"> အနုတ် → မဖြစ်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မဖြေချင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> ပြေချင်ပါတယ်။ \u003cb> မဖြေပါ။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> မဟုတ် + V \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဘတ်စ်ကားစီးတာထက် လမ်းလျှောက်ရတာ ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> လမ်းလျှောက်ရတာ ပိုကြိုက်တယ်။ \u003cb> မည့်အစား \u003c/b> ဘတ်စ်ကားစီးပါ။ \u003c/td>\u003ctd class=\"why\"> V → အစား \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကြောင်တွေကို ပိုကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကြောင်တွေကို ပိုကြိုက်တယ် ( \u003cb> ရန် \u003c/b> ခွေးများ)။ \u003c/td>\u003ctd class=\"why\"> prefer ဆိုသည်မှာ \"ပို\" နေပြီ၊ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 59 – ပိုနှစ်သက်ပြီး နှစ်သက်သည် | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit59.html';
+  var KEY = 'egu4_unit59_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. စကားလုံးများကိုဖြည့်ပါ/ကြိယာများကို ပေါင်းစပ်ပါ။',    desc:'နှစ်သက်ရာ / ကြိုက်သည် / ကြိုက်သည်ပြီးနောက် မှန်ကန်သောပုံစံကိုဖြည့်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz',            desc:'Unit 59 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 59 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 59.1 → 59.4 သည် Murphy\'s book (ဝါကျများကို ပြန်လည်ပြင်ဆင်ပြီးသည်) ၏ အတိအကျ သင်ခန်းစာပုံစံကို အောက်ပါအတိုင်း လိုက်နာပါသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I prefer tea ______ coffee.',
+      opts:['than','to','rather','from'], a:1,
+      exp:'A မှ B ကိုပိုနှစ်သက်သည်- ကော်ဖီမှလက်ဖက်ရည်ကိုကြိုက်သည်။ နှစ်သက်ရာပြီးနောက် "than" မသုံးပါနှင့်။' },
+    { id:'a2', sec:'A', type:'mcq', q:'— Shall we go by train? — I\'d rather ______.',
+      opts:['to drive','driving','drive','drove'], a:2,
+      exp:'would better + V infinitive not to → ငါမောင်းချင်သည်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'I\'d prefer ______ at home tonight.',
+      opts:['stay','to stay','stayed','than stay'], a:1,
+      exp:'would prefer + to V → ဆက်နေချင်ပါတယ်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'I\'d rather you ______ smoke in the house.',
+      opts:['don\'t','won\'t','didn\'t','not'], a:2,
+      exp:'ငါပိုကြိုက်တယ် + တစ်စုံတစ်ယောက် + အတိတ် V (လက်ရှိအဓိပ္ပာယ်) → မင်း ဆေးလိပ်မသောက်တာ ပိုကြိုက်တယ်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'I\'d rather walk ______ wait for the bus.',
+      opts:['than','to','rather than to','from'], a:0,
+      exp:'လုပ်ချင်သည် … လုပ်သည်ထက် : စောင့်တာထက် လမ်းလျှောက်ချင်သည် ။' },
+    { id:'a6', sec:'A', type:'mcq', q:'Sarah prefers to work alone ______ in a team.',
+      opts:['than','to','rather than','instead'], a:2,
+      exp:'(V) ထက် (V) ကို ပိုနှစ်သက်သည် - အဖွဲ့တစ်ဖွဲ့တွင် (အလုပ်လုပ်ခြင်းထက်) တစ်ယောက်တည်းအလုပ်လုပ်ခြင်းကို ပိုနှစ်သက်သည်။' },
+    { id:'a7', sec:'A', type:'mcq', q:'— Do you want to talk about it? — No, I\'d rather ______.',
+      opts:['not','not to','don\'t','didn\'t'], a:0,
+      exp:'လိုလားချက်ကို ငြင်းဆိုခြင်း- ငါ (+ V) ကို မကြိုက်ဘူး။ "to" မရှိပါ။' },
+    { id:'a8', sec:'A', type:'mcq', q:'Who\'s going to drive? — I\'d rather you ______.',
+      opts:['drive','to drive','drove','driving'], a:2,
+      exp:'ငါ + မင်း + အတိတ် V → မောင်းချင်တယ် ။' },
+
+    /*===== B. ===== စကားလုံးများကို ဖြည့်ပါ။*/
+    { id:'b1', sec:'B', type:'fill', q:'I prefer reading books ______ (watch) films.',
+      acc:['to watching'], ans:'to watching',
+      exp:'V-ing မှ V-ing → ကြည့်ရန် ပိုကြိုက်သည်။' },
+    { id:'b2', sec:'B', type:'fill', q:'I\'d rather ______ (cook) at home than eat out.',
+      acc:['cook'], ans:'cook',
+      exp:'would rather + V infinitive to မဟုတ်ပါ။' },
+    { id:'b3', sec:'B', type:'fill', q:'Would you prefer ______ (sit) by the window or near the door?',
+      acc:['to sit'], ans:'to sit',
+      exp:'+ V ကို ပိုကြိုက်တယ်။' },
+    { id:'b4', sec:'B', type:'fill', q:'I\'d rather he ______ (come) on Monday, not Friday.',
+      acc:['came'], ans:'came',
+      exp:'လိုချင်တာက + he + V past → came (အနာဂတ်/ပစ္စုပ္ပန် အဓိပ္ပါယ်)။' },
+    { id:'b5', sec:'B', type:'fill', q:'My parents prefer living in a village ______ (live) in a big city.',
+      acc:['to living'], ans:'to living',
+      exp:'V-ing မှ V-ing → အသက်ရှင်ခြင်းကို ပိုနှစ်သက်သည်။' },
+    { id:'b6', sec:'B', type:'fill', q:'I\'m tired. I\'d rather ______ (not / go) to the party.',
+      acc:['not go'], ans:'not go',
+      exp:'ငါမကြိုက်ဘူး + V infinitive → not go ။' },
+    { id:'b7', sec:'B', type:'fill', q:'I\'d prefer to take the stairs rather than ______ (use) the lift.',
+      acc:['use'], ans:'use',
+      exp:'V ထက် V ကို ပိုနှစ်သက်သည် (infinitive not to)။' },
+    { id:'b8', sec:'B', type:'fill', q:'I\'d rather you ______ (be) honest with me.',
+      acc:['were'], ans:'were',
+      exp:'ငါမင်းကို+အတိတ်ကာလရဲ့ဖြစ်တည်မှု → were ("you was" မပြောပါဘူး)။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (I\'d / stay / rather / home / than / go / out)',
+      tokens:["I'd",'rather','stay','home','than','go','out'],
+      acc:["i'd rather stay home than go out"], ans:'I\'d rather stay home than go out.',
+      exp:'ကြိုက်သည် + V ... ထက် + V ။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (I / prefer / cats / to / dogs)',
+      tokens:['I','prefer','cats','to','dogs'],
+      acc:['i prefer cats to dogs'], ans:'I prefer cats to dogs.',
+      exp:'A မှ B ကိုပိုနှစ်သက်သည်။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (I\'d / you / didn\'t / rather / tell / anyone)',
+      tokens:["I'd",'rather','you',"didn't",'tell','anyone'],
+      acc:["i'd rather you didn't tell anyone"], ans:'I\'d rather you didn\'t tell anyone.',
+      exp:'ငါ ပိုကြိုက်တယ် + မင်း + မ + V ။' },
+    { id:'c4', sec:'C', type:'order', q:'မေးခွန်းအဖြစ် စီရန်- (would / you / rather / I / called / him)',
+      tokens:['Would','you','rather','I','called','him'],
+      acc:['would you rather i called him'], ans:'Would you rather I called him?',
+      exp:'I + V past tense ကို ပိုကြိုက်လား။ = မင်း ငါ့ကို လုပ်စေချင်လား...?' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (I\'d / prefer / to / wait / rather / than / leave / now)',
+      tokens:["I'd",'prefer','to','wait','rather','than','leave','now'],
+      acc:["i'd prefer to wait rather than leave now"], ans:'I\'d prefer to wait rather than leave now.',
+      exp:'V ထက် V ကို ပိုကြိုက်တယ်။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Would you rather have pizza or noodles?  B: I\'d ______ have noodles.',
+      acc:['rather'], ans:'rather',
+      exp:'ပိုကြိုက်တယ် + V: ခေါက်ဆွဲကြိုက်တယ်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: Shall I tell Mum about the broken vase?  B: I\'d rather you ______. Let me tell her.',
+      acc:["didn't",'did not'], ans:'didn\'t',
+      exp:'မင်းမလုပ်ဘူး = မင်းမလုပ်ဘူးလို့ ငါမျှော်လင့်တယ်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Let\'s play football this afternoon.  B: I\'d prefer ______ (go) swimming.',
+      acc:['to go'], ans:'to go',
+      exp:'+ V ကို ပိုကြိုက်တယ်။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Do you want me to stay?  B: Yes, I\'d rather you ______ (stay) here with me.',
+      acc:['stayed'], ans:'stayed',
+      exp:'မင်း + အတိတ် V → နေခဲ့တာ ပိုကြိုက်တယ်။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'သင့်ဘုံအကျိုးစီးပွားများအကြောင်း စာကြောင်း 2 ကြောင်းရေးပါ- 1 စာကြောင်း "I prefer … to …"၊ 1 စာကြောင်း "I prefer to … rather than …"။',
+      sample:'I prefer swimming to running. I prefer to travel by train rather than fly.',
+      exp:'A မှ B ကို ပိုနှစ်သက်သည် (N/V-ing) · V ထက် V ကို ပိုနှစ်သက်သည်။' },
+    { id:'e2', sec:'E', type:'self', q:'ဒီည ရုပ်ရှင်သွားကြည့်ဖို့ ဖိတ်ခေါ်ထားပေမယ့် အိမ်မှာပဲနေချင်တယ်။ "I\'d rather … than …" နှင့် "I\'d rather not…" ဖြင့် စာပြန်ပါ။',
+      sample:'Thanks, but I\'d rather stay at home than go out tonight. I\'d rather not watch a horror film.',
+      exp:'would rather + V (not to), ယှဉ်တွဲ၊ အဆိုးမြင်တာတော့ မဖြစ်စေချင်ဘူး။' },
+    { id:'e3', sec:'E', type:'self', q:'"I\'d rather you…" နှင့် "I\'d rather you didn\'t…" ကို အသုံးပြု၍ တစ်စုံတစ်ဦးအား တစ်စုံတစ်ခုပြုလုပ်ရန် (မလုပ်ရန်) တောင်းဆိုသော စာကြောင်း 2 ကြောင်းကို ရေးပါ။',
+      sample:'I\'d rather you called me before you come. I\'d rather you didn\'t use my laptop.',
+      exp:'I\'d rather + S + V past (present meaning)။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['I\'d rather to eat now.','I\'d rather eat now.','I\'d rather eating now.'], a:1,
+      exp:'would rather + V infinitive to မဟုတ်ပါ။' },
+    { id:'f2', sec:'F', type:'fill', q:'I prefer summer ______ winter.',
+      acc:['to'], ans:'to',
+      exp:'A မှ B ကိုပိုနှစ်သက်သည်။' },
+    { id:'f3', sec:'F', type:'mcq', q:'I\'d rather you ______ me the truth now.',
+      opts:['tell','told','will tell','telling'], a:1,
+      exp:'I\'d rather + you + past V → ပြောခဲ့ပါတယ်။' },
+    { id:'f4', sec:'F', type:'fill', q:'"would rather" ဖြင့် ပြန်လည်ရေးသားထားသည် - တက္ကစီစီးမည့်အစား လမ်းလျှောက်လိုပါသည်။ → ငါ ______ ကောင်းပြီ။',
+      acc:['walk than take a taxi'], ans:'walk than take a taxi',
+      exp:'Y ထက် X ကို ပိုကြိုက်တယ် = ငါ X ထက် Y ကို ပိုကြိုက်တယ်။' },
+    { id:'f5', sec:'F', type:'mcq', q:'"Would you prefer ______ now or later?"',
+      opts:['to leave','leaving','leave','left'], a:0,
+      exp:'would prefer + to V (များသောအားဖြင့် would prefer + V-ing ကို မသုံးပါ)။' },
+    { id:'f6', sec:'F', type:'fill', q:'I\'d rather they ______ (not / come) so early tomorrow.',
+      acc:["didn't come",'did not come'], ans:'didn\'t come',
+      exp:'ပိုကြိုက်တယ် + သူတို့ + မလုပ်ဘူး + V ။' },
+    { id:'f7', sec:'F', type:'mcq', q:'ဘယ်စာကြောင်းက FALSE လဲ။',
+      opts:['I prefer driving to cycling.','I prefer to drive rather than cycle.','I prefer to drive than cycle.','I\'d rather drive than cycle.'], a:2,
+      exp:'V ကို ပိုနှစ်သက်သည် ထက် မဟုတ်ဘဲ နှင့် သွားရမည်။' },
+    { id:'f8', sec:'F', type:'fill', q:'- သင်အကူအညီတစ်ခုခုလိုပါသလား။ - ရပါတယ်ကျေးဇူးပါ။ ငါ ______ ငါကိုယ်တိုင်လုပ်မယ်။ (၁ စကားလုံး)',
+      acc:['rather'], ans:'rather',
+      exp:'ငါကိုယ်တိုင်လုပ်ရတာ ပိုကြိုက်တယ် (would + V infinitive)။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.1 – ကျွန်ုပ်သည် (တစ်ခုခု) (အခြားအရာ) ကို ပိုနှစ်သက်သည်',
+      q:'(cycle / take the bus) I prefer ______.',
+      acc:['cycling to taking the bus'], ans:'cycling to taking the bus',
+      exp:'V-ing မှ V-ing → စက်ဘီးစီးခြင်းကို ပိုနှစ်သက်သည်။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.1 – ငါ (တစ်ခုခု) (အခြားအရာ) ကို ပိုနှစ်သက်သည်',
+      q:'(volleyball / badminton) I prefer ______.',
+      acc:['volleyball to badminton'], ans:'volleyball to badminton',
+      exp:'N မှ N ကိုပိုနှစ်သက်သည်။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.1 – ကျွန်ုပ်သည် (တစ်ခုခု) (အခြားအရာ) ကို ပိုနှစ်သက်သည်',
+      q:'(read the news online / buy a newspaper) I prefer ______.',
+      acc:['reading the news online to buying a newspaper'], ans:'reading the news online to buying a newspaper',
+      exp:'V-ing မှ V-ing ကိုပိုနှစ်သက်သည်။' },
+    { id:'h4', sec:'G', type:'fill', sub:'Lesson 59.1 – ငါ (do) … (do) ထက် ပိုကြိုက်တယ်။',
+      q:'အထက်ပါဝါကျကို "prefer to" ဖြင့် ပြန်ရေးပါ : ငါ ______ ကိုနှစ်သက်သည်။',
+      acc:['read the news online rather than buy a newspaper','read the news online rather than buying a newspaper'], ans:'read the news online rather than buy a newspaper',
+      exp:'V ထက် V ကို ပိုကြိုက်တယ်။' },
+    { id:'h5', sec:'G', type:'fill', sub:'Lesson 59.1 – ငါ (do) … (do) ထက် ပိုကြိုက်တယ်။',
+      q:'(be outdoors / stay inside) I prefer to ______.',
+      acc:['be outdoors rather than stay inside','be outdoors rather than staying inside'], ans:'be outdoors rather than stay inside',
+      exp:'V ထက် V ကို ပိုကြိုက်တယ်။' },
+
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'— Shall we cook tonight? — I\'d rather ______ a pizza. (order)',
+      acc:['order'], ans:'order',
+      exp:'would rather + V infinitive။' },
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'- ဖဲရိုက်ချင်လား။ - ငါ ______ ငါ့စာအုပ်ကိုဖတ်ချင်တယ်။ (၁ စကားလုံး)',
+      acc:['prefer'], ans:'prefer',
+      exp:'နောက်မှာ "to read" ရှိတယ် → ငါလိုချင်ပါတယ်...' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'- ကော်ဖီဆိုင်သွားချင်လား။ — ငါ ______ အိမ်မှာနေချင်သည်။ (၁ စကားလုံး)',
+      acc:['stay','eat'], ans:'stay',
+      exp:'would better + V infinitive: နေပါ။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'- ကဲ သွားကြရအောင်။ — ______ မိနစ်အနည်းငယ်စောင့်ပါ။ (၃ လုံး၊ အစားသုံးပါ)',
+      acc:["i'd rather",'i would rather'], ans:'I\'d rather',
+      exp:'ငါအစား + V infinitive (ခဏစောင့်ပါ)။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'— How about a game of chess? — I\'d prefer ______ for a walk.',
+      acc:['to go'], ans:'to go',
+      exp:'+ V ကို ပိုကြိုက်တယ်။' },
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'- ဒီမှာ ထိုင်ချင်လား။ — ______ မတ်တပ်ရပ်ပါ။ (၃ လုံး၊ ကြိုက်ရာသုံးပါ)',
+      acc:["i'd prefer",'i would prefer'], ans:'I\'d prefer',
+      exp:'+ V ကို ပိုကြိုက်တယ်။' },
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – စာကြောင်းများကို ဖြည့်စွက်ပါ။',
+      q:'— Shall I come with you? — No, thanks. I\'d rather ______ alone.',
+      acc:['go'], ans:'go',
+      exp:'would better + V infinitive: တစ်ယောက်တည်းသွားပါ။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – … than / အစား',
+      q:'I\'d rather order a pizza ______ cook tonight.',
+      acc:['than'], ans:'than',
+      exp:'အစား ……' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.2 – … than / အစား',
+      q:'______ စစ်တုရင်ကစားဖို့ လမ်းလျှောက်ချင်ပါတယ်။ စကားလုံး (၂)လုံး၊',
+      acc:['rather than'], ans:'rather than',
+      exp:'V ထက် V ကို ပိုကြိုက်တယ်။' },
+
+    { id:'h15', sec:'G', type:'fill', sub:'Lesson 59.3 – မင်းက ပိုကြိုက်လား...',
+      q:'Are you going to wash the dishes, or would you rather I ______ them?',
+      acc:['washed'], ans:'washed',
+      exp:'I + V past → လျှော်ပေးစေချင်တယ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'Lesson 59.3 – မင်းက ပိုကြိုက်လား...',
+      q:'လက်မှတ်တွေကို ကြိုတင်မှာမှာလား ဒါမှမဟုတ် ______ (သုံးရတာ ပိုကြိုက်တယ်...)',
+      acc:['would you rather i booked them','would you rather i booked the tickets'], ans:'would you rather I booked them',
+      exp:'ငါသူတို့ကိုကြိုတင်စာရင်းသွင်းတာပိုကောင်းမလား - အတိတ် "booked" ဒါပေမယ့် လက်ရှိ အဓိပ္ပါယ်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'Lesson 59.3 – မင်းက ပိုကြိုက်လား...',
+      q:'ဆရာမကို အီးမေးလ်ပို့မှာလား ဒါမှမဟုတ် ______ (သုံးရတာ ပိုကြိုက်တယ်...)',
+      acc:['would you rather i emailed the teacher','would you rather i emailed her','would you rather i emailed him','would you rather i emailed them'], ans:'would you rather I emailed the teacher',
+      exp:'ငါ + အီးမေးလ်ပို့တာ ပိုကောင်းမလား...' },
+
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.4 – ဝါကျများကို ဖြည့်ပါ (ကိုယ်ပိုင် စိတ်ကူးများ)',
+      q:'Do you want me to leave now or would you rather I ______ a bit longer?',
+      acc:['stayed','waited','remained'], ans:'stayed',
+      exp:'I + past V → stayed / waited ၊' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.4 – ဝါကျများကို ဖြည့်ပါ (ကိုယ်ပိုင် စိတ်ကူးများ)',
+      q:'Do you want to eat out tonight or would you rather ______ at home?',
+      acc:['eat','stay'], ans:'eat',
+      exp:'would rather + ကြိယာ(အခြေခံပုံစံ) ဖြင့် ရွေးချယ်မှုကို ပြသည် → eat / stay; "to" မပါ။' },
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.4 – ဝါကျများကို ဖြည့်ပါ (ကိုယ်ပိုင် စိတ်ကူးများ)',
+      q:'Please keep this between us. I\'d rather you ______ mention it to anyone.',
+      acc:["didn't",'did not'], ans:'didn\'t',
+      exp:'မင်းမလုပ်ခဲ့တာကို ပိုကြိုက်တယ် + V' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.4 – ဝါကျများကို ဖြည့်ပါ (ကိုယ်ပိုင် စိတ်ကူးများ)',
+      q:'I don\'t want to start the meeting without the managers. I\'d rather they ______ here.',
+      acc:['were'], ans:'were',
+      exp:'ငါသူတို့ + ဖြစ်ခဲ့သည် (အတိတ်ဖြစ်၏) ပိုနှစ်သက်သည်။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 59.4 – ဝါကျများကို ဖြည့်ပါ (ကိုယ်ပိုင် စိတ်ကူးများ)',
+      q:'A: Can I open the window?  B: I\'d rather you ______. I\'m a bit cold.',
+      acc:["didn't",'did not'], ans:'didn\'t',
+      exp:'I\'d rather you + အတိတ်ကာလ → didn\'t (would rather you didn\'t ...)။' }
+  ];
+
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

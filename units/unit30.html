@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 30 – မေလ နှင့် မေလ 2 | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> ယူနစ် 30 – မေလ နှင့် မေလ 2 </h1>
+    <div class="sub"> ကိုယ်ပိုင်လေ့လာမှုသီအိုရီ · မတူညီသော အလေ့အကျင့် · ထပ်ခါတလဲလဲ စမ်းသပ်ခြင်း။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> ရမှတ် ၅၃ ခု + စာရေးမေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · ရည်ရွယ်ချက်များ &amp; အနှစ်သာရ </h2>
+      <p> ယူနစ် ၂၉ ကို သုံးတယ်။ <b> နိုင်/နိုင် </b> ပစ္စုပ္ပန်နှင့်အတိတ်ကို ခန့်မှန်းရန်။ ဤယူနစ်သည် ၎င်းတို့ကို အသုံးပြုသည်။ <b> အနာဂတ် </b> : တစ်ခုခု <b> နိုင် </b> အဲဒါလေးဘဲ စပီကာက <b> မသေချာပါ </b> . တစ်နည်းအားဖြင့် <i>may/might + V</i> ≈ <i>perhaps … will …</i> (50% သို့မဟုတ် ထို့ထက်နည်းသည်)။ </p>
+      <div class="ex"> <b class="en">I haven't decided yet. I  <mark>might go</mark>  to Da Lat. (= perhaps I will go)<br>I <mark>'ll go</mark>  to Da Lat next week. (= certain)</b> <br> နှစ်ခုလုံးက အနာဂတ်အကြောင်း ဆိုပေမယ့် <u> ပါလိမ့်မယ်။ </u> = သေချာတယ်၊ <u> နိုင်/နိုင် </u> = ဖြစ်နိုင်သည်။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာများ </h2>
+      <div class="formula"> (+) S+may/may+V It may rain later.
+(-) S+may not/maynot+V Amy မလာပါ။ (ဖြစ်နိုင်ချေ နည်းသည်မဟုတ်ပါ)
+Progressive: may / might + be + V-ing ငါ ၈ တန်းမှာ အလုပ်လုပ်နေနိုင်တယ်။
+ဖြစ်နိုင်သည် / may be able to:
+            ဖြစ်နိုင်သည် + V ကို စောင့်ရပေမည်။
+            ဖြစ်နိုင်သည် + V သူမကူညီနိုင်သည် ။
+may as well + V = မလုပ်ရန် အကြောင်းမရှိ → လုပ်လိုက်ရုံပါပဲ။ </div>
+      <div class="scroll"><table>
+        <tr><th> Structure </th><th> Meaning </th><th> For example </th></tr>
+        <tr><td> will + V </td><td> I'm sure. </td><td> I'll be late tonight. </td></tr>
+        <tr><td> may/may+V </td><td> maybe (not sure) </td><td> I might be late tonight </td></tr>
+        <tr><td> may not / may not + V </td><td> Not possible. </td><td> There may not be enough time. </td></tr>
+        <tr><td> Maybe + V </td><td> I can do it well. There is no better option. </td><td> We can walk too. </td></tr>
+      </table></div>
+      <p class="note">⚠️ <b> may/might သည် modal verb များဖြစ်သည်- </b> သူတို့နောက်မှာ အမြဲတမ်း a <b> အခြေခံကြိယာ </b> <i>to</i> မဟုတ်ပါ၊ <i>-s</i> မရှိပါ။ <i>She might <b>come</b></i> (<i>might comes / might to come</i> မဟုတ်ပါ)။ </p>
+
+      <h2> 1.3 · A. အနာဂတ် ဖြစ်နိုင်ခြေ </h2>
+      <ul>
+        <li> တစ်ခုခုဖြစ်တဲ့အခါ သုံးပါ။ <b> နိုင် </b> ဖြစ်ပေါ်လာသည်- <i>Take an umbrella. It <b>might rain</b> later.</i> </li>
+        <li> အနုတ်လက္ခဏာ- <b> မနိုင်/မဖြစ်နိုင် </b> : <i>There <b>might not be</b> enough chairs for everyone.</i> </li>
+        <li> ဖြင့်အသုံးပြုသည်။ <b> လုပ်ရန် / လုပ်နိုင်ရမည်။ </b> (အဘယ်ကြောင့်ဆိုသော် သင်သည် <i>must</i> သို့မဟုတ် <i>can</i> ကို အသုံးမပြုနိုင်တော့သောကြောင့်) : <i>We <b>might have to</b> wait. Jane <b>might be able to</b> help you.</i> </li>
+      </ul>
+
+      <h2> 1.4 · B. မေလ သို့မဟုတ် ဖြစ်နိုင်ပါသလား။ - လက်တွေ့မကျသော အခြေအနေများမှလွဲ၍ အများအားဖြင့် တူညီသည်။ </h2>
+      <ul>
+        <li> ကိစ္စအများစုတွင် <b> မေ </b> သို့မဟုတ် <b> တန်ခိုး </b> အလုပ်နှစ်ခုလုံး- <i>I may go / I might go to Ireland.</i> </li>
+        <li> ဒါပေမယ့် အတူ <b> မမှန်ကန်ပါ။ </b> အခြေအနေများ (ယူဆချက်၊ အမျိုးအစား-၂ အခြေအနေဆိုင်ရာ) → <b> သာ </b> <i>If they paid me better, I <b>might</b> work harder.</i> (<i>may</i> မဟုတ်ပါ) </li>
+      </ul>
+
+      <h2> 1.5 · C. may / may be + V-ing </h2>
+      <ul>
+        <li> တစ်ခုခုပေါ့။ <b> ဖြစ်ပျက်နိုင်ပါတယ်။ </b> အနာဂတ်အချိန်- <i>Don't phone at 8.30. I <b>might be watching</b> the football.</i> (နှိုင်းယှဉ်- <i>I'll be watching</i> = သေချာသည်) </li>
+        <li> အစီအစဉ်တစ်ခု <b> နိုင် </b> ဖြစ်ပျက်: <i>I <b>might be going</b> to Ireland soon.</i> (နှိုင်းယှဉ်: <i>I'm going</i> = ဆုံးဖြတ်ထားပြီးသား)။ <i>I might go</i> ဟုဆိုခြင်းသည် အဓိပ္ပါယ်နီးပါးတူပါသည်။ </li>
+      </ul>
+
+      <h2> 1.6 · D. လည်း ဖြစ်နိုင်သည်။ </h2>
+      <p><b> ငါတို့လည်း တစ်ခုခုလုပ်နိုင်တယ်။ </b> = ငါတို့ လုပ်သင့်တယ်မို့လား။ <b> ပိုကောင်းတဲ့ရွေးချယ်စရာမရှိပါဘူး။ </b> မဟုတ်ဘူး၊  <i>May as well</i> လည်းအလုပ်လုပ်ပါတယ်။ </p>
+      <div class="formula"> နောက်တစ်စီးက တစ်နာရီလောက်ကြာတယ်။  → ငါတို့လည်း လမ်းလျှောက်နိုင်တယ်။
+ငါအဆင်သင့်ဖြစ်နေပြီမို့ ငါအခုသွားလို့ရပြီလေ။
+တက္ကစီများသည် ဘတ်စ်ကားများကဲ့သို့ စျေးသက်သာသောကြောင့် သင်လည်း တက္ကစီရနိုင်သည်။ </div>
+
+      <h2> 1.7 · သဲလွန်စ </h2>
+      <div class="scroll"><table>
+        <tr><th> Clues </th><th> For example </th></tr>
+        <tr><td> Not sure / undecided / maybe. </td><td> I haven't decided yet. I <b> Power </b> Buy a Honda. </td></tr>
+        <tr><td> WARNING: BE CAREFUL / DO NOT ... / TAKE ... </td><td> Be careful. you <b> Power </b> Slip </td></tr>
+        <tr><td> There is no better choice: nothing else to do; There's still a lot left. </td><td> We are short <b> It's possible. </b> Watch a movie. </td></tr>
+        <tr><td> not true conditional (if + past) </td><td> If I have time, I will <b> Power </b> Learn Japanese. </td></tr>
+      </table></div>
+
+      <h2> 1.8 · အလွယ်တကူ ရှုပ်ထွေးနေသော ဖွဲ့စည်းပုံများနှင့် နှိုင်းယှဉ်ခြင်း။ </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> May/May (30 units) </th><th> Unit (21); </th><th> may/maybe + V3 (unit 29) </th></tr>
+        <tr><td> Time </td><td> The future </td><td> The future </td><td> The past </td></tr>
+        <tr><td> I'm sure. </td><td> It is possible. </td><td> I'm sure. </td><td> It's possible. </td></tr>
+        <tr><td> For example </td><td> he <b> can come </b> Tomorrow. </td><td> he <b> will come </b> Tomorrow. </td><td> he <b> can come </b> Yesterday </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Wrong. </th><th> ✅ That's right. </th></tr>
+        <tr><td class="no"> It may rain later. </td><td class="yes"> It's possible. <b> Rain </b> later </td></tr>
+        <tr><td class="no"> I can go to Ireland. </td><td class="yes"> I might <b> go </b> to Ireland </td></tr>
+        <tr><td class="no"> I have to wait. </td><td class="yes"> We might. <b> have to </b> wait </td></tr>
+        <tr><td class="no"> I can help you. </td><td class="yes"> I might <b> May it win. </b> Please help me. </td></tr>
+        <tr><td class="no"> If they pay me more, I will work harder. </td><td class="yes"> ..., I <b> Power </b> Work harder. </td></tr>
+        <tr><td class="no"> Liz can't come. </td><td class="yes"> Liz <b> It's possible. </b> come </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်လင့်ခ်များ- <b> ယူနစ် ၂၉ </b> (မေ/မေလ 1 – လက်ရှိ &amp; အတိတ် ခန့်မှန်းချက်များ) · <b> ယူနစ် ၂၄ </b> (ဖြစ်လိမ့်မည်) · <b> ယူနစ် 37C </b> (ရမလား …?) · <b> ယူနစ် 38C၊ 40D </b> (ဖြစ်နိုင်သည်)။ </p>
+    </div>
+  </section>
+
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (နေ့စဉ်ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> ☔ <b class="en">Take a raincoat. It  <mark>might rain</mark>  this afternoon.</b> <span class="note"> (နေ့စဉ်ဘဝ - သတိပေးချက်) </span></div>
+      <div class="ex"> ✈️ <b class="en">I haven't booked anything yet. I  <mark>may go</mark>  to Phu Quoc in June.</b> <span class="note"> (မသေချာသော အစီအစဉ်) </span></div>
+      <div class="ex"> 🏢 <b class="en">The meeting is running late. I  <mark>might have to</mark>  stay until seven.</b> <span class="note"> (အလုပ်-ကြိုတင်အသိပေးစာ) </span></div>
+      <div class="ex"> 🛠️ <b class="en">Send me the file. I  <mark>might be able to</mark>  fix it.</b> <span class="note"> (အလုပ်-အကူအညီပေးသည်) </span></div>
+      <div class="ex"> 📵 <b class="en">Don't call me at nine. I  <mark>might be driving</mark> .</b> <span class="note"> (နေ့စဉ်ဘဝ - အနာဂတ်တိုးတက်ရေး) </span></div>
+      <div class="ex"> 🎫 <b class="en">There  <mark>might not be</mark>  any tickets left, so let's book now.</b> <span class="note"> (ခရီးသွား - အနုတ်လက္ခဏာ ခန့်မှန်းချက်) </span></div>
+      <div class="ex"> 🚶 <b class="en">The next bus is in 40 minutes. We  <mark>might as well</mark>  walk.</b> <span class="note"> (စကားဝိုင်း — "might as well…") </span></div>
+      <div class="ex"> 💰 <b class="en">If the company paid us more, people  <mark>might</mark>  stay longer.</b> <span class="note"> (IELTS Writing — စိတ်ကူးယဉ်၊ ဖြစ်နိုင်သည်) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> will = 100%, may/might = "hit or miss" . </b> <i>I'm not sure / perhaps / I haven't decided</i> → မည်သည့်ဝါကျကိုမဆို ချက်ချင်းစဉ်းစားပါ။ </li>
+        <li><b> Might + အခြေခံကြိယာ </b> — can/must/should ကဲ့သို့- <i>to</i> မဟုတ်ပါ၊ <i>-s</i> မဟုတ်ပါ၊ <i>-ed</i> မရှိပါ။ </li>
+        <li><b> မော်ဒယ်နှစ်ခုကို မတွဲပါနှင့်။ </b> <i>might must ❌, might can ❌</i> → ဖြင့် အစားထိုးပါ။ <b> ဖြစ်နိုင်သည် / ဖြစ်နိုင်သည် </b>.</li>
+        <li><b> အခြေအနေအရ စာကြောင်းများ (If + past) → only may </b> အကြောင်းမှာ လက်တွေ့မကျသော အခြေအနေများအတွက် အသုံးမပြုနိုင်သောကြောင့်ဖြစ်သည်။ </li>
+        <li><b> "Might as well" = "might as well just…" </b> - အခြားရွေးချယ်မှုတိုင်းက ပိုကောင်းမလာတဲ့အခါ သုံးပါတယ်။ </li>
+      </ul>
+
+      <h2> 2.3 · စာမေးပွဲ အကြံပြုချက်များ 🎯 </h2>
+      <ul>
+        <li> ရွေးချယ်စရာတစ်ခု ( <i>might must, may can</i> ) → တစ်ခုနှင့်တစ်ခု ဘေးတွင်ရပ်နေသော ပုံစံနှစ်ခု <b> ချက်ချင်းဖယ်ရှားပါ။ </b>.</li>
+        <li> နှုတ်က အမှန် <b> ဖြစ်နိုင်သည် / မဖြစ်ပေ။ </b> <i>don't might</i> ဘယ်တော့မှ </li>
+        <li> <i>Be careful… / Don't let the children…</i> ကဲ့သို့သော သတိပေးချက်ပုံစံစာကြောင်းများ များသောအားဖြင့် လိုအပ်ပါသည်။ <b> may + V </b> ဖြစ်နိုင်သောအကျိုးဆက်အတွက် </li>
+        <li> <i>"I'm not sure that X will…"</i> → ပြန်ရေးခြင်း။ <b> X တော့မဖြစ်နိုင်ပါဘူး... </b> ("possibly not" ဟူသော အဓိပ္ပါယ်ကို ထားရှိပါ။ </li>
+        <li> အမျိုးအစား-၂ အခြေအနေအရ၊ ရွေးချယ်မှု <b> မေ </b> ထောင်ချောက်တစ်ခုဖြစ်သည်။ ရွေးချယ်ပါ။ <b> တန်ခိုး </b> သို့မဟုတ် <b> ပါ့ </b>.</li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ် သင်ယူသူများ၏ အဖြစ်များသော အမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese researchers often say. </th><th> ✅ That's right. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I might go. </td><td class="yes"> I <b> I can go. </b> . / I will go if possible. </td><td class="why"> Do not use will + might together </td></tr>
+        <tr><td class="no"> She might come tomorrow. </td><td class="yes"> Maybe a daughter. <b> come </b> Tomorrow. </td><td class="why"> modal + base verb </td></tr>
+        <tr><td class="no"> I might be late. </td><td class="yes"> I might <b> Be </b> Late </td><td class="why"> There is no "to" after force. </td></tr>
+        <tr><td class="no"> You can leave early. </td><td class="yes"> We might. <b> have to </b> Leave early </td><td class="why"> Do not combine two models </td></tr>
+        <tr><td class="no"> I can help you. </td><td class="yes"> I might <b> May it win. </b> Please help me. </td><td class="why"> can → can </td></tr>
+        <tr><td class="no"> He can't come. </td><td class="yes"> he <b> It's possible. </b> come </td><td class="why"> Negative sign: maybe + not. </td></tr>
+        <tr><td class="no"> Can it rain (daily talk) </td><td class="yes"> Do you think? <b> will be </b> Rain? </td><td class="why"> Questions with power are very valid; Rarely used. </td></tr>
+        <tr><td class="no"> If I'm rich, I can buy a house. </td><td class="yes"> If I am rich, I am <b> Power </b> Buy a house. </td><td class="why"> Absolute state → possible. </td></tr>
+        <tr><td class="no"> We can walk too. </td><td class="yes"> We might as well. <b> Walk </b>.</td><td class="why"> may as well + base verb </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဉ်စကားပြော &amp; စာရေးခြင်း ✍️ ၎င်းကို အသုံးချပါ။ </h2>
+      <ul>
+        <li><b> စကားပြောခြင်း (တစ်နေ့လျှင် ၂ မိနစ်)။ </b> မသေချာမရေရာသော ပိတ်ရက်အစီအစဉ် ၃ ခုကို စာရင်းပြုစုပါ- <i>"I might visit my parents. I may go swimming. I might not go out on Sunday."</i> </li>
+        <li><b> အလုပ်- </b> အန္တရာယ်များကို ယဉ်ကျေးစွာကြိုတင်သတိပေးသည်- <i>"The delivery might be a day late." / "We might have to change the deadline."</i> </li>
+        <li><b> စာပို့ခြင်း- </b> <i>"Don't wait for me. I might be stuck in traffic."</i> </li>
+        <li><b> IELTS Speaking အပိုင်း 1- </b> အနာဂတ်မေးခွန်းတစ်ခု ( <i>Will you…?</i> ) → <i>"I might…, but I'm not sure yet."</i> ဖြင့် ပိုမိုနူးညံ့စွာဖြေပါ။ </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> <i>will</i> မပြောမီ သင့်ကိုယ်သင် <i>"Am I sure?"</i> ဟုမေးပါ — မဟုတ်ပါက သုံးပါ။ <b> တန်ခိုး </b>.</li>
+      </ul>
+      <p class="note">🔁 <b> အကွာအဝေး သုံးသပ်ချက်- </b> 3၊ 7 နှင့် 14 ရက်ပြီးနောက်လေ့ကျင့်ခန်းများကိုပြန်လုပ်ပါ။ အချိန်တိုင်း "Retry wrong ones" ကို ဦးစားပေးပါ။ ဆက်စပ်- <b> ယူနစ် ၂၉ </b> (မေ/မေလ ၁)၊ <b> ယူနစ် ၂၁ </b> (အလို)၊ <b> ယူနစ် ၂၄ </b> (-ing)၊ <b> ယူနစ် ၃၈ </b> (ငါလုပ်ရင်….) </p>
+    </div>
+  </section>
+
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ ပရင့် / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit30.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 30 · အော့ဖ်လိုင်း ကိုယ်တိုင်လေ့လာရေးဖိုင် ·
+    သင်၏တိုးတက်မှုကို သင့်စက်ပစ္စည်း (localStorage) တွင် သိမ်းဆည်းထားသည်။ </footer>
+</div>
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> ဖွဲ့စည်းပုံ \u003c/th>\u003cth> အဓိပ္ပါယ် \u003c/th>\u003cth> ဥပမာ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> will + V \u003c/td>\u003ctd> သေချာပါတယ်။ \u003c/td>\u003ctd> ငါဒီညနောက်ကျမယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> may/may+V \u003c/td>\u003ctd> ဖြစ်နိုင်သည် (မသေချာပါ) \u003c/td>\u003ctd> ငါ ဒီည နောက်ကျနိုင်တယ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> may not / may not + V \u003c/td>\u003ctd> ဖြစ်နိုင်သည်မဟုတ်။ \u003c/td>\u003ctd> အချိန်မလုံလောက်နိုင်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဖြစ်နိုင်သည် + V \u003c/td>\u003ctd> အဲဒါကို ကောင်းကောင်းလုပ်နိုင်တယ်၊ ပိုကောင်းတဲ့ ရွေးချယ်စရာမရှိပါဘူး။ \u003c/td>\u003ctd> ငါတို့လည်း လမ်းလျှောက်နိုင်တယ်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> သဲလွန်စ \u003c/th>\u003cth> ဥပမာ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> မသေချာဘူး/ မဆုံးဖြတ်ရသေးဘူး/ ဖြစ်နိုင်တယ်။ \u003c/td>\u003ctd> ကျွန်တော် မဆုံးဖြတ်ရသေးဘူး။ ငါ \u003cb> တန်ခိုး \u003c/b> Honda တစ်စီးဝယ်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သတိပေးချက်- သတိထားပါ / မလုပ်ပါနှင့် ... / ယူပါ ... \u003c/td>\u003ctd> သတိထားပါ။ မင်း \u003cb> တန်ခိုး \u003c/b> ချော် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ပိုကောင်းတဲ့ရွေးချယ်စရာမရှိဘူး- တခြားလုပ်စရာမရှိ၊ အများကြီးကျန်သေးတယ်။ \u003c/td>\u003ctd> ကျွန်တော်တို \u003cb> ဖြစ်နိုင်တယ်။ \u003c/b> ရုပ်ရှင်ကြည့်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အခြေအနေမှန်မဟုတ်သော (အကယ်၍ + အတိတ်) \u003c/td>\u003ctd> ငါ့မှာ အချိန်ရှိရင် ငါ \u003cb> တန်ခိုး \u003c/b> ဂျပန်စာလေ့လာပါ။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> မေ/မေ (ယူနစ် ၃၀) \u003c/th>\u003cth> ယူနစ် (၂၁)၊ \u003c/th>\u003cth> ဖြစ်နိုင်/ဖြစ်နိုင်သည် + V3 (ယူနစ် ၂၉) \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အချိန် \u003c/td>\u003ctd> အနာဂတ် \u003c/td>\u003ctd> အနာဂတ် \u003c/td>\u003ctd> အတိတ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သေချာပါတယ်။ \u003c/td>\u003ctd> ဖြစ်နိုင်သည်။ \u003c/td>\u003ctd> သေချာပါတယ်။ \u003c/td>\u003ctd> ဖြစ်နိုင်တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဥပမာ \u003c/td>\u003ctd> သူ \u003cb> လာနိုင်တယ်။ \u003c/b> မနက်ဖြန်။ \u003c/td>\u003ctd> သူ \u003cb> လာမယ်။ \u003c/b> မနက်ဖြန်။ \u003c/td>\u003ctd> သူ \u003cb> လာနိုင်တယ်။ \u003c/b> မနေ့က \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ မှားတယ်။ \u003c/th>\u003cth> ✅ မှန်ပါတယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နောက်ပိုင်း မိုးရွာနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ဖြစ်နိုင်တယ်။ \u003cb> မိုး \u003c/b> နောက်ပိုင်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ အိုင်ယာလန်ကို သွားနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်ဖြစ်ကောင်းဖြစ်လိမ့်မည် \u003cb> သွား \u003c/b> အိုင်ယာလန်သို့ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စောင့်ရမှာပေါ့။ \u003c/td>\u003ctd class=\"yes\"> ငါတို့ ဖြစ်နိုင်တယ်။ \u003cb> လုပ်ရမည် \u003c/b> စောင့်ပါ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ မင်းကို ကူညီနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်ဖြစ်ကောင်းဖြစ်လိမ့်မည် \u003cb> နိုင်ပါစေ။ \u003c/b> ကူညီပေးပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူတို့က ကျွန်တော့်ကို ပိုပေးရင် ပိုကြိုးစားရလိမ့်မယ်။ \u003c/td>\u003ctd class=\"yes\"> …၊ ငါ \u003cb> တန်ခိုး \u003c/b> အလုပ်ပိုကြိုးစား။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> Liz မလာနိုင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> Liz \u003cb> ဖြစ်နိုင်တယ်။ \u003c/b> လာ။ \u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လေ့လာသူတွေက မကြာခဏပြောလေ့ရှိတယ်။ \u003c/th>\u003cth> ✅မှန်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့်လဲ။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါသွားဖြစ်နိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> သွားနိုင်တယ်။ \u003c/b> . / ဖြစ်နိုင်ရင် ငါသွားမယ်။ \u003c/td>\u003ctd class=\"why\"> will + might ကို တွဲမသုံးပါနှင့် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမ မနက်ဖြန် လာနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သမီးဖြစ်နိုင်တယ်။ \u003cb> လာ \u003c/b> မနက်ဖြန်။ \u003c/td>\u003ctd class=\"why\"> modal + အခြေခံကြိယာ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါနောက်ကျသွားနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်ဖြစ်ကောင်းဖြစ်လိမ့်မည် \u003cb> ဖြစ် \u003c/b> နောက်ကျ \u003c/td>\u003ctd class=\"why\"> အင်အားပြီးနောက် \"to\" မရှိပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စောစောစီးစီး ထွက်သွားနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါတို့ ဖြစ်နိုင်တယ်။ \u003cb> လုပ်ရမည် \u003c/b> စောစောထွက်သွား \u003c/td>\u003ctd class=\"why\"> မော်ဒယ်နှစ်ခုကို မတွဲပါနှင့် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ မင်းကို ကူညီနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်ဖြစ်ကောင်းဖြစ်လိမ့်မည် \u003cb> နိုင်ပါစေ။ \u003c/b> ကူညီပေးပါ။ \u003c/td>\u003ctd class=\"why\"> လုပ်နိုင်သည် → နိုင်သည် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူ မလာနိုင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> သူ \u003cb> ဖြစ်နိုင်တယ်။ \u003c/b> လာ။ \u003c/td>\u003ctd class=\"why\"> အနုတ်လက္ခဏာ: ဖြစ်နိုင်သည် + မဟုတ်ပေ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မိုးရွာနိုင်မလား (နေ့စဉ်စကားပြော) \u003c/td>\u003ctd class=\"yes\"> မင်းထင်လား။ \u003cb> ပါလိမ့်မယ်။ \u003c/b> မိုး? \u003c/td>\u003ctd class=\"why\"> ပါဝါပါသောမေးခွန်းများသည် အလွန်တရားဝင်သည်၊ အသုံးပြုခဲသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါချမ်းသာရင် အိမ်ဝယ်နိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါချမ်းသာရင် ငါ \u003cb> တန်ခိုး \u003c/b> အိမ်ဝယ်ပါ။ \u003c/td>\u003ctd class=\"why\"> ပကတိအခြေအနေ → ဖြစ်နိုင်သည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါတို့လည်း လမ်းလျှောက်လို့ရတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါတို့လည်း ဖြစ်နိုင်တယ်။ \u003cb> လမ်းလျှောက် \u003c/b>.\u003c/td>\u003ctd class=\"why\"> may as well + အခြေခံကြိယာ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 30 – မေလ နှင့် မေလ 2 | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit30.html';
+  var KEY = 'egu4_unit30_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. ရွေးချယ်စရာမျိုးစုံ (MCQ)',        desc:'ရွေးချယ်စရာများထဲမှ အကောင်းဆုံးအဖြေကို ရွေးချယ်ပါ။' },
+    { id:'B', title:'B. ဗလာ/ကြိယာပုံစံများကို ဖြည့်ပါ။',    desc:'အင်အားဖြည့်သွင်း / မေ / may have to / may be able to / might as well.' },
+    { id:'C', title:'ဂ။ နှုတ်ကပတ်တော်',     desc:'စကားလုံးများကို မှန်ကန်သောဝါကျအဖြစ် စီစဉ်ရန် ကိုနှိပ်ပါ၊ ထို့နောက် အဖြေကို စစ်ဆေးပါ။' },
+    { id:'D', title:'D. Dialogue gap-ဖြည့်စွက်ခြင်း။',     desc:'အကြောင်းအရာအပေါ် အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. စာရေးခြင်းအလေ့အကျင့် (ကိုယ်တိုင်အဆင့်သတ်မှတ်)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာနှင့် နှိုင်းယှဉ်ပါ၊ ထို့နောက် မိမိကိုယ်ကို အဆင့်သတ်မှတ်ပါ။ အလိုအလျောက်ဂိုးသွင်းခြင်းမဟုတ်ပါ။' },
+    { id:'F', title:'F. ယူနစ်ပဟေဋ္ဌိ (၈ မေးခွန်း)',    desc:'Unit 30 ဗဟုသုတအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲတွင် လေ့ကျင့်ခန်းများ (ယူနစ် 30 လေ့ကျင့်ခန်းများ)', desc:'လေ့ကျင့်ခန်းများ 30.1 → 30.5 Murphy စာအုပ်ရှိ တိကျသောပုံစံကို အောက်ပါစာကြောင်းများ ပြန်လည်ပြင်ဆင်ပါ။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'Multiple choice', fill:'Fill in the blank', order:'Word order',
+                     self:'Writing', match:'Matching' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I haven\'t decided yet, but I ______ to Japan next spring.',
+      opts:['will go','might go','might going','might to go'], a:1,
+      exp:'"I haven\'t decided yet" → မသေချာ → may + base verb: ဖြစ်နိုင်တယ်။  "will go" သေချာသည်;  "might going/might to go" များသည် မှားယွင်းသောပုံစံများဖြစ်သည်။' },
+    { id:'a2', sec:'A', type:'mcq', q:'Take a jacket with you. It ______ cold later.',
+      opts:['might get','might gets','mights get','is might get'], a:0,
+      exp:'အနာဂတ်ဖြစ်နိုင်ခြေ → may + base verb (get)။ Modals များသည် -s မယူဘဲ "is" နှင့် မသွားပါ။' },
+    { id:'a3', sec:'A', type:'mcq', q:'The traffic is terrible. We ______ wait a long time.',
+      opts:['might must','might can','might have to','might to'], a:2,
+      exp:'မော်ဒယ်နှစ်ခုကို မတွဲပါနှင့် (ဖြစ်နိုင်သည်)။  "Might have to" = "might have to + V" ။' },
+    { id:'a4', sec:'A', type:'mcq', q:'If I had more free time, I ______ learn to play the guitar.',
+      opts:['may','might','will','am going to'], a:1,
+      exp:'အစစ်အမှန်မဟုတ်သော အခြေအနေ (အကယ်၍ အတိတ်) → ဖြစ်နိုင်သည် (သို့မဟုတ်) ဖြစ်နိုင်သည် မဟုတ်ပေ။' },
+    { id:'a5', sec:'A', type:'mcq', q:'Choose the CORRECT sentence:',
+      opts:['Ben doesn\'t might come tonight.','Ben might not come tonight.','Ben might not to come tonight.','Ben not might come tonight.'], a:1,
+      exp:'အနုတ်လက္ခဏာဆောင်သော စွမ်းအား- may not + အခြေခံကြိယာ။ modal ဖြင့် do/does မသုံးပါနှင့်။' },
+    { id:'a6', sec:'A', type:'mcq', q:'Don\'t phone me at 9. I ______ my online class then.',
+      opts:['might be having','might having','might have had','might had'], a:0,
+      exp:'အနာဂတ်ကာလတွင် ဖြစ်ပျက်နိုင်သည့်အရာ → ဖြစ်နိုင်သည် + V-ing ဖြစ်နိုင်ပါသည်။' },
+    { id:'a7', sec:'A', type:'mcq', q:'— There\'s nothing good on TV. — Well, we ______ go to bed early, then.',
+      opts:['must as well','might as well','might well as','may well to'], a:1,
+      exp:'may as well + V = ပိုမိုကောင်းမွန်သော ရွေးချယ်မှု → မလုပ်ပါ။ ပုံသေစကားလုံး၊ အမှာစာမပြောင်းပါနှင့်။' },
+    { id:'a8', sec:'A', type:'mcq', q:'Ask Linh about the visa. She ______ help you.',
+      opts:['might can','might be able to','can might','might could'], a:1,
+      exp:'သင်အသုံးမပြုနိုင်ပြီးနောက်တွင် can → be able to ဖြင့်အစားထိုးပါ- ကူညီနိုင်ပေမည်။' },
+
+    /* ===== B. Fill in the blank ===== */
+    { id:'b1', sec:'B', type:'fill', q:'Be careful with that knife. You ______ (might / cut) yourself.',
+      acc:['might cut','may cut'], ans:'might cut',
+      exp:'ဖြစ်နိုင်သောအကျိုးဆက် → may + base verb အကြောင်း သတိပေးချက်။' },
+    { id:'b2', sec:'B', type:'fill', q:'I\'m not sure Anna will be at the party. She ______ (might not / be) there.',
+      acc:['might not be','may not be',"mightn't be"], ans:'might not be',
+      exp:'"Possibly not" → ဖြစ်နိုင်သည် + V။ အလုပ်မလုပ်သော်လည်း အဖြစ်နည်းပါသည်။' },
+    { id:'b3', sec:'B', type:'fill', q:'My laptop is very old. I ______ (might / have to) buy a new one.',
+      acc:['might have to buy','may have to buy'], ans:'might have to buy',
+      exp:'"Might have to" = ဖြစ်နိုင်သည် + V။' },
+    { id:'b4', sec:'B', type:'fill', q:'I\'m busy today, but I ______ (might / be able to / see) you tomorrow.',
+      acc:['might be able to see','may be able to see'], ans:'might be able to see',
+      exp:'"Might be able to" = ဖြစ်နိုင်သည် + V ။' },
+    { id:'b5', sec:'B', type:'fill', q:'Don\'t come at 7. We ______ (might / have) dinner then.',
+      acc:['might be having','may be having'], ans:'might be having',
+      exp:'အနာဂတ်အချိန် (၇ နာရီ) တွင် ဖြစ်ပျက်နိုင်သည့်အရာ → ဖြစ်နိုင်သည် + V-ing ဖြစ်နိုင်ပါသည်။' },
+    { id:'b6', sec:'B', type:'fill', q:'The shop is closed. We ______ (might as well / go) home.',
+      acc:['might as well go','may as well go'], ans:'might as well go',
+      exp:'ပိုမိုကောင်းမွန်သော ရွေးချယ်ခွင့် → may as well + V.' },
+    { id:'b7', sec:'B', type:'fill', q:'If you asked him nicely, he ______ (might / agree).',
+      acc:['might agree'], ans:'might agree',
+      exp:'အခြေအနေအရ ဝါကျ (If + past) → only may, not may.' },
+    { id:'b8', sec:'B', type:'fill', q:'The road is closed, so the bus ______ (might / not / arrive) on time.',
+      acc:['might not arrive','may not arrive',"mightn't arrive"], ans:'might not arrive',
+      exp:'အနုတ်လက္ခဏာ- may not + base verb ရောက်ရှိလာသည်။' },
+
+    /* ===== C. Word order ===== */
+    { id:'c1', sec:'C', type:'order', q:'Arrange: (might / it / later / snow)',
+      tokens:['It','might','snow','later'],
+      acc:['it might snow later'], ans:'It might snow later.',
+      exp:'S + might + V + time adverb ။' },
+    { id:'c2', sec:'C', type:'order', q:'Arrange: (not / enough / there / be / might / seats)',
+      tokens:['There','might','not','be','enough','seats'],
+      acc:['there might not be enough seats'], ans:'There might not be enough seats.',
+      exp:'There + might not + be + noun - ထိုင်ခုံအလုံအလောက်မရှိနိုင်ပါ။' },
+    { id:'c3', sec:'C', type:'order', q:'Arrange: (have / we / work / might / to / on Saturday)',
+      tokens:['We','might','have','to','work','on','Saturday'],
+      acc:['we might have to work on saturday'], ans:'We might have to work on Saturday.',
+      exp:'may have to + V = ဖြစ်နိုင်သည်။' },
+    { id:'c4', sec:'C', type:'order', q:'Arrange: (as / might / well / we / a taxi / take)',
+      tokens:['We','might','as','well','take','a','taxi'],
+      acc:['we might as well take a taxi'], ans:'We might as well take a taxi.',
+      exp:'ပုံသေစကားလုံး- may as well + V.' },
+    { id:'c5', sec:'C', type:'order', q:'Arrange: (be / I / working / might / late tonight)',
+      tokens:['I','might','be','working','late','tonight'],
+      acc:['i might be working late tonight'], ans:'I might be working late tonight.',
+      exp:'ဖြစ်နိုင်သည် + V-ing: ထိုအချိန်တွင် အလုပ်လုပ်နေနိုင်သည်။' },
+
+    /* ===== D. Dialogue ===== */
+    { id:'d1', sec:'D', type:'fill', q:'A: Are you coming to the beach on Sunday?  B: I\'m not sure. I ______ (visit) my grandmother.',
+      acc:['might visit','may visit','might be visiting','may be visiting'], ans:'might visit',
+      exp:'"I\'m not sure" → may + V (သို့မဟုတ် ဖြစ်နိုင်ချေရှိသော အစီအစဉ်တစ်ခုအတွက် လာရောက်လည်ပတ်နေနိုင်သည်)။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: Can you fix my phone?  B: I don\'t know. I ______ (be able to) do it — let me look.',
+      acc:['might be able to','may be able to'], ans:'might be able to',
+      exp:'အနာဂတ်တွင် ဖြစ်နိုင်ချေရှိသော်လည်း မသေချာသော → ဖြစ်နိုင်ချေရှိသည်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: We\'ve missed the last train!  B: Well, we ______ get a taxi, then.',
+      acc:['might as well','may as well'], ans:'might as well',
+      exp:'ပိုမိုကောင်းမွန်သော ရွေးချယ်ခွင့် → may as well + V.' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Will the shop be open on the holiday?  B: Maybe not. It ______ (not / open).',
+      acc:['might not open','may not open',"mightn't open"], ans:'might not open',
+      exp:'"Maybe not" → အနှုတ်လက္ခဏာ → ဖြစ်နိုင်ချေ + V ။' },
+
+    /* ===== E. Writing ===== */
+    { id:'e1', sec:'E', type:'self', q:'လာမည့်လအတွက် မသေချာမရေရာသော အစီအစဉ်များအကြောင်း စာကြောင်း 3 ကြောင်းကို may / may / may not သုံးပြီး ရေးပါ။',
+      sample:'I might start a new English course. I may visit my cousin in Hue. I might not have time to go to the gym.',
+      exp:'စစ်ဆေးပါ- နောက်မှာ ပါဝါ/မေ သည် အခြေခံကြိယာတစ်ခု ထွက်လာသည် ။ အနုတ်လက္ခဏာသည် ဖြစ်နိုင်ချေမရှိပါ။ တစ်ချိန်တည်းမှာ ဆန္ဒကို မသုံးပါနဲ့။' },
+    { id:'e2', sec:'E', type:'self', q:'might + V ကို အသုံးပြု၍ သူငယ်ချင်းတစ်ဦးထံ သတိပေးစာ ၂ ကြောင်းရေးပါ (သတိထားပါ… / Don\'t…)။',
+      sample:'Be careful on the stairs. You might fall. Don\'t leave your bag there — somebody might take it.',
+      exp:'သတိပေးချက်တစ်ခုသည် ပုံမှန်အားဖြင့် မရှိမဖြစ်လိုအပ်သော အင်အား + ဖြစ်နိုင်သည့် အကျိုးဆက်ကို ပေါင်းစပ်ထားသည်။' },
+    { id:'e3', sec:'E', type:'self', q:'အခြေအနေတစ်ခုနှင့် "might as well" ဖြင့်ပြုလုပ်သော ဆုံးဖြတ်ချက်ကို ဖော်ပြပါ။',
+      sample:'The film starts in ten minutes and there\'s nothing else to do, so we might as well watch it.',
+      exp:'ပိုမိုကောင်းမွန်သောရွေးချယ်စရာမရှိသည့်အခါတွင်လည်း may ကိုလည်း အသုံးပြုသည် — အကြောင်းပြချက်ကို ဦးစွာပေးပြီးနောက် may ကိုလည်း + V ဖြင့် နိဂုံးချုပ်ပါ။' },
+
+    /* ===== F. Unit quiz ===== */
+    { id:'f1', sec:'F', type:'fill', q:'I\'m not sure, but I ______ (might / change) my job next year.',
+      acc:['might change','may change'], ans:'might change',
+      exp:'မသေချာ → may + base verb ။' },
+    { id:'f2', sec:'F', type:'mcq', q:'Choose the CORRECT sentence:',
+      opts:['We might must cancel the trip.','We might have to cancel the trip.'], a:1,
+      exp:'မော်ဒယ်နှစ်ခုကို တွဲ၍ မသုံးပါနှင့် → လုပ်သင့်သည် ။' },
+    { id:'f3', sec:'F', type:'mcq', q:'If I won the lottery, I ______ stop working.',
+      opts:['may','might'], a:1,
+      exp:'အစစ်အမှန်မဟုတ်သော အခြေအနေ → သာလျှင် ဖြစ်နိုင်သည်။' },
+    { id:'f4', sec:'F', type:'fill', q:'Translate into English: "Tomorrow it might not rain."',
+      acc:['it might not rain tomorrow','it may not rain tomorrow',"it mightn't rain tomorrow"],
+      ans:'It might not rain tomorrow.',
+      exp:'"Might not" = ထင်သလောက် + V; ရာသီဥတုအတွက် အကြောင်းအရာအဖြစ် "it" ကို အသုံးပြုပါ။' },
+    { id:'f5', sec:'F', type:'fill', q:'Call me after 10. I ______ (might / sleep) before that.',
+      acc:['might be sleeping','may be sleeping'], ans:'might be sleeping',
+      exp:'အနာဂတ်ကာလတွင် ဖြစ်ပျက်နိုင်သည့်အရာ → ဖြစ်နိုင်သည် + V-ing ဖြစ်နိုင်ပါသည်။' },
+    { id:'f6', sec:'F', type:'mcq', q:'— The restaurant is full. — We ______ eat at home, then.',
+      opts:['might as well','might well as','might as good'], a:0,
+      exp:'ပုံသေစကားလုံး- may as well + V.' },
+    { id:'f7', sec:'F', type:'fill', q:'Ask the manager. She ______ (might / be able to / give) you a discount.',
+      acc:['might be able to give','may be able to give'], ans:'might be able to give',
+      exp:'"Might be able to" = ဖြစ်နိုင်သည် + V ။' },
+    { id:'f8', sec:'F', type:'mcq', q:'Choose the sentence that expresses CERTAINTY:',
+      opts:['I might be late tonight.','I\'ll be late tonight.','I may be late tonight.'], a:1,
+      exp:'will = သေချာသည်; may/might = ဖြစ်နိုင်သည်သာ။' },
+
+    /* ===== G. In-book exercises ===== */
+    { id:'h1', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.1 – ခွန်အားဖြင့် စာကြောင်းများရေးပါ။',
+      q:'2. What are you going to cook tonight? (pasta???) — I\'m not sure yet. I ______.',
+      acc:['might cook pasta','may cook pasta','might make pasta','may make pasta'], ans:'might cook pasta',
+      exp:'မေးခွန်းသုံးခု = မသေချာခြင်း → may + V. (မှန်ပါသည်။)' },
+    { id:'h2', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.1 – ခွန်အားဖြင့် စာကြောင်းများရေးပါ။',
+      q:'3. When is Lan coming back? (next week???) — She hasn\'t said yet. She ______.',
+      acc:['might come back next week','may come back next week'], ans:'might come back next week',
+      exp:'မသေချာသောအချိန် → သူမသည် နောက်အပတ်တွင် ပြန်လာနိုင်သည်။' },
+    { id:'h3', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.1 – ခွန်အားဖြင့် စာကြောင်းများရေးပါ။',
+      q:'4. Where are you going to put the new sofa? (by the window???) — I haven\'t made up my mind yet. I ______.',
+      acc:['might put it by the window','may put it by the window'], ans:'might put it by the window',
+      exp:'(ဆိုဖာအစား) + ပြတင်းပေါက်နားမှာ ထားနိုင်တယ်။' },
+    { id:'h4', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.1 – ခွန်အားဖြင့် စာကြောင်းများရေးပါ။',
+      q:'5. What is Minh going to do after his exams? (travel???) — He\'s still thinking about it. He ______.',
+      acc:['might travel','may travel'], ans:'might travel',
+      exp:'မဆုံးဖြတ်ရသေးသော → may + base verb ခရီး။' },
+
+    { id:'h5', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.2 – အပြင်းအထန် + ကိုက် / ချိုး / လိုအပ် / ချော် / နိုး',
+      q:'2. Please speak quietly. You ______ the baby.',
+      acc:['might wake','may wake'], ans:'might wake',
+      exp:'ဆူညံသံ → နိုးခြင်း (နိုးခြင်း) ဖြစ်နိုင်သော အကျိုးဆက်။' },
+    { id:'h6', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.2 – အပြင်းအထန် + ကိုက် / ချိုး / လိုအပ် / ချော် / နိုး',
+      q:'3. Don\'t touch that cat. It ______ you.',
+      acc:['might bite','may bite'], ans:'might bite',
+      exp:'သတိပေးချက် → ကိုက်နိုင်သည် (သင့်ကို ကိုက်နိုင်သည်)။' },
+    { id:'h7', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.2 – အပြင်းအထန် + ကိုက် / ချိုး / လိုအပ် / ချော် / နိုး',
+      q:'4. Keep the receipt. We ______ it if we want to return the shoes.',
+      acc:['might need','may need'], ans:'might need',
+      exp:'"Might need" = လိုအပ်နိုင်သည်။' },
+    { id:'h8', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.2 – အပြင်းအထန် + ကိုက် / ချိုး / လိုအပ် / ချော် / နိုး',
+      q:'5. Watch your step. The floor is wet. You ______.',
+      acc:['might slip','may slip'], ans:'might slip',
+      exp:'စိုစွတ်သောကြမ်းပြင် → ချော်လဲနိုင်သည်။' },
+    { id:'h9', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.2 – အပြင်းအထန် + ကိုက် / ချိုး / လိုအပ် / ချော် / နိုး',
+      q:'6. Don\'t let the dog into the kitchen. It ______ something.',
+      acc:['might break','may break'], ans:'might break',
+      exp:'တစ်ခုခုကွဲသွားနိုင်တယ်' },
+
+    { id:'h10', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.3 – လုပ်နိုင်သည် / ဖြစ်နိုင်သည်။',
+      q:'2. I can\'t meet you today, but I ______ (meet) you on Friday.',
+      acc:['might be able to meet','may be able to meet'], ans:'might be able to meet',
+      exp:'"Might be able to" = ဆုံနိုင်အံ့။' },
+    { id:'h11', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.3 – လုပ်နိုင်သည် / ဖြစ်နိုင်သည်။',
+      q:'3. I don\'t know if I\'ll be free next weekend. I ______ (work).',
+      acc:['might have to work','may have to work'], ans:'might have to work',
+      exp:'အလုပ်လုပ်ရပေမည်။' },
+    { id:'h12', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.3 – လုပ်နိုင်သည် / ဖြစ်နိုင်သည်။',
+      q:'4. I can come to the party, but I ______ (leave) early.',
+      acc:['might have to leave','may have to leave'], ans:'might have to leave',
+      exp:'ထွက်သွားရပေမည်။' },
+    { id:'h13', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.3 – လုပ်နိုင်သည် / ဖြစ်နိုင်သည်။',
+      q:'5. We need money. We love this house, but we ______ (sell) it.',
+      acc:['might have to sell','may have to sell'], ans:'might have to sell',
+      exp:'မလုပ်ချင်သော်လည်း အတင်းအကြပ် → ရောင်းရပေမည်။' },
+    { id:'h14', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.3 – လုပ်နိုင်သည် / ဖြစ်နိုင်သည်။',
+      q:'6. A: My printer isn\'t working.  B: Let me see. I ______ (fix) it.',
+      acc:['might be able to fix','may be able to fix'], ans:'might be able to fix',
+      exp:'ပြီးနိုင်သည် မသေချာပါ → ကူညီဖြေရှင်းပေးနိုင်သည်။' },
+
+    { id:'h15', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.4 – စာကြောင်းများကို ထင်သလောက်မရေးပါ။',
+      q:'2. I\'m not sure that I\'ll go to the gym today. → I ______ to the gym today.',
+      acc:['might not go','may not go',"mightn't go"], ans:'might not go',
+      exp:'"Not sure that I will" → ငါထင်သလောက် + V။' },
+    { id:'h16', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.4 – စာကြောင်းများကို ထင်သလောက်မရေးပါ။',
+      q:'3. I\'m not sure that we\'ll be able to find a hotel. → We ______ find a hotel.',
+      acc:['might not be able to','may not be able to',"mightn't be able to"], ans:'might not be able to',
+      exp:'"will be able to" → "might not be able to" (နိုင်ပါစေ)။' },
+    { id:'h17', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.4 – စာကြောင်းများကို ထင်သလောက်မရေးပါ။',
+      q:'4. I\'m not sure that Hoa will be able to come with us. → Hoa ______ come with us.',
+      acc:['might not be able to','may not be able to',"mightn't be able to"], ans:'might not be able to',
+      exp:'ဟိုဟာ ငါတို့နဲ့ လိုက်မလာနိုင်တော့ဘူး။' },
+
+    { id:'h18', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.5 – အစွမ်းဖြင့် ဝါကျများကို ဖန်တီးပါ။',
+      q:'2. You\'re invited to a wedding. You\'re not excited, but you have no other plans. → I\'m not doing anything else, so I ______ to the wedding.',
+      acc:['might as well go','may as well go'], ans:'might as well go',
+      exp:'သွားစရာအကြောင်းမရှိ → သွားလည်းသွားနိုင်တယ်။' },
+    { id:'h19', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.5 – အစွမ်းဖြင့် ဝါကျများကို ဖန်တီးပါ။',
+      q:'3. You\'ve cleaned the living room and you still have energy. Why not clean the bedroom too? → We ______ the bedroom too.',
+      acc:['might as well clean','may as well clean'], ans:'might as well clean',
+      exp:'သန့်ရှင်းတာလည်း ဖြစ်နိုင်တယ်။' },
+    { id:'h20', sec:'G', type:'fill', sub:'လေ့ကျင့်ခန်း 30.5 – အစွမ်းဖြင့် ဝါကျများကို ဖန်တီးပါ။',
+      q:'4. You\'re bored at home and a football match is starting on TV. → We ______ it. There\'s nothing else to do.',
+      acc:['might as well watch','may as well watch'], ans:'might as well watch',
+      exp:'"There\'s nothing else to do" → ဒါကိုလည်း စောင့်ကြည့်နိုင်ပါတယ်။' }
+  ];  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

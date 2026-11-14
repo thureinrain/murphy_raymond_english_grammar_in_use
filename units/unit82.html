@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 82 – ကျွန်ုပ်ကိုယ်တိုင်/သင်ကိုယ်တိုင်/မိမိတို့ဘာသာ စသည်တို့။ | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 82 – ကိုယ့်ကိုယ်ကိုယ် / ကိုယ်တိုင် / ကိုယ်တိုင် စသည်တို့။ </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း 63 ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း 3 ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> Reflexive နာမ်စားများ ( <b> ကိုယ့်ကိုယ်ကို... </b> ) ဘယ်အချိန်မှာသုံးတယ်။ <b> အကြောင်းအရာနှင့် အရာဝတ္ထုသည် တူညီသော လူ/အရာဖြစ်သည်။ </b> - ဗီယက်နမ်လို "self..., oneself" နဲ့ အတူတူပါပဲ။ အတွက်လည်း သုံးပါတယ်။ <b> အလေးပေး </b> "အဲဒီလူက မင်းကိုယ်တိုင်လုပ်" ထောင်ချောက်ကြီး- အချို့သော ဗီယက်နမ်ကြိယာများသည် အင်္ဂလိပ်လို "self" ရှိသည်။ <b> မဟုတ်ပါလား။ </b> ကိုယ်တိုင်သုံးပါ (ခံစား၊ အပန်းဖြေ၊ အာရုံစိုက်၊ တွေ့ဆုံ)။ </p>
+      <div class="ex"> <b class="en">Steve introduced  <mark>himself</mark>  to the guests.</b> (စတိဗ် = ကိုယ်တိုင်) <br> <b class="en">Steve introduced  <mark>me</mark>  to the guests.</b> (စတိဗ် ≠ ကျွန်ုပ်) </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> ငါ → ငါ့ကိုယ်ငါ မင်း (၁ ယောက်) → ငါသူ → သူ့ကိုယ်သူ
+သူမ → သူ့ကိုယ်သူ → ငါတို့ → ကိုယ့်ကိုယ်ကို
+အသင်(အများ) → သူတို့ → သူတို့ကိုယ်သူတို့
+
+S+V+-self (S=O) ဖြတ်မိတာ။   သူတို့ကိုယ်သူတို့ ပျော်ကြတယ်။
+S+V+O+-self (emphasis) ငါကိုယ်တိုင်လုပ်ထားတာ။   (= ဘယ်သူမှ မကူညီခဲ့ဘူး)
+S+V+ အချင်းချင်း (တစ်ယောက်နဲ့တစ်ယောက်) တစ်ယောက်နဲ့တစ်ယောက် ကြည့်ကြတယ်။ </div>
+      <div class="scroll"><table>
+        <tr><th> Use it yourself. </th><th> Do not use yourself </th></tr>
+        <tr><td> causing pain cutting burning blaming enjoy Introduction express protection dry teaching Keeping </td><td> feel chill out, focus meet shower Shave Clothing (usually omitted) </td></tr>
+        <tr><td> I was hurt. <b> myself </b>.</td><td> I feel tired. Relax! See you at 7 p.m. </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. Subject = အရာဝတ္ထု </h2>
+      <ul>
+        <li> <i>Amy had a great holiday. She enjoyed <b>herself</b>.</i> </li>
+        <li> နှိုင်းယှဉ်- <i>You can't blame <b>me</b>.</i> (အခြားလူ) ↔ <i>Don't blame <b>yourself</b>.</i> (သင်ကိုယ်တိုင်) </li>
+        <li> ဝိဘတ်နောက်မှာ အတူတူပါပဲ- <i>She was talking to <b>herself</b>. I'm ashamed of <b>myself</b>.</i> </li>
+        <li> Idiom- <i>Help yourself! Make yourself at home. Behave yourself!</i> </li>
+      </ul>
+
+      <h2> 1.4 · B. ကြိယာများ -self မသုံးပါ။ </h2>
+      <div class="formula"> အရမ်းခံစားရတယ်။        (မဟုတ်ဘူး ၊ ငါ့ကိုယ်ငါ အရမ်းကောင်းတယ်လို့ ခံစားရတယ်)
+အနားယူဖို့ ကြိုးစားပါ။        အာရုံမစိုက်နိုင်ဘူး။      ဘယ်အချိန်ဆုံကြမလဲ
+ရေချိုး၊ ရိတ်ပြီး ဝတ်တယ်။   (အသုံးပြုနိုင်သော်လည်း မကြာခဏ စွန့်ပစ်ခြင်း)
+→ ဒါပေမယ့်: ငါကိုယ်တိုင် အခြောက်ခံတယ်။   (အခြောက်ခံတတ်သည် - ကိုယ်တိုင်လိုအပ်သည်) </div>
+
+      <h2> 1.5 · C. -selves ↔ အချင်းချင်း · D. အလေးပေး </h2>
+      <div class="scroll"><table>
+        <tr><th> themselves/themselves </th><th> each other (each other) </th></tr>
+        <tr><td> Kate and Joe stood in front of the mirror and looked. <b> themselves </b> . (everyone looks at themselves) </td><td> Kate looked at Joe. Joe looked at Kate. They looked. <b> each other </b>.</td></tr>
+      </table></div>
+      <ul>
+        <li><b> လုပ်သူကို အလေးထားပါ- </b> <i>Who repaired your bike? — Nobody. I repaired it <b>myself</b>.</i> </li>
+        <li><b> "ကိုယ်တိုင်" ကို အလေးပေး: </b> <i>The film <b>itself</b> wasn't very good, but I liked the music.</i> · <i>I spoke to the manager <b>herself</b>.</i> </li>
+      </ul>
+
+      <h2> 1.6 · သက်သေခံလက္ခဏာများ </h2>
+      <div class="scroll"><table>
+        <tr><th> Token </th><th>→</th></tr>
+        <tr><td> "self..., self" and subject = object </td><td> - myself/ - myself </td></tr>
+        <tr><td> "each other, each other" </td><td> each other </td></tr>
+        <tr><td> Nobody (help)… / Why don’t you… </td><td> O+self/yourself at the end of the sentence </td></tr>
+        <tr><td> enjoy it, relax, concentrate meet up </td><td> No self. </td></tr>
+      </table></div>
+
+      <h2> 1.7 · အလွယ်တကူ ရှုပ်ထွေးနေသော ဖွဲ့စည်းပုံများနှင့် နှိုင်းယှဉ်ပါ။ </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> Myself (Unit 83); </th><th> Myself (Unit 82); </th></tr>
+        <tr><td> Meaning </td><td> alone There was no one around. </td><td> Do it yourself/yourself. </td></tr>
+        <tr><td> For example </td><td> I live. <b> I myself </b>.</td><td> I painted the room. <b> myself </b>.</td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I feel happy with myself. </td><td class="yes"> I <b> enjoy it. </b> happy </td></tr>
+        <tr><td class="no"> We were very happy. </td><td class="yes"> We are happy. <b> Self </b> I like it very much. </td></tr>
+        <tr><td class="no"> They love themselves. (Love each other) </td><td class="yes"> They love. <b> each other </b>.</td></tr>
+        <tr><td class="no"> It hurts him. (self harm) </td><td class="yes"> He is sick. <b> himself </b>.</td></tr>
+        <tr><td class="no"> themselves/ourselves </td><td class="yes"><b> themselves </b> / <b> Self </b></td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၈၃ </b> (ကိုယ့်ဘာသာ၊ ကိုယ့်ဘာသာ) · <b> ယူနစ် ၅၉ </b> (ခံစား + -ing) · <b> ထပ်လောင်းလေ့ကျင့်ခန်း ၃၀ </b>.</p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🎉 <b class="en">Did you enjoy  <mark>yourself</mark>  at the party?</b> <span class="note"> (ဆက်သွယ်မေးမြန်းရန်) </span></div>
+      <div class="ex"> 🍰 <b class="en">Please help  <mark>yourselves</mark>  to drinks.</b> <span class="note"> (ဧည့်ခံပွဲ) </span></div>
+      <div class="ex"> 🤝 <b class="en">Let me introduce  <mark>myself</mark> . I'm Minh, the new project manager.</b> <span class="note"> (အလုပ် - ပထမအကြိမ်အစည်းအဝေး) </span></div>
+      <div class="ex"> 🔧 <b class="en">I fixed the sink  <mark>myself</mark>  — no plumber needed!</b> <span class="note"> (ဘဝ - ကိုယ်တိုင်လုပ်ပါ) </span></div>
+      <div class="ex"> 📚 <b class="en">She taught  <mark>herself</mark>  Japanese from YouTube.</b> <span class="note"> (လေ့လာ) </span></div>
+      <div class="ex"> 💬 <b class="en">My team members help  <mark>each other</mark>  a lot.</b> <span class="note"> (အင်တာဗျူး - အဖွဲ့လိုက်အလုပ်) </span></div>
+      <div class="ex"> 🧘 <b class="en">After work I just want to  <mark>relax</mark> .</b> <span class="note"> (ကိုယ့်ကိုကိုယ် မသုံးပါနဲ့) </span></div>
+      <div class="ex"> 🏠 <b class="en">Come in and make  <mark>yourself</mark>  at home.</b> <span class="note"> ( ဖိတ်ကြားထားသော ဧည့်သည်များ ) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> "အနည်းကိန်း -self, အများကိန်း -selves": </b> သင်ကိုယ်တိုင် (၁) ↔ သင်ကိုယ်တိုင် (လူများစွာ)။ </li>
+        <li><b> "ပထမနှင့် ဒုတိယလူသည် အပိုင်ဝိသေသနကို သုံးသည်၊ တတိယလူက အရာဝတ္တုကို သုံးသည်" </b> ငါကိုယ်တိုင်၊ သင်ကိုယ်တိုင်၊ ငါတို့ကိုယ်တိုင် ↔ သူ့အတ္တ၊ သူတို့သည် (မိမိကိုယ်တိုင်မရှိဘဲ)။ </li>
+        <li><b> "Nhau = each other" : </b> "nhau" → အချင်းချင်း နားထောင်ပါ။ </li>
+        <li><b> "မိမိကိုယ်ကိုမပါဘဲ စိတ်လျှော့လိုက်သော ကြိယာ ၄ ခု" </b> ခံစားပါ၊ အပန်းဖြေပါ၊ အာရုံစူးစိုက်ပါ၊ တွေ့ဆုံပါ။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> အရာဝတ္ထုနှင့် ဘာသာရပ်ကို နှိုင်းယှဉ်ပါ- လူတစ်ဦးတည်း → -self; မတူဘူး → ငါ/မင်း/သူ… </li>
+        <li> မရှိမဖြစ်ဝါကျများတွင် လျှို့ဝှက်အကြောင်းအရာများရှိသည်။ <b> သင် </b> <i>Don't blame <b>yourself</b></i> ဒါပေမယ့် <i>Don't blame <b>me</b></i>။ </li>
+        <li> အများကိန်း ဘာသာရပ် + အပြန်အလှန် လုပ်ဆောင်ချက် → အချင်းချင်း၊ လူတစ်ဦးစီ → သူတို့ကိုယ်သူတို့ ဦးတည်လုပ်ဆောင်သည်။ </li>
+        <li> အဖြေပုံစံ "Nobody. I … myself" → အရာဝတ္တု <i>it/them/her</i> ရှေ့မှာ ထားဖို့ သတိရနေမိတယ်။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I had fun at the party. </td><td class="yes"> Happy <b> myself </b> / happy. <b> Party </b>.</td><td class="why"> If you want to be happy, you need an object. </td></tr>
+        <tr><td class="no"> I feel myself tired. </td><td class="yes"> I <b> enjoy it. </b> Tired. </td><td class="why"> Don't feel yourself. </td></tr>
+        <tr><td class="no"> We love ourselves. (Love each other) </td><td class="yes"> we love <b> each other </b>.</td><td class="why"> "nhau" = each other </td></tr>
+        <tr><td class="no"> Let me introduce you. </td><td class="yes"> Let me introduce you <b> myself </b>.</td><td class="why"> S=O </td></tr>
+        <tr><td class="no"> I taught him English. </td><td class="yes"> He taught. <b> himself </b> English. </td><td class="why"> Self study. </td></tr>
+        <tr><td class="no"> They do it themselves. </td><td class="yes"> They did. <b> themselves </b>.</td><td class="why"> Correct form </td></tr>
+        <tr><td class="no"> Give yourself a break. </td><td class="yes"> please <b> Relax </b>.</td><td class="why"> Don't relax yourself </td></tr>
+        <tr><td class="no"> children Help yourself. </td><td class="yes"> children help me. <b> yourself </b>!</td><td class="why"> Many people → -self </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြော- </b> အဖွင့်တင်ဆက်မှု- <i>"Let me introduce myself…"</i> </li>
+        <li><b> အင်တာဗျူး- </b> <i>"I taught myself Python."</i> — သင်သည် တက်ကြွနေကြောင်း ပြသသည်။ </li>
+        <li><b> ကတ်/စာ ရေးပါ- </b> <i>"Hope you enjoyed yourselves at the wedding!"</i> </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> "အရေးယူမှုကို ဘယ်သူလက်ခံမှာလဲ" လို့ မေးပါ။ — ဘာသာရပ်ကိုယ်တိုင် → -self; အခြားလူ → ငါ/မင်း…; အပြန်ပြန်အလှန်လှန် → အပြန်အလှန်။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> 3၊ 7 နှင့် 14 ရက်ပြီးနောက်လေ့ကျင့်ခန်းများကိုပြန်လုပ်ပါ။ သိမ်းဆည်းထားသော မှားယွင်းသော စာကြောင်းများကို အာရုံစိုက်ပါ။ ဆက်စပ်- <b> ယူနစ် ၈၃ </b> (ကျွန်တော်ကိုယ်တိုင်/ကိုယ်တိုင်)၊ <b> ယူနစ် ၈၁ </b> (possessive -'s)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit82.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 82 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> ကိုယ်တိုင်သုံးပါ။ \u003c/th>\u003cth> မိမိကိုယ်ကို မသုံးပါနှင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> နာကျင်စေခြင်း၊ ဖြတ်ခြင်း၊ မီးရှို့ခြင်း၊ အပြစ်တင်ခြင်း၊ ပျော်မွေ့ခြင်း၊ မိတ်ဆက်ခြင်း၊ ဖော်ပြခြင်း၊ ကာကွယ်ခြင်း၊ ခြောက်ကပ်ခြင်း၊ သွန်သင်ခြင်း၊ စောင့်ရှောက်ခြင်း။ \u003c/td>\u003ctd> ခံစား၊ အပန်းဖြေ၊ အာရုံစိုက်၊ တွေ့ဆုံ၊ ရေချိုး၊ မုတ်ဆိတ်ရိတ်၊ အဝတ်အစား (များသောအားဖြင့် ချန်လှပ်ထား) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> စိတ်ထိခိုက်သွားတယ်။ \u003cb> ကိုယ့်ကိုယ်ကို \u003c/b>.\u003c/td>\u003ctd> ပင်ပန်းတယ်လို့ ခံစားရတယ်။ သက်တောင့်သက်သာနေပါ! ည ၇ နာရီမှာ တွေ့တယ်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> သူတို့ကိုယ်တိုင်/ ကိုယ်တိုင် \u003c/th>\u003cth> အချင်းချင်း (အချင်းချင်း) \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> Kate နဲ့ Joe က မှန်ရှေ့မှာ ရပ်ပြီး ကြည့်လိုက်တယ်။ \u003cb> သူတို့ကိုယ်သူတို့ \u003c/b> . (လူတိုင်းက ကိုယ့်ကိုကိုယ်ကြည့်တယ်) \u003c/td>\u003ctd> Kate က Joe ကိုကြည့်တယ်။ ဂျိုးသည် ကိတ်ကို ကြည့်လိုက်သည်။ ကြည့်လိုက်ကြတယ်။ \u003cb> တစ်ဦးကိုတစ်ဦး \u003c/b>.\u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> တိုကင် \u003c/th>\u003cth>→\u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> \"self...,self\" and subject = အရာဝတ္ထု \u003c/td>\u003ctd> - ကိုယ်တိုင်/ - ကိုယ်တိုင် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"အချင်းချင်း၊ အချင်းချင်း\" \u003c/td>\u003ctd> တစ်ဦးကိုတစ်ဦး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဘယ်သူကမှ (မကူညီဘူး)… / ဘာလို့ မလုပ်တာလဲ… \u003c/td>\u003ctd> ဝါကျအဆုံးမှာ O+self/yourself \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ခံစားပါ၊ အပန်းဖြေပါ၊ အာရုံစူးစိုက်ပါ၊ တွေ့ဆုံပါ။ \u003c/td>\u003ctd> မိမိကိုယ်ကို မရှိ။ \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> ကျွန်တော်ကိုယ်တိုင် (ယူနစ် ၈၃)၊ \u003c/th>\u003cth> ကျွန်တော်ကိုယ်တိုင် (ယူနစ် ၈၂)၊ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အဓိပ္ပါယ် \u003c/td>\u003ctd> တစ်ယောက်တည်း၊ ပတ်ပတ်လည်မှာ ဘယ်သူမှမရှိဘူး။ \u003c/td>\u003ctd> ကိုယ်တိုင်/ ကိုယ်တိုင်လုပ်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဥပမာအားဖြင့် \u003c/td>\u003ctd> ငါအသက်ရှင်တယ်။ \u003cb> ငါကိုယ်တိုင် \u003c/b>.\u003c/td>\u003ctd> အခန်းကို ပန်းချီဆွဲတယ်။ \u003cb> ကိုယ့်ကိုယ်ကို \u003c/b>.\u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့ကိုယ်ငါ ပျော်တယ်လို့ ခံစားရတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> ခံစားပါ။ \u003c/b> ပျော်တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကျွန်တော်တို့ အရမ်းပျော်ခဲ့ပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါတို့ပျော်တယ်။ \u003cb> မိမိကိုယ်ကို \u003c/b> အရမ်းကြိုက်တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူတို့ကိုယ်သူတို့ ချစ်ကြတယ်။ (တစ်ယောက်ကိုတစ်ယောက် ချစ်ပါ) \u003c/td>\u003ctd class=\"yes\"> ချစ်ကြတယ်။ \u003cb> တစ်ဦးကိုတစ်ဦး \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူ့ကို နာကျင်စေတယ်။ (ကိုယ့်ကိုယ်ကိုထိခိုက်အောင်လုပ်ခြင်း) \u003c/td>\u003ctd class=\"yes\"> သူနာတယ်။ \u003cb> သူ့ကိုယ်သူ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူတို့ကိုယ်တိုင်/ ငါတို့ကိုယ်တိုင် \u003c/td>\u003ctd class=\"yes\">\u003cb> သူတို့ကိုယ်သူတို့ \u003c/b> / \u003cb> မိမိကိုယ်ကို \u003c/b>\u003c/td>\u003c/tr>\n      ","t5":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပါတီမှာ ပျော်ခဲ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> ပျော်ပျော်ကြီး \u003cb> ကိုယ့်ကိုယ်ကို \u003c/b> / ပျော်တယ်။ \u003cb> ပါတီ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> ပျော်ရင် အရာဝတ္ထုတစ်ခုလိုတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့ကိုယ်ငါ ပင်ပန်းသလို ခံစားရတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> ခံစားပါ။ \u003c/b> ပင်ပန်းသည်။ \u003c/td>\u003ctd class=\"why\"> ကိုယ့်ကိုယ်ကို မခံစားပါနဲ့။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကျွန်ုပ်တို့သည် မိမိကိုယ်ကို ချစ်ပါသည်။ (တစ်ယောက်ကိုတစ်ယောက် ချစ်ပါ) \u003c/td>\u003ctd class=\"yes\"> ငါတို့ ချစ်တယ်။ \u003cb> တစ်ဦးကိုတစ်ဦး \u003c/b>.\u003c/td>\u003ctd class=\"why\"> \"nhau\" = အချင်းချင်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မိတ်ဆက်ပေးပါရစေ။ \u003c/td>\u003ctd class=\"yes\"> မိတ်ဆက်ပေးပါရစေ \u003cb> ကိုယ့်ကိုယ်ကို \u003c/b>.\u003c/td>\u003ctd class=\"why\"> S=O \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူ့ကို အင်္ဂလိပ်စာသင်ပေးတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူသင်ပေးတယ်။ \u003cb> သူ့ကိုယ်သူ \u003c/b> အင်္ဂလိပ်စာ။ \u003c/td>\u003ctd class=\"why\"> ကိုယ်တိုင်လေ့လာခြင်း။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူတို့ကိုယ်တိုင်လုပ်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူတို့လုပ်ခဲ့တယ်။ \u003cb> သူတို့ကိုယ်သူတို့ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> မှန်ကန်သောပုံစံ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သင့်ကိုယ်သင် အနားယူပါ။ \u003c/td>\u003ctd class=\"yes\"> ကျေးဇူးပြု \u003cb> သက်တောင့်သက်သာနေပါ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> ကိုယ့်ကိုယ်ကို မဖြေလျှော့ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကလေးတွေ၊ ကိုယ့်ကိုကိုယ်ကူညီပါ။ \u003c/td>\u003ctd class=\"yes\"> ကလေးတွေ၊ ကူညီပါ။ \u003cb> သင်ကိုယ်တိုင် \u003c/b>!\u003c/td>\u003ctd class=\"why\"> လူတော်တော်များများ → -self \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 82 – ကိုယ့်ကိုယ်ကို / ကိုယ်တိုင် / ကိုယ်တိုင် | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit82.html';
+  var KEY = 'egu4_unit82_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. reflexive pronoun ကိုဖြည့်ပါ။',      desc:'ကိုယ့်ကိုယ်ကို / ကိုယ်တိုင် / ကိုယ်တိုင် / သူကိုယ်တိုင် / ကိုယ်တိုင် / ကိုယ်တိုင် / ကိုယ်တိုင် / ကိုယ်တိုင် / ကိုယ်တိုင် ဖြည့်သွင်းပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော နာမ်စားများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 82 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် ၈၂ လေ့ကျင့်ခန်းများ)', desc:'Lesson 82.1 → 82.5 သည် Murphy\'s book ရှိ တိကျသောသင်ခန်းစာပုံစံကို သော့များဖြင့်ဖော်ပြထားသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'Be careful with that knife! Don\'t cut ______.',
+      opts:['you','yourself','yourselves'], a:1,
+      exp:'အကြောင်းအရာ (သင် – လူတစ်ဦး) နှင့် အရာဝတ္တုသည် တူညီသော လူတစ်ဦးဖြစ်သည် → သင့်ကိုယ်သင် တုံ့ပြန်သည့် နာမ်စားဖြစ်သည်။' },
+    { id:'a2', sec:'A', type:'mcq', q:'We really enjoyed ______ at the party.',
+      opts:['us','ourself','ourselves'], a:2,
+      exp:'enjoy yourself = ပျော်ရွှင်ပါစေ၊ ပျော်ပျော်နေပါ။ ကျွန်ုပ်တို့ → မိမိကိုယ်ကို ("ourself" မပါဘဲ)။' },
+    { id:'a3', sec:'A', type:'mcq', q:'I ______ really tired today.',
+      opts:['feel myself','feel'], a:1,
+      exp:'ခံစား၊ အပန်းဖြေ၊ အာရုံစူးစိုက်ပါ၊ တွေ့ဆုံပါ၊ အများအားဖြင့် reflexive pronoun မသုံးပါနှင့်။ ပင်ပန်းသည်ဟု ခံစားရသည်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'Lan and Hoa are best friends. They call ______ every day.',
+      opts:['themselves','each other'], a:1,
+      exp:'တစ်ခုနှင့်တစ်ခု = တစ်ခုနှင့်တစ်ခု (သစ်ခွဟုခေါ်သည် Hoa၊ Hoa ဟုခေါ်သည် Lan)။ himself = ကိုယ်တိုင်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'There was nobody else in the room. She was talking to ______.',
+      opts:['her','herself'], a:1,
+      exp:'အခြားမည်သူမျှမရှိပါ → သူမသည် သူမကိုယ်သူမ။' },
+    { id:'a6', sec:'A', type:'mcq', q:'I didn\'t need any help. I did it ______.',
+      opts:['me','by me','myself'], a:2,
+      exp:'"ကိုယ့်ကိုယ်ကို လုပ်ပါ၊ ဘယ်သူမှ မကူညီဘူး" → ကိုယ့်ကိုယ်ကို (ဝါကျအဆုံးမှာ) အလေးပေးလိုက်ပါ။' },
+    { id:'a7', sec:'A', type:'mcq', q:'There\'s plenty of food. Please help ______!',
+      opts:['you','your','yourself'], a:2,
+      exp:'ကိုယ့်ကိုယ်ကို ကူညီပါ = စားစရာ/သောက်စရာများ လွတ်လွတ်လပ်လပ် ရအောင်ယူပါ။' },
+    { id:'a8', sec:'A', type:'mcq', q:'He sat down on the sofa and tried to ______.',
+      opts:['relax','relax himself'], a:0,
+      exp:'relax သည် reflexive pronoun နှင့်မသက်ဆိုင်ပါ။' },
+
+    /*===== B။ ဖြည့် =====*/
+    { id:'b1', sec:'B', type:'fill', q:'Did you hurt ______ when you fell off your bike?',
+      acc:['yourself'], ans:'yourself',
+      exp:'သင် (လူ) → သင်ကိုယ်တိုင်။' },
+    { id:'b2', sec:'B', type:'fill', q:'The children looked at ______ in the mirror and laughed.',
+      acc:['themselves'], ans:'themselves',
+      exp:'ကလေးများ (မိသားစု) → သူတို့ကိုယ်သူတို့။' },
+    { id:'b3', sec:'B', type:'fill', q:'My grandfather taught ______ to play the guitar.',
+      acc:['himself'], ans:'himself',
+      exp:'teach oneself = ကိုယ်တိုင်လေ့လာခြင်း၊ သူ → သူ့ကိုယ်သူ။' },
+    { id:'b4', sec:'B', type:'fill', q:'The machine switches ______ off when it gets too hot.',
+      acc:['itself'], ans:'itself',
+      exp:'စက် (it) → သူ့ဟာသူ။' },
+    { id:'b5', sec:'B', type:'fill', q:'I\'m going to buy ______ a new phone for my birthday.',
+      acc:['myself'], ans:'myself',
+      exp:'ကိုယ်တိုင် → ကိုယ်တိုင်ဝယ်ပါ။' },
+    { id:'b6', sec:'B', type:'fill', q:'We introduced ______ to our new neighbours.',
+      acc:['ourselves'], ans:'ourselves',
+      exp:'ငါတို့ → ကိုယ်တိုင်။' },
+    { id:'b7', sec:'B', type:'fill', q:'Huong lives alone. She has to look after ______.',
+      acc:['herself'], ans:'herself',
+      exp:'သူမ → သူမကိုယ်တိုင်။' },
+    { id:'b8', sec:'B', type:'fill', q:'Be careful, kids! Don\'t burn ______ on the stove.',
+      acc:['yourselves'], ans:'yourselves',
+      exp:'လူများစွာ (ကလေးများ) → သင့်ကိုယ်သင် စကားပြောပါ။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (she / taught / herself / English)',
+      tokens:['She','taught','herself','English'],
+      acc:['she taught herself english'], ans:'She taught herself English.',
+      exp:'သင်ကိုယ်တိုင် + ဘာသာရပ် = ကိုယ်တိုင်လေ့လာခြင်း။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (we / enjoyed / ourselves / at / the / beach)',
+      tokens:['We','enjoyed','ourselves','at','the','beach'],
+      acc:['we enjoyed ourselves at the beach'], ans:'We enjoyed ourselves at the beach.',
+      exp:'enjoy ourselves = ပျော်ရွှင်ပါစေ။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (they / looked / at / each / other / and / laughed)',
+      tokens:['They','looked','at','each','other','and','laughed'],
+      acc:['they looked at each other and laughed'], ans:'They looked at each other and laughed.',
+      exp:'each other = တစ်ယောက်ကိုတစ်ယောက်ကြည့်။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (I / repaired / the / bike / myself)',
+      tokens:['I','repaired','the','bike','myself'],
+      acc:['i repaired the bike myself'], ans:'I repaired the bike myself.',
+      exp:'ဝါကျအဆုံးမှာ ကိုယ်တိုင်က "I do it myself" လို့ အလေးပေးတယ်။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (make / yourself / at / home)',
+      tokens:['Make','yourself','at','home'],
+      acc:['make yourself at home'], ans:'Make yourself at home.',
+      exp:'Idiom: Make yourself at home = ကိုယ့်အိမ်မှာ လုပ်ပါ။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: This cake is delicious! Who made it?  B: I made it ______.',
+      acc:['myself'], ans:'myself',
+      exp:'အလေးပေး: ကိုယ်တိုင်လုပ်ပါ။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: Can I have another biscuit?  B: Of course. Help ______!',
+      acc:['yourself'], ans:'yourself',
+      exp:'ကိုယ့်ကိုယ်ကို ကူညီပါ' },
+    { id:'d3', sec:'D', type:'fill', q:'A: How long have you and Nam known ______?  B: Since primary school.',
+      acc:['each other','one another'], ans:'each other',
+      exp:'နမ်နဲ့နမ် → တစ်ယောက်နဲ့တစ်ယောက် သိတယ်။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Did the kids have fun at the camp?  B: Yes, they really enjoyed ______.',
+      acc:['themselves'], ans:'themselves',
+      exp:'သူတို့ကိုယ်သူတို့ပျော်မွေ့။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'အခြားသူများထံမှ အကူအညီမပါဘဲ သင်ကိုယ်တိုင်လုပ်ခဲ့သော အရာ ၂-၃ ခုကို ပြောပြပါ (ဝါကျအဆုံးတွင် ကျွန်ုပ်ကိုယ်တိုင် အသုံးပြုပါ)။',
+      sample:'I fixed my laptop myself. I usually cook dinner myself. I taught myself to play the piano.',
+      exp:'၀ါကျအဆုံးမှာ ကိုယ်တိုင်လုပ်ပါ။ teach myself = ကိုယ်တိုင်လေ့လာခြင်း။' },
+    { id:'e2', sec:'E', type:'self', q:'ခြားနားချက်ကို သိရန် စာကြောင်း 1 ကြောင်းကို ကိုယ်တိုင်/ကိုယ်တိုင်ရေးပြီး 1 စာကြောင်းကို ခြားနားစွာရေးပါ။',
+      sample:'My parents bought themselves a new car. My parents love each other very much.',
+      exp:'မိမိကိုယ်ကို = သူတို့ကိုယ်သူတို့၊ each other = အချင်းချင်း။' },
+    { id:'e3', sec:'E', type:'self', q:'စာကြောင်း 2 ကြောင်းကို feel / relax / focus (တုံ့ပြန်မှု နာမ်စားများ မပါ) ဖြင့်ရေးပါ။',
+      sample:'I feel much better after a good sleep. I can\'t concentrate when my phone keeps ringing.',
+      exp:'ကြိယာကို စိတ်လျှော့၊ အာရုံစူးစိုက်မှု ဆုံအောင် မသုံးပါနဲ့။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'fill', q:'အင်္ဂလိပ်ဘာသာသို့ ဘာသာပြန်ဆိုသည်- "She cuts (her own) hair."',
+      acc:['she cuts her hair herself','she cuts her own hair','she cut her hair herself','she cut her own hair','she cuts her hair by herself'], ans:'She cuts her hair herself.',
+      exp:'ဝါကျအဆုံးတွင် သူမကိုယ်တိုင်က "သူမ၏ဆံပင်" (သူမ၏ကိုယ်ပိုင်ဆံပင် — Unit 83 ကိုကြည့်ပါ)။' },
+    { id:'f2', sec:'F', type:'mcq', q:'I can\'t ______ — it\'s too noisy in here.',
+      opts:['concentrate myself','concentrate'], a:1,
+      exp:'အာရုံမစိုက်ဘူး။' },
+    { id:'f3', sec:'F', type:'fill', q:'If someone attacks you, you should be able to defend ______.',
+      acc:['yourself'], ans:'yourself',
+      exp:'ကိုယ့်ကိုယ်ကို ခုခံကာကွယ် = ကိုယ့်ကိုကိုယ် ကာကွယ်ပါ။' },
+    { id:'f4', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['We\'re meeting ourselves at 7.','We\'re meeting at 7.'], a:1,
+      exp:'တွေ့ဆုံခြင်း (to meet) မသုံးတတ်ပါ။' },
+    { id:'f5', sec:'F', type:'fill', q:'Tom and I don\'t see ______ very often these days.',
+      acc:['each other','one another'], ans:'each other',
+      exp:'တွမ်က ကျွန်မကိုတွေ့တယ်၊ တွမ် → တစ်ယောက်နဲ့တစ်ယောက်တွေ့တယ်။' },
+    { id:'f6', sec:'F', type:'mcq', q:'The film ______ wasn\'t very good, but the music was great.',
+      opts:['it','himself','itself'], a:2,
+      exp:'"ရုပ်ရှင်ကိုယ်တိုင်" ကို အလေးပေးရန်အတွက် နာမ်၏နောက်မှ လာပါသည်။' },
+    { id:'f7', sec:'F', type:'fill', q:'I gave them a key so that they could let ______ in.',
+      acc:['themselves'], ans:'themselves',
+      exp:'let + ကိုယ်ပိုင်နာမ်စား → let themselves in (ကိုယ်တိုင် ဝင်ခွင့်ပြု)။' },
+    { id:'f8', sec:'F', type:'mcq', q:'FALSE ထုတ်ပြန်ချက်ကို ရွေးပါ-',
+      opts:['He dried himself with a towel.','She feels herself better now.','I washed and got dressed quickly.'], a:1,
+      exp:'feel သည် reflexive pronoun များကိုမသုံးပါ- ယခု သူမ ပိုကောင်းလာသည်။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'',
+      q:'Mike ______ to everyone at the meeting. (introduce)', acc:['introduced himself'], ans:'introduced himself',
+      exp:'Mike → သူ့ကိုယ်သူ; past: မိတ်ဆက်သည်။' },
+    { id:'h2', sec:'G', type:'fill', sub:'',
+      q:'Lan slipped on the stairs, but luckily she didn\'t ______. (hurt)', acc:['hurt herself'], ans:'hurt herself',
+      exp:'didn\'t + V infinitive: သူ့ကိုယ်သူ နာကျင်စေသည်။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၁ – ကြိယာ + ကိုယ်တိုင်/ကိုယ့်ကိုယ်ကို… (အပြစ်တင်၊ ပူလောင်၊ ပျော်ရွှင်၊ ဖော်ပြ၊ နာကျင်စေ၊ မိတ်ဆက်၊ ထား)',
+      q:'It wasn\'t your fault. You shouldn\'t ______. (blame)', acc:['blame yourself'], ans:'blame yourself',
+      exp:'ကိုယ့်ကိုယ်ကို အပြစ်တင်ပါ → ကိုယ့်ကိုယ်ကို အပြစ်တင်ပါ။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၁ – ကြိယာ + ကိုယ်တိုင်/ကိုယ့်ကိုယ်ကို… (အပြစ်တင်၊ ပူလောင်၊ ပျော်ရွှင်၊ ဖော်ပြ၊ နာကျင်စေ၊ မိတ်ဆက်၊ ထား)',
+      q:'Please try to ______ in my position. (put)', acc:['put yourself'], ans:'put yourself',
+      exp:'put yourself in my position = ကိုယ့်ကိုကိုယ် ကိုယ့်အနေအထားနဲ့ကိုယ်ထားပါ။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၁ – ကြိယာ + ကိုယ်တိုင်/ကိုယ့်ကိုယ်ကို… (အပြစ်တင်၊ ပူလောင်၊ ပျော်ရွှင်၊ ဖော်ပြ၊ နာကျင်စေ၊ မိတ်ဆက်၊ ထား)',
+      q:'The kids had a great time at the zoo. They really ______. (enjoy)', acc:['enjoyed themselves'], ans:'enjoyed themselves',
+      exp:'သူတို့ကိုယ်သူတို့ ပျော်တယ်။' },
+    { id:'h6', sec:'G', type:'fill', sub:'',
+      q:'Careful! The iron is very hot. Don\'t ______. (burn)', acc:['burn yourself'], ans:'burn yourself',
+      exp:'Don\'t + V: ကိုယ့်ကိုကိုယ် မီးရှို့ပါ။' },
+    { id:'h7', sec:'G', type:'fill', sub:'',
+      q:'My English isn\'t great. Sometimes I find it hard to ______ clearly. (express)', acc:['express myself'], ans:'express myself',
+      exp:'express myself = ကိုယ့်ကိုယ်ကို ဖော်ပြပါ။' },
+
+    { id:'h8', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'Nam had a wonderful holiday. He really enjoyed ______.', acc:['himself'], ans:'himself',
+      exp:'Subject = အရာဝတ္ထု → သူ့ကိုယ်သူ။' },
+    { id:'h9', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'It\'s not my fault. Don\'t blame ______.', acc:['me'], ans:'me',
+      exp:'ဝှက်ထားသောအကြောင်းအရာသည် သင်ဖြစ်သည်၊ အရာဝတ္ထုမှာ ငါ (အခြားလူ) → ငါဖြစ်သည်။' },
+    { id:'h10', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'What I said was terrible. I\'m ashamed of ______.', acc:['myself'], ans:'myself',
+      exp:'ငါ… ကိုယ်တိုင်။' },
+    { id:'h11', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'We\'re lost. Can you help ______?', acc:['us'], ans:'us',
+      exp:'သင်အကြောင်းအရာ၊ ကျွန်ုပ်တို့ → ကျွန်ုပ်တို့ကို ကန့်ကွက်ပါ။' },
+    { id:'h12', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'You must meet my cousin. I\'ll introduce ______ to him.', acc:['you'], ans:'you',
+      exp:'Subject I၊ object is you → သင်။' },
+    { id:'h13', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'Don\'t worry about us. We can look after ______.', acc:['ourselves'], ans:'ourselves',
+      exp:'ငါတို့… ကိုယ်တိုင်။' },
+    { id:'h14', sec:'G', type:'fill', sub:'Lesson 82.2 – ကိုယ်တိုင်/ သင်ကိုယ်တိုင်… သို့မဟုတ် ကျွန်ုပ်/သင်/ကျွန်ုပ်တို့…',
+      q:'Don\'t worry about the kids. I\'ll look after ______.', acc:['them'], ans:'them',
+      exp:'ဘာသာရပ် I၊ အရာဝတ္ထုသည် ကလေးများ → ၎င်းတို့ ဖြစ်သည်။' },
+
+    { id:'h15', sec:'G', type:'fill', sub:'Lesson 82.3 – လိုအပ်သည့်အခါတွင် မိမိကိုယ်တိုင်သာ အသုံးပြုပါ (အာရုံစူးစိုက်ပါ၊ ကာကွယ်ပါ၊ ခြောက်သွေ့၊ ခံစားပါ၊ တွေ့ဆုံပါ၊ အနားယူပါ)',
+      q:'I was ill last week, but I ______ much better now. (feel)', acc:['feel'], ans:'feel',
+      exp:'ကိုယ်တိုင်လည်း မသုံးဘူး ခံစားရတယ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'Lesson 82.3 – လိုအပ်သည့်အခါတွင် မိမိကိုယ်တိုင်သာ အသုံးပြုပါ (အာရုံစူးစိုက်ခြင်း၊ ကာကွယ်ခြင်း၊ ခြောက်သွေ့ခြင်း၊ ခံစားရခြင်း၊ တွေ့ဆုံခြင်း၊ အနားယူခြင်း)',
+      q:'She got out of the shower and ______ with a towel. (dry)', acc:['dried herself'], ans:'dried herself',
+      exp:'dry yourself = ခြောက်သွေ့အောင် → ကိုယ့်ကိုယ်ကို အခြောက်ခံပါ။' },
+    { id:'h17', sec:'G', type:'fill', sub:'Lesson 82.3 – လိုအပ်သည့်အခါတွင် မိမိကိုယ်တိုင်သာ အသုံးပြုပါ (အာရုံစူးစိုက်ပါ၊ ကာကွယ်ပါ၊ ခြောက်သွေ့၊ ခံစားပါ၊ တွေ့ဆုံပါ၊ အနားယူပါ)',
+      q:'There\'s too much noise here. I can\'t ______. (concentrate)', acc:['concentrate'], ans:'concentrate',
+      exp:'အာရုံစူးစိုက်မှုကို ကိုယ်တိုင်မသုံးပါဘူး။' },
+    { id:'h18', sec:'G', type:'fill', sub:'Lesson 82.3 – လိုအပ်သည့်အခါတွင် မိမိကိုယ်တိုင်သာ အသုံးပြုပါ (အာရုံစူးစိုက်ခြင်း၊ ကာကွယ်ခြင်း၊ ခြောက်သွေ့ခြင်း၊ ခံစားရခြင်း၊ တွေ့ဆုံခြင်း၊ အနားယူခြင်း)',
+      q:'If someone attacks you, you need to know how to ______. (defend)', acc:['defend yourself'], ans:'defend yourself',
+      exp:'defend yourself = ခုခံကာကွယ်ခြင်း (reflexive pronoun လိုအပ်သည်)။' },
+    { id:'h19', sec:'G', type:'fill', sub:'Lesson 82.3 – လိုအပ်သည့်အခါတွင် မိမိကိုယ်တိုင်သာ အသုံးပြုပါ (အာရုံစူးစိုက်ခြင်း၊ ကာကွယ်ခြင်း၊ ခြောက်သွေ့ခြင်း၊ ခံစားရခြင်း၊ တွေ့ဆုံခြင်း၊ အနားယူခြင်း)',
+      q:'I\'m seeing Hoa tonight. We\'re ______ at 8. (meet)', acc:['meeting'], ans:'meeting',
+      exp:'တွေ့လို့ မသုံးဘူး။' },
+    { id:'h20', sec:'G', type:'fill', sub:'Lesson 82.3 – လိုအပ်သည့်အခါတွင် မိမိကိုယ်တိုင်သာ အသုံးပြုပါ (အာရုံစူးစိုက်ခြင်း၊ ကာကွယ်ခြင်း၊ ခြောက်သွေ့ခြင်း၊ ခံစားရခြင်း၊ တွေ့ဆုံခြင်း၊ အနားယူခြင်း)',
+      q:'You work too hard. Why don\'t you sit down and ______? (relax)', acc:['relax'], ans:'relax',
+      exp:'ဖြေလျှော့တာ ကိုယ့်ကိုယ်ကို မသုံးဘူး။' },
+
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၄ – ကျွန်ုပ်တို့ကိုယ်တိုင် သို့မဟုတ် အချင်းချင်း',
+      q:'How long have you and your wife known ______?', acc:['each other','one another'], ans:'each other',
+      exp:'တစ်ယောက်နဲ့တစ်ယောက် → တစ်ယောက်နဲ့တစ်ယောက် သိပါစေ။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၄ – ကျွန်ုပ်တို့ကိုယ်တိုင် သို့မဟုတ် အချင်းချင်း',
+      q:'People who work too hard can make ______ ill.', acc:['themselves'], ans:'themselves',
+      exp:'သင့်ကိုယ်သင် → ဖျားနာအောင်လုပ်ပါ။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၄ – ကျွန်ုပ်တို့ကိုယ်တိုင် သို့မဟုတ် အချင်းချင်း',
+      q:'At Tet, family members often give ______ lucky money.', acc:['each other','one another'], ans:'each other',
+      exp:'အချင်းချင်း → တစ်ယောက်ကို တစ်ယောက် ကံကောင်းငွေ ပေးကမ်းခြင်း။' },
+    { id:'h24', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၄ – ကျွန်ုပ်တို့ကိုယ်တိုင် သို့မဟုတ် အချင်းချင်း',
+      q:'Some people are very selfish. They only think of ______.', acc:['themselves'], ans:'themselves',
+      exp:'→ ကိုယ့်ကိုယ်ကိုသာ စဉ်းစားပါ။' },
+    { id:'h25', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၄ – ကျွန်ုပ်တို့ကိုယ်တိုင် သို့မဟုတ် အချင်းချင်း',
+      q:'We couldn\'t get back into the car. We had locked ______ out.', acc:['ourselves'], ans:'ourselves',
+      exp:'→ မိမိကိုယ်ကို သော့ခတ်ထားပါ။' },
+    { id:'h26', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၈၂.၄ – ကျွန်ုပ်တို့ကိုယ်တိုင် သို့မဟုတ် အချင်းချင်း',
+      q:'They had an argument, and now they\'re not speaking to ______.', acc:['each other','one another'], ans:'each other',
+      exp:'တစ်ယောက်နဲ့တစ်ယောက် → တစ်ယောက်နဲ့တစ်ယောက် စကားမပြောပါနဲ့။' },
+
+    { id:'h27', sec:'G', type:'fill', sub:'သင်ခန်းစာ 82.5 – ကိုယ်တိုင်/မိမိကိုယ်ကို တုံ့ပြန်ပါ… (အလေးပေး)',
+      q:'Who cleans your flat for you? — Nobody. I clean ______.', acc:['it myself'], ans:'it myself',
+      exp:'ဝါကျအဆုံးမှာ Object (it) + ကိုယ့်ကိုယ်ကို။' },
+    { id:'h28', sec:'G', type:'fill', sub:'သင်ခန်းစာ 82.5 – ကိုယ်တိုင်/မိမိကိုယ်ကို တုံ့ပြန်ပါ… (အလေးပေး)',
+      q:'Who cuts your son\'s hair? — Nobody. He cuts ______.', acc:['it himself'], ans:'it himself',
+      exp:'သူကိုယ်တိုင်ဖြတ်တယ်။' },
+    { id:'h29', sec:'G', type:'fill', sub:'သင်ခန်းစာ 82.5 – ကိုယ်တိုင်/မိမိကိုယ်ကို တုံ့ပြန်ပါ… (အလေးပေး)',
+      q:'Shall I tell Linh about the plan? — No, I\'ll tell ______.', acc:['her myself'], ans:'her myself',
+      exp:'I\'ll tell herself = ငါ သူ့ကိုယ်သူ ပြောပြမယ်။' },
+    { id:'h30', sec:'G', type:'fill', sub:'သင်ခန်းစာ 82.5 – ကိုယ်တိုင်/မိမိကိုယ်ကို တုံ့ပြန်ပါ… (အလေးပေး)',
+      q:'Can you book the tickets for me? — Why can\'t you book ______?', acc:['them yourself'], ans:'them yourself',
+      exp:'သင်ဘာကြောင့်သူတို့ကိုသင်ကိုယ်တိုင်ဘွတ်ကင်လုပ်လို့မရပါဘူး။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

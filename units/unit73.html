@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 73 – The 1 | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> ယူနစ် ၇၃ – ၁ </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> ရမှတ် ၅၇ မှတ် + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> သုံးပါ။ <b> အဆိုပါ </b> အခါသာ <b> တစ်ခု </b> ထိုအရာ (နေ၊ မြို့တော်၊ ဒသမထပ်၊ အဆုံး…)။ ဤယူနစ်သည် အလွတ်ကျက်ထားရမည့် "ပုံသေစကားစုများ" ကိုလည်း စုဆောင်းပါသည်။ <b> အတူတူ </b>, <b> ရုပ်ရှင်ရုံ / ရေဒီယို </b> ဒါပေမယ့် <b> တီဗွီ </b>, <b> မနက်စာ/နေ့လည်စာ/ညစာ </b> မဟုတ်ဘူး၊ <b> နာမ် + နံပါတ် </b> (ပလပ်ဖောင်း 5၊ အခန်း 126) မရနိုင်ပါ။ </p>
+      <div class="ex"> <b class="en"> <mark>The earth</mark>  goes round  <mark>the sun</mark> , and  <mark>the moon</mark>  goes round  <mark>the earth</mark> .</b> <br> တစ်ခုစီတွင် → the တစ်ခုသာရှိသည်။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> ဟုတ်သည် မဟုတ်ပါ
+နေ/လ/မြေ/ကမ္ဘာ ကမ္ဘာ(ဂြိုဟ်အမည်)၊ အာကာသ(စကြာဝဠာ)၊
+ကောင်းကင် / ပင်လယ် / မြေပြင် / ပတ်ဝန်းကျင် TV / ရုပ်မြင်သံကြား (တီဗီကြည့်)
+အင်တာနက် / စကြဝဠာ နံနက်စာ / နေ့လည်စာ / ညစာ
+the same, the best, ဒသမထပ် Platform 5, Room 126, page 29,
+မြို့တော်၊ … မေးခွန်း ၃၊ ဂိတ် ၁၀၊ အရွယ်အစား ၄၃
+ရုပ်ရှင်ရုံ / ပြဇာတ်ရုံ / ရေဒီယို
+the television (= the TV) a + adj + meal : ကြီးကြီးကျယ်ကျယ် နေ့လည်စာ </div>
+      <div class="scroll"><table>
+        <tr><th> situation </th><th> For example </th></tr>
+        <tr><td> Only </td><td> Buenos Aires <b> The </b> Capital of Argentina. </td></tr>
+        <tr><td> the same </td><td> Your sweater <b> the same </b> My color. </td></tr>
+        <tr><td> a = what type? </td><td> The sun <b> a </b> A star. </td></tr>
+        <tr><td> Radio ↔ TV </td><td> We heard that. <b> The </b> radio But I watch it on TV. </td></tr>
+        <tr><td> Rice </td><td> What did you have for breakfast? / we had <b> a </b> A very good lunch. </td></tr>
+        <tr><td> N+ number </td><td> Our train departs from platform 5. </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. → the တစ်ခုပဲ ရှိတယ်။ </h2>
+      <p> <i>Have you ever crossed <b>the</b> equator? · What's <b>the</b> longest river in Europe? · Our apartment is on <b>the</b> tenth floor. · I'm going away at <b>the</b> end of this month.</i> အမြဲစကားပြောပါ။ <b> အတူတူ </b> (<i>same colour</i> မဟုတ်ပါ။) </p>
+
+      <h2> 1.4 · B. နေ၊ ကောင်းကင်…—ကမ္ဘာ၊ အာကာသ </h2>
+      <ul>
+        <li> <i>I love to look at the stars in <b>the</b> sky.</i> (<i>in sky</i> မဟုတ်ပါ) · <i><b>The</b> internet has changed the way we live.</i> </li>
+        <li><b> ကမ္ဘာမြေ </b> <i>Which planet is nearest Earth?</i> ဂြိုဟ်အဖြစ် ထည့်သွင်းစဉ်းစားရန် မဖြစ်နိုင်ပေ။ </li>
+        <li><b> အာကာသ </b> = စကြဝဠာ → <i>millions of stars in space</i> မဟုတ်ပါ။ ဒါပေမယ့် <i>the space was too small</i> = သတ်သတ်မှတ်မှတ် ဗလာ။ </li>
+        <li> နှိုင်းယှဉ်ပါ- <i>The sun is <b>a</b> star.</i> (ကြယ်များစွာထဲမှ တစ်ခုဖြစ်သည့်)။ </li>
+      </ul>
+
+      <h2> 1.5 · C. ရုပ်ရှင်ရုံ၊ ပြဇာတ်ရုံ၊ ရေဒီယို — ဒါပေမယ့် TV </h2>
+      <p> <i>I go to <b>the</b> cinema a lot. · I listen to <b>the</b> radio. · I watch television a lot.</i> — <i>Can you turn off <b>the</b> television?</i> (= ရုပ်မြင်သံကြား)။ </p>
+
+      <h2> 1.6 · D-E ဘောဇဉ်နှင့် နာမ် + ဂဏန်း </h2>
+      <ul>
+        <li> <i>What did you have for breakfast? · We had lunch in a nice restaurant.</i> — နာမဝိသေသနနှင့် <i>We had <b>a</b> very nice lunch.</i> </li>
+        <li> <i>Platform 5, size 43, Room 126, page 29, question 3, Gate 10</i> — မရှိပါ။ </li>
+      </ul>
+
+      <h2> 1.7 · အလွယ်တကူ ရှုပ်ထွေးနေသော ဖွဲ့စည်းပုံများနှင့် နှိုင်းယှဉ်ပါ။ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> Same color. </td><td class="yes"> That's it <b> The </b> Same color. </td></tr>
+        <tr><td class="no"> I watched it on TV. </td><td class="yes"> I watched it on TV. </td></tr>
+        <tr><td class="no"> I ate breakfast at 7 o'clock. </td><td class="yes"> I ate breakfast at 7. </td></tr>
+        <tr><td class="no"> The train departs from platform 3. </td><td class="yes"> From Platform 3… </td></tr>
+        <tr><td class="no"> Stars in space </td><td class="yes"> Stars in space </td></tr>
+        <tr><td class="no"> We had a very nice lunch. </td><td class="yes"> we had <b> a </b> A very good lunch. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၇၂ </b> (a/an and the) · <b> ယူနစ် ၇၄-၇၆ </b> (၂-၄) · <b> ယူနစ် ၇၇-၇၈ </b> (အမည်မှန်/မဟုတ်ပါ)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🌏 <b class="en">We must protect  <mark>the environment</mark> .</b> <span class="note"> (IELTS Writing — ပတ်ဝန်းကျင်) </span></div>
+      <div class="ex"> 🌐 <b class="en"> <mark>The internet</mark>  has changed the way we work.</b> <span class="note"> (IELTS Speaking — နည်းပညာ) </span></div>
+      <div class="ex"> 🏢 <b class="en">My office is on  <mark>the</mark>  15th floor.</b> <span class="note"> (အလုပ် - အော်ဒါနံပါတ်) </span></div>
+      <div class="ex"> 👕 <b class="en">We're wearing  <mark>the same</mark>  T-shirt!</b> <span class="note"> (ဘဝ - အတူတူ) </span></div>
+      <div class="ex"> 📺 <b class="en">I saw it on TV, but my dad heard it on  <mark>the</mark>  radio.</b> <span class="note"> (သတင်း — TV vs ရေဒီယို) </span></div>
+      <div class="ex"> 🍳 <b class="en">I never skip breakfast.</b> <span class="note"> (ဘဝ - အစာအလွတ်) </span></div>
+      <div class="ex"> 🛫 <b class="en">Please go to Gate 21. Boarding starts at 9.</b> <span class="note"> (လေဆိပ် - N + နံပါတ်) </span></div>
+      <div class="ex"> 🏨 <b class="en">I'm in Room 305. Can you send up some towels?</b> <span class="note"> (ဟိုတယ် - N + နံပါတ်) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> "ထူးခြားသော" → အဆိုပါ: </b> နေ၊ လ၊ ကောင်းကင်၊ ပင်လယ်၊ ကမ္ဘာ၊ အင်တာနက်။ </li>
+        <li><b> မှားယွင်းသောစုံတွဲများ </b> <i>the radio</i> ↔ <i>TV</i> ;  <i>the earth</i> ↔ <i>Earth</i> (ဂြိုဟ်);  <i>the space</i> (နေရာလွတ်) ↔ <i>space</i> (စကြာဝဠာ)။ </li>
+        <li><b> → ဖယ်ရှားပြီးနောက် နံပါတ်တစ်ခု ရှိသည်- </b> အခန်း ၅၊ ဂိတ် ၃၊ စာမျက်နှာ ၁၀။ </li>
+        <li><b> ရိုးရိုးအစားအစာ → အစာမရှိ၊ နာမဝိသေသန → a ။ </b></li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> ကြည့်ပါ။ <b> အတူတူပါပဲ။ </b> → ဟုတ်ကြောင်း စစ်ဆေးပါ။ <b> အဆိုပါ </b> မရသေး။ </li>
+        <li> ပုံမှန်နံပါတ်များ (ပထမ၊ ဒုတိယ၊ ဒသမ) နှင့် သာလွန်များ (အကောင်းဆုံး၊ အရှည်ဆုံး) → <b> အဆိုပါ </b>.</li>
+        <li> <i>watch TV / on TV</i> → no;  <i>turn off the TV</i> → (စက်) နဲ့ လုပ်နိုင်ပါတယ်။ </li>
+        <li> စာလုံးကြီး နာမ် + နံပါတ် (ပလပ်ဖောင်း 3) → no the;  <i>the next train</i> ရရှိနိုင်သေးသည်။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> The sun rises in the east. </td><td class="yes"><b> Hi </b> The sun rises. <b> The </b> East. </td><td class="why"> → Only </td></tr>
+        <tr><td class="no"> I'm watching TV. </td><td class="yes"> I'm watching TV. </td><td class="why"> I can't watch TV </td></tr>
+        <tr><td class="no"> I listen to the radio. </td><td class="yes"> I listen. <b> The </b> Radio. </td><td class="why"> Radio </td></tr>
+        <tr><td class="no"> We have the same idea. </td><td class="yes"> we have <b> The </b> Same idea. </td><td class="why"> the same </td></tr>
+        <tr><td class="no"> Let's have lunch. </td><td class="yes"> Let's have lunch. </td><td class="why"> No food. </td></tr>
+        <tr><td class="no"> Open your book to page 20. </td><td class="yes"> On page 20… </td><td class="why"> N+ number </td></tr>
+        <tr><td class="no"> Hanoi is the capital of Vietnam. </td><td class="yes"> Hanoi <b> The </b> The capital... </td><td class="why"> There is only one capital. </td></tr>
+        <tr><td class="no"> I live on the second floor. </td><td class="yes"> Is it on? <b> The </b> Second floor. </td><td class="why"> In order of numbers </td></tr>
+        <tr><td class="no"> Astronauts work in space. </td><td class="yes"> Astronauts work in space. </td><td class="why"> Space = Universe </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> နေထိုင်မှုဖော်ပြချက် </b> <i>"I live on the 8th floor. From the balcony I can see the sea."</i> </li>
+        <li><b> IELTS စကားပြော (မီဒီယာ)- </b> <i>"I mostly get news from the internet. My parents still watch TV and listen to the radio."</i> </li>
+        <li><b> ခရီးသွားလုပ်ငန်း- </b> <i>"Our flight leaves from Gate 7. We're staying in Room 402."</i> </li>
+        <li><b> အလေ့အကျင့် </b> ယနေ့ ကောင်းကင်၊ နေ၊ ကောင်းကင်၊ လေတို့ကို ဖော်ပြသည့် စာကြောင်း ၅ ကြောင်းကို ရေးပါ။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> အောက်ပါလေ့ကျင့်ခန်းများကို ထပ်မံပြုလုပ်ပါ။ <b> ၃/၇/၁၄ ရက် </b> ဦးစားပေးသည် "မှားသောဝါကျကို ပြန်လုပ်ပါ"။ ဆက်စပ်- <b> ယူနစ် ၇၂ </b> (a/an နှင့် the)၊ <b> ယူနစ် ၇၄ </b> (ကျောင်း/ကျောင်း)၊ <b> ယူနစ် ၇၇-၇၈ </b> (အမည်မှန်)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit73.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 73 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> အခြေအနေ \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> သာ \u003c/td>\u003ctd> Buenos Aires သည် \u003cb> အဆိုပါ \u003c/b> အာဂျင်တီးနားမြို့တော်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အတူတူ \u003c/td>\u003ctd> မင်းရဲ့ဆွယ်တာအင်္ကျီ \u003cb> အတူတူ \u003c/b> ငါ့အတိုင်းအရောင်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> a = ဘာအမျိုးအစားလဲ။ \u003c/td>\u003ctd> နေက \u003cb> a \u003c/b> ကြယ်ပွင့်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ရေဒီယို ↔ တီဗီ \u003c/td>\u003ctd> အဲဒါကို ကျနော်တို့ ကြားတယ်။ \u003cb> အဆိုပါ \u003c/b> ရေဒီယို၊ ဒါပေမယ့် တီဗီမှာ ကြည့်တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ထမင်း \u003c/td>\u003ctd> မနက်စာ ဘာစားခဲ့လဲ။ / ကြှနျုပျတို့မှာ ... ရှိခဲ့သညျ \u003cb> a \u003c/b> အရမ်းကောင်းတဲ့နေ့လည်စာ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> N+ နံပါတ် \u003c/td>\u003ctd> ကျွန်ုပ်တို့၏ရထားသည် ပလပ်ဖောင်း 5 မှထွက်ခွာသည်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အရောင်အတူတူပါပဲ။ \u003c/td>\u003ctd class=\"yes\"> အဲဒါ \u003cb> အဆိုပါ \u003c/b> တူညီသောအရောင်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> တီဗီမှာ ကြည့်ခဲ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> တီဗီမှာ ကြည့်ခဲ့တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မနက်စာကို 7 နာရီမှာစားတယ်။ \u003c/td>\u003ctd class=\"yes\"> မနက်စာစားပြီး 7 မှာစားတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ရထားက ပလပ်ဖောင်း ၃ မှ ထွက်ခွာသည်။ \u003c/td>\u003ctd class=\"yes\"> Platform 3 မှ… \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အာကာသ၌ကြယ်များ \u003c/td>\u003ctd class=\"yes\"> အာကာသထဲတွင်ကြယ်များ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါတို့က အရမ်းကောင်းတဲ့နေ့လည်စာ စားခဲ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကြှနျုပျတို့မှာ ... ရှိခဲ့သညျ \u003cb> a \u003c/b> အရမ်းကောင်းတဲ့နေ့လည်စာ။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အရှေ့ဘက်တွင် နေထွက်သည်။ \u003c/td>\u003ctd class=\"yes\">\u003cb> ဟိ \u003c/b> နေထွက်သည်။ \u003cb> အဆိုပါ \u003c/b> အရှေ့။ \u003c/td>\u003ctd class=\"why\"> → သာလျှင် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> တီဗီကြည့်နေတယ်။ \u003c/td>\u003ctd class=\"yes\"> တီဗီကြည့်နေတယ်။ \u003c/td>\u003ctd class=\"why\"> TV ကြည့်လို့မရဘူး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ရေဒီယို နားထောင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါနားထောင်တယ်။ \u003cb> အဆိုပါ \u003c/b> ရေဒီယို။ \u003c/td>\u003ctd class=\"why\"> ရေဒီယို \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကျွန်ုပ်တို့တွင် တူညီသော အကြံဥာဏ်ရှိသည်။ \u003c/td>\u003ctd class=\"yes\"> ကြှနျုပျတို့မှာ ... ရှိသညျ \u003cb> အဆိုပါ \u003c/b> တူညီသောအကြံ။ \u003c/td>\u003ctd class=\"why\"> အတူတူ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နေ့လည်စာစားရအောင်။ \u003c/td>\u003ctd class=\"yes\"> နေ့လည်စာစားရအောင်။ \u003c/td>\u003ctd class=\"why\"> အစာမရှိ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စာမျက်နှာ 20 တွင် သင့်စာအုပ်ကိုဖွင့်ပါ။ \u003c/td>\u003ctd class=\"yes\"> စာမျက်နှာ 20 တွင်… \u003c/td>\u003ctd class=\"why\"> N+ နံပါတ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဟနွိုင်းသည် ဗီယက်နမ်နိုင်ငံ၏ မြို့တော်ဖြစ်သည်။ \u003c/td>\u003ctd class=\"yes\"> ဟနွိုင်း \u003cb> အဆိုပါ \u003c/b> မြို့တော်… \u003c/td>\u003ctd class=\"why\"> အရင်းအနှီးတစ်ခုပဲရှိတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဒုတိယထပ်မှာ နေထိုင်ပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> ပေါ်နေတာလား။ \u003cb> အဆိုပါ \u003c/b> ဒုတိယထပ်။ \u003c/td>\u003ctd class=\"why\"> ဂဏန်းအလို့ငှာ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အာကာသယာဉ်မှူးများသည် အာကာသထဲတွင် အလုပ်လုပ်ကြသည်။ \u003c/td>\u003ctd class=\"yes\"> အာကာသယာဉ်မှူးများသည် အာကာသထဲတွင် အလုပ်လုပ်ကြသည်။ \u003c/td>\u003ctd class=\"why\"> အာကာသ = စကြာဝဠာ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 73 – The 1 | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit73.html';
+  var KEY = 'egu4_unit73_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ဆောင်းပါး၊ တစ်ခု/တစ်ခု သို့မဟုတ် မရှိကို ရွေးပါ။' },
+    { id:'B', title:'B.၊ a/an သို့မဟုတ် 0 ကိုထည့်ပါ။',     desc:'a သို့မဟုတ် an ကိုဖြည့်ပါ။ ဆောင်းပါးတစ်ခု မလိုအပ်ပါက 0 ဟု ရိုက်ထည့်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာပေါ်မူတည်၍ /a/an သို့မဟုတ် 0 ကိုထည့်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 73 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 73 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာများ 73.1 → 73.4 သော့များဖြင့် Murphy စာအုပ်၏ အတိအကျ သင်ခန်းစာပုံစံကို လိုက်နာပါ။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I love looking at the stars in ______ sky.',
+      opts:['a','0 (ဘာမှမသုံးပါ)','the','an'], a:2,
+      exp:'ကောင်းကင်တစ်ခု → ကောင်းကင် (ကောင်းကင်မဟုတ်)။' },
+    { id:'a2', sec:'A', type:'mcq', q:'Your bag is ______ colour as mine.',
+      opts:['the same','same','a same','same the'], a:0,
+      exp:'အမြဲတမ်း တူညီသည် (အရောင်တူ / တူညီသည် မဟုတ်ပါ)။' },
+    { id:'a3', sec:'A', type:'mcq', q:'There are billions of stars in ______ space.',
+      opts:['the','a','0 (ဘာမှမသုံးပါ)','an'], a:2,
+      exp:'space = စကြာဝဠာ၊ အာကာသ → ကမ္ဘာမြေပြင်ကို မသုံးပါနှင့်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'I usually watch ______ TV in the evening.',
+      opts:['the','0 (ဘာမှမသုံးပါ)','a','an'], a:1,
+      exp:'ရုပ်မြင်သံကြား/တီဗီကြည့်ခြင်း — မသုံးပါနှင့်။ (ဒါပေမယ့် ရေဒီယို နားထောင်ပါ။)' },
+    { id:'a5', sec:'A', type:'mcq', q:'Do you ever listen to ______ radio?',
+      opts:['0 (ဘာမှမသုံးပါ)','a','an','the'], a:3,
+      exp:'ရေဒီယို နားထောင်ပါ။' },
+    { id:'a6', sec:'A', type:'mcq', q:'What did you have for ______ breakfast?',
+      opts:['the','a','0 (ဘာမှမသုံးပါ)','an'], a:2,
+      exp:'မနက်စာ/နေ့လည်စာ/ညစာ မပါရှိပါ။' },
+    { id:'a7', sec:'A', type:'mcq', q:'We had ______ lovely dinner at my aunt\'s house.',
+      opts:['a','the','0 (ဘာမှမသုံးပါ)','an'], a:0,
+      exp:'နာမဝိသေသန အစာမစားမီ → ချစ်စရာကောင်းသော ညစာ/ နေ့လည်စာ အကြီးကြီး/ မနက်စာ စောစော။' },
+    { id:'a8', sec:'A', type:'mcq', q:'Our flight leaves from ______ Gate 12.',
+      opts:['the','a','an','0 (ဘာမှမသုံးပါ)'], a:3,
+      exp:'Noun + number → not the: Gate 12, Platform 5, Room 126, page 29.' },
+
+    /*===== B။ ဖြည့် =====*/
+    { id:'b1', sec:'B', type:'fill', q:'Hanoi is ______ capital of Vietnam.',
+      acc:['the'], ans:'the',
+      exp:'မြို့တော် → မြို့တော် တစ်ခုပဲ ရှိတယ်။' },
+    { id:'b2', sec:'B', type:'fill', q:'Our office is on ______ fifth floor.',
+      acc:['the'], ans:'the',
+      exp:'ပဉ္စမထပ် → ပဉ္စမထပ်။' },
+    { id:'b3', sec:'B', type:'fill', q:'We need to protect ______ environment.',
+      acc:['the'], ans:'the',
+      exp:'the Environment = ကျွန်ုပ်တို့ပတ်ဝန်းကျင်ရှိ သဘာဝ ပတ်ဝန်းကျင်။' },
+    { id:'b4', sec:'B', type:'fill', q:'ဘယ်ဂြိုဟ်က ______ ကမ္ဘာနဲ့အနီးဆုံးလဲ။ (မလိုအပ်ပါက 0 ဟုရိုက်ပါ)',
+      acc:['0','x','-'], ans:'0',
+      exp:'ဂြိုဟ်အမည် → ကမ္ဘာ (စာလုံးကြီး) → မရှိပါ။' },
+    { id:'b5', sec:'B', type:'fill', q:'The sun is ______ star.',
+      acc:['a'], ans:'a',
+      exp:'ကြယ်အမျိုးအစား (ကြယ်များစွာထဲမှ တစ်ခု) → ကြယ်အမျိုးအစားကို ပြောပါ။' },
+    { id:'b6', sec:'B', type:'fill', q:'I haven\'t been to ______ theatre for ages.',
+      acc:['the'], ans:'the',
+      exp:'ရုပ်ရှင်ရုံ / ပြဇာတ်ရုံကိုသွားပါ။' },
+    { id:'b7', sec:'B', type:'fill', q:'ကျေးဇူးပြု၍ သင့်စာအုပ်များကို ______ စာမျက်နှာ 40 တွင်ဖွင့်ပါ။ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      acc:['0','x','-'], ans:'0',
+      exp:'စာမျက်နှာ + နံပါတ် → မရှိပါ။' },
+    { id:'b8', sec:'B', type:'fill', q:'I\'m going on holiday at ______ end of the month.',
+      acc:['the'], ans:'the',
+      exp:'အဆုံးမှာ … (အဆုံးမှတ်တစ်ခုပဲ ရှိတယ်)။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (goes / the moon / round / Earth / every 27 days)',
+      tokens:['The','moon','goes','round','Earth','every','27','days'],
+      acc:['the moon goes round earth every 27 days'], ans:'The moon goes round Earth every 27 days.',
+      exp:'လ → လ တစ်ခုသာ ရှိသည်။ ကမ္ဘာသည် ဂြိုလ်၏အမည်နှင့်တူသည် → no the (မြေကြီးဟုလည်း ဆိုနိုင်သည်)။' },
+    { id:'c2', sec:'C', type:'order', q:'စီစဉ်ခြင်း- (ကျွန်ုပ်တို့ / နေ့လည်စာ / စားဖူးသည် / ကော်ဖီဆိုင်တွင်)',
+      tokens:['We','had','lunch','in','a','ကဖေး။ ကော်ဖီဆိုင်'],
+      acc:['ကော်ဖီဆိုင်မှာ နေ့လည်စာ စားခဲ့ကြတယ်။'], ans:'ကော်ဖီဆိုင်မှာ နေ့လည်စာ စားခဲ့ကြတယ်။',
+      exp:'နေ့လည်စာစားခဲ့တယ် — မဟုတ်ဘူး ။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (the internet / changed / has / our lives)',
+      tokens:['The','internet','has','changed','our','lives'],
+      acc:['the internet has changed our lives'], ans:'The internet has changed our lives.',
+      exp:'အင်တာနက် - အမြဲရှိနေတယ်။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (in / Room 214 / I\'m / staying)',
+      tokens:["I'm",'staying','in','Room','214'],
+      acc:["i'm staying in room 214"], ans:'I\'m staying in Room 214.',
+      exp:'အခန်း + နံပါတ် → မရှိပါ။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (heard / we / on / it / the radio)',
+      tokens:['We','heard','it','on','the','radio'],
+      acc:['we heard it on the radio'], ans:'We heard it on the radio.',
+      exp:'ရေဒီယို (ဒါပေမယ့် TV မှာ)။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Are these two keys ______ same?  B: No, they\'re different.',
+      acc:['the'], ans:'the',
+      exp:'အတူတူ။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: What\'s ______ longest river in Asia?  B: The Yangtze, I think.',
+      acc:['the'], ans:'the',
+      exp:'Superlative → အရှည်ဆုံး။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Can you turn off ______ television?  B: Sure.',
+      acc:['the'], ans:'the',
+      exp:'the tv = ရုပ်မြင်သံကြား (စက်ပစ္စည်း)။' },
+    { id:'d4', sec:'D', type:'fill', q:'ဖြေ- ဒီဂျင်းဘောင်းဘီ ______ ဆိုဒ် 30 ရှိပါသလား။  B: စစ်ဆေးပါရစေ။ (မလိုအပ်ပါက 0 ဟုရိုက်ပါ)',
+      acc:['0','x','-'], ans:'0',
+      exp:'အရွယ်အစား + နံပါတ် → မရှိပါ။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'နေ/လ/ကောင်းကင်/ပင်လယ် နှင့် "space" (မဟုတ်) ကိုအသုံးပြု၍ သဘာဝတရား/စကြာဝဠာအကြောင်း စာကြောင်း 3 ကြောင်းရေးပါ။',
+      sample:'The moon looks huge tonight. I\'d love to swim in the sea. One day people will go on holiday in space.',
+      exp:'တစ်ခုပဲရှိတယ် → the; အာကာသ (စကြာဝဠာ) → မဟုတ်၊ ကမ္ဘာသည် ဂြိုဟ်အမည် → မရှိပါ။' },
+    { id:'e2', sec:'E', type:'self', q:'ဖျော်ဖြေရေးအလေ့အထများအကြောင်း စာကြောင်း ၂ ကြောင်းပါ- တီဗွီ (မဟုတ်) နှင့် ရေဒီယို/ ရုပ်ရှင်ရုံတို့ကို အသုံးပြုပါ။',
+      sample:'I watch TV every evening. At weekends I often go to the cinema with friends.',
+      exp:'တီဗီကြည့် - မဟုတ်ဘူး; ရေဒီယိုနားထောင်; ရုပ်ရှင်ရုံ / ပြဇာတ်ရုံကိုသွားပါ။' },
+    { id:'e3', sec:'E', type:'self', q:'အစာအကြောင်း စာကြောင်း ၂ကြောင်းရေးပါ- စာကြောင်းတစ်ကြောင်း "have breakfast/lunch/dinner" (ဆောင်းပါးမရှိ)၊ စာကြောင်းတစ်ကြောင်း "a + adjective + meal"။',
+      sample:'I usually have lunch at 12. Yesterday we had a delicious dinner at a seafood restaurant.',
+      exp:'အစာမပါဘဲအစားအစာ; နာမဝိသေသန → a big/nice/wonderful + meal.' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['Our train leaves from the Platform 4.','Our train leaves from Platform 4.'], a:1,
+      exp:'ပလပ်ဖောင်း + နံပါတ် → မရှိပါ။' },
+    { id:'f2', sec:'F', type:'fill', q:'I lay down on ______ ground and looked up.',
+      acc:['the'], ans:'the',
+      exp:'မြေ။' },
+    { id:'f3', sec:'F', type:'mcq', q:'I tried to park, but ______ space was too small.',
+      opts:['a','0 (ဘာမှမသုံးပါ)','the','an'], a:2,
+      exp:'space = သီးခြားကားပါကင်နေရာ → နေရာ။ (အခြား: in space = စကြာဝဠာ။)' },
+    { id:'f4', sec:'F', type:'fill', q:'ဘာသာပြန်- "နေ့တိုင်း ဒီလိုလုပ်ရတာ ပျင်းတယ်။" → ______ နေ့တိုင်း ဒီလိုပဲလုပ်ရတာကို ငြီးငွေ့နေတယ်။',
+      acc:['the'], ans:'the',
+      exp:'အတူတူပါပဲ။' },
+    { id:'f5', sec:'F', type:'mcq', q:'FALSE ထုတ်ပြန်ချက်ကို ရွေးပါ-',
+      opts:['It was the hottest day of the year.','It was hottest day of year.','It was a very hot day.'], a:1,
+      exp:'Superlative နှင့် "of the year" လိုအပ်ပါသည်။' },
+    { id:'f6', sec:'F', type:'fill', q:'______ ညစာစားပြီးပြီလား။ (မလိုအပ်ပါက 0 ဟုရိုက်ပါ)',
+      acc:['0','x','-'], ans:'0',
+      exp:'ညစာစားပါ။' },
+    { id:'f7', sec:'F', type:'mcq', q:'Have you ever crossed ______ equator?',
+      opts:['an','the','a','0 (ဘာမှမသုံးပါ)'], a:1,
+      exp:'အီကွေတာ → အီကွေတာ တစ်ခုပဲ ရှိတယ်။' },
+    { id:'f8', sec:'F', type:'fill', q:'စာမေးပွဲမှာ ______ မေးခွန်း 5 ကို မဖြေနိုင်ခဲ့ပါ။ (မလိုအပ်ပါက 0 ဟုရိုက်ပါ)',
+      acc:['0','x','-'], ans:'0',
+      exp:'မေးခွန်း + နံပါတ် → မရှိပါ။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'A: Did you have ______ good weekend?',
+      acc:['a'], ans:'a',
+      exp:'ကောင်းသော သီတင်းပတ်များ (အတိအကျမဟုတ်သော၊ နာမ်)။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'B: Yes, it was ______ best weekend I\'ve had for months.',
+      acc:['the'], ans:'the',
+      exp:'Superlative → အကောင်းဆုံး။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'A: Where\'s ______ nearest ATM?',
+      acc:['the'], ans:'the',
+      exp:'အနီးဆုံး' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'A: It\'s a beautiful morning. B: Yes, there isn\'t ______ cloud in the sky.',
+      acc:['a'], ans:'a',
+      exp:'not a cloud = တစ်ခုတည်းသော cloud မဟုတ်ပါ။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'My phone won\'t connect to ______ internet.',
+      acc:['the'], ans:'the',
+      exp:'အင်တာနက်' },
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'A: သင် ______ အာကာသအတွင်း ခရီးသွားလိုပါသလား။ (မလိုအပ်ပါက 0 ဟုရိုက်ပါ)',
+      acc:['0','x','-'], ans:'0',
+      exp:'အာကာသ (စကြာဝဠာ) → မရှိပါ။' },
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'B: Yes, I\'d love to go to ______ moon.',
+      acc:['the'], ans:'the',
+      exp:'လ။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.1 – သို့မဟုတ် a တွင်ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'Mars isn\'t a star. It\'s ______ planet.',
+      acc:['a'], ans:'a',
+      exp:'→ ဂြိုလ်ဆိုတာ ဘယ်လိုမျိုးလဲ ပြောပါ။' },
+
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.2 – လိုအပ်သည့်နေရာတွင် ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'My grandmother spends hours watching ______ TV.',
+      acc:['0','x','-'], ans:'0',
+      exp:'တီဗီကြည့်ခြင်း - မဟုတ်ပါ။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.2 – လိုအပ်သည့်နေရာတွင် ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'My grandfather prefers listening to ______ radio.',
+      acc:['the'], ans:'the',
+      exp:'ရေဒီယိုနားထောင်ပါ။' },
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.2 – လိုအပ်သည့်နေရာတွင် ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'______ television was on, but nobody was in the room.',
+      acc:['the'], ans:'The',
+      exp:'the tv = ရုပ်မြင်သံကြား (စက်ပစ္စည်း)။' },
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.2 – လိုအပ်သည့်နေရာတွင် ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'Minh and I got to the party at ______ same time.',
+      acc:['the'], ans:'the',
+      exp:'အတူတူ။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.2 – လိုအပ်သည့်နေရာတွင် ထည့်ပါ (မလိုအပ်ပါက 0 ကိုရိုက်ပါ)',
+      q:'What would you like for ______ lunch?',
+      acc:['0','x','-'], ans:'0',
+      exp:'နေ့လည်စာအတွက် - မဟုတ်ပါ။' },
+
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.3 – စာသားကို ထည့်ပါ (ပြင်ဆင်ထားသော စကားစုကို ရေးပါ)',
+      q:'Room 12 is on third floor. → Room 12 is on ______.',
+      acc:['the third floor'], ans:'the third floor',
+      exp:'အခန်း 12 သည် (နာမ် + နံပါတ်); တတိယထပ် (အမှတ်စဉ်)။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.3 – စာသားကို ထည့်ပါ (ပြင်ဆင်ထားသော စကားစုကို ရေးပါ)',
+      q:'ပင်လယ်နားက စားသောက်ဆိုင်ငယ်လေးမှာ ညစာစားတယ်။ → ______ ကျွန်ုပ်တို့ ______ တွင် ညစာစားကြသည်။ (စာပိုဒ်တို ၂ လုံးကို "..." ဖြင့် ပိုင်းခြား၍ ရေးသားပါ)',
+      acc:['a small restaurant ... the sea','a small restaurant...the sea','a small restaurant the sea'], ans:'a small restaurant ... the sea',
+      exp:'ညစာစားခဲ့တယ် (မဟုတ်ပါ); စားသောက်ဆိုင်ငယ် (ပထမအကြိမ်၊ နာမဝိသေသန)၊ ပင်လယ်။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.3 – စာသားကို ထည့်ပါ (ပြင်ဆင်ထားသော စကားစုကို ရေးပါ)',
+      q:'What\'s on at cinema tonight? → What\'s on at ______ tonight?',
+      acc:['the cinema'], ans:'the cinema',
+      exp:'ရုပ်ရှင်ရုံ။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.3 – စာသားကို ထည့်ပါ (ပြင်ဆင်ထားသော စကားစုကို ရေးပါ)',
+      q:'I always eat big breakfast. → I always eat ______.',
+      acc:['a big breakfast'], ans:'a big breakfast',
+      exp:'နာမဝိသေသန → ကြီးမားတဲ့ မနက်စာ။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.3 – စာသားကို ထည့်ပါ (ပြင်ဆင်ထားသော စကားစုကို ရေးပါ)',
+      q:'We were waiting at wrong bus stop. → We were waiting at ______.',
+      acc:['the wrong bus stop'], ans:'the wrong bus stop',
+      exp:'မှားသည်… (အတိအကျအားဖြင့်၊ မှန်သည်/တူသည်)။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.3 – စာသားကို ထည့်ပါ (ပြင်ဆင်ထားသော စကားစုကို ရေးပါ)',
+      q:'Next bus to the airport leaves from Stop 6. → ______ to the airport leaves from Stop 6.',
+      acc:['the next bus'], ans:'The next bus',
+      exp:'နောက်တစ်စီး; 6 (နာမ် + နံပါတ်) ရပ်တန့်ခြင်းသည် မဟုတ်ပါ။' },
+
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.4 – အပြီးအစီး (နံနက်စာ၊ ရုပ်ရှင်ရုံ၊ ညစာ၊ ဂိတ်၊ ဂိတ် ၁၄၊ မေးခွန်း ၃၊ ပင်လယ်)',
+      q:'"Are you busy tonight?" "Yes, I\'m going out after ______."',
+      acc:['dinner'], ans:'dinner',
+      exp:'ညစာစားပြီးနောက် - မဟုတ်ပါ။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.4 – အပြီးအစီး (နံနက်စာ၊ ရုပ်ရှင်ရုံ၊ ညစာ၊ ဂိတ်၊ ဂိတ် ၁၄၊ မေးခွန်း ၃၊ ပင်လယ်)',
+      q:'It was very windy, so ______ was rough.',
+      acc:['the sea'], ans:'the sea',
+      exp:'ပင်လယ်။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.4 – အပြီးအစီး (နံနက်စာ၊ ရုပ်ရှင်ရုံ၊ ညစာ၊ ဂိတ်၊ ဂိတ် ၁၄၊ မေးခွန်း ၃၊ ပင်လယ်)',
+      q:'The exam was OK, but I couldn\'t do ______.',
+      acc:['question 3'], ans:'question 3',
+      exp:'မေးခွန်း + နံပါတ် → မရှိပါ။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.4 – အပြီးအစီး (နံနက်စာ၊ ရုပ်ရှင်ရုံ၊ ညစာ၊ ဂိတ်၊ ဂိတ် ၁၄၊ မေးခွန်း ၃၊ ပင်လယ်)',
+      q:'Oh no, ______ is open! The dog might run out.',
+      acc:['the gate'], ans:'the gate',
+      exp:'သင့်အိမ်၏ သီးခြားတံခါး → တံခါး။' },
+    { id:'h24', sec:'G', type:'fill', sub:'သင်ခန်းစာ 73.4 – အပြီးအစီး (နံနက်စာ၊ ရုပ်ရှင်ရုံ၊ ညစာ၊ ဂိတ်၊ ဂိတ် ၁၄၊ မေးခွန်း ၃၊ ပင်လယ်)',
+      q:'(airport announcement) Flight VN245 to Seoul is now boarding at ______.',
+      acc:['gate 14'], ans:'Gate 14',
+      exp:'ဂိတ် + နံပါတ် → မရှိပါ။' }
+  ];
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

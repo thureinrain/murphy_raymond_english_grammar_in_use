@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 87 – အများကြီး၊ အများကြီး၊ နည်းနည်း၊ နည်းနည်း၊ အများကြီး၊ များများ | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 87 - အများကြီး၊ အများကြီး၊ နည်းနည်း၊ နည်းနည်း၊ အများကြီး၊ များများ </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> ရမှတ် 60 မေးခွန်း + ကိုယ်တိုင်ရေးထားသော မေးခွန်း 3 ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> ဤသည်မှာ ရည်ညွှန်းစကားလုံးများအုပ်စုဖြစ်သည်။ <b> ပမာဏ </b> . (၁) နာမ် <b> အများကိန်းများကို ရေတွက်နိုင်သည်။ </b> မြက်ပင် <b> မရေမတွက်နိုင်သော </b> ? (၂) ဘာကို ဆိုလိုတာလဲ။ <b> အပြုသဘော </b> ("နည်းနည်း၊ လုံလောက်ပြီ") ကောင်းပြီ။ <b> အနုတ်လက္ခဏာ </b> ("နည်းနည်းလေး၊ ဘာမှနီးပါး")? အစုံ၊ <b> အများကြီး </b> ခိုင်လုံသောဝါကျများတွင် သဘာဝမကျသောအသံများ — ဇာတိစပီကာများက ၎င်းကို မကြာခဏအစားထိုးသည်။ <b> များစွာသော) </b>.</p>
+      <div class="ex"> <b class="en">He spoke  <mark>a little</mark>  English, so we could talk. ↔ He spoke  <mark>little</mark>  English, so it was hard to talk.</b> <br> စာလုံးတွေက မတူဘူး။ <u> a </u> ဆိုလိုသည်မှာ အတိအကျဆန့်ကျင်ဘက်ဖြစ်သည်- <i>a little</i> = အနည်းငယ် (လုံလောက်), <i>little</i> = အနည်းငယ် (မလုံလောက်)။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> မရေမတွက်နိုင်သော (အချိန်၊ ငွေ၊ ရေ): အများကြီး · အနည်းငယ် · အနည်းငယ်
+အများကိန်း (သူငယ်ချင်း၊ ကားများ၊ စိတ်ကူးများ): many · few · အနည်းငယ်
+အမျိုးအစားနှစ်မျိုးလုံး- အများကြီး · အများကြီး · အများကြီး
+
+little/ few = မများ ၊ အလိုဆန္ဒထက် နည်းသည် ( အနုတ်လက္ခဏာ )
+a little / a few = အနည်းငယ်၊ လုံလောက်သည် (အပြုသဘောဆောင်သော အဓိပ္ပါယ်)
+many(of) = လိုအပ်သည်ထက် ပိုသည်။ </div>
+      <div class="scroll"><table>
+        <tr><th></th><th> Countless </th><th> Plurals can be counted. </th></tr>
+        <tr><td> very much </td><td> A lot / a lot </td><td> A lot / a lot </td></tr>
+        <tr><td> small (mouth) </td><td> A little/very little. </td><td> A little / very little. </td></tr>
+        <tr><td> a little (positive) </td><td> A few </td><td> A few </td></tr>
+        <tr><td> More than enough. </td><td colspan="2"> A lot (of time / ideas) </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A–B။ အများကြီး/အများကြီး၊ အများကြီး၊ အများကြီး </h2>
+      <ul>
+        <li><b> အများကြီး </b> + ရေမတွက်နိုင်သော <i>much time, much luck</i>။ <b> အများကြီး </b> + အများကိန်း- <i>many friends, many countries</i>။ </li>
+        <li><b> အများကြီး / အများကြီး / အများကြီး </b> နှစ်ခုလုံးအတွက်- <i>a lot of luck, lots of people, plenty of ideas</i> </li>
+        <li><b> များနေပြီ။ </b> = လိုအပ်သည်ထက်ပိုသည်- <i>Don't rush. We've got <b>plenty of</b> time.</i> </li>
+      </ul>
+
+      <h2> 1.4 · C. အများစုသည် ခိုင်လုံသောဝါကျများတွင် သုံးခဲသည်။ </h2>
+      <div class="formula"> ငါတို့ပိုက်ဆံအများကြီးမသုံးခဲ့ဘူး။     ✅ ပိုက်ဆံအများကြီးကုန်တယ်။   ✅
+ပိုက်ဆံအများကြီးကုန်တယ်။            ❌ (သဘာဝမကျသော)
+ဒါဝိဒ်ကို သိပ်မြင်သလား။          ✅ ဒါဝိဒ်ကို အရမ်းတွေ့တယ်။        ✅ (မဟုတ်ဘူး ဒေးဗစ်ကို အရမ်းတွေ့တယ်) </div>
+      <ul>
+        <li><b> အများကြီး </b> နှင့် <b> များစွာသော </b> စာကြောင်းအမျိုးအစားအားလုံးတွင်အသုံးပြုနိုင်သည်- <i>Many people / A lot of people drive too fast.</i> </li>
+        <li> <i><b>many years / many weeks / many days</b></i> ပြောပါ၊ မပြောပါနှင့် <s> နှစ်တွေအများကြီး </s> : <i>We've lived here for many years.</i> </li>
+      </ul>
+
+      <h2> 1.5 · D. Little = မများဘူး၊ အနည်းငယ် = မများပါဘူး။ </h2>
+      <ul>
+        <li> <i>Gary is very busy. He has <b>little</b> time for other things.</i> (သူလိုချင်တာထက် နည်းသည်) </li>
+        <li> <i>Vicky doesn't like the city. She has <b>few</b> friends there.</i> </li>
+        <li> သုံးလေ့ရှိတယ်။ <b> အလွန်နည်း / အလွန်နည်းပါးသည်။ </b> : <i>very little time, very few friends</i> </li>
+      </ul>
+
+      <h2> 1.6 · E. A little = some, a few = some </h2>
+      <ul>
+        <li> <i>Let's get a coffee. We have <b>a little</b> time before the train.</i> (ကော်ဖီအတွက်လုံလောက်သည်) </li>
+        <li> <i>'Do you speak French?' '<b>A little</b>.'</i> </li>
+        <li> <i>I have <b>a few</b> friends here and we meet quite often.</i> · <i>I saw her <b>a few</b> days ago.</i> </li>
+        <li><b> အနည်းငယ်သာ / အနည်းငယ်သာ </b> (မပြောနဲ့ <s> အနည်းငယ်သာ / အနည်းငယ်သာ </s> ): <i>We only have a little time. There were only a few houses.</i> </li>
+      </ul>
+      <div class="formula"> သူမ ကံကောင်းတယ်။ သူမတွင် ပြဿနာများစွာရှိသည်။        (ပြဿနာအများကြီးမဟုတ် → ကောင်းသည်)
+အရာတွေ အဆင်မပြေဘူး။ သူမတွင် ပြဿနာအနည်းငယ်ရှိသည်။ (ပြဿနာအချို့ရှိပါသည်) </div>
+
+      <h2> 1.7 · ဘုံအမှားများ &amp; နှိုင်းယှဉ် </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I have a lot of homework. </td><td class="yes"> I am short <b> a lot of </b> home work. home work. (homework doesn't count) </td></tr>
+        <tr><td class="no"> I drink a lot of coffee. </td><td class="yes"> She drank. <b> a lot of </b> coffee. </td></tr>
+        <tr><td class="no"> He travels a lot. </td><td class="yes"> He travels. <b> very much </b>.</td></tr>
+        <tr><td class="no"> Can you lend me a few dollars? </td><td class="yes"> hey... <b> A few </b> dollar </td></tr>
+        <tr><td class="no"> I only know a few words. </td><td class="yes"> I know <b> Only a few </b> Words </td></tr>
+        <tr><td class="no"> I haven't seen her in years. </td><td class="yes"> ...for <b> very much </b> Years. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၆၉-၇၀ </b> (ရေတွက်နိုင်သောနာမ် &amp; ရေမတွက်နိုင်သော) · <b> ယူနစ် ၈၈ </b> (အားလုံး/အများစု/အချို့)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> ⏰ <b class="en">Relax — we've got  <mark>plenty of</mark>  time.</b> <span class="note"> (ဘဝ - အာမခံချက်) </span></div>
+      <div class="ex"> 💸 <b class="en">We spent  <mark>a lot of</mark>  money on our holiday.</b> <span class="note"> (ဘဝ - အများအပြားအသုံးပြုကြောင်းအတည်ပြု) </span></div>
+      <div class="ex"> 🚦 <b class="en">There wasn't  <mark>much</mark>  traffic this morning.</b> <span class="note"> (အပျက်သဘောဆောင်တာများတယ်) </span></div>
+      <div class="ex"> 🗣️ <b class="en">— Do you speak Korean? — Only  <mark>a little</mark> .</b> <span class="note"> (ပြောဆိုဆက်ဆံမှု - ရိုးသားမှု) </span></div>
+      <div class="ex"> ❓ <b class="en">Can I ask you  <mark>a few</mark>  questions?</b> <span class="note"> (အလုပ် - အင်တာဗျူး၊ စစ်တမ်း) </span></div>
+      <div class="ex"> 🏚️ <b class="en">The town is quiet.  <mark>Very few</mark>  tourists come here.</b> <span class="note"> (ဖော်ပြချက် - အဆိုးမြင်အတွေး) </span></div>
+      <div class="ex"> 🧘 <b class="en">She has  <mark>little</mark>  patience with lazy students.</b> <span class="note"> (ကိုယ်ရေးကိုယ်တာ မှတ်ချက်) </span></div>
+      <div class="ex"> 📊 <b class="en"> <mark>Many</mark>  people now work from home.</b> <span class="note"> (IELTS Writing — တရားဝင်များစွာ) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> "များစွာ-အချို့အရာများကို ရေတွက်နိုင်သည်၊ များစွာ-များစွာသော အရာများကို ရေတွက်၍မရနိုင်ပါ။" </b></li>
+        <li><b> "a" = "အလင်းအနည်းငယ်" ရှိသည်- </b> အနည်းငယ် / အနည်းငယ် = အပြုသဘော၊ "a" = မှောင်မိုက်၊ ပျော့ပြောင်းသည်။ </li>
+        <li><b> ခိုင်လုံသောဝါကျများနှင့်ပတ်သက်၍ အလွန်ရှက်တတ်သည်- </b> အပြုသဘောဆောင်သောဝါကျ → <i>a lot (of)</i> သို့ပြောင်းပါ။ </li>
+        <li><b> ပဒေသာပင် = ပဒေသာပင် </b> အချိန်များများ = အဆင်ပြေတဲ့အချိန်။ </li>
+        <li><b> အမြဲတမ်းတစ်ခုနှင့်သာသွားသည်- </b> အနည်းငယ်သာ / အနည်းငယ်သာ။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> အဆင့် 1- နာမ်သည် ရေတွက်နိုင်သည်ဖြစ်စေ မရေတွက်နိုင်ဖြစ်စေ (ငွေ၊ အချိန်၊ အကြံဉာဏ်၊ အချက်အလက်၊ ယာဉ်အသွားအလာ၊ မိုး → ရေမတွက်နိုင်သော) ကို ဆုံးဖြတ်ပါ။ </li>
+        <li> အဆင့် 2- အကြောင်းအရာကိုဖတ်ပါ — ရလဒ်ကောင်းများ ( "so we could talk" , "enough" ) → <b> အနည်းငယ်/အနည်းငယ် </b> ; မကောင်းတဲ့ရလဒ် ("so it was difficult" , "not popular" ) → <b> အနည်းငယ်/အနည်းငယ် </b>.</li>
+        <li> ခိုင်လုံသောဝါကျတွင် <i>much</i> → များသောအားဖြင့် <i>a lot of / a lot</i> သို့ပြောင်းရန် လိုအပ်သည်။ </li>
+        <li> နောက်ဆုံးကြိယာ ( <i>travels much, cost much</i> ) → <i>a lot</i> (no of)။ </li>
+        <li> <i>for ___ years</i> → <b> အများကြီး </b>.</li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I have a lot of money. </td><td class="yes"> I am short <b> a lot of </b> Money </td><td class="why"> Money cannot be counted. </td></tr>
+        <tr><td class="no"> There are many people here. </td><td class="yes"> there is <b> A lot / a lot </b> Here people </td><td class="why"> plural of people </td></tr>
+        <tr><td class="no"> He gave me a lot of advice. </td><td class="yes"> He gave <b> a lot of </b> Advice. </td><td class="why"> Advice cannot be counted; Do not add -s </td></tr>
+        <tr><td class="no"> People like it very much. </td><td class="yes"><b> a lot of </b> People like it. </td><td class="why"> Translates to multiple devices. </td></tr>
+        <tr><td class="no"> She works a lot. </td><td class="yes"> She works. <b> very much </b>.</td><td class="why"> Many of the valid sentences are unnatural. </td></tr>
+        <tr><td class="no"> I have little time. (= have time) </td><td class="yes"> I am short <b> A few </b> Time. </td><td class="why"> Time is infinite + positive thought. </td></tr>
+        <tr><td class="no"> Wait a few minutes. </td><td class="yes"> Wait a minute <b> A few </b> minutes. </td><td class="why"> "a few minutes" → a few </td></tr>
+        <tr><td class="no"> He speaks little English. </td><td class="yes"> I know <b> Only a few </b> English. </td><td class="why"> + Only a few </td></tr>
+        <tr><td class="no"> A lot of information </td><td class="yes"> a lot of <b> Information </b></td><td class="why"> Countless </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြော- </b> အဆင့်- <i>"I speak a little Japanese." / "I know a few words of Thai."</i> အကြောင်းမေးသောအခါ </li>
+        <li><b> IELTS ရေးခြင်း- </b> ပိုမိုတရားဝင်ရေးသားရန်အတွက် <i>many / few / very little</i> ကိုသုံးပါ- <i>"Very few students can afford ..."</i> </li>
+        <li><b> အလုပ်- </b> <i>"Could I have a few minutes of your time?" / "We have plenty of stock."</i> </li>
+        <li><b> အလိုအလျောက်ပြင်ရန်- </b> <i>much</i> ကို အပြုသဘောဆောင်သောဝါကျဖြင့် ပြောလိုသည့်အခါတိုင်း → ၎င်းကို <i>a lot of</i> ဖြင့် အစားထိုးပါ။ </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> ရေတွက်နိုင်သော → အများကြီး/အနည်းငယ်; မရေမတွက်နိုင်သော? → အများကြီး/နည်းနည်း; အပြုသဘော? → ထည့်ပါ။ <b> a </b>.</li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> ၃ ရက်၊ ၇ ရက်နှင့် ၁၄ ရက်ပြီးနောက် လေ့ကျင့်ခန်းများကို ပြန်လုပ်ပါ။ "ဝါကျမှားပြန်လုပ်ရန်" ခလုတ်ကို ဦးစားပေးပါ။ ဆက်စပ်- <b> ယူနစ် ၆၉-၇၀ </b> (ရေမတွက်နိုင်သော/ရေမတွက်နိုင်သော)၊ <b> ယူနစ် ၈၈ </b> (အားလုံး/အများစု/အချို့)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit87.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 87 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> မရေမတွက်နိုင်အောင် \u003c/th>\u003cth> အများကိန်းများကို ရေတွက်နိုင်သည်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အများကြီး \u003c/td>\u003ctd> အများကြီး / အများကြီး \u003c/td>\u003ctd> အများကြီး / အများကြီး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အနဲငယ် (နှုတ်) \u003c/td>\u003ctd> နည်းနည်း/အလွန်နည်းတယ်။ \u003c/td>\u003ctd> အနည်းငယ် / အလွန်နည်းပါးသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အနည်းငယ် (အပြုသဘော) \u003c/td>\u003ctd> အနည်းငယ် \u003c/td>\u003ctd> အနည်းငယ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> လုံလောက်သည်ထက် ပိုသည်။ \u003c/td>\u003ctd colspan=\"2\"> အများကြီး (အချိန် / စိတ်ကူးများ) \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့မှာ အိမ်စာတွေ အများကြီးရှိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါတို \u003cb> များစွာသော \u003c/b> အိမ်စာ။ အိမ်စာ။ (အိမ်စာသည် မရေတွက်နိုင်သော) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကော်ဖီအများကြီးသောက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူမသောက်သည်။ \u003cb> များစွာသော \u003c/b> ကော်ဖီ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက ခရီးအများကြီးထွက်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ ခရီးသွားတယ်။ \u003cb> အများကြီး \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်းငါ့ကိုဒေါ်လာအနည်းငယ်ချေးပေးနိုင်မလား \u003c/td>\u003ctd class=\"yes\"> ခေ… \u003cb> အနည်းငယ် \u003c/b> ဒေါ်လာ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စကားလုံးအနည်းငယ်ပဲ သိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်သိသည် \u003cb> အနည်းငယ်သာ \u003c/b> စကားလုံးများ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကျွန်တော် သူမကို မတွေ့ရတာ နှစ်အတော်ကြာပြီ။ \u003c/td>\u003ctd class=\"yes\"> ...အဘို့ \u003cb> အများကြီး \u003c/b> နှစ်များ။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့မှာ ပိုက်ဆံအများကြီးရှိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါတို \u003cb> များစွာသော \u003c/b> ပိုက်ဆံ \u003c/td>\u003ctd class=\"why\"> ပိုက်ဆံကို ရေတွက်လို့ မရဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဒီမှာ လူတွေအများကြီးရှိတယ်။ \u003c/td>\u003ctd class=\"yes\"> ရှိတယ်။ \u003cb> အများကြီး / အများကြီး \u003c/b> ဒီမှာ လူတွေ \u003c/td>\u003ctd class=\"why\"> people အများကိန်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက အကြံဉာဏ်တွေ အများကြီးပေးတယ်။ \u003c/td>\u003ctd class=\"yes\"> ပေးတော်မူ၏။ \u003cb> များစွာသော \u003c/b> အကြံဉာဏ်။ \u003c/td>\u003ctd class=\"why\"> အကြံပေးချက်သည် ရေတွက်၍မရနိုင်ပါ၊ -s မထည့်ပါနှင့် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လူတွေအရမ်းကြိုက်တယ်။ \u003c/td>\u003ctd class=\"yes\">\u003cb> များစွာသော \u003c/b> လူတွေက ကြိုက်တယ်။ \u003c/td>\u003ctd class=\"why\"> စက်များစွာကို ဘာသာပြန်ဆိုသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမ အများကြီးအလုပ်လုပ်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူမအလုပ်လုပ်တယ်။ \u003cb> အများကြီး \u003c/b>.\u003c/td>\u003ctd class=\"why\"> ခိုင်လုံသောစာကြောင်းများတွင် များစွာသည် သဘာဝမကျပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့မှာ အချိန်နည်းနည်းရှိတယ်။ (= အချိန်ရှိပါ) \u003c/td>\u003ctd class=\"yes\"> ငါတို \u003cb> အနည်းငယ် \u003c/b> အချိန်။ \u003c/td>\u003ctd class=\"why\"> အချိန်သည် မရေမတွက်နိုင်သော + အပြုသဘောဆောင်သော အတွေးဖြစ်သည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မိနစ်အနည်းငယ်စောင့်ပါ။ \u003c/td>\u003ctd class=\"yes\"> ခဏနေ \u003cb> အနည်းငယ် \u003c/b> မိနစ်။ \u003c/td>\u003ctd class=\"why\"> \"မိနစ်အနည်းငယ်\" → အနည်းငယ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အင်္ဂလိပ်စာနည်းနည်းပဲတတ်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်သိသည် \u003cb> အနည်းငယ်သာ \u003c/b> အင်္ဂလိပ်စာ။ \u003c/td>\u003ctd class=\"why\"> + အနည်းငယ်​သာ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အချက်အလက်အများကြီး \u003c/td>\u003ctd class=\"yes\"> များစွာသော \u003cb> အချက်အလက် \u003c/b>\u003c/td>\u003ctd class=\"why\"> မရေမတွက်နိုင်သော \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 87 – အများကြီး၊ အများကြီး၊ နည်းနည်း၊ နည်းနည်း၊ အများကြီး၊ များများ | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit87.html';
+  var KEY = 'egu4_unit87_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'များစွာ/အနည်း/အများ/အများ/အများအလိုက် ရွေးချယ်ပါ။' },
+    { id:'B', title:'B. ပမာဏစကားလုံးများကိုဖြည့်ပါ။',      desc:'အများကြီး၊ အများကြီး၊ နည်းနည်း၊ နည်းနည်း၊ အနည်းငယ်၊ အများကြီး (အများကြီး)...' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 87 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 87 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 87.1 → 87.5 သည် Murphy ၏ စာအုပ်၏ အတိအကျ သင်ခန်းစာပုံစံကို လိုက်နာပြီး သော့များပါ၀င်သော စာကြောင်းများကို ပြန်လည်ပြင်ဆင်ထားပါသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'How ______ students are there in your class?',
+      opts:['many','much','little','a lot'], a:0,
+      exp:'students သည် အများကိန်း ရေတွက်နိုင်သော နာမ် → မည်မျှရှိသည် ။' },
+    { id:'a2', sec:'A', type:'mcq', q:'We don\'t have ______ information about the new project yet.',
+      opts:['many','much','few','a few'], a:1,
+      exp:'မရေတွက်နိုင်သော အချက်အလက် + အနှုတ်ဝါကျ → များစွာ။' },
+    { id:'a3', sec:'A', type:'mcq', q:'သဘာဝအရှိဆုံးဝါကျကို ရွေးပါ',
+      opts:['My brother eats much meat.','My brother eats many meat.','My brother eats a lot of meat.'], a:2,
+      exp:'ခိုင်လုံသောဝါကျ → အများကြီး (much is unnatural)။ အသားက မရေမတွက်နိုင်အောင် အများကြီး မသုံးပါနဲ့။' },
+    { id:'a4', sec:'A', type:'mcq', q:'Hurry up! We only have ______ time before the shop closes.',
+      opts:['little','a few','few','a little'], a:3,
+      exp:'အချိန်သည် မရေတွက်နိုင်သော၊ အနည်းငယ်သာသုံးပါ (အနည်းငယ်သာ မပြောပါနှင့်)။' },
+    { id:'a5', sec:'A', type:'mcq', q:'The film was boring, so ______ people stayed until the end.',
+      opts:['few','a few','a little','much'], a:0,
+      exp:'အနှုတ်လက္ခဏာ (ပျင်းစရာရုပ်ရှင် → လူအနည်းငယ်) + အများကိန်း လူများ → အနည်းငယ်။' },
+    { id:'a6', sec:'A', type:'mcq', q:'Don\'t worry about food — there\'s ______ for everyone.',
+      opts:['plenty of','plenty','many','few'], a:1,
+      exp:'ပဒေသာပင် (နာမ်မရှိသော) = လိုအပ်သည်ထက် ပိုများသည်။ အများအပြားကို noun ဖြင့် လိုက်ရပါမည်။' },
+    { id:'a7', sec:'A', type:'mcq', q:'I\'ve known Lan for ______ years.',
+      opts:['a lot of','much','many','plenty'], a:2,
+      exp:'နှစ်/ရက်သတ္တပတ်/ရက်များဖြင့် ကျွန်ုပ်တို့သည် နှစ်များစွာ (နှစ်များစွာမဟုတ်ပါ)။' },
+    { id:'a8', sec:'A', type:'mcq', q:'He spoke ______ Spanish, so we managed to understand each other.',
+      opts:['little','few','a few','a little'], a:3,
+      exp:'အပြုသဘောဆောင်သောရလဒ် (အချင်းချင်းနားလည်ဆဲ) + စပိန်သည် မရေမတွက်နိုင်သော → အနည်းငယ်။' },
+
+    /*===== B။ ဖြည့် =====*/
+    { id:'b1', sec:'B', type:'fill', q:'Did you spend ______ money at the market? (much/many)',
+      acc:['much'], ans:'much',
+      exp:'မေးခွန်း + မရေမတွက်နိုင်သော ငွေကြေး → များစွာ။' },
+    { id:'b2', sec:'B', type:'fill', q:'She has very ______ free time because she has two jobs. (little/few)',
+      acc:['little'], ans:'little',
+      exp:'အားလပ်ချိန်သည် မရေတွက်နိုင်သော၊ အနုတ်လက္ခဏာ → အလွန်နည်းပါးသည်။' },
+    { id:'b3', sec:'B', type:'fill', q:'I\'ve got ______ ideas for the party. Let\'s discuss them. (a few/a little)',
+      acc:['a few'], ans:'a few',
+      exp:'အများကိန်း အယူအဆများ အပြုသဘောဆောင်သော အတွေးအခေါ်များ (စိတ်ကူးအနည်းငယ်ရှိသည်) → အနည်းငယ်။' },
+    { id:'b4', sec:'B', type:'fill', q:'အဖေက သူ့အလုပ်အတွက် ______ ခရီးသွားတယ် — တစ်လကို နှစ်ကြိမ်လောက်။ (စကားလုံး ၂ လုံး)',
+      acc:['a lot'], ans:'a lot',
+      exp:'ခိုင်လုံသောဝါကျ၊နောက်ကြိယာ (နာမ်မရှိ) → အများကြီး (ခရီးအများကြီးမပြောတာ)။' },
+    { id:'b5', sec:'B', type:'fill', q:'There aren\'t ______ good restaurants in this area. (much/many)',
+      acc:['many'], ans:'many',
+      exp:'စားသောက်ဆိုင်များ → အများကိန်း' },
+    { id:'b6', sec:'B', type:'fill', q:'Would you like ______ more soup? (a few/a little)',
+      acc:['a little'], ans:'a little',
+      exp:'uncountable soup + idea "a little" → အနည်းငယ်။' },
+    { id:'b7', sec:'B', type:'fill', q:'It\'s a big flat. There\'s ______ of room for a piano.',
+      acc:['plenty'], ans:'plenty',
+      exp:'များပြားသောအခန်း = အခန်းအများကြီး၊ လုံလောက်သည်ထက် ပိုသည်။' },
+    { id:'b8', sec:'B', type:'fill', q:'The village is tiny. Very ______ people live there. (little/few)',
+      acc:['few'], ans:'few',
+      exp:'လူတို့သည် အများကိန်း၊ အနုတ်လက္ခဏာ → အလွန်နည်းပါးသည်။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (we\'ve / plenty / got / of / time)',
+      tokens:["We've",'got','plenty','of','time'],
+      acc:["we've got plenty of time"], ans:'We\'ve got plenty of time.',
+      exp:'have + ပဒေသာ + နာမ်။' },
+    { id:'c2', sec:'C', type:'order', q:'မေးခွန်းအဖြစ် စီရန်- (how / did / much / cost / it)',
+      tokens:['How','much','did','it','cost'],
+      acc:['how much did it cost'], ans:'How much did it cost?',
+      exp:'စျေးနှုန်းကို မေးပါ - ဘယ်လောက် + လုပ်လဲ + S + V?' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (only / I / a few / know / words)',
+      tokens:['I','know','only','a','few','words'],
+      acc:['i know only a few words'], ans:'I know only a few words.',
+      exp:'only + a few + အများကိန်း နာမ်။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (there / much / wasn\'t / traffic / today)',
+      tokens:['There',"wasn't",'much','traffic','today'],
+      acc:["there wasn't much traffic today"], ans:'There wasn\'t much traffic today.',
+      exp:'အနှုတ် + မရေမတွက်နိုင်သော နာမ် → များစွာ။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (he / patience / has / very / little)',
+      tokens:['He','has','very','little','patience'],
+      acc:['he has very little patience'], ans:'He has very little patience.',
+      exp:'very little + uncountable noun (အနုတ်လက္ခဏာ)။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Do you speak Chinese?  B: Just ______. I can order food.',
+      acc:['a little'], ans:'a little',
+      exp:'အပြုသဘောဆောင်သော အဓိပ္ပာယ်၊ "နည်းနည်း" → အနည်းငယ်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: When did you last see Minh?  B: ______ days ago.',
+      acc:['a few'], ans:'A few',
+      exp:'a few days ago = လွန်ခဲ့သောရက်အနည်းငယ်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: How ______ coffee do you drink a day?  B: About three cups.',
+      acc:['much'], ans:'much',
+      exp:'ကော်ဖီက ရေမတွက်နိုင်တဲ့ → ဘယ်လောက်လဲ။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Is there enough bread?  B: Yes, there\'s ______. I bought two loaves.',
+      acc:['plenty'], ans:'plenty',
+      exp:'အောက်ဖော်ပြပါ နာမ် → မပါဘဲ လုံလောက်သည်ထက် များများ။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'စာကြောင်း 2 ကြောင်းရေးပါ- အနည်းငယ်ပါသော စာကြောင်း 1 ကြောင်း ၊ အနည်းငယ်ပါသော စာကြောင်း 1 ကြောင်း ၊ အဓိပ္ပါယ် ကွာခြားချက်ကို ပြသပါ။',
+      sample:'I have a few close friends, so I\'m never lonely. Few people visit this museum, so it\'s always quiet.',
+      exp:'အနည်းငယ် = အနည်းငယ် (အကောင်းမြင်၊ လုံလောက်သည်); အနည်းငယ် = အနည်းငယ် (ဘာမှမနီးပါး)။' },
+    { id:'e2', sec:'E', type:'self', q:'သင့်အသုံးစရိတ်များအကြောင်း စာကြောင်း 2 ကြောင်းရေးပါ- များစွာသော အခိုင်အမာဝါကျ ၁ ကြောင်း၊ အနှုတ်ဝါကျ ၁ ကြောင်းကို အများကြီးရေးပါ။',
+      sample:'I spend a lot of money on books. I don\'t spend much money on clothes.',
+      exp:'Afirm → a lot of; အနုတ်လက္ခဏာ/မေးခွန်း → အများကြီး။' },
+    { id:'e3', sec:'E', type:'self', q:'ဝါကျ ၁ ကြောင်းကို များများနဲ့ စာကြောင်း ၁ ကြောင်းကို အလွန်နည်းအောင်ရေးပါ။',
+      sample:'There are plenty of parks in my city. I have very little time to relax during the week.',
+      exp:'ပဒေသာပင် = လုံလောက်သည် (ရေတွက်နိုင်သော၊ မရေတွက်နိုင်သော)၊ အလွန်နည်းသည် + မရေမတွက်နိုင်သော။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['Can you lend me few dollars?','Can you lend me a little dollars?','Can you lend me a few dollars?'], a:2,
+      exp:'ဒေါ်လာသည် ရေတွက်နိုင်သော၊ အဓိပ္ပါယ်မှာ "ဒေါ်လာအနည်းငယ်" → အနည်းငယ်ဖြစ်သည်။' },
+    { id:'f2', sec:'F', type:'fill', q:'There\'s ______ milk left. Can you buy some? (little/few)',
+      acc:['little'], ans:'little',
+      exp:'နို့သည် မရေမတွက်နိုင်သော၊ အဓိပ္ပါယ်မှာ "ပြီးလုနီးပါး" → အနည်းငယ်ဖြစ်သည်။' },
+    { id:'f3', sec:'F', type:'mcq', q:'သဘာဝအရှိဆုံးဝါကျကို ရွေးပါ',
+      opts:['It cost much to fix the roof.','It cost a lot to fix the roof.'], a:1,
+      exp:'Affirmative sentence → အများကြီး။ (မေးခွန်း "Did it cost much?" ကောင်းပါတယ်။)' },
+    { id:'f4', sec:'F', type:'fill', q:'ဘာသာပြန်ဆိုချက်- "ငါ့မှာ မေးခွန်းအနည်းငယ်ရှိတယ်။" (အနည်းငယ်သုံးပါ)',
+      acc:['i have a few questions',"i've got a few questions",'i have got a few questions'],
+      ans:'I have a few questions.',
+      exp:'မေးခွန်းများ ရေတွက်နိုင်သော အများကိန်း + အယူအဆ "အနည်းငယ်" → အနည်းငယ်။' },
+    { id:'f5', sec:'F', type:'mcq', q:'She isn\'t very popular. She has ______ friends.',
+      opts:['a few','a little','few','much'], a:2,
+      exp:'အနုတ်လက္ခဏာ (မနှစ်သက်) → အနည်းငယ်။' },
+    { id:'f6', sec:'F', type:'fill', q:'I need ______ advice about my CV. (a few/a little)',
+      acc:['a little'], ans:'a little',
+      exp:'မရေတွက်နိုင်သော အကြံဉာဏ် → အနည်းငယ်။' },
+    { id:'f7', sec:'F', type:'mcq', q:'We haven\'t had ______ rain this summer.',
+      opts:['many','few','a few','much'], a:3,
+      exp:'မရေမတွက်နိုင်သော မိုး + အနှုတ် → များစွာ။' },
+    { id:'f8', sec:'F', type:'fill', q:'There are ______ of hotels in the city, so finding a room is easy.',
+      acc:['plenty','lots'], ans:'plenty',
+      exp:'များသောဟိုတယ် = ဟိုတယ်တွေအများကြီး (လုံလောက်သည်ထက်)။ အများကြီးအဆင်ပြေပါတယ်။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'mcq', sub:'သင်ခန်းစာ 87.1 – များစွာမှန်ကန်ပါသလား သို့မဟုတ် ပြောင်းလဲရန် လိုအပ်ပါသလား။',
+      q:'"Tom drinks much coffee."',
+      opts:['ပြောင်းလဲခြင်း- Tom ကော်ဖီအများကြီးသောက်တယ်။','အိုကေ၊ ဒီအတိုင်းထားပါ။'], a:0,
+      exp:'ခိုင်လုံသောဝါကျ → ကော်ဖီအများကြီး။' },
+    { id:'h2', sec:'G', type:'mcq', sub:'သင်ခန်းစာ 87.1 – များစွာမှန်ကန်ပါသလား သို့မဟုတ် ပြောင်းလဲရန် လိုအပ်ပါသလား။',
+      q:'"Hurry up. We don\'t have much time."',
+      opts:['ပြောင်းလဲခြင်း- ကျွန်ုပ်တို့တွင် အချိန်သိပ်မရှိပါ။','အိုကေ၊ ဒီအတိုင်းထားပါ။'], a:1,
+      exp:'အနှုတ် + မရေမတွက်နိုင်သော အချိန် → များစွာမှန်ပါသည်။' },
+    { id:'h3', sec:'G', type:'mcq', sub:'သင်ခန်းစာ 87.1 – များစွာမှန်ကန်ပါသလား သို့မဟုတ် ပြောင်းလဲရန် လိုအပ်ပါသလား။',
+      q:'"Did it cost much to fix your phone?"',
+      opts:['အိုကေ၊ ဒီအတိုင်းထားပါ။','Change : ပြင်ဖို့ အများကြီး ကုန်ကျခဲ့တာလား...'], a:0,
+      exp:'မေးခွန်း → အများကြီးသုံးနိုင်တယ်။' },
+    { id:'h4', sec:'G', type:'mcq', sub:'သင်ခန်းစာ 87.1 – များစွာမှန်ကန်ပါသလား သို့မဟုတ် ပြောင်းလဲရန် လိုအပ်ပါသလား။',
+      q:'"I don\'t know much people in this city."',
+      opts:['အိုကေ၊ ဒီအတိုင်းထားပါ။','ပြောင်းလဲခြင်း- လူများစွာ / လူများစွာကို ငါမသိပါ။'], a:1,
+      exp:'people အများကိန်း → many သို့မဟုတ် အများကြီး။' },
+    { id:'h5', sec:'G', type:'mcq', sub:'သင်ခန်းစာ 87.1 – များစွာမှန်ကန်ပါသလား သို့မဟုတ် ပြောင်းလဲရန် လိုအပ်ပါသလား။',
+      q:'"My sister travels much."',
+      opts:['အပြောင်းအလဲ- ညီမက ခရီးသွားတာများတယ်။','အိုကေ၊ ဒီအတိုင်းထားပါ။'], a:0,
+      exp:'affirmative ကြိယာ → အများကြီးနောက်မှာ။' },
+    { id:'h6', sec:'G', type:'mcq', sub:'သင်ခန်းစာ 87.1 – များစွာမှန်ကန်ပါသလား သို့မဟုတ် ပြောင်းလဲရန် လိုအပ်ပါသလား။',
+      q:'"You need much patience to teach children."',
+      opts:['အိုကေ၊ ဒီအတိုင်းထားပါ။','Doi : မင်း စိတ်ရှည်ဖို့ လိုတယ်...'], a:1,
+      exp:'ခိုင်လုံသောဝါကျ → သည်းခံခြင်းများစွာ။' },
+
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.2 – များများ / များများ',
+      q:'She\'s rich. She has ______ money.', acc:['plenty of'], ans:'plenty of',
+      exp:'+ noun များများ။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.2 – များများ / များများ',
+      q:'Sit down with us. There\'s ______ room.', acc:['plenty of'], ans:'plenty of',
+      exp:'အခန်း (နေရာလွတ်) သည် ရေတွက်၍မရနိုင်သော → အခန်းများစွာရှိသည်။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.2 – များများ / များများ',
+      q:'He\'s a good player, but he still has ______ to learn.', acc:['plenty'], ans:'plenty',
+      exp:'ပဒေသာပင် + မှ V (နာမ်မပါသော) → သင်ယူစရာများစွာ။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.2 – များများ / များများ',
+      q:'Hanoi is a great city to visit. There\'s ______ to see.', acc:['plenty'], ans:'plenty',
+      exp:'a lot to see = မြင်စရာတွေ အများကြီးရှိတယ်။' },
+
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.3 – အများကြီး / အများကြီး / အနည်းငယ် / အနည်းငယ် (1 စကားလုံး)',
+      q:'Mai is very busy at the moment. She has ______ free time.', acc:['little'], ans:'little',
+      exp:'အားလပ်ချိန်သည် မရေမတွက်နိုင်သော၊ အနုတ်လက္ခဏာ → အနည်းငယ်သာဖြစ်သည်။' },
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.3 – အများကြီး / အများကြီး / အနည်းငယ် / အနည်းငယ် (1 စကားလုံး)',
+      q:'Did you buy ______ souvenirs on your trip?', acc:['many'], ans:'many',
+      exp:'အမှတ်တရလက်ဆောင်များ ၊မေးခွန်း → အများကိန်း။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.3 – အများကြီး / အများကြီး / အနည်းငယ် / အနည်းငယ် (1 စကားလုံး)',
+      q:'I\'m quite relaxed today. I don\'t have ______ to do.', acc:['much'], ans:'much',
+      exp:'အနုတ်လက္ခဏာ နာမ် → များစွာ မရှိပါ။' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.3 – အများကြီး / အများကြီး / အနည်းငယ် / အနည်းငယ် (1 စကားလုံး)',
+      q:'It\'s a very new town. There are ______ old houses.', acc:['few'], ans:'few',
+      exp:'houses သည် အများကိန်းဖြစ်ပြီး "အလွန်နည်း" → အနည်းငယ်ဟု အဓိပ္ပာယ်ရသည်။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.3 – အများကြီး / အများကြီး / အနည်းငယ် / အနည်းငယ် (1 စကားလုံး)',
+      q:'\'Have you been to Da Lat?\' \'Not for ______ years.\'', acc:['many'], ans:'many',
+      exp:'နှစ်ပေါင်းများစွာ။' },
+
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.4 – လိုအပ်ပါက (အနည်းငယ် / အနည်းငယ်) ထည့်ပါ။ မှန်တယ်ဆိုရင် OK ရေးပါ။',
+      q:'ဘတ်စ်ကားအတွက် ယူရိုအနည်းငယ် ပေးလို့ရမလား။ → မှန်ကန်သော စကားစု- ______ ယူရို', acc:['a few','a few euros'], ans:'a few euros',
+      exp:'ကျေးဇူးပြု၍ "ဒင်္ဂါးအနည်းငယ်" (အပြုသဘောဆောင်သော အဓိပ္ပာယ်၊ အနည်းငယ်သော ပမာဏ) → ယူရိုအနည်းငယ်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.4 – လိုအပ်ပါက (အနည်းငယ် / အနည်းငယ်) ထည့်ပါ။ မှန်တယ်ဆိုရင် OK ရေးပါ။',
+      q:'လမ်းတွေ တိတ်ဆိတ်နေတော့ ကားအသွားအလာနည်းတဲ့အတွက် စောစောရောက်တယ်။ → (အိုကေ ရေးပါ သို့မဟုတ် တည်းဖြတ်ပါ)', acc:['ok'], ans:'OK',
+      exp:'အသွားအလာလေးများ = ကားများများမစီးပါ (ခရီးအတွက်ကောင်းသည်) → မှန်ကန်သောဝါကျ၊ OK ရေးပါ။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.4 – လိုအပ်ပါက (အနည်းငယ် / အနည်းငယ်) ထည့်ပါ။ မှန်တယ်ဆိုရင် OK ရေးပါ။',
+      q:'အခု မဆုံးဖြတ်နိုင်သေးဘူး။ စဉ်းစားဖို့ အချိန်နည်းနည်းလိုတယ်။ → မှန်ကန်သော စကားစု- ______ အချိန်', acc:['a little','a little time'], ans:'a little time',
+      exp:'အချိန်အနည်းငယ် (အပြုသဘောဆောင်သော အဓိပ္ပာယ်) → အချိန်အနည်းငယ် လိုအပ်သည်။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.4 – လိုအပ်ပါက (အနည်းငယ် / အနည်းငယ်) ထည့်ပါ။ မှန်တယ်ဆိုရင် OK ရေးပါ။',
+      q:'သူမအနိုင်ရမည်ဟု မည်သူမျှမထင်ခဲ့ပေ။ လူအနည်းငယ်သာ မျှော်လင့်ထားသည်။ → (အိုကေ ရေးပါ သို့မဟုတ် တည်းဖြတ်ပါ)', acc:['ok'], ans:'OK',
+      exp:'လူအနည်းငယ် = လူအနည်းငယ် (တစ်ယောက်မျှနီးပါး) → မှန်သည်၊ OK ရေးပါ။' },
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.4 – လိုအပ်ပါက (အနည်းငယ် / အနည်းငယ်) ထည့်ပါ။ မှန်တယ်ဆိုရင် OK ရေးပါ။',
+      q:'ကျွန်ုပ်၏ဂျပန်စကားသည် အခြေခံဖြစ်သည်- ကျွန်ုပ်သည် စကားစုအနည်းငယ်သာ သိသည်။ → မှန်ကန်သောစကားစု- ______ စကားစုများသာ', acc:['a few','only a few','only a few phrases','a few phrases'], ans:'only a few phrases',
+      exp:'ပြီးရင် အမြဲတမ်း a ရှိတယ်၊ အနည်းငယ်ပဲရှိတယ်။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.4 – လိုအပ်ပါက (အနည်းငယ် / အနည်းငယ်) ထည့်ပါ။ မှန်တယ်ဆိုရင် OK ရေးပါ။',
+      q:'Huy ဆီက မကြားရတာ ရက်သတ္တပတ် အတော်ကြာပြီ။ → မှန်ကန်သောစကားစု- ______ ရက်သတ္တပတ်များအတွက်', acc:['a few','a few weeks','for a few weeks'], ans:'for a few weeks',
+      exp:'"a few weeks" → ရက်သတ္တပတ်အနည်းငယ်။' },
+
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.5 – အနည်းငယ် / အနည်းငယ် / အနည်းငယ် / အနည်းငယ်',
+      q:'Listen. I\'d like to give you ______ advice before you start.', acc:['a little'], ans:'a little',
+      exp:'အကြံဉာဏ်သည် ရေတွက်၍မရနိုင်ပါ၊ အဓိပ္ပါယ်မှာ "အနည်းငယ်သော အကြံဉာဏ်" → အနည်းငယ်ဖြစ်သည်။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.5 – အနည်းငယ် / အနည်းငယ် / အနည်းငယ် / အနည်းငယ်',
+      q:'Can I ask you ______ questions about your job?', acc:['a few'], ans:'a few',
+      exp:'မေးခွန်းများ အများကိန်း၊ ဆိုလိုသည်မှာ "စာကြောင်းအနည်းငယ်" → အနည်းငယ်။' },
+    { id:'h24', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.5 – အနည်းငယ် / အနည်းငယ် / အနည်းငယ် / အနည်းငယ်',
+      q:'The beach is hard to reach, so ______ tourists go there.', acc:['few'], ans:'few',
+      exp:'အနုတ်လက္ခဏာဆောင်သော အဓိပ္ပါယ် (လာရန်ခက်ခဲ → ဖောက်သည်အနည်းငယ်) → အနည်းငယ်။' },
+    { id:'h25', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.5 – အနည်းငယ် / အနည်းငယ် / အနည်းငယ် / အနည်းငယ်',
+      q:'He wouldn\'t be a good nurse. He has ______ patience.', acc:['little'], ans:'little',
+      exp:'သည်းခံခြင်းသည် မရေမတွက်နိုင်သော၊ "အလွန်နည်း" → အနည်းငယ်ဟု ဆိုလိုသည်။' },
+    { id:'h26', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.5 – အနည်းငယ် / အနည်းငယ် / အနည်းငယ် / အနည်းငယ်',
+      q:'\'Sugar in your tea?\' \'Yes, ______, please.\'', acc:['a little'], ans:'a little',
+      exp:'သကြားအနည်းငယ် → အနည်းငယ်။' },
+    { id:'h27', sec:'G', type:'fill', sub:'သင်ခန်းစာ 87.5 – အနည်းငယ် / အနည်းငယ် / အနည်းငယ် / အနည်းငယ်',
+      q:'\'Have you been to Singapore?\' \'Yes, I\'ve been there ______ times.\'', acc:['a few'], ans:'a few',
+      exp:'အကြိမ်များစွာ → အကြိမ်အနည်းငယ်။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

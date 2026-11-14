@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 67 – တစ်စုံတစ်ယောက်လုပ်သည်ကိုကြည့်ပါ၊ တစ်စုံတစ်ယောက်လုပ်နေသည်ကိုမြင်သည် | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 67 - တစ်စုံတစ်ယောက်လုပ်သည်ကိုကြည့်ပါ၊ တစ်စုံတစ်ယောက်လုပ်ဆောင်နေသည်ကိုကြည့်ပါ။ </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း ၅၂ ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> နောက်ကြိယာ <b> သဘော </b> (see, hear, watch, feel, notice, အနံ့, listen to, find...) သုံးနိုင်တယ်။ <b> object + V infinitive (ကြီးကြီးမားမားမဟုတ်ပါ) </b> သို့မဟုတ် <b> အရာဝတ္ထု + V-ing </b> . ခြားနားချက်မှာ သင်သက်သေဖြစ်သည်။ <b> ပြီးပါပြီ။ </b> လုပ်ဆောင်ပါ သို့မဟုတ် ကြည့်ရုံသာဖြစ်သည်။ <b> ဆက်ဖြစ်နေပါတယ်။ </b>.</p>
+      <div class="ex"> <b class="en">I saw Tom  <mark>get</mark>  into his car and  <mark>drive</mark>  away.</b> → အစမှအဆုံးမြင်သည်။ <br> <b class="en">I saw Kate  <mark>waiting</mark>  for a bus.</b> → သူမစောင့်ဆိုင်းနေစဉ်တွင်သာ မြင်တွေ့ခဲ့ရသည်။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> မြင် / ကြား / စောင့်ကြည့် / ခံစား / သတိပေးသည် + O + V (လုပ်ဆောင်ချက်တစ်ခုလုံးကိုကြည့်ပါ)
+မြင် / ကြား / စောင့်ကြည့် / ခံစား / အနံ့ + O + V-ing (လုပ်ဆောင်မှုကိုကြည့်ပါ)
+
+Passive : be seen / be hear + TO + V သူ့ကို ကားပေါ်တက်ဖို့ မြင်တယ်။ </div>
+      <div class="scroll"><table>
+        <tr><th> Structure </th><th> It is relevant. </th><th> For example </th></tr>
+        <tr><td> I saw him. <b> do it </b> That's it </td><td> he <b> I did. </b> That (simple past) + saw this. </td><td> I saw it fall off the wall. </td></tr>
+        <tr><td> I saw him. <b> I'm doing it. </b> That's it </td><td> he <b> I'm doing it. </b> That (continuous) + I saw this. </td><td> I saw him walking on the side of the road. </td></tr>
+        <tr><td> He saw. <b> to do </b> That's it </td><td> passive </td><td> He was seen leaving the building. </td></tr>
+      </table></div>
+      <p class="note"> ⚠️ တက်ကြွသောပုံစံ <b> ဘယ်တော့မှ </b> "to" : <i>I saw him <s>to fall</s></i> ❌။ Passive အသံကိုသာ ရနိုင်သည်။ <b> ရန် </b>.</p>
+
+      <h2> 1.3 · A. တစ်စုံတစ်ယောက်လုပ်သည်ကိုကြည့်ပါ (ပြီးပြည့်စုံသည်) </h2>
+      <ul>
+        <li> <i>He fell off the wall. I saw this.</i> → <b> နံရံပေါ်က ပြုတ်ကျတာကို မြင်လိုက်ရတယ်။ </b></li>
+        <li> <i>The accident happened. Did you see it?</i> → <b> မတော်တဆမှုဖြစ်တာကို မြင်ပါသလား။ </b></li>
+        <li> သို့မဟုတ် တိုတောင်းသော လုပ်ဆောင်ချက်များအတွက် အသုံးပြုသည်- <i>hear a door slam, feel somebody touch you, hear somebody say "Hi"</i> . </li>
+      </ul>
+
+      <h2> 1.4 · B. တစ်စုံတစ်ယောက် လုပ်နေတာကို ကြည့်ပါ (ဆက်လုပ်နေတယ်) </h2>
+      <ul>
+        <li> <i>He was walking along the street. I saw this when I drove past.</i> → <b> လမ်းဘေးမှာ လမ်းလျှောက်နေတာတွေ့တယ်။ </b> (အားလုံးကို မမြင်ရဘူး) </li>
+        <li> <i>I could hear it raining. / Listen to the birds singing! / Can you smell something burning?</i> </li>
+        <li><b> + O + V-ing ကိုရှာပါ။ </b> : <i>We found him sitting under a tree.</i> </li>
+      </ul>
+
+      <h2> 1.5 · C. မည်သည့်နည်းလမ်းကို သင်သုံးနိုင်သနည်း။ </h2>
+      <p> ကွာခြားချက်က အရေးမကြီးတဲ့အခါ <i>I've never seen her <b>dance</b>.</i> = <i>I've never seen her <b>dancing</b>.</i> </p>
+
+      <h2> 1.6 · သက်သေခံလက္ခဏာများ </h2>
+      <div class="scroll"><table>
+        <tr><th> Token </th><th> select </th></tr>
+        <tr><td> from beginning to end The whole... then next action (then…) </td><td> Oh + <b> v </b></td></tr>
+        <tr><td> short Immediate Action: Falling; shouting explosion speaking touching </td><td> Oh + <b> v </b></td></tr>
+        <tr><td> Can I hear, hear, smell when I pass / pass by? </td><td> Oh + <b> V-ing </b></td></tr>
+        <tr><td> Find/catch someone... </td><td> Oh + <b> V-ing </b></td></tr>
+        <tr><td> see / hear </td><td><b> to + V </b></td></tr>
+      </table></div>
+
+      <h2> 1.7 · အလွယ်တကူ ရှုပ်ထွေးနေသော ဖွဲ့စည်းပုံများနှင့် နှိုင်းယှဉ်ပါ။ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I saw him to leave. </td><td class="yes"> I saw him. <b> Leave it. </b>.</td></tr>
+        <tr><td class="no"> He was seen leaving. </td><td class="yes"> He saw. <b> to leave </b>.</td></tr>
+        <tr><td class="no"> I heard him sing. </td><td class="yes"> I heard <b> her </b> Sing a song </td></tr>
+        <tr><td class="no"> I saw it fall. </td><td class="yes"> I saw him. <b> Fall </b>.</td></tr>
+        <tr><td class="no"> Can you smell burning? </td><td class="yes"> Can you smell something? <b> Burning. </b>?</td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၅-၆ </b> (အတိတ်က ရိုးရိုး &amp; စဉ်ဆက်မပြတ်) · <b> ယူနစ် ၅၅ </b> (ပြုလုပ်/ခွင့်ပြု + V) · <b> ယူနစ် ၆၈ </b> (-ing clauses)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🚗 <b class="en">I saw the car  <mark>hit</mark>  the motorbike.</b> <span class="note"> (သက်သေ - ယာဉ်တိုက်မှု တစ်ခုလုံးကို မြင်သည်) </span></div>
+      <div class="ex"> 🌧️ <b class="en">I could hear it  <mark>raining</mark>  all night.</b> <span class="note"> (ဘဝ — အသံဖော်ပြချက်) </span></div>
+      <div class="ex"> 🔥 <b class="en">Can you smell something  <mark>burning</mark> ?</b> <span class="note"> (မီးဖိုချောင်-သတိပေးချက်) </span></div>
+      <div class="ex"> 🕵️ <b class="en">A man was seen  <mark>to run</mark>  away from the shop.</b> <span class="note"> (သတင်း — passive) </span></div>
+      <div class="ex"> 🎤 <b class="en">I've never heard him  <mark>sing</mark>  before.</b> <span class="note"> (ဆက်သွယ်ရေး - သီချင်းဆို/ဆိုလည်း အဆင်ပြေတယ်) </span></div>
+      <div class="ex"> 🏃 <b class="en">I saw my boss  <mark>jogging</mark>  in the park this morning.</b> <span class="note"> (ဘဝ - ပြေးနေစဉ်မြင်သည်) </span></div>
+      <div class="ex"> 🐜 <b class="en">I felt something  <mark>crawling</mark>  up my leg.</b> <span class="note"> (ဘဝ-ဖြစ်ပျက်ခံစားမှု) </span></div>
+      <div class="ex"> 📝 <b class="en">Did you notice anyone  <mark>leave</mark>  early?</b> <span class="note"> (အလုပ် - ပွဲများအကြောင်းမေးပါ) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> V infinitive = "ရုပ်ရှင်တစ်ခုလုံး" </b>, <b> V-ing = "ဖြတ်ထားသော မြင်ကွင်း" </b>.</li>
+        <li> မူရင်းဝါကျသို့ ပြန်ပြောင်းပါ- <i>he <b>did</b></i> → <b> လုပ်ပါ။ </b> ;  <i>he <b>was doing</b></i> → <b> လုပ်နေတယ်။ </b>.</li>
+        <li><b> Active တွင် "to" မရှိပါ၊ Passive တွင် "to" ရှိသည်။ </b> : <i>saw him leave</i> ↔ <i>was seen to leave</i> . </li>
+        <li> မြင်/ကြားသည်နှင့် <b> neologism </b> : သူ/သူမ/သူတို့၊ သူ/သူမ/သူတို့ မဟုတ်ဘူး။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> <i>to + V</i> ပြီးနောက် <i>saw/heard</i> ကို တက်ကြွစွာ → <b> ချက်ချင်းဖယ်ရှားပါ။ </b>.</li>
+        <li> <i>was seen / was heard</i> → အဖြေရှိရပါမည်။ <b> ရန် </b>.</li>
+        <li> Past tense အဖြေ <i>saw him fell / heard her sang</i> → မမှန်ပါ- ဒုတိယကြိယာတွင် tense မရှိပါ။ </li>
+        <li> ဝါကျတွင် <i>"from beginning to end", "the whole"</i> → V infinitive ပါရှိသည်။ <i>"when I passed", "Listen!", "could hear"</i> → V-ing ပါရှိသည်။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I saw him leave. </td><td class="yes"> I saw him. <b> go </b> get out </td><td class="why"> Not very proactive. </td></tr>
+        <tr><td class="no"> I saw him leave. </td><td class="yes"> I saw him. <b> go </b> get out </td><td class="why"> The verb has no tense after the object. </td></tr>
+        <tr><td class="no"> He heard her cry. </td><td class="yes"> I heard <b> her </b> I cried. </td><td class="why"> Use neologisms. </td></tr>
+        <tr><td class="no"> I saw him taking money. </td><td class="yes"> He saw. <b> to take </b> Money </td><td class="why"> I need a big passive. </td></tr>
+        <tr><td class="no"> You may smell something burning. </td><td class="yes"> I could smell something. <b> Burning. </b>.</td><td class="why"> Smell = happening </td></tr>
+        <tr><td class="no"> I cross the road and see a taxi. </td><td class="yes"> I saw him. <b> Cross </b> and the road <b> Get </b> In the taxi. </td><td class="why"> Complete action sequence </td></tr>
+        <tr><td class="no"> I found him sleeping. </td><td class="yes"> I found him. <b> sleep </b>.</td><td class="why"> + O + Find V-ing. </td></tr>
+        <tr><td class="no"> Listen to the birds singing. </td><td class="yes"> Listen. <b> To fight </b> Birds <b> Singing. </b>!</td><td class="why"> Listen + O + V-ing. </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> ပုံပြင်ပြောခြင်း- </b> <i>"I saw a man drop his wallet, so I ran after him."</i> </li>
+        <li><b> လေထုကို ဖော်ပြခြင်း (IELTS Speaking) </b> <i>"You can hear people chatting and smell street food cooking."</i> </li>
+        <li><b> သက်သေခံ/အစီရင်ခံစာ- </b> <i>"I didn't see the accident happen, but I heard the cars crash."</i> </li>
+        <li><b> ရေးပါ </b> နေ့စဉ်နေ့တိုင်း သင်သွားလာနေသည့် <i>saw / heard / smelt</i> အကြောင်း စာကြောင်း ၃ ကြောင်း။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> အောက်ပါလေ့ကျင့်ခန်းများကို ထပ်မံပြုလုပ်ပါ။ <b> ၃/၇/၁၄ ရက် </b> ဦးစားပေးသည် "မှားသောဝါကျကို ပြန်လုပ်ပါ"။ ဆက်စပ်- <b> ယူနစ် ၆ </b> (အတိတ်အဆက်မပြတ်)၊ <b> ယူနစ် ၅၅ </b> (make/let + V)၊ <b> ယူနစ် ၆၈ </b> (-ing clauses)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit67.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 67 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> ဖွဲ့စည်းပုံ \u003c/th>\u003cth> သက်ဆိုင်ပါသည်။ \u003c/th>\u003cth> ဥပမာအားဖြင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> သူ့ကိုမြင်တယ်။ \u003cb> လုပ်ပါ။ \u003c/b> အဲဒါ \u003c/td>\u003ctd> သူ \u003cb> လုပ်ခဲ့တယ်။ \u003c/b> အဲဒါ (ရိုးရိုးအတိတ်) + ဒါကို မြင်တယ်။ \u003c/td>\u003ctd> နံရံပေါ်က ပြုတ်ကျတာကို မြင်လိုက်ရတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သူ့ကိုမြင်တယ်။ \u003cb> လုပ်နေတယ်။ \u003c/b> အဲဒါ \u003c/td>\u003ctd> သူ \u003cb> လုပ်နေတယ်။ \u003c/b> အဲဒါ (အဆက်မပြတ်) + ဒါကို မြင်တယ်။ \u003c/td>\u003ctd> လမ်းဘေးမှာ လမ်းလျှောက်နေတာတွေ့တယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> သူမြင်သည်။ \u003cb> လုပ်ဖို့ \u003c/b> အဲဒါ \u003c/td>\u003ctd> passive \u003c/td>\u003ctd> အဆောက်အဦးမှ ထွက်ခွာသွားသည်ကို မြင်တွေ့ခဲ့ရသည်။ \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> တိုကင် \u003c/th>\u003cth> ရွေးပါ။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အစမှအဆုံး၊ တစ်ခုလုံး…၊ ထို့နောက် နောက်လုပ်ဆောင်ချက် (ထို့နောက်…) \u003c/td>\u003ctd> အို + \u003cb> v \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> တိုတောင်းသော၊ ချက်ချင်းလုပ်ဆောင်မှု- ပြုတ်ကျခြင်း၊ ကြွေးကြော်ခြင်း၊ ပေါက်ကွဲခြင်း၊ ပြောခြင်း၊ ထိခြင်း။ \u003c/td>\u003ctd> အို + \u003cb> v \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ငါဖြတ်သွား / ဖြတ်သွားသောအခါ, ကြားနိုင်, နားထောင်, အနံ့ရနိုင်သလား ... ? \u003c/td>\u003ctd> အို + \u003cb> V-ing \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> တစ်စုံတစ်ယောက်ကို ရှာ/ဖမ်း... \u003c/td>\u003ctd> အို + \u003cb> V-ing \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> မြင်သည် / ကြားသည် \u003c/td>\u003ctd>\u003cb> to + V \u003c/b>\u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ထွက်သွားဖို့ သူ့ကို မြင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ့ကိုမြင်တယ်။ \u003cb> ထားခဲ့ပါ။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ထွက်ခွာသွားသည်ကို မြင်တွေ့ခဲ့ရသည်။ \u003c/td>\u003ctd class=\"yes\"> သူမြင်သည်။ \u003cb> ထွက်ခွာရန် \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူသီချင်းဆိုသံကြားတယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်ကြားတယ် \u003cb> သူမ၏ \u003c/b> သီချင်းဆို \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လဲကျသွားတာတွေ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ့ကိုမြင်တယ်။ \u003cb> ကြွေကျ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပူလောင်တဲ့အနံ့ရနိုင်သလား။ \u003c/td>\u003ctd class=\"yes\"> တစ်ခုခု အနံ့ခံနိုင်လား။ \u003cb> ပူလောင်ခြင်း။ \u003c/b>?\u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ထွက်သွားတာကို မြင်လိုက်ရတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ့ကိုမြင်တယ်။ \u003cb> သွား \u003c/b> ထွက် \u003c/td>\u003ctd class=\"why\"> proactive သိပ်တော့မရှိပါဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူထွက်သွားတာတွေ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ့ကိုမြင်တယ်။ \u003cb> သွား \u003c/b> ထွက် \u003c/td>\u003ctd class=\"why\"> အရာဝတ္ထု၏နောက်တွင် ကြိယာသည် tense မရှိပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမ ငိုသံကြားလိုက်ရသည်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော်ကြားတယ် \u003cb> သူမ၏ \u003c/b> ငိုတယ်။ \u003c/td>\u003ctd class=\"why\"> neologisms ကိုသုံးပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပိုက်ဆံယူတာတွေ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူမြင်သည်။ \u003cb> ယူရန် \u003c/b> ငွေ \u003c/td>\u003ctd class=\"why\"> passive အကျယ်ကြီးလိုတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ပူလောင်တဲ့ အနံ့တစ်ခုခု ရနိုင်တယ်။ \u003c/td>\u003ctd class=\"yes\"> တစ်ခုခု အနံ့ခံလို့ရတယ်။ \u003cb> ပူလောင်ခြင်း။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> အနံ့ = ဖြစ်ပျက် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လမ်းဖြတ်ကူးပြီး တက္ကစီစီးတာတွေ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ့ကိုမြင်တယ်။ \u003cb> လက်ဝါးကပ်တိုင် \u003c/b> လမ်းနှင့် \u003cb> ရယူ \u003c/b> တက္ကစီ၌။ \u003c/td>\u003ctd class=\"why\"> ပြီးပြည့်စုံသော လုပ်ဆောင်ချက် sequence \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူအိပ်နေတာကို တွေ့တယ်။ \u003c/td>\u003ctd class=\"yes\"> သူ့ကိုတွေ့တယ်။ \u003cb> အိပ် \u003c/b>.\u003c/td>\u003ctd class=\"why\"> + O + V-ing ကိုရှာပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငှက်တွေ တေးဆို နားထောင်။ \u003c/td>\u003ctd class=\"yes\"> နားထောင်ပါ။ \u003cb> ရန် \u003c/b> ငှက်များ \u003cb> သီချင်းဆိုခြင်း။ \u003c/b>!\u003c/td>\u003ctd class=\"why\"> + O + V-ing ကို နားထောင်ပါ။ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 67 – တစ်ယောက်ယောက်လုပ်နေ /လုပ်နေတာကိုကြည့် | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit67.html';
+  var KEY = 'egu4_unit67_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'အဖြေမှန် ၁ ခု ရွေးပါ' },
+    { id:'B', title:'B. ကြိယာ၏ မှန်ကန်သောပုံစံကို ဖြည့်ပါ။', desc:'အကြောင်းအရာအရ V infinitive (ကျယ်လောင်စွာမဟုတ်) သို့မဟုတ် V-ing ကိုရေးပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသောအပိုင်းကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 67 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 67 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာများ 67.1 → 67.3 သော့များဖြင့် Murphy စာအုပ်၏ အတိအကျ သင်ခန်းစာပုံစံကို လိုက်နာပါ။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I saw the thief ______ out of the window and run away.',
+      opts:['to climb','climbed','climb','climbs'], a:2,
+      exp:'see somebody + V infinitive NOT : လုပ်ဆောင်ချက်တစ်ခုလုံးကို သက်သေခံ (တက်ထွက်ပြေးသွားသည်)။ "to climb" မသုံးပါနှင့်။' },
+    { id:'a2', sec:'A', type:'mcq', q:'When I passed the park, I saw some kids ______ football.',
+      opts:['playing','to play','played','plays'], a:0,
+      exp:'ကျွန်တော် ဖြတ်သွားတဲ့အခါ ကလေးတွေ (အလယ်မှာ) ကစားနေတဲ့ အလယ်မှာ → တစ်စုံတစ်ယောက် + V-ing ကို တွေ့တယ်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'He was seen ______ the building at midnight.',
+      opts:['leave','leaving','to leave','left'], a:2,
+      exp:'PASSIVE ပုံစံပြီးနောက် (မြင်၊ ကြားသည်) → use to + V: သူ့ကို ထွက်သွားဖို့ မြင်တယ်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'Can you smell something ______? I think the rice is on fire!',
+      opts:['burn','burning','to burn','burnt'], a:1,
+      exp:'အနံ့တစ်ခုခု + V-ing : ဘာဖြစ်နေတာလဲ အနံ့ (တစ်ခုခု ပူနေတယ်)။' },
+    { id:'a5', sec:'A', type:'mcq', q:'I didn\'t hear you ______ in last night. What time did you get home?',
+      opts:['came','to come','coming in','come'], a:3,
+      exp:'ပြီးအောင်လုပ်ဆောင်ပါ (မင်းအိမ်ထဲကိုဝင်လာ) → တစ်ယောက်ယောက်ကို နားထောင်ပါ + V infinitive- မင်းဝင်လာတာကို ကြားလား။' },
+    { id:'a6', sec:'A', type:'mcq', q:'We found him ______ on the sofa with the TV still on.',
+      opts:['sleeping','to sleep','sleep','slept'], a:0,
+      exp:'တစ်စုံတစ်ယောက်ကို ရှာပါ + V-ing - ဘယ်သူက ဘာလုပ်နေလဲ ဆိုတာ ရှာပါ။' },
+    { id:'a7', sec:'A', type:'mcq', q:'Did you see the accident ______? — Yes, I saw the whole thing.',
+      opts:['happening at','to happen','happen','happened'], a:2,
+      exp:'"the whole thing" = အစမှအဆုံးကိုကြည့်ပါ → တစ်ခုခုကိုမြင်သည် + V infinitive- မတော်တဆဖြစ်မှုကိုကြည့်ပါ။' },
+    { id:'a8', sec:'A', type:'mcq', q:'Listen to the rain ______ on the roof. It\'s so relaxing.',
+      opts:['to fall','falls','falling','fell'], a:2,
+      exp:'listen to + something + V-ing - လုပ်ဆောင်မှုတစ်ခုအား နားထောင်ပါ။' },
+
+    /*===== B. ===== စကားလုံးများကို ဖြည့်ပါ။*/
+    { id:'b1', sec:'B', type:'fill', q:'I watched the chef ______ (cut) the fish into thin slices. It took him two minutes.',
+      acc:['cut'], ans:'cut',
+      exp:'လုပ်ငန်းစဉ်တစ်ခုလုံးကိုကြည့်ပါ (2 မိနစ်၊ အစမှအဆုံးအထိ) → တစ်စုံတစ်ယောက် + V ရှေ့ပြေးပုံစံကို ကြည့်ပါ- ဖြတ်လိုက်ပါ။' },
+    { id:'b2', sec:'B', type:'fill', q:'I could hear my neighbours ______ (argue) through the wall.',
+      acc:['arguing'], ans:'arguing',
+      exp:'(အလယ်) → ကြားသည် + V-ing ။  "could hear" မကြာခဏ -ing ။' },
+    { id:'b3', sec:'B', type:'fill', q:'Suddenly Mai felt something ______ (bite) her leg.',
+      acc:['bite'], ans:'bite',
+      exp:'တိုတို၊ ပြီးပြည့်စုံသော လုပ်ဆောင်ချက် (ကိုက်ယူခြင်း) → တစ်ခုခုကို ခံစား + V အဆုံးမရှိ' },
+    { id:'b4', sec:'B', type:'fill', q:'Did you notice anyone ______ (leave) the room during the test?',
+      acc:['leave'], ans:'leave',
+      exp:'တစ်စုံတစ်ယောက် + V infinitive- လုပ်ဆောင်ချက်ပြီးမြောက်သည် (အခန်းမှထွက်) ကို သတိပြုပါ။' },
+    { id:'b5', sec:'B', type:'fill', q:'အမျိုးသမီးတစ်ဦး ______ (shout) "Help!" (အသုံးပြုရန် + V)',
+      acc:['to shout'], ans:'to shout',
+      exp:'Passive (ကြားသည်) → to + V.' },
+    { id:'b6', sec:'B', type:'fill', q:'I saw Nam ______ (wait) at the bus stop when I drove past.',
+      acc:['waiting'], ans:'waiting',
+      exp:'ကျွန်တော် ကားမောင်းလာရင်း နမ်စောင့်နေတာ → တစ်ယောက်ယောက် + V-ing ကို တွေ့လိုက်တယ်။' },
+    { id:'b7', sec:'B', type:'fill', q:'We heard the plane ______ (land). Then everybody clapped.',
+      acc:['land'], ans:'land',
+      exp:'လုပ်ဆောင်ချက်ပြီးသွားပါပြီ (လေယာဉ်ဆင်းသက်ပြီးနောက် လူတိုင်းလက်ခုပ်တီးကြသည်) → V ရှေ့ပြေးပုံစံ။' },
+    { id:'b8', sec:'B', type:'fill', q:'Look at that cat ______ (try) to catch its tail!',
+      acc:['trying'], ans:'trying',
+      exp:'+ တစ်ခုခု + V-ing ကိုကြည့်ပါ- သင့်မျက်စိရှေ့မှာ ဖြစ်ပျက်နေတဲ့ လုပ်ရပ်။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (saw / I / fall / him / off the ladder)',
+      tokens:['I','saw','him','fall','off','the','ladder'],
+      acc:['i saw him fall off the ladder'], ans:'I saw him fall off the ladder.',
+      exp:'see + object (him) + V infinitive — ကြွေကျခြင်းကိုကြည့်ပါ။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (could / we / hear / the children / singing)',
+      tokens:['We','could','hear','the','children','singing'],
+      acc:['we could hear the children singing'], ans:'We could hear the children singing.',
+      exp:'ကြားနိုင်သည် + တစ်စုံတစ်ယောက် + V-ing - ဖြစ်ပျက်နေသည့် လုပ်ရပ်ကို ကြားနိုင်သည်။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (seen / was / to / he / enter / the bank)',
+      tokens:['He','was','seen','to','enter','the','bank'],
+      acc:['he was seen to enter the bank'], ans:'He was seen to enter the bank.',
+      exp:'Passive - မြင်သည် + to + V ။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (never / I\'ve / heard / sing / her)',
+      tokens:["I've",'never','heard','her','sing'],
+      acc:["i've never heard her sing"], ans:'I\'ve never heard her sing.',
+      exp:'ကွာခြားချက်က အရေးမကြီးသောအခါ သီချင်းဆိုခြင်း သို့မဟုတ် သီချင်းဆိုခြင်း နှစ်မျိုးလုံးကို အသုံးပြုနိုင်သည်။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (found / we / the dog / under my bed / hiding)',
+      tokens:['We','found','the','dog','hiding','under','my','bed'],
+      acc:['we found the dog hiding under my bed'], ans:'We found the dog hiding under my bed.',
+      exp:'find + object + V-ing - ဘယ်သူ/ဘာလုပ်နေလဲဆိုတာ ရှာဖွေပါ။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Is Linh home?  B: I think so. I heard her ______ (come) in a few minutes ago.',
+      acc:['come'], ans:'come',
+      exp:'ပြီးပြည့်စုံသောလုပ်ဆောင်ချက် → တစ်စုံတစ်ဦးကို ကြားသည် + V အဆုံးမရှိ ဖြစ်သွားသည်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: How do you know he cheated?  B: I saw him ______ (copy) from his phone.',
+      acc:['copy','copying'], ans:'copy',
+      exp:'လိမ်လည်လှည့်ဖြားခြင်း → မိတ္တူ (ပြီးပြည့်စုံသော) ကိုကြည့်ပါ သို့မဟုတ် ကူးယူခြင်း (လုပ်နေသည်) နှစ်မျိုးလုံးကို ဤနေရာတွင် လက်ခံနိုင်သည်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Where\'s Bao?  B: I saw him ______ (sit) in the library an hour ago.',
+      acc:['sitting'], ans:'sitting',
+      exp:'ထိုင်နေသူကို မြင်ခြင်း (လက်ရှိအခြေအနေ) → V-ing။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Did the phone ring?  B: I don\'t think so. I didn\'t hear ______.',
+      acc:['it ring'], ans:'it ring',
+      exp:'hear + object (it) + V infinitive - မြည်သံကို မကြားလိုက်ဘူး။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'စာကြောင်း ၂ ကြောင်းရေးပါ- "I saw somebody do something" တစ်ခု (လုပ်ဆောင်ချက်တစ်ခုလုံးကိုကြည့်ပါ) နှင့် စာကြောင်းတစ်ကြောင်း "I saw somebody doing something" (အလယ်ကိုကြည့်ပါ)။',
+      sample:'I saw a man drop his wallet and walk away. When I left the office, I saw my boss talking on the phone.',
+      exp:'V infinitive = အစမှအဆုံးမြင်သည် (ရိုးရှင်းသောအတိတ်ကဲ့သို့)။ V-ing = တိုးတက်မှု (အတိတ်စဉ်ဆက်ကဲ့သို့) မြင်သည်။' },
+    { id:'e2', sec:'E', type:'self', q:'ကြား/အနံ့/ခံစား+V-ing ပါသော စာကြောင်း 3 ကြောင်းဖြင့် ယခု သင်ခံစားရသော အသံ/အနံ့များကို ဖော်ပြပါ။',
+      sample:'I can hear a dog barking outside. I can smell coffee brewing. I can feel the wind blowing through the window.',
+      exp:'ကြားနိုင်၊ အနံ့ခံနိုင်သည်၊ ခံစားရနိုင်သည် + O + V-ing သည် လက်ရှိခံစားချက်များကို ဖော်ပြရန် အလွန်သဘာဝကျပါသည်။' },
+    { id:'e3', sec:'E', type:'self', q:'"was seen / was heard + to + V" (သတင်းတွင်ကဲ့သို့) ဖြင့် passive ဝါကျကိုရေးပါ။',
+      sample:'The suspect was seen to get into a black car.',
+      exp:'passive ပြီးနောက် be seen / be hear → to + V ( active နှင့် ကွဲပြားသည် : see him get ) ။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['I saw her to cross the road.','I saw her cross the road.'], a:1,
+      exp:'အသက်ဝင်သည်- + O + V infinitive (သို့ မဟုတ်) ကိုကြည့်ပါ။' },
+    { id:'f2', sec:'F', type:'fill', q:'I could smell the bread ______ (bake) in the oven.',
+      acc:['baking'], ans:'baking',
+      exp:'အနံ့ + O + V-ing : ဖြစ်ပျက်နေတဲ့ အနံ့။' },
+    { id:'f3', sec:'F', type:'mcq', q:'The two men were seen ______ into a van.',
+      opts:['get','to get','got','getting into'], a:1,
+      exp:'Passive → to + V ကိုမြင်သည်။' },
+    { id:'f4', sec:'F', type:'fill', q:'ဘာသာပြန်- "တစ်ယောက်ယောက် ငါ့နာမည်ခေါ်သံကို ငါကြားတယ်။" → ______ ငါ့နာမည်ကို တစ်ယောက်ယောက်ကြားခဲ့တယ်။',
+      acc:['call','calling'], ans:'call',
+      exp:'တစ်စုံတစ်ယောက် + ခေါ်သံ (အပြည့်) / ခေါ်ဆိုခြင်း (ခေါ်ဆိုခြင်း) — နှစ်ခုစလုံး မှန်ပါသည်။' },
+    { id:'f5', sec:'F', type:'mcq', q:'I watched him ______ the whole cake by himself. Amazing!',
+      opts:['eat','to eat','ate','eats'], a:0,
+      exp:'"the whole cake" — လုပ်ဆောင်ချက်အပြည့်အစုံ → နာရီ + O + V ရှေ့ပြေးပုံစံ။' },
+    { id:'f6', sec:'F', type:'fill', q:'Did you feel the building ______ (shake) during the earthquake?',
+      acc:['shake','shaking'], ans:'shake',
+      exp:'feel + O + V infinitive သို့မဟုတ် V-ing (ကွာခြားချက် အရေးမကြီးပါ)။' },
+    { id:'f7', sec:'F', type:'mcq', q:'FALSE ထုတ်ပြန်ချက်ကို ရွေးပါ-',
+      opts:['I noticed him leave early.','I noticed him leaving early.','I noticed him to leave early.'], a:2,
+      exp:'အသက်ဝင်သည်- "to" မပါဘဲ သတိပေးချက် + O + V သို့မဟုတ် V-ing။' },
+    { id:'f8', sec:'F', type:'fill', q:'When I opened the door, I found my brother ______ (play) video games.',
+      acc:['playing'], ans:'playing',
+      exp:'find + O + V-ing : ဘယ်သူက ဘာလုပ်နေတယ်ဆိုတာကို ရှာဖွေပါ။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.1 – အဖြေများကိုဖြည့်ပါ။',
+      q:'"Has Quan arrived yet?" — "Yes, I think I heard him ______."',
+      acc:['arrive'], ans:'arrive',
+      exp:'hear him + V infinitive: ဆိုက်ရောက် (အက်ရှင်ဖြစ်သွားသည်)။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.1 – အဖြေများကိုဖြည့်ပါ။',
+      q:'"How do you know I took the cake?" — "I know because I saw you ______."',
+      acc:['take it','do it'], ans:'take it',
+      exp:'see you + V infinitive + it: မင်းယူထားတာ ငါမြင်တယ်။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.1 – အဖြေများကိုဖြည့်ပါ။',
+      q:'"Did the alarm go off?" — "I don\'t think so. I didn\'t hear ______."',
+      acc:['it go off'], ans:'it go off',
+      exp:'hear + it + V infinitive - မကြားလိုက်ဘူး။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.1 – အဖြေများကိုဖြည့်ပါ။',
+      q:'"Can Hoa play the guitar?" — "I\'ve never heard ______."',
+      acc:['her play','her playing','her play the guitar','her playing the guitar'], ans:'her play',
+      exp:'သူမ၏ကစားခြင်း/ကစားခြင်းကို နားထောင်ပါ — ကွာခြားချက်က အရေးမကြီးပါ၊ ထို့ကြောင့် နှစ်ခုစလုံးမှန်ပါသည်။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.1 – အဖြေများကိုဖြည့်ပါ။',
+      q:'"Did I turn off the oven?" — "Yes, I saw ______."',
+      acc:['you turn it off','you do it','you turn off the oven'], ans:'you turn it off',
+      exp:'see you + V infinitive- မင်းပိတ်ထားတာကို ငါမြင်တယ်။' },
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.1 – အဖြေများကိုဖြည့်ပါ။',
+      q:'"How did the old man fall?" — "I don\'t know. I didn\'t see ______."',
+      acc:['him fall'], ans:'him fall',
+      exp:'see him + V infinitive: သူလဲကျတယ် (သူ့ ကို ကန့်ကွက်တယ်၊ သူမဟုတ်ဘူး)။' },
+
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.2 – ဘာကိုမြင်လဲ/ကြားလား/အနံ့။',
+      q:'မင်းသိတဲ့ သူငယ်ချင်းနှစ်ယောက်က ပန်းခြံထဲမှာ ကြက်တောင်ရိုက်တယ်။ → Duc နှင့် Lan ______ ကိုတွေ့ခဲ့သည်။',
+      acc:['playing badminton'], ans:'playing badminton',
+      exp:'မြင်သူတို့အား ကစားခြင်း (midway) → saw + O + V-ing ။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.2 – ဘာကိုမြင်လဲ/ကြားလား/အနံ့။',
+      q:'အခန်းထဲမှာ Minh က ပုလွေတီးသံကြားတယ်။ → Minh ______ သူ့ပုလွေသံကို ငါတို့ကြားတယ်။',
+      acc:['playing'], ans:'playing',
+      exp:'hear + O + V-ing - ဂီတတူရိယာတီးခြင်း။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.2 – ဘာကိုမြင်လဲ/ကြားလား/အနံ့။',
+      q:'မီးဖိုပေါ်ရှိငါးသည် မီးလောင်သောအနံ့ရှိသည်။ → ငါးကို ______ အနံ့ခံနိုင်တယ်။',
+      acc:['burning'], ans:'burning',
+      exp:'အနံ့ + O + V-ing ။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.2 – ဘာကိုမြင်လဲ/ကြားလား/အနံ့။',
+      q:'ရေကန်တစ်ဝိုက်တွင် Ngoc ရွရွပြေးသည်ကို သင်မြင်ရသည်။ → Ngoc ______ ရေကန်တစ်ဝိုက်တွင် ကျွန်ုပ်တို့တွေ့ခဲ့သည်။',
+      acc:['jogging','running'], ans:'jogging',
+      exp:'အလယ်အလတ်လှုပ်ရှားမှု → V-ing- ရွရွပြေးခြင်း/ပြေးခြင်း' },
+
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'We sat and listened to the guide ______ (tell) the legend from beginning to end.',
+      acc:['tell'], ans:'tell',
+      exp:'"from beginning to end" → အပြီးသတ် → V ရှေ့ပြေးပုံစံ။' },
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'Listen! Can you hear a child ______ (cry) next door?',
+      acc:['crying'], ans:'crying',
+      exp:'ငိုနေသည် (လုပ်ဆောင်နေသည်) → ကြားနိုင်သည် + V-ing။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'From the balcony I saw Tuan ______ (ride) his motorbike down the street.',
+      acc:['riding'], ans:'riding',
+      exp:'ကားမောင်းနေစဉ် → V-ing ကိုတွေ့သည်။' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'I thought I heard someone ______ (say) my name, so I turned round.',
+      acc:['say'], ans:'say',
+      exp:'တိုတို၊ ပြီးပြည့်စုံသော စကား → V အဆုံးမရှိ' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'ကောင်လေး ______ (run) ခြံကိုဖြတ်ပြီး ______ (climb) ခြံစည်းရိုးကို ကြည့်လိုက်တယ်။ ("..." ဖြင့် ခြားထားသော ကြိယာ ၂ လုံးကို ရေးပါ)',
+      acc:['run ... climb','run...climb','run climb','run and climb','run / climb'], ans:'run ... climb',
+      exp:'လုပ်ဆောင်ချက် sequence → V infinitive နှစ်ခုလုံးအတွက် ပြီးအောင်လုပ်ပါ- run ... climb' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'The whole street heard the gas tank ______ (explode). It was terrifying.',
+      acc:['explode'], ans:'explode',
+      exp:'ပေါက်ကွဲမှုသည် တိုတောင်းပြီး ပြီးပြည့်စုံသော လုပ်ဆောင်ချက် → V archetypal ဖြစ်သည်။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'Ugh! I can feel something ______ (crawl) on my arm. Is it an ant?',
+      acc:['crawling'], ans:'crawling',
+      exp:'တွားသွားခြင်း (သွားနေသည်) → ခံစားရနိုင်သည် + V-ing။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'I heard somebody ______ (slam) a door at 2 a.m. It woke me up.',
+      acc:['slam'], ans:'slam',
+      exp:'တံခါးကို ခေါက်ခြင်း- တိုတို၊ ပြီးပြည့်စုံသော လုပ်ဆောင်ချက် → V infinitive။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 67.3 – ကြိယာကိုသုံးပါ (တက်၊ တွားသွား၊ အော်ဟစ်၊ ပေါက်ကွဲ၊ စီး၊ ပြေး၊ ပြော၊ ကြွေးကြော်၊ အိပ်၊ ပြော)',
+      q:'When we came back, we found the puppy ______ (sleep) in my shoe.',
+      acc:['sleeping'], ans:'sleeping',
+      exp:'find + O + V-ing- အိပ်စက်ခြင်းကို ရှာဖွေပါ။' }
+  ];
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

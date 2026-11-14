@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 89 – နှစ်ခုလုံး / နှစ်ခုလုံး၊ neither / neither of, either / both of | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 89 – နှစ်ခုလုံး / နှစ်ခုလုံး · neither / neither of · တစ်ခုခု / တစ်ခုခု </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> အမှတ်ပေးမေးခွန်း ၅၈ ခု + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · ရည်ရွယ်ချက် &amp; အခြေခံ </h2>
+      <p> ဒီစကားလုံးသုံးလုံးကို ပြောတဲ့အခါမှာသာ သုံးပါတယ်။ <b> နှစ်ကြိမ်မှန်သည် </b> လူ/အရာ။ <b> နှစ်ခုလုံး </b> = နှစ်ခုလုံး; <b> မဟုတ်ပါ </b> = နှစ်ခုထဲက တစ်ခုမှ၊ <b> ဖြစ်ဖြစ်၊ </b> = တစ်ခု ဖြစ်ဖြစ် ၊ တစ်ခု ဖြစ်ဖြစ် အဆင်ပြေပါတယ် ။ ရရှိနိုင်သည့်အခါ <b> သုံးမျိုး သို့မဟုတ် ထို့ထက်ပိုသည်။ </b> ထို့နောက်ပြောင်း <b> all / none / any </b> . ဤယူနစ်တွင်လည်း တွဲဖက်အတွဲများရှိသည်။ <b> နှစ်ခုလုံး ... နှင့် </b>, <b> မဟုတ်ဘူး... မဟုတ်သလို </b>, <b> ဖြစ်ဖြစ် ... ဒါမှမဟုတ် </b>.</p>
+      <div class="ex"> <b class="en"> There are two လက်ဖက်ရည်ဆိုင်များ။ <mark>Both</mark> are good. လက်ဖက်ရည်ဆိုင်များ <mark>Neither</mark> ကော်ဖီဆိုင် is expensive. We can go to <mark>either</mark> ကဖေး။ ကဖေး။ </b> <br> ဆိုင်နှစ်ဆိုင် → နှစ်ခုလုံး/မဟုတ်/နှစ်ခုလုံး။ ငါးဘားလား → <u> all / none / any </u>.</div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> +N ဗဟုဝုစ် နှစ်ခုလုံး နှစ်ခုစလုံး နှစ်ခုစလုံး တစ်ခုတည်း၊   (နှစ်ခုလုံးမဟုတ်ပါ)
+neither / Both + N singular နှင့် စျေးပေါသည် မဟုတ်ပါ ။  တစ်ခုခုဖြစ်ပါစေ၊
+
+နှစ်ခုလုံး၏ /neither of /any of + the /the/my... +N အများကိန်း
+     အဲဒီကာလနှစ်ခုလုံး... အဲဒီကာလနှစ်ခုလုံး မရောက်ဖူး၊
+နှစ်ယောက်လုံး / neither of / both of + us / you / them
+     နှစ်ယောက်လုံး ရေကူးလို့ ရလား ငါတို့နှစ်ယောက်လုံး ပင်ပန်းခဲ့ကြ။  (မဟုတ်ဘူး- ငါတို့နှစ်ယောက်)
+
+Chris နဲ့ Paul နှစ်ယောက်စလုံး နောက်ဆုံးပိတ်
+ခရစ်ေရာ Paul လည္းမလာ၊
+คาด... သူမဟာ รางวัล အီတလီပဲ ဖြစ်ဖြစ်။ </div>
+      <div class="scroll"><table>
+        <tr><th> Two things </th><th> Three or more things </th><th> Meaning </th></tr>
+        <tr><td> Both </td><td> All </td><td> All/Both </td></tr>
+        <tr><td> not much </td><td> no </td><td> not much </td></tr>
+        <tr><td> either </td><td> Something </td><td> Any / any </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. နာမ်အားဖြင့်သွားပါ တစ်ယောက်တည်းရပ်။ </h2>
+      <ul>
+        <li> <i><b>Both</b> restaurants are very good.</i> (မပြော <s> စားသောက်ဆိုင်တွေရော </s>)</li>
+        <li> <i><b>Neither</b> restaurant is expensive.</i> — neither + noun <b> အနည်းကိန်း </b> , အတည်ပြုကြိယာ။ </li>
+        <li> <i>We can go to <b>either</b> restaurant. I don't mind.</i> </li>
+        <li> တစ်ယောက်တည်း- <i>I liked <b>both</b>. · 'British or American?' '<b>Neither</b>. She's Australian.' · 'Tea or coffee?' '<b>Either</b>.'</i> </li>
+      </ul>
+
+      <h2> 1.4 · B. Both of / neither of / Both of </h2>
+      <ul>
+        <li> ၎င်းနောက်တွင် <i>the / these / my / Tom's ...</i> : <i>both of the restaurants</i> (နံပါတ် <s> စားသောက်ဆိုင်တွေရော </s>).</li>
+        <li> <i><b>Neither of</b> the restaurants we tried <b>was</b> (or <b>were</b>) expensive.</i> — အနည်းကိန်းများ အများကိန်းကြိယာများသည် သင့်လျော်သော၊ </li>
+        <li><b> နှစ်ခုလုံး </b> /my- <i>Both (of) my parents are from Hue.</i> ရှေ့တွင် ချန်ချန်လှပ် </li>
+        <li> မီ <b> ငါတို့/မင်း/သူတို့ </b> : <i>Can <b>either of you</b> speak Russian? · <b>Neither of them</b> could help me.</i> ေပျာ်စရာ <b> ငါတို့နှစ်ယောက်လုံး </b> (မဟုတ်ဘူးလား။ <s> ငါတို့နှစ်ယောက်လုံး </s>).</li>
+      </ul>
+
+      <h2> 1.5 · C. Both ... and / neither ... nor / either ... or </h2>
+      <ul>
+        <li> <i><b>Both</b> Chris <b>and</b> Paul were late. · I was <b>both</b> tired <b>and</b> hungry.</i> </li>
+        <li> <i><b>Neither</b> Chris <b>nor</b> Paul came. · We <b>neither</b> saw <b>nor</b> heard anything.</i> (အတည်ပြုကြိယာ) </li>
+        <li> <i>She's <b>either</b> Spanish <b>or</b> Italian. · <b>Either</b> you apologise, <b>or</b> I'll leave.</i> </li>
+      </ul>
+
+      <h2> 1.6 · D. အရာနှစ်ခုနှင့် များစွာသောအရာ </h2>
+      <div class="formula"> ကောင်းသောဟိုတယ် နှစ်ခု- ၎င်းတို့ထဲမှ နှစ်ခုလုံးတွင် သင်တည်းခိုနိုင်သည်။  သူတို့နှစ်ယောက်လုံး အခန်းတွေမရှိကြဘူး။  နှစ်ယောက်လုံး အပြည့်။
+ကောင်းမွန်သောဟိုတယ်များစွာ- ၎င်းတို့အနက်မှ သင်တည်းခိုနိုင်သည်။     သူတို့မှာ အခန်းတွေ မရှိဘူး။     သူတို့အားလုံး ပြည့်နေတယ်။ </div>
+
+      <h2> 1.7 · အဖြစ်များသောအမှားများ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> Both girls are clever. </td><td class="yes"><b> Both </b> girls/ <b> both (of) </b> Girls are clever. </td></tr>
+        <tr><td class="no"> We were both tired. </td><td class="yes"><b> Both of us </b> They were tired. / We were both tired. </td></tr>
+        <tr><td class="no"> Neither of them came. </td><td class="yes"><b> Neither of them came. </b>.</td></tr>
+        <tr><td class="no"> Restaurants are not expensive. </td><td class="yes"> No? <b> The restaurant </b> It's cheap. </td></tr>
+        <tr><td class="no"> I don't have time or money. </td><td class="yes"> I don't have time. <b> not much. </b> Money </td></tr>
+        <tr><td class="no"> None of my five friends... </td><td class="yes"><b> None </b> Out of my five friends... </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် 51C </b> (ငါလည်းမလုပ်ဘူး) · <b> ယူနစ် 96B </b> (နှစ်ယောက်လုံး/မ) · <b> ယူနစ် 110D </b> (နှစ်ခုလုံးရဲ့ အနေအထား)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> ☕ <b class="en">— Tea or coffee? —   <mark>Either</mark>  . I don't mind.</b> <span class="note"> (ဘဝ - တစ်ယောက်ပဲ ဖြစ်ဖြစ် အဆင်ပြေပါတယ်) </span></div>
+      <div class="ex"> 👪 <b class="en">  <mark>Both</mark>   my parents are teachers.</b> <span class="note"> (ကိုယ့်ကိုကိုယ် မိတ်ဆက်) </span></div>
+      <div class="ex"> 🗺️ <b class="en">I asked two people for directions, but   <mark>neither of them</mark>   knew.</b> <span class="note"> (ခရီးသွားလုပ်ငန်း) </span></div>
+      <div class="ex"> 💻 <b class="en">Can   <mark>either of you</mark>   help me with this file?</b> <span class="note"> (ရုံး - လူ 2 ယောက် စကားပြောသည်) </span></div>
+      <div class="ex"> 🥵 <b class="en">I was   <mark>both</mark>   tired   <mark>and</mark>   hungry after the trip.</b> <span class="note"> (ပုံပြင်ပြောခြင်း) </span></div>
+      <div class="ex"> 🚫 <b class="en">  <mark>Neither</mark>   the manager   <mark>nor</mark>   his assistant answered my email.</b> <span class="note"> (အလုပ်-တိုင်ကြား) </span></div>
+      <div class="ex"> 📅 <b class="en">We can meet   <mark>either</mark>   on Monday   <mark>or</mark>   on Friday.</b> <span class="note"> (ချိန်းဆိုမှုအချိန်ဇယား) </span></div>
+      <div class="ex"> 📊 <b class="en">  <mark>Both</mark>   countries saw a rise in tourism, but   <mark>neither</mark>   reached its target.</b> <span class="note"> (IELTS Writing Task 1) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> နံပါတ် 2 သည် အဓိကဖြစ်သည်- </b> အချက်နှစ်ချက်တိတိရှိမှသာလျှင် ကျွန်ုပ်တို့သည် နှစ်မျိုးလုံး/မဟုတ်၊ </li>
+        <li><b> neither = မဟုတ် + တစ်ခုခု </b> <i>I didn't read either of them = I read neither of them.</i> </li>
+        <li><b> မပြောင်းလဲသောစုံတွဲ- </b> နှစ်ခုလုံး · နှင့် · မဟုတ်သလို · သော်လည်းကောင်း - သို့မဟုတ် (မရောနှောပါနှင့် <s> မဟုတ်ဘူး... ဒါမှမဟုတ် </s>).</li>
+        <li><b> "the both" ဘယ်တော့မှ မလုပ်တော့ပါဘူး၊ </b> နှစ်ခုစလုံးသည် <i>both the girls</i> ရှေ့တွင် လာပါ </li>
+        <li><b> Neither/ether + အနည်းကိန်းနာမ် </b>, <b> နှစ်ခုလုံး + အများကိန်း </b>.</li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> ပြဿနာရှိ နံပါတ်ကို ရေတွက်ပါ- "two books" → အချို့/မဟုတ်၊   "five books" →အတွဲ/တစ်ခုမျှ </li>
+        <li> အနှုတ်ကြိယာ ( <i>didn't, couldn't</i> ) → အကြောင်းအရာကို အကြံပြုလိုသည်မှာ "မဟုတ်" → မဟုတ်คณะ </li>
+        <li> တစ်လုံးတည်းသောအဖြေ- နှစ်ခုလုံးမှားသည် → <i>Neither</i> ; နှစ်ခုလုံးသည် → <i>Either</i> ; နှစ်ခုစလုံး မှန်သည် → <i>Both</i> . </li>
+        <li> "X didn't ... and Y didn't ..." → ဝါကျကို ပြန်ရေးပါ။  <i> X ရော Y + V ရော အတည်မပြုပါဘူး။ </i> </li>
+        <li> ကြိယာသည် အနီးဆုံးအကြောင်းအရာအရ ရောထွေးနေသည်- <i>Neither Joe nor Sam <b>has</b> a car.</i> </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> Both are good natured. </td><td class="yes"><b> Both of them </b> It's lovely. </td><td class="why"> Do not use before both. </td></tr>
+        <tr><td class="no"> Neither of us went. </td><td class="yes"><b> Not two of us. </b> went </td><td class="why"> "No" → No. </td></tr>
+        <tr><td class="no"> I don't like either of them. </td><td class="yes"> I don't like it. <b> either </b> of them </td><td class="why"> Don't → </td></tr>
+        <tr><td class="no"> Neither of them can swim. </td><td class="yes"> Neither of them. <b> can </b> swimming. </td><td class="why"> Nor is it negative. </td></tr>
+        <tr><td class="no"> Either Monday or Friday. </td><td class="yes"> Either Monday or <b> Or </b> Friday. </td><td class="why"> Something ... or </td></tr>
+        <tr><td class="no"> Lan and Mai are students. </td><td class="yes"> Both Lan and Mine <b> are. </b> student </td><td class="why"> ... and → both plural </td></tr>
+        <tr><td class="no"> None of the three brothers... </td><td class="yes"><b> None </b> Of my three brothers... </td><td class="why"> Three or more people → none. </td></tr>
+        <tr><td class="no"> Both restaurants are good. </td><td class="yes"> Both (of) <b> The </b> The restaurants are good. </td><td class="why"> of +the/thes/my </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကိုုအသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြော- </b> A စာမေးပွဲ B ကိုရွေးခိုင်းသောအခါ <i>"Either is fine." / "Neither, actually." / "I'd like both!"</i> ကိုဖြေဆိုပါ။ </li>
+        <li><b> ရေးပါ </b> ရွေးချယ်စရာ 2 ခုု လွမ်းပါ- <i>"Both options have advantages, but neither is perfect."</i> </li>
+        <li><b> အလုပ်- </b> <i>"Either Nam or I will send you the report."</i> </li>
+        <li><b> မိသားစုဖော်ပြချက်- </b> <i>"Both of my sisters live abroad."</i> </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> အရာနှစ်ခု → နှစ်ခုလုံး/မရှိ/မဖြစ်၊ များစွာသော အရာများ → all/none/any. </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> ၃ ရက်၊ ၇ ရက်နှင့် ၁၄ ရက်ပြီးနောက် လေ့ကျင့်ခန်းများကို ပြန်လုပ်ပါ။ "ဝါကျမှားပြန်လုပ်ရန်" ခလုတ်ကို ဦးစားပေးပါ။ ဆက်စပ်- <b> ယူနစ် ၅၁ </b> (ကြှနျုပျလဲပဲ), <b> ယူနစ် ၈၆ </b> (မရှိ)၊ <b> ယူနစ် ၈၈ </b> (all of / none of)၊ <b> ယူနစ် ၉၆ </b> (နှစ်ယောက်လုံး)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit89.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 89 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> အရာနှစ်ခု \u003c/th>\u003cth> သုံးခု သို့မဟုတ် ထို့ထက်ပိုသောအရာများ \u003c/th>\u003cth> အဓိပ္ပါယ် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> နှစ်ခုလုံး \u003c/td>\u003ctd> အားလုံး \u003c/td>\u003ctd> အားလုံး/နှစ်ခုလုံး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> မဟုတ်ပါ \u003c/td>\u003ctd> မရှိ \u003c/td>\u003ctd> မဟုတ်ပါ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဖြစ်ဖြစ်၊ \u003c/td>\u003ctd> တစ်ခုခု \u003c/td>\u003ctd> မည်သည့် /မဆို \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကောင်မလေးနှစ်ယောက်လုံးက လိမ္မာတယ်။ \u003c/td>\u003ctd class=\"yes\">\u003cb> နှစ်ခုလုံး \u003c/b> မိန်းကလေးများ/ \u003cb> နှစ်မျိုးလုံး (၏) \u003c/b> မိန်းကလေးတွေက လိမ္မာတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါတို့နှစ်ယောက်လုံး ပင်ပန်းခဲ့ကြပြီ။ \u003c/td>\u003ctd class=\"yes\">\u003cb> ငါတို့နှစ်ယောက်လုံး \u003c/b> ပင်ပန်းခဲ့ကြသည် ။ / ငါတို့ နှစ်ယောက်လုံး ပင်ပန်းခဲ့ကြသည် ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နှစ်ယောက်လုံး မလာဘူး။ \u003c/td>\u003ctd class=\"yes\">\u003cb> နှစ်ယောက်လုံး မလာဘူး။ \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စားသောက်ဆိုင်တွေက ဈေးမကြီးဘူး။ \u003c/td>\u003ctd class=\"yes\"> မဟုတ်ဘူးလား။ \u003cb> စားသောက်ဆိုင်သည် \u003c/b> စျေးပေါတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့မှာ အချိန်တွေ ပိုက်ဆံမရှိဘူး။ \u003c/td>\u003ctd class=\"yes\"> ငါ့မှာ အချိန်မရှိဘူး။ \u003cb> မဟုတ်ပါ။ \u003c/b> ပိုက်ဆံ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့သူငယ်ချင်းငါးယောက်မှ မဟုတ်ဘူး... \u003c/td>\u003ctd class=\"yes\">\u003cb> တစ်ခုမှ \u003c/b> ငါ့သူငယ်ချင်းငါးယောက်ထဲက... \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နှစ်ယောက်လုံးက သဘောကောင်းတယ်။ \u003c/td>\u003ctd class=\"yes\">\u003cb> နှစ်ယောက်လုံး \u003c/b> ချစ်စရာကောင်းတယ်။ \u003c/td>\u003ctd class=\"why\"> နှစ်ခုလုံးရှေ့မှာ မသုံးပါနဲ့။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါတို့နှစ်ယောက်လုံး မသွားဘူး။ \u003c/td>\u003ctd class=\"yes\">\u003cb> ငါတို့နှစ်ယောက် မဟုတ်ဘူး။ \u003c/b> သွားတယ်။ \u003c/td>\u003ctd class=\"why\"> \"မဟုတ်\" → မဟုတ်ပေ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူတို့နှစ်ယောက်ကို မကြိုက်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> မကြိုက်ဘူး။ \u003cb> ဖြစ်ဖြစ်၊ \u003c/b> သူတို့ထဲက \u003c/td>\u003ctd class=\"why\"> don't → လည်းရှိ၊ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နှစ်ယောက်လုံး ရေမကူးနိုင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> သူတို့နှစ်ယောက်လုံး မဟုတ်ဘူး။ \u003cb> နိုင်သည် \u003c/b> ရေကူး။ \u003c/td>\u003ctd class=\"why\"> အနုတ်လက္ခဏာလည်း မဟုတ်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> တနင်္လာနဲ့ သောကြာ ဖြစ်ဖြစ်ပေါ့။ \u003c/td>\u003ctd class=\"yes\"> တနင်္လာနေ့ဖြစ်ဖြစ်၊ \u003cb> သို့မဟုတ် \u003c/b> သောကြာ။ \u003c/td>\u003ctd class=\"why\"> တစ်စုံတစ်ခု ... သို့မဟုတ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> Lan နဲ့ Mai က ကျောင်းသားတွေပါ။ \u003c/td>\u003ctd class=\"yes\"> Lan ေရာမိုင်းေရာ \u003cb> ဖြစ်ကြပါသည်။ \u003c/b> ကျောင်းသား၊ \u003c/td>\u003ctd class=\"why\"> ... နှင့် → အများကိန်း နှစ်မျိုးလုံး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ညီအကို သုံးယောက်ထဲက တစ်ယောက်မှ... \u003c/td>\u003ctd class=\"yes\">\u003cb> တစ်ခုမှ \u003c/b> ငါ့ညီသုံးယောက်ထဲက... \u003c/td>\u003ctd class=\"why\"> သုံးယောက် သို့မဟုတ် ထို့ထက်ပိုသောလူ → မရှိပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> စားသောက်ဆိုင် နှစ်ခုလုံးက ကောင်းပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> နှစ်ခုလုံး (၏)၊ \u003cb> အဆိုပါ \u003c/b> စားသောက်ဆိုင်တွေက ကောင်းတယ်။ \u003c/td>\u003ctd class=\"why\"> ၏ +the/thes/my \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 89 – နှစ်ခုလုံး / neither / တစ်ခုခု | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit89.html';
+  var KEY = 'egu4_unit89_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'နှစ်ခုလုံး / neither / Both (of) သို့မဟုတ် all / none / any ကို ရွေးပါ။' },
+    { id:'B', title:'ခ။ စကားလုံးများကို ဖြည့်စွက်ပါ။',                   desc:'ကွက်လပ်ထဲတွင် (+ of / nor / or) နှစ်မျိုးလုံးကို ဖြည့်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အတိုကောက် အဖြေ နှစ်ခုလုံး / Neither / Either သည် အကြောင်းအရာ အလိုက်။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 89 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 89 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာ 89.1 → 89.5 သည် Murphy ၏ စာအုပ်၏ အတိအကျ သင်ခန်းစာပုံစံကို ဖော်ပြထားပြီး၊ စာကြောင်းများကို သော့များဖြင့် ပြန်လည်ပြင်ဆင်ထားပါသည်။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'______ my brothers work in a bank.',
+      opts:['Both','The both','Either','Neither'], a:0,
+      exp:'နှစ်ခုလုံး (of) my brother + plural affirmative verb. "The both" မပြောပါနဲ့။' },
+    { id:'a2', sec:'A', type:'mcq', q:'I tried two keys, but ______ of them opened the door.',
+      opts:['either','neither','both','none'], a:1,
+      exp:'သော့နှစ်ချောင်း၊ အတည်ပြုကြိယာ (အဖွင့်)၊ "မရှိ" → မဟုတ်ဟု အဓိပ္ပာယ်ရသည်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'I tried ten keys, but ______ of them opened the door.',
+      opts:['neither','either','none','both'], a:2,
+      exp:'နှစ်ခုထက်ပို၍ → none (အသုံးမပြုပါနှင့်)။' },
+    { id:'a4', sec:'A', type:'mcq', q:'(လူနှစ်ယောက်အတွက်) ______ သင်ကားမောင်းနိုင်ပါသလား။',
+      opts:['either','both','any','either of'], a:3,
+      exp:'သင်လိုအပ်သော နာမ်စား၏ ရှေ့မှောက်တွင် သင်တို့ထဲမှ တဦးဦး (= သင်တို့ထဲမှ တဦး)။' },
+    { id:'a5', sec:'A', type:'mcq', q:'______ restaurant is open on Mondays, so we\'ll have to eat at home.',
+      opts:['Neither','Both','Either','None'], a:0,
+      exp:'neither + singular noun + affirmative verb = neither (နှစ်ခု)။' },
+    { id:'a6', sec:'A', type:'mcq', q:'She speaks ______ English and French fluently.',
+      opts:['either','both','neither','all'], a:1,
+      exp:'နှစ်ခုလုံး ... နှင့် ... = နှစ်ဦးစလုံး ... နှင့် ...' },
+    { id:'a7', sec:'A', type:'mcq', q:'We can take ______ the bus or a taxi. It\'s up to you.',
+      opts:['neither','both','either','whether'], a:2,
+      exp:'ဖြစ်ဖြစ် ... သို့မဟုတ် ... = ဖြစ်ဖြစ် ... သို့မဟုတ် ...' },
+    { id:'a8', sec:'A', type:'mcq', q:'I didn\'t like ______ of the two films.',
+      opts:['neither','both','none','either'], a:3,
+      exp:'→ မရှိခဲ့ဘူး (အနုတ် ၂ ချက်ကို ရှောင်ကြဉ်ပါ)။ သို့တည်းမဟုတ် ပြောပါ- သူတို့နှစ်ယောက်လုံးကို မကြိုက်ဖူး။' },
+
+    /*===== B။ ဖြည့် =====*/
+    { id:'b1', sec:'B', type:'fill', q:'______ တောင်တက်ပြီးနောက် မောပန်းနွမ်းနယ်နေပါသည်။ (နှစ်ခုလုံး)',
+      acc:['both'], ans:'Both',
+      exp:'နှစ်ယောက်လုံး = ငါတို့နှစ်ယောက်လုံး။' },
+    { id:'b2', sec:'B', type:'fill', q:'Neither Lan ______ Mai came to the meeting.',
+      acc:['nor'], ans:'nor',
+      exp:'တွဲလည်း မဟုတ်ဘူး…။' },
+    { id:'b3', sec:'B', type:'fill', q:'You can pay ______ by card or in cash.',
+      acc:['either'], ans:'either',
+      exp:'ဖြစ်ဖြစ် ... ဖြစ်ဖြစ် တွဲပါ။' },
+    { id:'b4', sec:'B', type:'fill', q:'တံတားနှစ်စင်းရှိပြီး ______ တစ်ခုတွင် သင်ဖြတ်နိုင်သည်။ (ဘာမဆို အဆင်ပြေပါတယ်)',
+      acc:['either'], ans:'either',
+      exp:'Both + singular noun = ဖြစ်ဖြစ်၊ ဖြစ်ဖြစ် အဆင်ပြေတယ်။' },
+    { id:'b5', sec:'B', type:'fill', q:'ကျွန်တော့်ညီမနှစ်ယောက်ကို မေးပေမယ့် ______ က ကျွန်တော့်ကို ပိုက်ဆံချေးနိုင်တယ်။ (မည်သူမျှ)',
+      acc:['neither'], ans:'neither',
+      exp:'လူနှစ်ယောက် + affirmative verb (could) + no meaning → neither.' },
+    { id:'b6', sec:'B', type:'fill', q:'ဟိုတယ် ______ စျေးသက်သက်သာသာနှင့်အဆင်ပြေသည်။ (နှစ်ခုလုံး ... နှင့် ... )',
+      acc:['both'], ans:'both',
+      exp:'both +adj + and + adj ။' },
+    { id:'b7', sec:'B', type:'fill', q:'လေဆိပ်ကို သွားဖို့ ဘတ်စ်ကားတွေ အများကြီးရှိတယ်။ ၎င်းတို့ထဲမှ ______ ကို သင် ယူနိုင်သည်။ (တစ်ခုခု)',
+      acc:['any'], ans:'any',
+      exp:'နှစ်ခုထက်ပို၍ → တစ်ခုခု (တစ်ခုခုကို မသုံးပါနှင့်)။' },
+    { id:'b8', sec:'B', type:'fill', q:'သူ ______ ဖုန်းဆက်ပြီး ______ တစ်ပတ်လုံး ကျွန်တော့်ကို စာပို့တယ်။ (၂ နေရာ- မဟုတ်ဘူး...မဟုတ်)',
+      acc:['neither ... nor','neither nor','neither / nor','neither...nor'], ans:'neither ... nor',
+      exp:'မခေါ်လည်း စာမရေးတတ် = မခေါ်လည်း စာမရေးတတ် (အတည်ပြုကြိယာ)။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (both / us / of / were / late)',
+      tokens:['Both','of','us','were','late'],
+      acc:['both of us were late'], ans:'Both of us were late.',
+      exp:'နှစ်ခုလုံး + ငါတို့ (နာမ်စား၏ ရှေ့တွင် လိုအပ်သည်)။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (neither / them / of / speaks / Japanese)',
+      tokens:['Neither','of','them','speaks','Japanese'],
+      acc:['neither of them speaks japanese'], ans:'Neither of them speaks Japanese.',
+      exp:'၎င်းတို့ နှစ်ခုလုံး + ကြိယာ (အနည်းကိန်း သို့မဟုတ် အများကိန်း သည် ကောင်းပါသည်၊ ဤနေရာတွင် မပြောပါ)။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (she / either / is / Korean / or / Chinese)',
+      tokens:['She','is','either','Korean','or','Chinese'],
+      acc:['she is either korean or chinese'], ans:'She is either Korean or Chinese.',
+      exp:'တစ်ခုခုကို ... သို့မဟုတ် ... ရွေးချယ်မှုနှစ်ခုရှေ့တွင် ချက်ချင်းထည့်ပါ။' },
+    { id:'c4', sec:'C', type:'order', q:'အမျိုးအစား- (I / neither / have / time / nor / money)',
+      tokens:['I','have','neither','time','nor','money'],
+      acc:['i have neither time nor money'], ans:'I have neither time nor money.',
+      exp:'neither + N + nor + N; verb က အတည်ပြုရပါမယ်။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (my / both / parents / from / are / Hue)',
+      tokens:['Both','my','parents','are','from','Hue'],
+      acc:['both my parents are from hue'], ans:'Both my parents are from Hue.',
+      exp:'+my+N နှစ်ခုလုံး မလိုပါဘူး။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Do you want the red one or the blue one?  B: ______. I don\'t mind.',
+      acc:['either'], ans:'Either',
+      exp:'နှစ်ခုစလုံး အဆင်ပြေပါတယ် → ဖြစ်ဖြစ်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: Is it Tuesday or Wednesday today?  B: ______. It\'s Thursday!',
+      acc:['neither'], ans:'Neither',
+      exp:'နှစ်ခုလုံး မှားသည် → မဟုတ်ပါ ။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Did you visit Hoi An or Hue?  B: ______. We spent three days in each.',
+      acc:['both'], ans:'Both',
+      exp:'နေရာနှစ်ခုစလုံး → နှစ်ခုလုံးသွားပါ။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Which of your two cousins can speak English?  B: ______ of them. They both studied in London.',
+      acc:['both'], ans:'Both',
+      exp:'နှစ်ယောက်စလုံး → နှစ်ယောက်စလုံး စကားပြောနိုင်သည်။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'စာကြောင်း 1 ကြောင်းကို ... နှင့် ... နှင့် 1 ဝါကျ နှစ်ခုလုံး ... နှင့် ... နှင့် ... သင့်အကြောင်း မရေးပါ ။',
+      sample:'I can both cook and sew. I neither smoke nor drink.',
+      exp:'နှစ်ခုစလုံး ... နှင့် → အများကိန်း affirmative; neither ... nor → affirmative verb but negative အဓိပ္ပာယ်။' },
+    { id:'e2', sec:'E', type:'self', q:'မင်းရဲ့သူငယ်ချင်း/မောင်နှမနှစ်ယောက်အကြောင်း စာကြောင်း ၂ကြောင်းရေးပြီး သူတို့နှစ်ယောက်လုံးနဲ့ သူတို့နှစ်ယောက်စလုံးကို မသုံးပါနဲ့။',
+      sample:'I have two cousins. Both of them live in Da Nang, but neither of them likes the beach.',
+      exp:'Both of /neither of + them (မဖြစ်မနေ နာမ်စားများ)။' },
+    { id:'e3', sec:'E', type:'self', q:'ရက်ချိန်းတောင်းတဲ့ စာကြောင်းတစ်ကြောင်းရေးပါ... ဒါမှမဟုတ်...',
+      sample:'We could meet either on Saturday morning or on Sunday afternoon.',
+      exp:'Both … or … = တစ်ခုခု … သို့မဟုတ် … (ရွေးချယ်ပါ)။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['The both girls are clever.','Both of girls are clever.','Both girls are clever.'], a:2,
+      exp:'နှစ်ခုလုံး + N အများကိန်း; "the both" မပြောနဲ့ "both of girls" (ပျောက်နေတယ်) လို့ မပြောပါနဲ့။' },
+    { id:'f2', sec:'F', type:'fill', q:'ငါ့မှာ ထီးနှစ်ချောင်းရှိတယ်။ ၎င်းတို့ထဲမှ ______ ကို သင် ချေးနိုင်ပါသည်။ (ဘာမဆို အဆင်ပြေပါတယ်)',
+      acc:['either'], ans:'either',
+      exp:'Both of them = တစ်စုံတစ်ယောက်သော၊' },
+    { id:'f3', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['Neither of my parents can swim.','Neither of my parents can\'t swim.','Either of my parents can\'t swim.'], a:0,
+      exp:'အနှုတ်လက္ခဏာ → အတည်ပြုကြိယာ (ကူးခတ်နိုင်သည်)။' },
+    { id:'f4', sec:'F', type:'fill', q:'ပြန်ရေးပါ- "Joe isn\'t here. Sam isn\'t here either." → Joe မဟုတ်ဘူး ______ Sam က ဒီမှာ။',
+      acc:['nor'], ans:'nor',
+      exp:'ဂျိုးရော Sam ရော ဒီမှာ မရှိဘူး။' },
+    { id:'f5', sec:'F', type:'mcq', q:'I applied to five companies, but ______ of them replied.',
+      opts:['neither','none','either'], a:1,
+      exp:'ကုမ္ပဏီငါးခု (နှစ်ခုထက်ပိုသည်) → မရှိပါ။' },
+    { id:'f6', sec:'F', type:'fill', q:'ဘာသာပြန်- "ငါတို့နှစ်ယောက်လုံး ပင်ပန်းနေပြီ"',
+      acc:['both of us were tired','we were both tired','both of us are tired','we are both tired'],
+      ans:'Both of us were tired. / We were both tired.',
+      exp:'ငါတို့နှစ်ယောက်လုံး (လိုအပ်သည်) သို့မဟုတ် We were both… (နှစ်ယောက်စလုံးသည် နောက်မှလာမည်)။' },
+    { id:'f7', sec:'F', type:'mcq', q:'We can leave ______ today or tomorrow — whichever you prefer.',
+      opts:['both','neither','either'], a:2,
+      exp:'ဖြစ်ဖြစ် ... သို့မဟုတ် ... = နှစ်ခုထဲက တစ်ခုကို ရွေးပါ။' },
+    { id:'f8', sec:'F', type:'fill', q:'ရုပ်ရှင်သည် ______ ရှည်လျားပြီး ပျင်းစရာကောင်းသည်။ (နှစ်ခုလုံး ... နှင့် ... )',
+      acc:['both'], ans:'both',
+      exp:'both +adj + and + adj ။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.1 – နှစ်ခုလုံး / neither / တစ်ခုခု',
+      q:'\'Is the meeting on Monday or Tuesday?\' \'______. It\'s on Wednesday.\'', acc:['neither'], ans:'Neither',
+      exp:'နှစ်ခုလုံး မှားသည် → မဟုတ်ပါ ။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.1 – နှစ်ခုလုံး / neither / တစ်ခုခု',
+      q:'A: Did you study maths or physics at university? B: I studied ______. It was a joint degree.', acc:['both'], ans:'both',
+      exp:'နှစ်ခုစလုံး → နှစ်ခုလုံးကို လေ့လာပါ။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.1 – နှစ်ခုလုံး / neither / တစ်ခုခု',
+      q:'\'Shall I call you in the morning or the afternoon?\' \'______. I\'ll be free all day.\'', acc:['either'], ans:'Either',
+      exp:'အချိန်မရွေး → တစ်ခုခု။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.1 – နှစ်ခုလုံး / neither / တစ်ခုခု',
+      q:'\'Is Nam in the library or in the canteen?\' \'______. He\'s gone home.\'', acc:['neither'], ans:'Neither',
+      exp:'နှစ်ခုလုံး → မဟုတ်ဘူးလား။' },
+
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.2 – နှစ်ခုလုံး / neither / တစ်ခုခု (+ လိုအပ်သည့်အခါ)',
+      q:'To get to the station, you can take the main road or the side street. You can go ______ way.', acc:['either'], ans:'either',
+      exp:'မည်​သို့ပင်​ဖြစ်​​စေ → မည်​သို့ပင်​ဖြစ်​သည်​။' },
+    { id:'h6', sec:'G', type:'fill', sub:'',
+      q:'I rang the bell twice, but ______ times nobody answered.', acc:['both'], ans:'both',
+      exp:'နှစ်ကြိမ် → နှစ်ကြိမ်စလုံး။' },
+    { id:'h7', sec:'G', type:'fill', sub:'',
+      q:'______ Minh\'s parents is Vietnamese. His mother is French and his father is German.', acc:['neither of'], ans:'Neither of',
+      exp:'Neither of you → Neither of + Minh\'s father, အနည်းကိန်းကြိယာ (is)။' },
+    { id:'h8', sec:'G', type:'fill', sub:'',
+      q:'ဆိုင်ကယ်နှစ်စီး အချင်းချင်း တိုက်မိသွားသည်။ ကံကောင်းစွာပဲ၊ ______ စီးနင်းသူ ဒဏ်ရာရသွားသော်လည်း ______ စက်ဘီးများ ဆိုးရွားစွာ ပျက်စီးသွားခဲ့သည်။ ထိုင်ခုံ (၂)၊', acc:['neither ... both','neither both','neither / both','neither...both'], ans:'neither ... both',
+      exp:'neither + N singular (မြင်းစီးသူ) = မည်သူတစ်ဦးတစ်ယောက်မျှ ထိခိုက်ဒဏ်ရာရခြင်းမရှိပါ။ Both + N အများကိန်း (bikes) = စက်ဘီး နှစ်ခုလုံး ပျက်သွားသည် ။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.2 – နှစ်ခုလုံး / neither / တစ်ခုခု (+ လိုအပ်သည့်အခါ)',
+      q:'I have two brothers and a sister. My sister is married, but ______ my brothers are still single.', acc:['both','both of'], ans:'both (of)',
+      exp:'ငါ့ညီအကိုနှစ်ယောက်စလုံး ရွေးချယ်ခွင့်ရှိတယ်။' },
+
+    { id:'h10', sec:'G', type:'fill', sub:'Lesson 89.3 – နှစ်ခုလုံး / neither / both + of us / them',
+      q:'I was invited to two weddings last month, but I couldn\'t go to ______.', acc:['either of them'], ans:'either of them',
+      exp:'(အနုတ်လက္ခဏာ) → နှစ်ခုစလုံးကို မရပါ။' },
+    { id:'h11', sec:'G', type:'fill', sub:'Lesson 89.3 – နှစ်ခုလုံး / neither / both + of us / them',
+      q:'There were two fans in the room. It was hot, so I turned on ______.', acc:['both of them'], ans:'both of them',
+      exp:'နှစ်ခုလုံး → နှစ်ခုလုံးကို ဖွင့်ပါ။' },
+    { id:'h12', sec:'G', type:'fill', sub:'Lesson 89.3 – နှစ်ခုလုံး / neither / both + of us / them',
+      q:'My friend and I play chess every week, but ______ is very good.', acc:['neither of us'], ans:'neither of us',
+      exp:'ခိုင်လုံသောကြိယာ (is) + အဓိပ္ပါယ်မဟုတ်ခြင်း → ငါတို့နှစ်ယောက်မှမရှိ။' },
+    { id:'h13', sec:'G', type:'fill', sub:'Lesson 89.3 – နှစ်ခုလုံး / neither / both + of us / them',
+      q:'I checked two pharmacies for the medicine, but ______ had it.', acc:['neither of them'], ans:'neither of them',
+      exp:'ရှိ၏ (အတည်ပြု) + မရှိဘဲ → ၎င်းတို့အနက်မှ မရှိပေ။' },
+
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.4 – နှစ်ခုစလုံး ... နှင့် / neither ... nor / either ... or',
+      q:'Hoa is on a business trip and so is Tuan. → ______ are on a business trip.', acc:['both hoa and tuan'], ans:'Both Hoa and Tuan',
+      exp:'X နှင့် Y + အများကိန်းကြိယာ နှစ်မျိုးလုံး။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.4 – နှစ်ခုစလုံး ... နှင့် / neither ... nor / either ... or',
+      q:'Hoa doesn\'t have a bike. Tuan doesn\'t have one either. → ______ has a bike.', acc:['neither hoa nor tuan'], ans:'Neither Hoa nor Tuan',
+      exp:'X ရော Y + affirmative verb (has) လည်း မရှိပါ။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.4 – နှစ်ခုစလုံး ... နှင့် / neither ... nor / either ... or',
+      q:'Peter doesn\'t eat meat and he doesn\'t eat fish. → Peter ______.', acc:['neither eats meat nor fish','eats neither meat nor fish'], ans:'Peter eats neither meat nor fish.',
+      exp:'neither ... nor affirmative verbs: အသားငါးကို မစားဘူး။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.4 – နှစ်ခုစလုံး ... နှင့် / neither ... nor / either ... or',
+      q:'The trip was tiring. It was expensive too. → The trip was ______.', acc:['both tiring and expensive','both expensive and tiring'], ans:'both tiring and expensive',
+      exp:'both +adj + and + adj ။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.4 – နှစ်ခုစလုံး ... နှင့် / neither ... nor / either ... or',
+      q:'Is her name Linh? Or is it Lan? It\'s one of the two. → Her name is ______.', acc:['either linh or lan','either lan or linh'], ans:'either Linh or Lan',
+      exp:'ဖြစ်ဖြစ် → ဖြစ်ဖြစ် … ဒါမှမဟုတ် …' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.4 – နှစ်ခုစလုံး ... နှင့် / neither ... nor / either ... or',
+      q:'We can go by train or we can drive — whichever you like. → We can ______.', acc:['either go by train or drive','go either by train or drive'], ans:'either go by train or drive',
+      exp:'တစ်ခုခုကို ... သို့မဟုတ် ... ဘေးချင်းယှဉ်၍ ရွေးချယ်မှုနှစ်ခုကို ဦးစားပေးသည်။' },
+
+    { id:'h20', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.5 – neither / both / none / any',
+      q:'I bought two magazines at the airport, but I didn\'t read ______ of them.', acc:['either'], ans:'either',
+      exp:'နှစ်ခု + အနုတ် (didn\'t) → တစ်ခုခု။' },
+    { id:'h21', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.5 – neither / both / none / any',
+      q:'I bought six magazines at the airport, but I didn\'t read ______ of them.', acc:['any'], ans:'any',
+      exp:'နှစ်ခု + အနှုတ် → တစ်ခုခုထက်ပိုသည်။' },
+    { id:'h22', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.5 – neither / both / none / any',
+      q:'ရုံးအနီးတွင် ကော်ဖီဆိုင်များစွာရှိသော်လည်း ______ ၎င်းတို့ထဲမှ ______ နံနက်စာ ကျွေးသည်။', acc:['none'], ans:'none',
+      exp:'များစွာသော + affirmative verb (serves) + meaning not → none ။' },
+    { id:'h23', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.5 – neither / both / none / any',
+      q:'Feel free to call me at ______ time this weekend.', acc:['any'], ans:'any',
+      exp:'မည်သည့်အချိန် = မည်သည့်အချိန် (ရွေးချယ်မှုနှစ်ခုမှ အကန့်အသတ်မရှိ)။' },
+    { id:'h24', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.5 – neither / both / none / any',
+      q:'I\'m free on Tuesday or Thursday. Would ______ of those days be OK for you?', acc:['either'], ans:'either',
+      exp:'နှစ်ရက်အတွင်း မေးခွန်း → လည်းကောင်း။' },
+    { id:'h25', sec:'G', type:'fill', sub:'သင်ခန်းစာ 89.5 – neither / both / none / any',
+      q:'My sister and I were locked out because ______ of us had a key.', acc:['neither'], ans:'neither',
+      exp:'လူနှစ်ယောက်၊ affirmative verb (had) → neither.' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် ၃၆ – Will | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> ယူနစ် ၃၆ - ပါလား။ </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> ရမှတ် ၅၇ မှတ် + ကိုယ်တိုင်ရေးထားသော မေးခွန်း ၃ ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!--===== TAB 1: THEORY =====-->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · ရည်မှန်းချက်များနှင့် သဘာဝ </h2>
+      <p><b> ပါလား။ </b> "will take a step back" : နောက်ဆုတ်သွားပြီ <b> အဖြစ်မှန် </b> (အစစ်အမှန်မဟုတ်သောအရာကို မြင်ယောင်ကြည့်ပါ) သို့မဟုတ် နောက်ဆုတ်ပါ။ <b> အတိတ် </b> (would = past tense of will)။ ဤယူနစ်သည် အသုံးပြုမှု 5 ခုကို စုစည်းထားသည်- စိတ်ကူးကြည့်ခြင်း ( <i>would / would have done</i> ) ၊ <i>will – would</i> ၊ အတိတ်ကာလ၏ဆန္ဒ ၊ <i>wouldn't</i> = ငြင်းဆန်ခြင်းနှင့် အတိတ်အလေ့အထများကို နှိုင်းယှဉ်ပါ။ </p>
+      <div class="ex"> <b class="en">It  <mark>would be</mark>  nice to buy a new car, but we can't afford it.<br>I  <mark>would have called</mark>  Lisa, but I didn't have her number.</b> <br> မေးခွန်း 1- ပစ္စုပ္ပန်မှာ မြင်ယောင်ကြည့်ပါ။ မေးခွန်း 2- အတိတ်ကို မြင်ယောင်ကြည့်ပါ။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> would ('d) + V စိတ်ကူးယဉ် ပစ္စုပ္ပန်/အနာဂတ် ပင်လယ်ကမ်းစပ်မှာ နေချင်ပါတယ်။
+Will't + V ငါ ဘာမှ မပြောဘူး။
+would have ('d have) + V3 အတိတ်ကို မြင်ယောင်ကြည့်ပါ We'd have got got lost you.
+ပြော / ကတိပြုသည် + လွန်လေပြီးသော စိတ်ဆန္ဒကို လွန်မြောက်စေမည် ဟူ၍ မိန့်တော်မူ၏။
+wouldn't + V ငြင်းဆို ကားမစပါဘူး။
+would + V past habit (= used to) အခန်းထဲက လမ်းလျှောက်မယ်။ </div>
+      <div class="scroll"><table>
+        <tr><th></th><th> present (fictional) </th><th> past (fiction) </th></tr>
+        <tr><td> Confirm. </td><td> I <b> will call </b> Lisa, But I don't have his number. </td><td> I <b> I will call </b> Lisa But I don't have his number. </td></tr>
+        <tr><td> Negative </td><td> He is short <b> It will not come. </b> Anyway </td><td> He is short <b> will not come </b> Anyway </td></tr>
+        <tr><td> With you </td><td> I want to call her. <b> If I had </b> Her number </td><td> I called her. <b> If I had </b> Her number </td></tr>
+      </table></div>
+
+      <h2> 1.3 · A–B။ Imagine: would/ would have </h2>
+      <ul>
+        <li> လက်ရှိတွင် မမှန်သောအရာများ- <i>I<b>'d love</b> to live by the sea.</i> · <i>'Shall I tell Chris?' 'No, I <b>wouldn't say</b> anything.'</i> (= သင့်အနေအထားအရဆိုလျှင်) </li>
+        <li> အတိတ်မှာ မဖြစ်ခဲ့ဘူးတဲ့အရာ- <i>I don't know what we<b>'d have done</b> without their help.</i> · <i>I didn't tell Sam. He <b>wouldn't have been</b> pleased.</i> </li>
+      </ul>
+
+      <h2> 1.4 · C. မြက်ပင်ရှိမည်လား။ </h2>
+      <div class="scroll"><table>
+        <tr><th> will ('ll) — actually will. </th><th> would ('d) — imagine I can't do it. </th></tr>
+        <tr><td> I <b> will stay </b> A little long. I have time. </td><td> I <b> will stay </b> It takes longer, but I have to go. (So ​​I can't stay) </td></tr>
+        <tr><td> I <b> will call </b> Lisa. I have his number. </td><td> I <b> will call </b> Lisa, But I don't have his number. </td></tr>
+      </table></div>
+
+      <h2> 1.5 · D. Will = အတိတ်ကာလ၏ ဆန္ဒ; wouldn't = ငြင်းဆန်ခြင်း။ </h2>
+      <ul>
+        <li> အကောင့်- <i>'I'll call you.' → Tom <b>said he'd call</b> me.</i> · <i>'I won't be late.' → Amy <b>promised she wouldn't be</b> late.</i> </li>
+        <li> ငြင်းချက်- <i>I tried to warn him, but he <b>wouldn't listen</b>.</i> · <i>The car <b>wouldn't start</b>.</i> (ကား "refuses" စတင်ရန်ကဲ့သို့) </li>
+      </ul>
+
+      <h2> 1.6 · E. အတိတ်အလေ့အထအတွက် ပါလား။ </h2>
+      <p> <i>In summer, we <b>would</b> all <b>get up</b> early and go for a swim.</i> · <i>Whenever Richard was angry, he <b>would walk</b> out of the room.</i> → အတူတူပါပဲ။ <b> ကျင့်သားရသည် </b> (ယူနစ် 18) ကိုတော့ <b> ပါ့ </b> အသုံးပြုရန်အတွက်သာ <b> ထပ်တလဲလဲ လုပ်ဆောင်ချက် </b> အသုံးပြုရန်မဟုတ်ပါ။ <b> အခြေအနေ </b> : <i>I <b>used to</b> live by the sea</i> ✅ · <i>I would live by the sea</i> ❌ (သဘောအရ ဖြတ်တယ်)။ </p>
+
+      <h2> 1.7 · ဇယားအမှား ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> I wanted to call you but I lost my phone. </td><td class="yes"> I should ... <b> called </b> But I lost my phone. </td></tr>
+        <tr><td class="no"> He promised to help me. (say) </td><td class="yes"> He promised. <b> Pat </b> help me. </td></tr>
+        <tr><td class="no"> I would go with you but I'm busy. </td><td class="yes"> I <b> 'D </b> I went with you, but I'm busy. </td></tr>
+        <tr><td class="no"> I will have a dog when I am young. </td><td class="yes"> When I was young, <b> used to </b> There is a dog. </td></tr>
+        <tr><td class="no"> She won't answer me. </td><td class="yes"> she <b> No </b> answer me. </td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၂၁-၂၂ </b> (အလိုတော်) · <b> ယူနစ် ၁၈ </b> (ကျင့်သားရသည်) · <b> ယူနစ် 37A </b> (သင်...?) · <b> ယူနစ် ၃၈-၄၀ </b> (ဖြစ်ရင်ဖြစ်မယ်) · <b> ယူနစ် ၄၁ </b> (ဆန္ဒ… ဖြစ်ချင်သည်) · <b> ယူနစ် ၃၇E၊ ၅၈ </b> (လိုချင်ပါတယ်) · <b> ယူနစ် ၅၉ </b> (ပို/ကြိုက်သည်)။ </p>
+    </div>
+  </section>
+
+  <!--===== TAB 2: EXAMPLES & TIPS =====-->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🏖️ <b class="en">I <mark>'d love</mark>  to live near the beach one day.</b> <span class="note"> (စိတ်ကူးယဉ်အိပ်မက်) </span></div>
+      <div class="ex"> 🤐 <b class="en">'Should I tell my boss?' 'I  <mark>wouldn't</mark>  say anything yet.'</b> <span class="note"> (အကြံဉာဏ် — "if it were me" ) </span></div>
+      <div class="ex"> 🙏 <b class="en">Thanks for your help. I don't know what I <mark>'d have done</mark>  without you.</b> <span class="note"> (ကျေးဇူးတင်ပါတယ်- စိတ်ကူးယဉ်အတိတ်) </span></div>
+      <div class="ex"> 🚕 <b class="en">We took a taxi, but it  <mark>would have been</mark>  quicker to walk.</b> <span class="note"> (ဘဝ-နောင်တ) </span></div>
+      <div class="ex"> 📞 <b class="en">She  <mark>promised</mark>  she <mark>'d call</mark>  me back, but she didn't.</b> <span class="note"> (ကတိကို ပြန်ပြောပါ) </span></div>
+      <div class="ex"> 🔑 <b class="en">The door  <mark>wouldn't open</mark> , so I called a locksmith.</b> <span class="note"> (အရာဝတ္ထု "refuses" အလုပ်လုပ်ရန်) </span></div>
+      <div class="ex"> 👵 <b class="en">Every Sunday, my grandmother  <mark>would make</mark>  spring rolls for the whole family.</b> <span class="note"> (အမှတ်တရများပြောပြခြင်း — IELTS Speaking Part 2) </span></div>
+      <div class="ex"> 💼 <b class="en">I <mark>'d stay</mark>  late to help, but I have to pick up my son.</b> <span class="note"> (အလုပ် - ယဉ်ကျေးစွာ ငြင်းဆိုခြင်း) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> will = အမှန်၊ would = စိတ်ကူးပါ။ </b> "I'll help" → ကူညီပါမည်။  "I'd help" → ကူညီချင်သော်လည်း (များသောအားဖြင့်) မတတ်နိုင်ပါ။ </li>
+        <li><b> +V3 = "could have..." ရှိမည်။ </b> (ဒါပေမယ့် တကယ်တော့ မဖြစ်ပါဘူး)။ </li>
+        <li><b> ပြော/ကတိ + ဖြစ်မယ်။ </b> — သတင်းပို့သည့်အခါ နောက်ပြန်တင်းမာသည်- will → would. </li>
+        <li><b> မဟုတ်ဘူး = "definitely not" </b> - လူနှင့် အရာဝတ္ထုများ (ကား၊ တံခါး၊ ကွန်ပျူတာ)။ </li>
+        <li><b> အထပ်ထပ်လုပ်မယ်။ </b>, <b> + လုပ်ဆောင်ချက်နှင့် အခြေအနေ နှစ်မျိုးလုံးကို အသုံးပြုသည်။ </b>.</li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> <i>but + reason for not being able to do it</i> ( <i>but I don't have…</i> ) → <b> ပါ့ </b> လုပ်မှာမဟုတ်ဘူး။ </li>
+        <li> အတိတ်မှတ်တိုင်များ (<i>last night, yesterday</i>) + စိတ်ကူးကြည့်ခြင်း → <b> +V3 ရှိမယ်။ </b>.</li>
+        <li> ဝါကျချိတ်ဆက်ကိရိယာ- ဘယ်ဝါကျအကြောင်း ဆွေးနွေးသည်။ <b> တကယ့်အနာဂတ် </b> ( <i>I'm looking forward…</i> ) → အတူသွားပါ။ <b> ပါလိမ့်မယ်။ </b> ; အကြောင်းပြောပါ <b> ဖြစ်မလာဘူး။ </b> → <b> ရှိမှာလား။ </b>.</li>
+        <li> <i>He promised he ___ (call)</i> → <b> ခေါ်မယ်။ </b>.</li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> I will live in Da Lat. </td><td class="yes"> I <b> I would like to. </b> / I want to live in Da Lat. </td><td class="why"> would + V, will't + to </td></tr>
+        <tr><td class="no"> I will go if I have time. </td><td class="yes"> I should ... <b> go </b> If I have time </td><td class="why"> will + V is its original form. </td></tr>
+        <tr><td class="no"> I hope you enjoyed the party. </td><td class="yes"> Pa? <b> have felt </b> Party. </td><td class="why"> Past: + V3 will have. </td></tr>
+        <tr><td class="no"> He said he would come. </td><td class="yes"> he said <b> Pat </b> come </td><td class="why"> Back tension when reporting. </td></tr>
+        <tr><td class="no"> I don't want to ride my bike. </td><td class="yes"> my bike <b> It won't start. </b>.</td><td class="why"> wouldn't </td></tr>
+        <tr><td class="no"> I will help you But I am very busy. </td><td class="yes"> I <b> 'D </b> help you But I'm too busy. </td><td class="why"> → I can't do it. </td></tr>
+        <tr><td class="no"> When I was young, I was often shy. </td><td class="yes"> When I was young, <b> It used to be. </b> I'm ashamed. </td><td class="why"> Status → Used. </td></tr>
+        <tr><td class="no"> She will be happy. </td><td class="yes"> Will she be there? <b> was. </b> happy </td><td class="why"> have + V3 (have) </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဉ် စကားပြောနှင့် စာရေးခြင်း ✍️ အသုံးချပါ။ </h2>
+      <ul>
+        <li><b> စကားပြောခြင်း (တစ်နေ့လျှင် ၂ မိနစ်)။ </b> <i>"If I had a free week, I'd …"</i> — သင်လုပ်မည့်အရာ ၃ ခုကို အမည်ပေးပါ။ </li>
+        <li><b> ကလေးဘဝပုံပြင်များပြောပြခြင်း </b> <i>"Every summer, we would …"</i> — အလေ့အကျင့် ၃ ခု။ </li>
+        <li><b> လိမ္မာပါးနပ်စွာငြင်းပါ- </b> <i>"I'd love to come, but I've got a deadline."</i> </li>
+        <li><b> ကျေးဇူးတင်ပါတယ် </b> <i>"I couldn't have done it without you. It would have taken me days."</i> </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> အစစ်အမှန် → အလိုတော်; စိတ်ကူးကြည့်မည် → အတိတ် → + V3 ရှိမည်ကို မြင်ယောင်ကြည့်ပါ။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> ၃ ရက်၊ ၇ ရက်နှင့် ၁၄ ရက်ပြီးနောက် လေ့ကျင့်ခန်းများကို ပြန်လုပ်ပါ။  "Redo the wrong sentence" အချိန်တိုင်း။ ဆက်စပ်- <b> ယူနစ် ၁၈ </b> (ကျင့်သားရသည်), <b> ယူနစ် ၃၇ </b> (သင်...?), <b> ယူနစ် ၃၈ </b> (ငါလုပ်ရင်…) <b> ယူနစ် ၄၁ </b> (ဆန္ဒ… ဖြစ်ချင်သည်)။ </p>
+    </div>
+  </section>
+
+  <!--===== TAB 3: EXERCISES =====-->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit36.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 36 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> ပစ္စုပ္ပန် (စိတ်ကူးယဉ်) \u003c/th>\u003cth> အတိတ် (စိတ်ကူးယဉ်) \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အတည်ပြုပါ။ \u003c/td>\u003ctd> ငါ \u003cb> ခေါ်မယ်။ \u003c/b> Lisa၊ ဒါပေမယ့် ငါ့မှာ သူ့နံပါတ် မရှိဘူး။ \u003c/td>\u003ctd> ငါ \u003cb> ခေါ်ခဲ့မယ်။ \u003c/b> Lisa ၊ ဒါပေမယ့် ငါ့မှာ သူ့နံပါတ် မရှိဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> အပျက်သဘော \u003c/td>\u003ctd> သူတို \u003cb> လာမှာမဟုတ်ဘူး။ \u003c/b> ဘာပဲဖြစ်ဖြစ် \u003c/td>\u003ctd> သူတို \u003cb> လာမှာ မဟုတ်ဘူး။ \u003c/b> ဘာပဲဖြစ်ဖြစ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ရင်နှင့် \u003c/td>\u003ctd> ငါသူမကိုခေါ်ချင်ပါတယ်။ \u003cb> ငါရှိခဲ့လျှင် \u003c/b> သူမ၏နံပါတ် \u003c/td>\u003ctd> ငါသူမကိုခေါ်ခဲ့တယ်။ \u003cb> ငါရှိခဲ့လျှင် \u003c/b> သူမ၏နံပါတ် \u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> will ('ll) — တကယ်တော့ လုပ်မယ်။ \u003c/th>\u003cth> would ('d) — တွေးကြည့်၊ မလုပ်နိုင်ဘူး။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> ငါ \u003cb> နေမယ်။ \u003c/b> နည်းနည်းရှည်တယ်။ ငါ့မှာ အချိန်ရှိတယ်။ \u003c/td>\u003ctd> ငါ \u003cb> နေမယ်။ \u003c/b> ပိုကြာပေမယ့် ငါသွားရမယ်။ (ဒါကြောင့် မနေနိုင်ပါဘူး) \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ငါ \u003cb> ခေါ်မယ်။ \u003c/b> လီဆာ။ ငါ့မှာ သူ့နံပါတ်ရှိတယ်။ \u003c/td>\u003ctd> ငါ \u003cb> ခေါ်မယ်။ \u003c/b> Lisa၊ ဒါပေမယ့် ငါ့မှာ သူ့နံပါတ် မရှိဘူး။ \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ မင်းကို ခေါ်ချင်ပေမယ့် ဖုန်းပျောက်သွားတယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော် .... လုပ်သင့်တယ် \u003cb> ခေါ်ပြီ \u003c/b> ဒါပေမယ့် ဖုန်းပျောက်သွားတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူက ကျွန်တော့်ကို ကူညီမယ်လို့ ကတိပေးတယ်။ (ပြောပါ) \u003c/td>\u003ctd class=\"yes\"> သူက ကတိပေးတယ်။ \u003cb> ပါ့ \u003c/b> ကူညီပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါမင်းနဲ့လိုက်မယ် ဒါပေမယ့် အလုပ်ရှုပ်နေတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> 'ဃ \u003c/b> မင်းနဲ့လိုက်ခဲ့ပေမဲ့ ငါအလုပ်ရှုပ်နေတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငယ်ငယ်က ခွေးမွေးမယ်။ \u003c/td>\u003ctd class=\"yes\"> ငယ်ငယ်တုန်းကတော့၊ \u003cb> ကျင့်သားရသည် \u003c/b> ခွေးတစ်ကောင်ရှိသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမက ကျွန်တော့်ကို ပြန်ပြောမှာ မဟုတ်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> သူမ \u003cb> မဟုတ်ဘူး \u003c/b> ကျွန်တော့်ကိုဖြေပါ။ \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ Da Lat မှာ နေမယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> လိုချင်ပါတယ်။ \u003c/b> / ငါ Da Lat မှာနေချင်တယ်။ \u003c/td>\u003ctd class=\"why\"> would + V, will't + to \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> အချိန်ရရင် ငါသွားမယ်။ \u003c/td>\u003ctd class=\"yes\"> ကျွန်တော် .... လုပ်သင့်တယ် \u003cb> သွား \u003c/b> ငါအချိန်ရရင် \u003c/td>\u003ctd class=\"why\"> will + V သည် ၎င်း၏ မူရင်းပုံစံဖြစ်သည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မင်း ပါတီကို ပျော်ခဲ့မယ် ။ \u003c/td>\u003ctd class=\"yes\"> ပါ့လား။ \u003cb> ခံစားဖူးသည်။ \u003c/b> ပါတီ။ \u003c/td>\u003ctd class=\"why\"> အတိတ်- + V3 ရှိမည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> လာမယ်လို့ပြောပါတယ်။ \u003c/td>\u003ctd class=\"yes\"> သူကပြောတယ် \u003cb> ပါ့ \u003c/b> လာ။ \u003c/td>\u003ctd class=\"why\"> သတင်းပို့သည့်အခါ နောက်ပြန်တင်းမာသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့ဆိုင်ကယ်မစီးချင်ဘူး။ \u003c/td>\u003ctd class=\"yes\"> ငါ့ဆိုင်ကယ် \u003cb> စတင်မည်မဟုတ်ပါ။ \u003c/b>.\u003c/td>\u003ctd class=\"why\"> wouldn't = မဖြစ်ဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ မင်းကို ကူညီမယ်၊ ဒါပေမယ့် ငါ အရမ်းအလုပ်ရှုပ်နေတယ်။ \u003c/td>\u003ctd class=\"yes\"> ငါ \u003cb> 'ဃ \u003c/b> မင်းကိုကူညီပါ၊ ဒါပေမယ့် ငါအလုပ်များလွန်းတယ်။ \u003c/td>\u003ctd class=\"why\"> → မလုပ်နိုင်ဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငယ်ငယ်တုန်းကတော့ ရှက်တတ်တယ်။ \u003c/td>\u003ctd class=\"yes\"> ငယ်ငယ်တုန်းကတော့၊ \u003cb> ဖြစ်ခဲ့ဖူးသည်။ \u003c/b> ရှက်တယ်။ \u003c/td>\u003ctd class=\"why\"> အခြေအနေ → သုံးသည်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမပျော်နေလိမ့်မယ်။ \u003c/td>\u003ctd class=\"yes\"> သူမရှိမှာလား။ \u003cb> ဖြစ်ခဲ့သည်။ \u003c/b> ပျော်တယ်။ \u003c/td>\u003ctd class=\"why\"> have + V3 (ရှိပြီ) \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 36 – Will | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit36.html';
+  var KEY = 'egu4_unit36_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. စကားလုံးများကိုဖြည့်ပါ/ကြိယာများကို ပေါင်းစပ်ပါ။',    desc:'ကွင်းစကွက်များတွင် အကြံပြုချက်များအရ would / would have / wouldn\'t … ကို ဖြည့်စွက်ပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာကို အခြေခံ၍ ပျောက်ဆုံးနေသော စကားလုံးများကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 36 ​​၏ အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲတွင် လေ့ကျင့်ခန်းများ (ယူနစ် ၃၆ လေ့ကျင့်ခန်းများ)၊', desc:'Lesson 36.2 → 36.6 သည် Murphy ၏ စာအုပ်၏ တိကျသောပုံစံကို လိုက်နာပြီး၊ စာကြောင်းများကို ရှင်းလင်းချက်ဖြင့် ပြန်လည်ရေးသားထားသည် (သင့်ကိုယ်ပိုင်သင်ခန်းစာ 36.1 သည် အပိုင်း E တွင်ဖြစ်သည်)။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'Multiple choice', fill:'Fill in the word', order:'Arrange',
+                     self:'Self-written', match:'Connect sentences' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'It ______ wonderful to have a house with a garden, but we can\'t afford one.',
+      opts:['will be','would be','would have','is'], a:1,
+      exp:'ပစ္စုပ္ပန်မှာ အစစ်အမှန်မဟုတ်တဲ့ အရာ → will + V ကို စိတ်ကူးယဉ်ပါ။' },
+    { id:'a2', sec:'A', type:'mcq', q:'I ______ you at the airport, but nobody told me what time you were arriving.',
+      opts:['would meet','will meet','would have met','would met'], a:2,
+      exp:'အတိတ်က မဖြစ်ခဲ့ဘူးတဲ့အရာ → + V3 ရှိမယ်။' },
+    { id:'a3', sec:'A', type:'mcq', q:'I ______ to the cinema with you, but I have to work tonight.',
+      opts:['\'ll come','\'d come','came','\'d have come'], a:1,
+      exp:'လိုချင်သော်လည်း မသွားနိုင် (ပစ္စုပ္ပန်အကြောင်းတရား) → would + V.' },
+    { id:'a4', sec:'A', type:'mcq', q:'Nam said he ______ me the money back next week.',
+      opts:['will give','would give','would have given','gives'], a:1,
+      exp:'ကတိတစ်ခုတင်ပြခြင်း- will → would.' },
+    { id:'a5', sec:'A', type:'mcq', q:'I asked her several times, but she ______ tell me her secret.',
+      opts:['didn\'t would','wouldn\'t','won\'t','wouldn\'t have'], a:1,
+      exp:'wouldn\'t + V = ငြင်းဆန် (အတိတ်)။' },
+    { id:'a6', sec:'A', type:'mcq', q:'When my dad was young, he ______ cycle 10 km to school every day.',
+      opts:['would','will','would have','was'], a:0,
+      exp:'အတိတ်တွင် ထပ်ခါထပ်ခါ လုပ်ဆောင်ချက် → would + V (= used to)။' },
+    { id:'a7', sec:'A', type:'mcq', q:'Choose the FALSE statement:',
+      opts:['When I was a child, I used to have long hair.','When I was a child, I would have long hair.','When I was a child, I would play in the street.'], a:1,
+      exp:'would (အလေ့အထ) ကို လုပ်ဆောင်ချက်များအတွက်သာ အသုံးပြုသည်၊ ပြည်နယ်များအတွက် (ဆံပင်ရှည်သည်) → အသုံးပြုရန် အသုံးပြုသည်။' },
+    { id:'a8', sec:'A', type:'mcq', q:'\'Should I sell my old guitar?\' \'I ______ it. You might want to play again.\'',
+      opts:['won\'t sell','wouldn\'t sell','wouldn\'t have sold','didn\'t sell'], a:1,
+      exp:'အကြံပေးချက် "if it were me" → ငါမလုပ်ဘူး + V' },
+
+    /*===== B. Fill in the words =====*/
+    { id:'b1', sec:'B', type:'fill', q:'I ______ (love) to visit Iceland one day.',
+      acc:["'d love",'would love',"i'd love"], ans:"'d love",
+      exp:'Imaginary wish → would (\'d) love to + V.' },
+    { id:'b2', sec:'B', type:'fill', q:'Thanks for the map. We ______ (get) lost without it. (past)',
+      acc:["would have got","'d have got",'would have gotten',"'d have gotten"], ans:'would have got',
+      exp:'အတိတ်ကို ပုံဖော်ခြင်း → + V3 ရှိမည်။' },
+    { id:'b3', sec:'B', type:'fill', q:'I didn\'t invite Long. He ______ (not / enjoy) it anyway. (past)',
+      acc:["wouldn't have enjoyed",'would not have enjoyed'], ans:"wouldn't have enjoyed",
+      exp:'အနုတ်လက္ခဏာ စိတ်ကူးယဉ်အတိတ် → + V3 ရှိမည်မဟုတ်ပါ။' },
+    { id:'b4', sec:'B', type:'fill', q:'She promised she ______ (not / tell) anyone.',
+      acc:["wouldn't tell",'would not tell'], ans:"wouldn't tell",
+      exp:'ကတိတစ်ခုအစီရင်ခံခြင်း- မပြု → မပြုရ။' },
+    { id:'b5', sec:'B', type:'fill', q:'My laptop ______ (not / turn on) this morning, so I couldn\'t work.',
+      acc:["wouldn't turn on",'would not turn on'], ans:"wouldn't turn on",
+      exp:'အရာဝတ္တု "refused" အလုပ်လုပ်သည် → wouldn\'t + V.' },
+    { id:'b6', sec:'B', type:'fill', q:'Every evening, my grandfather ______ (sit) on the balcony and read the paper.',
+      acc:['would sit','used to sit'], ans:'would sit',
+      exp:'Past habit → would + V (= used to)။' },
+    { id:'b7', sec:'B', type:'fill', q:'I ______ (help) you, but I don\'t know anything about cars.',
+      acc:["'d help",'would help'], ans:"'d help",
+      exp:'ကူညီချင်သော်လည်း မတတ်နိုင် → ကူညီမည်။' },
+    { id:'b8', sec:'B', type:'fill', q:'What ______ (you / do) if you lost your passport abroad?',
+      acc:['would you do'], ans:'would you do',
+      exp:'စိတ်ကူးယဉ်အခြေအနေ → သင် ဘာလုပ်မလဲ။' },
+
+    /*===== C. Arrange =====*/
+    { id:'c1', sec:'C', type:'order', q:'Arrange: (be / it / nice / would / to / a dog / have)',
+      tokens:['It','would','be','nice','to','have','a','dog'],
+      acc:['it would be nice to have a dog'], ans:'It would be nice to have a dog.',
+      exp:'အဲဒါက +adj + to V: စိတ်ကူးကြည့်မယ်။' },
+    { id:'c2', sec:'C', type:'order', q:'Arrange: (have / you / would / it / enjoyed)',
+      tokens:['You','would','have','enjoyed','it'],
+      acc:['you would have enjoyed it'], ans:'You would have enjoyed it.',
+      exp:'ရှိသည် + V3 - မင်း ကြိုက်ခဲ့မယ် (ဒါပေမယ့် မင်းမလာဘူး)။' },
+    { id:'c3', sec:'C', type:'order', q:'Arrange: (said / he / call / he\'d / me)',
+      tokens:['He','said',"he'd",'call','me'],
+      acc:["he said he'd call me"], ans:'He said he\'d call me.',
+      exp:'အစီရင်ခံခြင်း- will → would (\'d)။' },
+    { id:'c4', sec:'C', type:'order', q:'Arrange: (start / wouldn\'t / the car / this morning)',
+      tokens:['The','car',"wouldn't",'start','this','morning'],
+      acc:["the car wouldn't start this morning"], ans:'The car wouldn\'t start this morning.',
+      exp:'wouldn\'t + V = အလုပ်မဖြစ်ပါ။' },
+    { id:'c5', sec:'C', type:'order', q:'Arrange into QUESTIONS: (would / what / do / in my position / you)',
+      tokens:['What','would','you','do','in','my','position'],
+      acc:['what would you do in my position'], ans:'What would you do in my position?',
+      exp:'Wh- + would + S + V? - စိတ်ကူးယဉ်အခြေအနေများကို မေးပါ။' },
+
+    /*===== D. Conversation =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: Can you come to my party on Saturday?  B: I ______ love to, but I\'m going to a wedding.',
+      acc:["'d",'would'], ans:"'d",
+      exp:'လိုချင်ပေမယ့် မလုပ်နိုင် → လိုချင်ပါတယ်။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: I didn\'t go to the concert in the end.  B: That\'s a pity. You ______ (love) it.',
+      acc:["would have loved","'d have loved"], ans:'would have loved',
+      exp:'အတိတ်က မဖြစ်ခဲ့ဘူး → + V3 ရှိမယ်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Did Minh help you move house?  B: No, he ______ (not / help). He said he was too tired.',
+      acc:["wouldn't help",'would not help'], ans:"wouldn't help",
+      exp:'ကူညီရန်ငြင်းဆန်ခြင်း → မကူညီခြင်း + V ။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: Why are you angry with Lan?  B: She promised she ______ (be) here at 7, and it\'s now 8!',
+      acc:["would be","'d be"], ans:'would be',
+      exp:'ကတိတစ်ခုတင်ပြခြင်း- ဖြစ်မည် → ဖြစ်လိမ့်မည်။' },
+
+    /*===== E. Write it yourself =====*/
+    { id:'e1', sec:'E', type:'self', q:'(သင်ခန်းစာ ၃၆.၁ နှင့်အတူတူ) သင့်အကြောင်းရေးပါ- သင်အမှန်တကယ်နေထိုင်လိုသောနေရာ ၁၊ သင်မလုပ်ချင်သောအလုပ် ၁ ခု၊ သင်ရရန်ကောင်းမည်ဟု သင်ထင်သောအရာ ၁။',
+      sample:'I\'d love to live in Da Lat. I wouldn\'t like to be a surgeon. It would be nice to have a bigger kitchen.',
+      exp:'would /\'d + V to imagine; + V ကို မကြိုက်ဘူး၊ +V က ကောင်းမယ်။' },
+    { id:'e2', sec:'E', type:'self', q:'Will + V ကို အသုံးပြု၍ သင် သို့မဟုတ် သင့်အဘိုးအဘွားများ၏ ငယ်စဉ်ကလေးဘဝတွင် အလေ့အကျင့် ၃ ခုကို ပြောပြပါ။',
+      sample:'Every summer, we would visit my grandparents in the countryside. My grandmother would wake us up at 5. We would swim in the river every afternoon.',
+      exp:'ထပ်ခါတလဲလဲ လုပ်ဆောင်ချက်များအတွက်သာ အသုံးပြုသည် ။ အဆင့်အတန်းအတွက်၊ အသုံးပြုရန်။' },
+    { id:'e3', sec:'E', type:'self', q:'မနှစ်က မလုပ်ခဲ့တဲ့ အရာတစ်ခုကို စဉ်းစားကြည့်ပါ။ စာကြောင်း ၂ ကြောင်းရေးပါ- ဘာဖြစ်သွားမလဲ။',
+      sample:'I didn\'t take the job in Singapore. I would have earned more money, but I would have missed my family.',
+      exp:'will have + V3 = မဖြစ်ခဲ့ဘူးသောအရာကို စိတ်ကူးကြည့်ပါ။' },
+
+    /*===== F. Quiz at the end of the unit =====*/
+    { id:'f1', sec:'F', type:'fill', q:'I ______ (buy) that jacket, but it\'s too expensive.',
+      acc:["'d buy",'would buy'], ans:"'d buy",
+      exp:'လိုချင်ပေမယ့် မလုပ်နိုင်ဘူး → would + V' },
+    { id:'f2', sec:'F', type:'mcq', q:'We walked home last night. A taxi ______ much faster.',
+      opts:['would be','would have been'], a:1,
+      exp:'စိတ်ကူးယဉ်အတိတ် → ဖြစ်ခဲ့ပြီ။' },
+    { id:'f3', sec:'F', type:'mcq', q:'He promised he ______ late again.',
+      opts:['won\'t be','wouldn\'t be'], a:1,
+      exp:'ယခင်အစီရင်ခံချက်- မပြု → မပြုပါ။' },
+    { id:'f4', sec:'F', type:'fill', q:'Translated into English: "The door refused to open."',
+      acc:["the door wouldn't open",'the door would not open'], ans:'The door wouldn\'t open.',
+      exp:'wouldn\'t + V = (အရာဝတ္တု) အလုပ်မလုပ်ခြင်း။' },
+    { id:'f5', sec:'F', type:'mcq', q:'I ______ stay longer. I\'ve got plenty of time. (actually, will do)',
+      opts:['\'ll','\'d'], a:0,
+      exp:'will do → will (\'ll) မှန်သည်။' },
+    { id:'f6', sec:'F', type:'fill', q:'When we were students, we ______ (often / stay) up all night talking.',
+      acc:['would often stay','often used to stay','used to stay','would stay'], ans:'would often stay',
+      exp:'အတိတ်အလေ့အထ → would (မကြာခဏ) + V ။' },
+    { id:'f7', sec:'F', type:'fill', q:'In an ideal world, nobody ______ (be) poor.',
+      acc:['would be'], ans:'would be',
+      exp:'စံပြကမ္ဘာ = စိတ်ကူး → ဖြစ်ပေသည်။' },
+    { id:'f8', sec:'F', type:'mcq', q:'I didn\'t tell my parents about the accident. They ______ very worried.',
+      opts:['would be','would have been','will be'], a:1,
+      exp:'အတိတ်ကို စိတ်ကူးယဉ်ခြင်း (မပြောခဲ့ပါ) → ဖြစ်လိမ့်မည်။' },
+
+    /*===== G. Exercises in the book =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'2. You should try that new noodle shop. You ______ (enjoy) it.',
+      acc:["'d enjoy",'would enjoy'], ans:"'d enjoy",
+      exp:'(ကြိုးစားရင်) → စိတ်ကူးကြည့်လို့ ရရင်ပျော်မယ်။' },
+    { id:'h2', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'3. It\'s a shame you missed the trip last weekend. You ______ (enjoy) it.',
+      acc:["'d have enjoyed",'would have enjoyed'], ans:"'d have enjoyed",
+      exp:'ဟိုတုန်းကတော့ မသွားဘဲ → ခံစားခဲ့ရတာ။' },
+    { id:'h3', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'4. Should I accept the offer or not? What ______ (you / do) in my place?',
+      acc:['would you do'], ans:'would you do',
+      exp:'စိတ်ကူးယဉ်အခြေအနေများ → သင်ဘာလုပ်မည်နည်း။' },
+    { id:'h4', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'5. I was late for a meeting when I saw you. Otherwise I ______ (stop) to chat.',
+      acc:["'d have stopped",'would have stopped'], ans:"'d have stopped",
+      exp:'ဟိုတုန်းကတော့ မရပ်ဘူး → ရပ်သွားပြီ။' },
+    { id:'h5', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'6. We drove to the centre, but there was nowhere to park. It ______ (be) easier to take the bus.',
+      acc:['would have been',"'d have been"], ans:'would have been',
+      exp:'စိတ်ကူးယဉ်အတိတ် → ဖြစ်ခဲ့ပြီ။' },
+    { id:'h6', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'7. Why don\'t you visit your old teacher? She ______ (be) so happy to see you.',
+      acc:["'d be",'would be'], ans:"'d be",
+      exp:'(လာလျှင်) → ဖြစ်မည်ဟု မြင်ယောင်ကြည့်ပါ။' },
+    { id:'h7', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'8. Why didn\'t you enter the competition? I\'m sure you ______ (win) it.',
+      acc:["'d have won",'would have won'], ans:"'d have won",
+      exp:'အရင်တုန်းက မပါဝင်ခဲ့ဘူး → အနိုင်ရခဲ့တာမှ မဟုတ်တာ။' },
+    { id:'h8', sec:'G', type:'fill', sub:'Lesson 36.2 – would + verb (ပုံစံအမှန်)',
+      q:'9. In a perfect world, every child ______ (have) a good school.',
+      acc:['would have'], ans:'would have',
+      exp:'စံပြကမ္ဘာ → ရှိသည် ။' },
+
+    { id:'h9', sec:'G', type:'match', w:6, sub:'Lesson 36.3 – ဘယ်ဝါကျက နောက်ဆက်တွဲပါလဲ။',
+      q:'ညာဘက်ရှိ သင့်လျော်သောဝါကျနှင့် ဘယ်ဘက်ရှိဝါကျကို တွဲပါ-',
+      items:[
+        { t:'I\'d love to go to Japan one day.',             letter:'c', o:'It would be amazing.' },
+        { t:'I wouldn\'t like to work night shifts.',          letter:'e', o:'It wouldn\'t be much fun.' },
+        { t:'I\'m sorry the concert was cancelled.',          letter:'b', o:'It would have been great.' },
+        { t:'I\'m excited about the picnic tomorrow.',         letter:'f', o:'It will be great.' },
+        { t:'I\'m glad we didn\'t go out in that storm.',      letter:'a', o:'It wouldn\'t have been much fun.' },
+        { t:'I\'m dreading the exam tomorrow.',               letter:'d', o:'It won\'t be much fun.' }
+      ],
+      exp:'သော့- 1-c၊ 2-e၊ 3-b၊ 4-f၊ 5-a၊ 6-d။ စစ်မှန်သောအနာဂတ် → ဖြစ်/မဖြစ်၊ ပစ္စုပ္ပန် စိတ်ကူးစိတ်သန်း → ဖြစ်/မဖြစ်၊ ဖြစ်မလာသောအရာ → ရှိ/မရှိ ဖြစ်မည်။' },
+
+    { id:'h10', sec:'G', type:'fill', sub:'Lesson 36.4 – ကတိပြု + အလိုတော် / မပြု',
+      q:'2. I wonder why Tuan hasn\'t replied to my email. He promised ______.',
+      acc:["he'd reply",'he would reply',"he'd answer",'he would answer',"he'd write back",'he would write back'], ans:"he'd reply",
+      exp:'ကတိပြု (that) + S + would + V ။' },
+    { id:'h11', sec:'G', type:'fill', sub:'Lesson 36.4 – ကတိပြု + အလိုတော် / မပြု',
+      q:'3. Why did you show Mai my photos? You promised ______ them to her.',
+      acc:["you wouldn't show",'you would not show'], ans:"you wouldn't show",
+      exp:'အနုတ်လက္ခဏာ ကတိ- မပြု → မပြု။' },
+    { id:'h12', sec:'G', type:'fill', sub:'Lesson 36.4 – ကတိပြု + အလိုတော် / မပြု',
+      q:'4. I\'m surprised they left without us. They promised ______ for us.',
+      acc:["they'd wait",'they would wait'], ans:"they'd wait",
+      exp:'စောင့်မယ်လို့ ကတိပေးတယ်။' },
+
+    { id:'h13', sec:'G', type:'fill', sub:'Lesson 36.5 – wouldn\'t + verb (ငြင်းဆိုထားသည်)',
+      q:'2. I asked my brother where he had been, but he ______ me.',
+      acc:["wouldn't tell",'would not tell'], ans:"wouldn't tell",
+      exp:'မပြောရန် ငြင်းဆန်ခြင်း → မပြောပါ။' },
+    { id:'h14', sec:'G', type:'fill', sub:'Lesson 36.5 – wouldn\'t + verb (ငြင်းဆိုထားသည်)',
+      q:'3. Hoa was so upset about the argument that she ______ to me for days.',
+      acc:["wouldn't speak",'would not speak',"wouldn't talk",'would not talk'], ans:"wouldn't speak",
+      exp:'စကားမပြောခြင်း → စကားမပြောပါ။' },
+    { id:'h15', sec:'G', type:'fill', sub:'Lesson 36.5 – wouldn\'t + verb (ငြင်းဆိုထားသည်)',
+      q:'4. My grandmother insisted on carrying the heavy bags herself. She ______ me help her.',
+      acc:["wouldn't let",'would not let'], ans:"wouldn't let",
+      exp:'ကူညီခွင့်မပြုပါ → ခွင့်မပြုပါ။' },
+
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၃၆.၆ – will + verb (အတိတ်အလေ့အထများ)',
+      q:'2. We used to live near the airport. Every time a plane flew over, the windows ______.',
+      acc:['would shake'], ans:'would shake',
+      exp:'အတိတ် → ထပ်ခါထပ်ခါ လှုပ်ပါ့။' },
+    { id:'h17', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၃၆.၆ – will + verb (အတိတ်အလေ့အထများ)',
+      q:'3. Mr Binh was a wonderful neighbour. He ______ (always / help) you if you needed anything.',
+      acc:['would help','would always help'], ans:'would always help',
+      exp:'would always + V: အတိတ်က အကျင့်ကောင်း။' },
+    { id:'h18', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၃၆.၆ – will + verb (အတိတ်အလေ့အထများ)',
+      q:'4. My aunt was very generous. She didn\'t have much, but she ______ what she had with everyone.',
+      acc:['would share'], ans:'would share',
+      exp:'အတိတ်အလေ့အထ → မျှဝေခံစားပါ။' },
+    { id:'h19', sec:'G', type:'fill', sub:'သင်ခန်းစာ ၃၆.၆ – will + verb (အတိတ်အလေ့အထများ)',
+      q:'5. You could never trust Phong with a message. However often you reminded him, he ______ (always / forget).',
+      acc:['would always forget','would forget'], ans:'would always forget',
+      exp:'အမြဲလိုလို + V သည် အလေ့အထကို အလေးပေးသည် (များသောအားဖြင့် စောဒကတက်ခြင်း)။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>

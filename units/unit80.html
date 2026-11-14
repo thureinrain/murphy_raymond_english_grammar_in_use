@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="mm">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ယူနစ် 80 – နာမ် + နာမ် (တင်းနစ်ဘောလုံး / ခေါင်းကိုက်ခြင်း) | English Grammar 4e ကို အသုံးပြုပါ။</title>
+<style>
+/* ===== အထွေထွေ ပုံစံ ===== */
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --primary:#4f46e5; --primary-2:#4338ca; --violet:#7c3aed;
+  --ok:#16a34a; --ok-bg:#ecfdf5;
+  --bad:#dc2626; --bad-bg:#fef2f2;
+  --warn:#d97706; --line:#e5e7eb; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em}
+a{color:var(--primary)}
+
+/* ===== Header ===== */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--violet) 100%);color:#fff;
+  border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:0 8px 24px rgba(79,70,229,.25)}
+.hero .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:1.55rem;margin:.2em 0 .1em}
+.hero .sub{opacity:.9;font-size:.92rem}
+.hero .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}
+.hero .stats span{background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+
+/* ===== Tabs ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{flex:1 1 auto;min-width:120px;text-align:center;padding:11px 14px;border-radius:12px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);font-weight:600;color:var(--muted);user-select:none}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.tabpanel[hidden]{display:none}
+
+/* ===== ကတ်နှင့် အကြောင်းအရာ ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.card h2{font-size:1.2rem;color:var(--primary-2)}
+.card h3{font-size:1.05rem;margin-top:1.2em}
+.formula{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin:10px 0;
+  font-family:var(--mono);font-size:.94rem;overflow-x:auto;white-space:pre-wrap}
+.chip{display:inline-block;background:#eef2ff;color:var(--primary-2);border-radius:999px;padding:2px 10px;
+  font-size:.82rem;font-weight:600;margin:2px 4px 2px 0}
+.chip.ok{background:var(--ok-bg);color:#15803d}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f9fafb;font-weight:700}
+.scroll{overflow-x:auto}
+ul{padding-left:20px} li{margin:4px 0}
+mark{background:#fef08a;padding:0 3px;border-radius:4px}
+.ex{background:#f9fafb;border-left:4px solid var(--primary);padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0}
+.ex b.en{font-family:var(--mono);font-size:.95rem}
+
+/* ===== ဗီယက်နမ်လူမျိုး အမှားများ ဇယား ===== */
+.mistakes td.no{background:var(--bad-bg);color:#991b1b}
+.mistakes td.yes{background:var(--ok-bg);color:#14532d}
+.mistakes td.why{background:#fffbeb;color:#78350f}
+
+/* ===== Toolbar ===== */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:.9rem;
+  background:#e5e7eb;color:#111827;transition:.15s;white-space:nowrap}
+.btn:hover{filter:brightness(.96)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.okb{background:var(--ok);color:#fff}
+.btn.badb{background:var(--bad);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line)}
+.btn-mini{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:.8rem;
+  cursor:pointer;font-weight:600;color:var(--muted)}
+.btn-mini:hover{border-color:var(--primary);color:var(--primary)}
+.clock{font-family:var(--mono);background:#111827;color:#4ade80;border-radius:8px;padding:6px 12px;font-size:.9rem}
+.mode-pill{display:flex;background:#e5e7eb;border-radius:10px;padding:3px;gap:3px}
+.mode-pill button{border:0;background:transparent;padding:7px 13px;border-radius:8px;cursor:pointer;
+  font-weight:700;font-size:.85rem;color:var(--muted)}
+.mode-pill button.on{background:#fff;color:var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+
+/* ===== မေးခွန်းများ ===== */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.sec h3{color:var(--primary-2);border-bottom:2px solid var(--line);padding-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.88rem;margin:-6px 0 12px}
+.sub{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:.88rem;color:#334155;margin:14px 0 8px}
+.qcard{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.qcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.qcard.bad{border-color:var(--bad);background:var(--bad-bg)}
+.qhead{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.qno{background:var(--primary);color:#fff;border-radius:8px;font-size:.78rem;font-weight:700;padding:2px 8px}
+.qtype{font-size:.72rem;background:#f1f5f9;color:#475569;border-radius:999px;padding:2px 9px}
+.qtext{font-weight:600;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+  margin:6px 0;cursor:pointer;background:#fff}
+.opt:hover{border-color:#c7d2fe;background:#f8faff}
+.opt input{margin-top:4px;accent-color:var(--primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-bg)}
+.ans-input,.self-text{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;
+  font-family:inherit;background:#fff}
+.ans-input:focus,.self-text:focus{outline:2px solid #c7d2fe;border-color:var(--primary)}
+.self-text{resize:vertical}
+.self-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.self-btns button.on-ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.self-btns button.on-bad{background:var(--warn);color:#fff;border-color:var(--warn)}
+/* စကားလုံးများကို စီစဉ်ခြင်း */
+.line{min-height:46px;border:2px dashed #c7d2fe;border-radius:10px;padding:7px;background:#f8faff;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.line:empty::after{content:"ဝါကျဖွဲ့ရန် အောက်မှ စကားလုံးများကို နှိပ်ပါ \2192";color:#94a3b8;font-size:.85rem}
+.pool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tok{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;font-size:.95rem;
+  font-family:var(--mono);font-weight:600}
+.tok:hover{border-color:var(--primary);color:var(--primary)}
+.line .tok{background:#eef2ff;border-color:#c7d2fe}
+/* ဝါကျများ ချိတ်ဆက်ခြင်း */
+.mrow{display:flex;gap:10px;align-items:center;margin:7px 0;flex-wrap:wrap}
+.mleft{flex:1 1 260px;font-size:.93rem}
+.msel{flex:0 0 260px;max-width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:.88rem}
+/* အဖြေနှင့် ရှင်းလင်းချက် */
+.answer-box{display:none;margin-top:10px;background:var(--ok-bg);border-left:4px solid var(--ok);
+  border-radius:0 10px 10px 0;padding:10px 12px;font-size:.93rem}
+.answer-box .ab-title{color:#14532d}
+.answer-box .ab-exp{color:#166534;margin-top:4px}
+body[data-mode="study"] .qcard.checked .answer-box{display:block}
+body.revealed .answer-box{display:block}
+body[data-mode="test"] .check-one{display:none}
+.qfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.vtag{font-weight:700;font-size:.85rem}
+.vtag.ok{color:var(--ok)} .vtag.bad{color:var(--bad)}
+
+/* ===== ရလဒ် ===== */
+.result{text-align:center;border:2px solid var(--line)}
+.result .big{font-size:2.6rem;font-weight:800;line-height:1}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)} .result .big.mid{color:var(--warn)}
+.result .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.result .wrong{margin-top:10px;font-size:.9rem;background:var(--bad-bg);color:#991b1b;border-radius:10px;padding:8px 10px}
+.result .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.selfscore{margin-top:8px;font-size:.9rem;color:var(--primary-2);font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:16px 0 30px}
+
+/* ===== Responsive ===== */
+@media (max-width:640px){
+  .hero h1{font-size:1.25rem}
+  .tab{min-width:0;padding:9px 8px;font-size:.85rem}
+  .toolbar .btn{flex:1 1 auto}
+  .msel{flex:1 1 100%}
+  .result .big{font-size:2.1rem}
+  table{font-size:.86rem}
+  th,td{padding:6px 7px}
+}
+/* ===== ပရင့် / PDF ထုတ်ယူ ===== */
+@media print{
+  [hidden]{display:block!important}
+  .no-print{display:none!important}
+  .answer-box{display:block!important}
+  body{background:#fff;font-size:12pt}
+  .card,.sec,.qcard{border:1px solid #bbb;box-shadow:none;break-inside:avoid}
+  .hero{background:#4f46e5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .qcard.ok,.qcard.bad{background:#fff!important}
+  .tab{display:none!important}
+}
+
+/* ===== Dark mode ===== */
+.theme-toggle{position:fixed;z-index:50;
+  right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  width:44px;height:44px;padding:0;margin:0;border-radius:50%;
+  -webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.theme-toggle svg{width:22px;height:22px;display:block;flex:none;pointer-events:none}
+@media print{.theme-toggle{display:none!important}}
+.back-home{position:fixed;z-index:50;
+  left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));
+  height:44px;padding:0 16px 0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem;
+  -webkit-tap-highlight-color:transparent;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.back-home svg{width:20px;height:20px;display:block;flex:none}
+.back-home:hover{color:var(--primary)}
+@media print{.back-home{display:none!important}}
+@media screen{
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b1120; --card:#161e2e; --ink:#e5e7eb; --muted:#9ca3af;
+  --primary:#6366f1; --primary-2:#a5b4fc; --violet:#7c3aed;
+  --ok:#22c55e; --ok-bg:#0f2a1c; --line:#2b3546}
+[data-theme="dark"] a{color:#a5b4fc}
+[data-theme="dark"] th{background:#1c2536}
+[data-theme="dark"] .hero{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+[data-theme="dark"] .ok{color:#86efac}
+:root[data-theme="dark"]{--bad:#f87171; --bad-bg:#2e1414; --warn:#f59e0b}
+[data-theme="dark"] .formula{background:#1a1b3a;border-color:#3730a3}
+[data-theme="dark"] .chip{background:#26285a}
+[data-theme="dark"] .chip.ok{background:var(--ok-bg);color:#86efac}
+[data-theme="dark"] mark{background:#854d0e;color:#fef9c3}
+[data-theme="dark"] .ex{background:#1c2536}
+[data-theme="dark"] .mistakes td.no{color:#fca5a5}
+[data-theme="dark"] .mistakes td.yes{color:#86efac}
+[data-theme="dark"] .mistakes td.why{background:#2b210b;color:#fcd34d}
+[data-theme="dark"] .btn{background:#2b3546;color:var(--ink)}
+[data-theme="dark"] .btn.primary,[data-theme="dark"] .btn.okb,[data-theme="dark"] .btn.badb{color:#fff}
+[data-theme="dark"] .btn.primary{background:var(--primary)}
+[data-theme="dark"] .btn.primary:hover{background:#4f46e5}
+[data-theme="dark"] .btn.okb{background:#16a34a}
+[data-theme="dark"] .btn.badb{background:#dc2626}
+[data-theme="dark"] .btn.ghost,[data-theme="dark"] .btn-mini{background:var(--card)}
+[data-theme="dark"] .btn-mini:hover{color:#a5b4fc;border-color:#a5b4fc}
+[data-theme="dark"] .clock{background:#020617}
+[data-theme="dark"] .mode-pill{background:#0b1120}
+[data-theme="dark"] .mode-pill button.on{background:#2b3546;color:#c7d2fe}
+[data-theme="dark"] .sub{background:#1c2536;color:#cbd5e1}
+[data-theme="dark"] .hero .sub{background:transparent;color:#fff}
+[data-theme="dark"] .qcard,[data-theme="dark"] .opt{background:var(--card)}
+[data-theme="dark"] .qcard.ok,[data-theme="dark"] .opt.correct{background:var(--ok-bg)}
+[data-theme="dark"] .qcard.bad,[data-theme="dark"] .opt.wrongpick{background:var(--bad-bg)}
+[data-theme="dark"] .opt:hover{background:#1c2536;border-color:#4338ca}
+[data-theme="dark"] .qtype{background:#0b1120;color:#9ca3af}
+[data-theme="dark"] .ans-input,[data-theme="dark"] .self-text,[data-theme="dark"] .msel{
+  background:#0b1120;border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .ans-input:focus,[data-theme="dark"] .self-text:focus{outline-color:#4338ca}
+[data-theme="dark"] .line{background:#111827;border-color:#3730a3}
+[data-theme="dark"] .line:empty::after{color:#64748b}
+[data-theme="dark"] .tok{background:var(--card);border-color:#3b475b;color:var(--ink)}
+[data-theme="dark"] .tok:hover{border-color:#a5b4fc;color:#a5b4fc}
+[data-theme="dark"] .line .tok{background:#26285a;border-color:#4338ca}
+[data-theme="dark"] .answer-box .ab-title{color:#86efac}
+[data-theme="dark"] .answer-box .ab-exp{color:#bbf7d0}
+[data-theme="dark"] .result .wrong{color:#fca5a5}
+[data-theme="dark"] .selfscore{color:#a5b4fc}
+}
+</style>
+<script data-theme-init>
+/* အမှောင်မုဒ်- စက်၏ဆက်တင်အတိုင်း၊ နေ့/ည ခလုတ်ဖြင့် ပြောင်း၊ ရွေးချယ်မှုကို စာမျက်နှာတိုင်းအတွက် မှတ်ထား */
+(function(){
+  var K='egu4_theme', root=document.documentElement,
+    SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+    SUN=SV+'<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    MOON=SV+'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>', mq=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');
+  function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function apply(t){root.setAttribute('data-theme',t);var b=document.getElementById('themeToggle');
+    if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'အလင်းပုံစံသို့ ပြောင်းပါ':'အမှောင်ပုံစံသို့ ပြောင်းပါ';}}
+  apply(saved()||(mq&&mq.matches?'dark':'light'));
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(e){if(!saved())apply(e.matches?'dark':'light')});
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.createElement('button');b.id='themeToggle';b.type='button';b.className='theme-toggle no-print';
+    b.setAttribute('aria-label','အလင်း/အမှောင် ပုံစံ ပြောင်းရန်');
+    b.onclick=function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+    document.body.appendChild(b);apply(root.getAttribute('data-theme'));
+    var h=document.createElement('a');h.href='../index.html';h.className='back-home no-print';h.title='ယူနစ်စာရင်းသို့ ပြန်သွားရန်';
+    h.innerHTML=SV+'<path d="M15 18l-6-6 6-6"/></svg><span>စာရင်း</span>';document.body.appendChild(h);
+  });
+})();
+</script>
+<script src="../i18n.js" defer></script>
+</head>
+<body data-mode="study">
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="kicker"> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ · Raymond Murphy · 4th Edition </div>
+    <h1> UNIT 80 - နာမ် + နာမ် (တင်းနစ်ဘောလုံး / ခေါင်းကိုက်ခြင်း) </h1>
+    <div class="sub"> Self-study theory · မတူညီသောအလေ့အကျင့် · အကြိမ်များစွာ စမ်းသပ်ပါ။ </div>
+    <div class="stats">
+      <span id="stAttempts"> ပြီးဆုံးပြီ- 0 ကြိမ် </span>
+      <span id="stBest"> အမြင့်ဆုံး ရမှတ်- </span>
+      <span id="stWrong"> သိမ်းထားသော မှားနေသော ဝါကျများ- 0 </span>
+      <span id="stScored"> ရမှတ် 60 မေးခွန်း + ကိုယ်တိုင်ရေးထားသော မေးခွန်း 3 ခု </span>
+    </div>
+  </header>
+
+  <!-- ===== TABS ===== -->
+  <nav class="tabs no-print">
+    <div class="tab active" data-tab="theory"> 📘 1. သီအိုရီ </div>
+    <div class="tab" data-tab="tips"> 💡 2. ဥပမာ &amp; အကြံပြုချက် </div>
+    <div class="tab" data-tab="practice"> ✍️ 3. လေ့ကျင့်ခန်း &amp; စမ်းသပ်မှု </div>
+  </nav>
+
+  <!-- ===== TAB 1: THEORY ===== -->
+  <section class="tabpanel" id="tab-theory">
+    <div class="card">
+      <h2> 1.1 · Objective &amp; အခြေခံအားဖြင့် </h2>
+      <p> အင်္ဂလိပ်လို ပေါင်းစပ်တတ်တယ်။ <b> နာမ်နှစ်ခု </b> : noun <b> ပထမဆုံး </b> အခန်းကဏ္ဍ <b> နာမဝိသေသနအဖြစ် </b> (မည်သည့်အမျိုးအစား၊ ဘာကိုသုံးရမည်၊ ဘယ်နေရာ)၊ နာမ် <b> တနင်္လာနေ့ </b> အဓိကအရာဝတ္ထုဖြစ်သည်။ ဗီယက်နမ်နှင့် ဆန့်ကျင်ဘက်- "တင်းနစ်ဘောလုံး" → <b> တင်းနစ်ဘောလုံး </b>.</p>
+      <div class="ex"> <b class="en">a  <mark>tennis</mark>  ball · a  <mark>bank</mark>  manager · a  <mark>road</mark>  accident · the  <mark>city</mark>  centre</b> <br> ရှေ့စကားလုံး = "ဘယ်လိုမျိုးလဲ?"; word after = "ဘာလဲ"။ </div>
+
+      <h2> 1.2 · Core ဖော်မြူလာ </h2>
+      <div class="formula"> N1 (မွမ်းမံမှု၊ အများအားဖြင့် SINGULAR) + N2 (ပင်မအရာဝတ္ထု)
+   ဖိနပ်ဆိုင် (အမှတ်-ဖိနပ်ဆိုင်)
+   ကားသော့များ (N2 သည် အများကိန်းဖြစ်ပြီး N1 သည် အနည်းကိန်းဖြစ်နေသေးသည်)
+
+NUMBER + N (တုံးတို၊ SINGULAR) + N2
+   ခြောက်နှစ်အရွယ်မိန်းကလေးတစ်ဦး ကြယ်ငါးပွင့်ဟိုတယ်တစ်လုံး နှစ်နာရီကြာခရီးအတွက် ဆယ်ပေါင်မှတ်စုတစ်ခု
+   ↔ ဆယ်ပေါင်နှစ်နာရီ ကြယ်ငါးခြောက်နှစ် (N2 မပါ) </div>
+      <div class="scroll"><table>
+        <tr><th> Vietnam </th><th> English </th><th> Note </th></tr>
+        <tr><td> Downtown </td><td> Downtown </td><td> I don't like it. </td></tr>
+        <tr><td> Income tax </td><td> Income tax </td><td> N1 singular </td></tr>
+        <tr><td> Car key </td><td> Car keys </td><td> N2 only plural </td></tr>
+        <tr><td> Traffic accident </td><td> Road / traffic accident </td><td></td></tr>
+      </table></div>
+
+      <h2> 1.3 · A. ပထမနာမ်သည် နာမဝိသေသနနှင့်တူသည်။ </h2>
+      <ul>
+        <li> ပစ္စည်း/အမျိုးအစား- <i>a gold ring, chocolate ice cream, a paper bag</i> </li>
+        <li> ရည်ရွယ်ချက်- <i>a shopping bag, running shoes, a swimming pool</i> (V-ing သည်လည်း နာမ်အဖြစ် ဦးစွာလာသည်)။ </li>
+        <li> နေရာ/ဌာန- <i>the kitchen window, the fridge door, a hotel room</i> </li>
+        <li> နာမ် ၃ မျိုး ပေါင်းစပ်နိုင်သည်- <i>a road improvement scheme, car factory workers</i>။ </li>
+        <li> အချို့သောနံပါတ်များကို စာလုံးတစ်လုံးတည်းအဖြစ် <i>headache, toothpaste, weekend, bookshop</i> ရေးထားသည်။ </li>
+      </ul>
+
+      <h2> 1.4 · B. နှိုင်းယှဉ်- ကော်ဖီခွက် ↔ ကော်ဖီတစ်ခွက် </h2>
+      <div class="scroll"><table>
+        <tr><th> N+N </th><th> N of N </th></tr>
+        <tr><td><b> A cup of coffee </b> = cup used for drinking coffee (can be empty) </td><td><b> A cup of coffee </b> = a full cup of coffee </td></tr>
+        <tr><td><b> A glass of wine </b> = a glass of wine </td><td><b> A glass of wine </b> = a glass of wine </td></tr>
+        <tr><td><b> Shopping bag </b> = shopping bag </td><td><b> Shopping bag </b> = full shopping bag </td></tr>
+      </table></div>
+
+      <h2> 1.5 · C. နံပါတ် + နာမ် (ဆယ်ပေါင်မှတ်စု) </h2>
+      <p> အစုအဝေးတွင် ဒေါင်လိုက်နံပါတ်တစ်ခုရှိသောအခါ <b> အခြားနာမ်ရှေ့မှာ </b> လက်ကိုင်နံပါတ်ဖြင့် ပါလာသော နာမ် <b> အနည်းကိန်း </b> အုတ်များဖြင့် ချိတ်ဆက်ထားသည်- <i>a fifteen-minute break, a twelve-storey building, a 24-hour service</i> . အောက်ပါနာမ်မရှိသောအခါ → ပုံမှန်နာမ်ကိုသုံးပါ- <i>The break is fifteen minutes. She is six years old.</i> </p>
+      <p class="note"> 📌 <i>two hours' walk / a week's holiday</i> (with -'s) ဘယ်လိုပြောရမလဲ ကြည့်ကြည့်လိုက်ပါ။ <b> ယူနစ် ၈၁ </b>.</p>
+
+      <h2> 1.6 · သက်သေခံလက္ခဏာများ </h2>
+      <div class="scroll"><table>
+        <tr><th> Token </th><th>→</th></tr>
+        <tr><td> Number + Unit + <b> Noun </b> (note, travel, hotel, boy) </td><td> hyphen A singular unit </td></tr>
+        <tr><td> The number + unit is /after be at the end of the sentence. </td><td> plural No hyphens. </td></tr>
+        <tr><td> It means "N for/of/about N". </td><td> Change to N + N. </td></tr>
+      </table></div>
+
+      <h2> 1.7 · အလွယ်တကူ ရှုပ်ထွေးနေသော ဖွဲ့စည်းပုံများနှင့် နှိုင်းယှဉ်ပါ။ </h2>
+      <div class="scroll"><table>
+        <tr><th></th><th> noun + noun (unit 80) </th><th> - Pai Min (Unit 81), </th></tr>
+        <tr><td> used for </td><td> Object type/category </td><td> Things related to people/animals </td></tr>
+        <tr><td> For example </td><td> a <b> Car </b> factory <b> Kitchen </b> the door </td><td><b> my sister </b> car <b> So </b> Room </td></tr>
+      </table></div>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Sai shop </th><th> ✅ Yes. </th></tr>
+        <tr><td class="no"> Ball tennis </td><td class="yes"> a <b> Tennis ball </b></td></tr>
+        <tr><td class="no"> A two-hour meeting </td><td class="yes"> a <b> Two hours </b> Meeting </td></tr>
+        <tr><td class="no"> She is ten years old. </td><td class="yes"> she is <b> Ten years old </b>.</td></tr>
+        <tr><td class="no"> Shoe store </td><td class="yes"> a <b> Shoes </b> Shop </td></tr>
+        <tr><td class="no"> A cup of coffee (empty cup) </td><td class="yes"> a <b> A cup of coffee </b></td></tr>
+      </table></div>
+      <p class="note"> စာအုပ်ရှိလင့်ခ်များ- <b> ယူနစ် ၇၉ </b> (အနည်းကိန်း/ အများကိန်း) · <b> ယူနစ် ၈၁ </b> (- နှင့် ၏) · <b> ယူနစ် ၉၈ </b> (နာမဝိသေသန)။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: EXAMPLES & TIPS ===== -->
+  <section class="tabpanel" id="tab-tips" hidden>
+    <div class="card">
+      <h2> 2.1 · လက်တွေ့ဘဝဥပမာ 8 ခု (ဘဝ · အလုပ် · စာမေးပွဲများ) </h2>
+      <div class="ex"> 🔑 <b class="en">Have you seen my  <mark>car keys</mark> ?</b> <span class="note"> (ဘဝ) </span></div>
+      <div class="ex"> 🏦 <b class="en">I have a meeting with the  <mark>bank manager</mark>  at ten.</b> <span class="note"> (အလုပ်) </span></div>
+      <div class="ex"> 🚶 <b class="en">The hotel is a  <mark>five-minute walk</mark>  from the beach.</b> <span class="note"> (ခရီးသွား — ဟိုတယ်ဖော်ပြချက်ဖတ်ရန်) </span></div>
+      <div class="ex"> 💵 <b class="en">Do you have change for a  <mark>fifty-dollar note</mark> ?</b> <span class="note"> (ဈေးဝယ်) </span></div>
+      <div class="ex"> ✈️ <b class="en">Please show your  <mark>boarding pass</mark>  at the gate.</b> <span class="note"> (လေဆိပ်) </span></div>
+      <div class="ex"> 📊 <b class="en">We have a  <mark>budget meeting</mark>  every Monday.</b> <span class="note"> (ရုံး) </span></div>
+      <div class="ex"> 🧒 <b class="en">She has a  <mark>six-year-old</mark>  son. He is  <mark>six years old</mark> .</b> <span class="note"> (ပုံစံ ၂ မျိုးကို နှိုင်းယှဉ်ပါ) </span></div>
+      <div class="ex"> ☕ <b class="en">Would you like  <mark>a cup of coffee</mark> ? — Sorry, I broke your  <mark>coffee cup</mark> .</b> <span class="note"> (အဓိပ္ပါယ် အမျိုးမျိုး) </span></div>
+
+      <h2> 2.2 · မှတ်ဉာဏ်အကြံပြုချက်များ 🧠 </h2>
+      <ul>
+        <li><b> "ဗီယက်နမ်ကို နောက်ပြန်ဖတ်ပါ" </b> ဘောလုံး (2) တင်းနစ် (1) → တင်းနစ် (1) ဘောလုံး (2) ။ </li>
+        <li><b> "ရှေ့စကားလုံးက -s မပါပါဘူး": </b> ဖိနပ်ဆိုင်၊ကားသော့၊ဆယ်ပေါင်မှတ်စု။ </li>
+        <li><b> "တုံးတိုရှိရင် -s မရှိဘူး" </b> နှစ်နာရီ၊ ကြယ်ငါးပွင့်၊ ဆယ်နှစ်။ </li>
+        <li><b> "ဘာပါလဲ ↔ ဘာတွေပါလဲ" </b> ကော်ဖီခွက် (cup) vs ကော်ဖီခွက် (ကော်ဖီ)။ </li>
+      </ul>
+
+      <h2> 2.3 · အကြံပြုချက်များကို ရယူစမ်းသပ်ခြင်း။ </h2>
+      <ul>
+        <li> "Which is correct?" ပုံစံ- နံပါတ်စကားစုကို ကြည့်ပါ — နာမ်တစ်ခု ရှိပါသလား။ ဟုတ်သည် → တုံးတို + အနည်းကိန်း။ </li>
+        <li> ပုံစံ "What do we call…?"- ပြောင်းပြန်အစုလိုက် အဓိပ္ပါယ်ဖွင့်ဆိုချက်- <i>A race for horses</i> → <i>a horse race</i> ;  <i>a horse that races</i> → <i>a racehorse</i> </li>
+        <li> ဆောင်းပါး a/an သည် နာမ်ကို လိုက်နာသည်။ <b> ပထမဦးစွာ </b> : <i>an <b>oil</b> company scandal, a <b>university</b> student</i> </li>
+        <li> "ရိုက်ထည့်ပါ" - <i>a car factory</i>၊ <i>a car's factory</i> မဟုတ်ပါ။ </li>
+      </ul>
+
+      <h2> 2.4 · ဗီယက်နမ်လူမျိုးများ၏ အဖြစ်များသောအမှားများ ❌/✅ </h2>
+      <div class="scroll"><table class="mistakes">
+        <tr><th> ❌ Vietnamese people often talk. </th><th> ✅ Yes. </th><th> 🔎 Why? </th></tr>
+        <tr><td class="no"> Central city </td><td class="yes"> The <b> Downtown </b></td><td class="why"> N major comes next. </td></tr>
+        <tr><td class="no"> My bookshelf </td><td class="yes"> my <b> Bookshelf </b></td><td class="why"> Use possessive + N compound. </td></tr>
+        <tr><td class="no"> Three days' journey </td><td class="yes"> a <b> Three days </b> Journey </td><td class="why"> There is no N in front </td></tr>
+        <tr><td class="no"> My son is five years old. </td><td class="yes"> my son <b> Five years </b>.</td><td class="why"> After all, there is no N. </td></tr>
+        <tr><td class="no"> I work in a computer company. </td><td class="yes"> … a <b> Computer </b> the company. </td><td class="why"> N1 singular </td></tr>
+        <tr><td class="no"> Ten thousand dong </td><td class="yes"> a <b> Ten thousand dong </b> Note </td><td class="why"> Connect the parts with bricks. </td></tr>
+        <tr><td class="no"> A glass of wine </td><td class="yes"><b> A glass of wine </b></td><td class="why"> I mean, there's wine in the glass. </td></tr>
+        <tr><td class="no"> The traffic light is red. </td><td class="yes"> Hi <b> Traffic light </b> The red ones. </td><td class="why"> N2 divides the plural. </td></tr>
+      </table></div>
+
+      <h2> 2.5 · နေ့စဥ်စာရေးရန် &amp; ကို အသုံးပြုပါ။ </h2>
+      <ul>
+        <li><b> စကားပြော- </b> အလုပ်သွားကြောင်း ဖော်ပြချက်- <i>"It's a twenty-minute ride by motorbike."</i> </li>
+        <li><b> အီးမေးလ်တစ်စောင်ရေးပါ </b> <i>"Please find attached the meeting notes and the sales report."</i> </li>
+        <li><b> ကြော်ငြာ/ကြိုတင်မှာယူခြင်း- </b> <i>a three-night stay, a 24-hour reception, a ten-minute drive</i> ကို သေချာဖတ်ပါ။ </li>
+        <li><b> ရွှေစည်းမျဉ်း- </b> "type + thing" → N + N; "နံပတ် + ယူနစ် နာမ်ရှေ့" → တုံးတို၊ အနည်းကိန်း။ </li>
+      </ul>
+      <p class="note">🔁 <b> ကြားကာလတွင် လေ့ကျင့်ပါ- </b> 3၊ 7 နှင့် 14 ရက်ပြီးနောက်လေ့ကျင့်ခန်းများကိုပြန်လုပ်ပါ။ သိမ်းဆည်းထားသော မှားယွင်းသော စာကြောင်းများကို အာရုံစိုက်ပါ။ ဆက်စပ်- <b> ယူနစ် ၇၉ </b> (အနည်းကိန်း- အများကိန်း)၊ <b> ယူနစ် ၈၁ </b> (- နှင့် ၊ နှစ်နာရီ လမ်းလျှောက် ) ။ </p>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: PRACTICE ===== -->
+  <section class="tabpanel" id="tab-practice" hidden>
+    <div class="toolbar no-print">
+      <div class="mode-pill">
+        <button id="mStudy" class="on" type="button">📘 သင်ယူမုဒ်</button>
+        <button id="mTest" type="button">⏱️ စမ်းသပ်မုဒ်</button>
+      </div>
+      <button class="btn primary" id="btnSubmit" type="button">အလုပ်တင်ပြပါ</button>
+      <button class="btn ghost" id="btnReveal" type="button">အဖြေများကို ကြည့်ပါ</button>
+      <button class="btn ghost" id="btnAgain" type="button">ပြန်လုပ်ပါ</button>
+      <button class="btn ghost" id="btnWrong" type="button">မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+      <button class="btn badb" id="btnReset" type="button">အားလုံး ပြန်လည်သတ်မှတ်ပါ</button>
+      <button class="btn ghost" id="btnPrint" type="button"> 🖨️ In / PDF </button>
+      <button class="btn ghost" id="btnSave" type="button">💾 unit80.html ကို ဒေါင်းလုဒ်လုပ်ပါ</button>
+      <span class="clock" id="clock">00:00</span>
+    </div>
+
+    <div class="card result" id="result" hidden>
+      <div class="big" id="rPct">0%</div>
+      <div class="meta" id="rMeta"></div>
+      <div class="selfscore" id="rSelf"></div>
+      <div class="wrong" id="rWrong" hidden></div>
+      <div class="acts no-print">
+        <button class="btn primary" id="rAgain" type="button">🔁 ပြန်လုပ်ပါ (အသစ်ရောနှော)</button>
+        <button class="btn okb" id="rWrongBtn" type="button">🎯 မှားသောဝါကျကို ပြန်လုပ်ပါ</button>
+        <button class="btn ghost" id="rReveal" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+      </div>
+    </div>
+
+    <p class="note no-print" id="modeHint"></p>
+    <div id="quiz"></div>
+
+    <div class="card no-print" id="submitBar">
+      <div class="toolbar" style="margin:0">
+        <button class="btn primary" id="btnSubmit2" type="button">✅ အလုပ်တင်ပြပြီး အမှတ်ပေးပါ</button>
+        <button class="btn ghost" id="btnReveal2" type="button">👀 အဖြေများကို ကြည့်ပါ</button>
+        <span class="note"> မုဒ် <b id="modeName">သင်ယူခြင်း</b> — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီးနောက် အဖြေနှင့် ရှင်းလင်းချက်ကို ချက်ချင်း ပြသသည်။ </span>
+      </div>
+    </div>
+  </section>
+
+  <footer> အသုံးပြုနေသော အင်္ဂလိပ်သဒ္ဒါ – Raymond Murphy၊ 4th Edition · Unit 80 · အော့ဖ်လိုင်း ကိုယ်ပိုင်လေ့လာမှုဖိုင် ·
+    တိုးတက်မှုကို သင့်ကွန်ပြူတာတွင် သိမ်းဆည်းထားသည် (localStorage) </footer>
+</div>
+
+
+<script type="application/json" id="i18nTableSource">{"t0":"\n        \u003ctr>\u003cth> ဗီယက်နမ် \u003c/th>\u003cth> အင်္ဂလိပ်စာ \u003c/th>\u003cth> မှတ်ချက် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> မြို့လယ် \u003c/td>\u003ctd> မြို့လယ် \u003c/td>\u003ctd> စိတ်တိုင်းမကျဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဝင်ငွေခွန် \u003c/td>\u003ctd> ဝင်ငွေခွန် \u003c/td>\u003ctd> N1 အနည်းကိန်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ကားသော့ \u003c/td>\u003ctd> ကားသော့များ \u003c/td>\u003ctd> N2 သာ အများကိန်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ယာဉ်မတော်တဆမှု \u003c/td>\u003ctd> လမ်း / ယာဉ်မတော်တဆမှု \u003c/td>\u003ctd>\u003c/td>\u003c/tr>\n      ","t1":"\n        \u003ctr>\u003cth> N+N \u003c/th>\u003cth> N of N \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> ကော်ဖီခွက် \u003c/b> = ကော်ဖီသောက်ရန် သုံးသော ခွက် (အလွတ်ရနိုင်သည်) \u003c/td>\u003ctd>\u003cb> ကော်ဖီတစ်ခွက် \u003c/b> = ကော်ဖီတစ်ခွက်အပြည့် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> ဝိုင်တစ်ခွက် \u003c/b> = ဝိုင်တစ်ခွက် \u003c/td>\u003ctd>\u003cb> ဝိုင်တစ်ခွက် \u003c/b> = ဝိုင်တစ်ခွက် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd>\u003cb> စျေးဝယ်အိတ် \u003c/b> = စျေးဝယ်အိတ် \u003c/td>\u003ctd>\u003cb> စျေးဝယ်အိတ် \u003c/b> = ဈေးဝယ်အိတ်အပြည့် \u003c/td>\u003c/tr>\n      ","t2":"\n        \u003ctr>\u003cth> တိုကင် \u003c/th>\u003cth>→\u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> နံပါတ် + ယူနစ် + \u003cb> နာမ် \u003c/b> (မှတ်ချက်၊ ခရီး၊ ဟိုတယ်၊ ကောင်လေး) \u003c/td>\u003ctd> တုံးတို၊ အနည်းကိန်းယူနစ် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ကိန်း+ယူနစ်သည် ဝါကျအဆုံးတွင် /after be ဖြစ်သည်။ \u003c/td>\u003ctd> အများကိန်း၊ တုံးတိုမရှိပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> \"N for/of/about N\" ဟု အဓိပ္ပါယ်ရသည်။ \u003c/td>\u003ctd> N + N သို့ပြောင်းပါ။ \u003c/td>\u003c/tr>\n      ","t3":"\n        \u003ctr>\u003cth>\u003c/th>\u003cth> noun + noun (ယူနစ် 80) \u003c/th>\u003cth> - ပိုင်ကျည်း (ယူနစ် ၈၁)၊ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd> အတွက်အသုံးပြုသည်။ \u003c/td>\u003ctd> အရာဝတ္ထုအမျိုးအစား/အမျိုးအစား \u003c/td>\u003ctd> လူ/တိရစ္ဆာန်နှင့် သက်ဆိုင်သောအရာများ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd> ဥပမာအားဖြင့် \u003c/td>\u003ctd> a \u003cb> ကား \u003c/b> စက်ရုံ၊ \u003cb> မီးဖိုချောင် \u003c/b> တံခါး \u003c/td>\u003ctd>\u003cb> ငါ့ညီမ \u003c/b> ကား၊ \u003cb> အဲတော့ \u003c/b> အခန်း \u003c/td>\u003c/tr>\n      ","t4":"\n        \u003ctr>\u003cth> ❌ စိုင်းထီးဆိုင် \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဘောလုံးတင်းနစ် \u003c/td>\u003ctd class=\"yes\"> a \u003cb> တင်းနစ်ဘောလုံး \u003c/b>\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> နှစ်နာရီကြာအစည်းအဝေး \u003c/td>\u003ctd class=\"yes\"> a \u003cb> နှစ်နာရီ \u003c/b> အစည်းအဝေး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သူမသည် ဆယ်နှစ်အရွယ်ဖြစ်သည်။ \u003c/td>\u003ctd class=\"yes\"> သူမမှာ \u003cb> အသက်ဆယ်နှစ် \u003c/b>.\u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဖိနပ်ဆိုင် \u003c/td>\u003ctd class=\"yes\"> a \u003cb> ဖိနပ် \u003c/b> ဆိုင် \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကော်ဖီတစ်ခွက် (ခွက်အလွတ်) \u003c/td>\u003ctd class=\"yes\"> a \u003cb> ကော်ဖီခွက် \u003c/b>\u003c/td>\u003c/tr>\n      ","t5":"\n        \u003ctr>\u003cth> ❌ဗီယက်နမ်လူမျိုးတွေက စကားပြောတတ်တယ်။ \u003c/th>\u003cth> ✅ ဟုတ်တယ်။ \u003c/th>\u003cth> 🔎 ဘာကြောင့် \u003c/th>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဗဟိုမြို့ \u003c/td>\u003ctd class=\"yes\"> အဆိုပါ \u003cb> မြို့လယ် \u003c/b>\u003c/td>\u003ctd class=\"why\"> N major က နောက်ကလာတာပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့ရဲ့ စာအုပ်စင် \u003c/td>\u003ctd class=\"yes\"> ငါ့ \u003cb> စာအုပ်စင် \u003c/b>\u003c/td>\u003ctd class=\"why\"> possessive + N compound ကိုသုံးပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> သုံးရက်ခရီး \u003c/td>\u003ctd class=\"yes\"> a \u003cb> သုံးရက် \u003c/b> ခရီး \u003c/td>\u003ctd class=\"why\"> N ရှေ့မှာ မရှိဘူး \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ငါ့သားက ငါးနှစ်သား။ \u003c/td>\u003ctd class=\"yes\"> ငါ့သား \u003cb> ငါးနှစ် \u003c/b>.\u003c/td>\u003ctd class=\"why\"> နောက်ဆို N မရှိဘူး။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ကျွန်တော်က ကွန်ပျူတာ ကုမ္ပဏီတစ်ခုမှာ အလုပ်လုပ်တယ်။ \u003c/td>\u003ctd class=\"yes\"> … a \u003cb> ကွန်ပျူတာ \u003c/b> ကုမ္ပဏီ။ \u003c/td>\u003ctd class=\"why\"> N1 အနည်းကိန်း \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဒေါင်ငွေ တစ်သောင်း \u003c/td>\u003ctd class=\"yes\"> a \u003cb> ဒေါင် တစ်သောင်း \u003c/b> မှတ်ချက် \u003c/td>\u003ctd class=\"why\"> အစိတ်အပိုင်းများကို အုတ်များဖြင့် ချိတ်ဆက်ပါ။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> ဝိုင်တစ်ခွက် \u003c/td>\u003ctd class=\"yes\">\u003cb> ဝိုင်တစ်ခွက် \u003c/b>\u003c/td>\u003ctd class=\"why\"> ပြောချင်တာက ဖန်ခွက်ထဲမှာ ဝိုင်ရှိတယ်။ \u003c/td>\u003c/tr>\n        \u003ctr>\u003ctd class=\"no\"> မီးပွိုင့်က အနီရောင်။ \u003c/td>\u003ctd class=\"yes\"> ဟိ \u003cb> မီးပွိုင့် \u003c/b> အနီရောင်တွေပါ။ \u003c/td>\u003ctd class=\"why\"> N2 သည် အများကိန်းကို ပိုင်းခြားသည်။ \u003c/td>\u003c/tr>\n      "}</script><script>
+/* ============================================================
+   UNIT 80 – နာမ် + နာမ် (တင်းနစ်ဘောလုံး / ခေါင်းကိုက်ခြင်း) | ကိုယ်တိုင်ပါရှိသော လေ့ကျင့်ခန်းအင်ဂျင်
+   - မုဒ် ၂ မျိုး- သင်ယူခြင်း (အဖြေကို ချက်ချင်းပြ) / စမ်းသပ်ခြင်း (တင်ပြပြီးမှ အမှတ်ပေး)
+   - မေးခွန်းနှင့်အဖြေ ရောနှော၊ localStorage၊ မှားသောဝါကျ ပြန်လုပ်၊ ပရင့်/PDF
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var FILENAME = 'unit80.html';
+  var KEY = 'egu4_unit80_progress';
+
+  /* ---------- လေ့ကျင့်ခန်း အပိုင်းများ ---------- */
+  var SECTIONS = [
+    { id:'A', title:'A. Multiple Choice (MCQ)',        desc:'ရွေးချယ်စရာများမှ အမှန်ကန်ဆုံး အဖြေ 1 ကို ရွေးပါ။' },
+    { id:'B', title:'B. ပေါင်းစပ်နာမ်များဖန်တီးပါ (နာမ် + နာမ်)', desc:'ပေးထားသော အဓိပ္ပါယ်အလိုက် ပေါင်းစပ်နာမ်စာစုကို ရေးပါ။' },
+    { id:'C', title:'ဂ။ စကားလုံးများကို ဝါကျများအဖြစ် စီပါ။',     desc:'မှန်ကန်သောစာကြောင်းများဖွဲ့စည်းရန် စကားလုံးများကို နှိပ်ပြီး အဖြေများကို နှိုင်းယှဉ်ပါ။' },
+    { id:'D', title:'D. ကွက်လပ်ဖြည့် စကားဝိုင်း',     desc:'အကြောင်းအရာအပေါ် အခြေခံ၍ ပျောက်ဆုံးနေသော ပေါင်းစပ်နာမ်စာစုကို ဖြည့်စွက်ပါ။' },
+    { id:'E', title:'E. ကိုယ်တိုင်ရေးသားမှုအခြေအနေ (ကိုယ်တိုင်အဆင့်သတ်မှတ်ခြင်း)', desc:'သင့်ကိုယ်ပိုင်စာကြောင်းများကို ရေးပါ၊ နမူနာများကို နှိုင်းယှဉ်ပြီးနောက် ၎င်းတို့ကို သင်ကိုယ်တိုင် အမှတ်အသားပြုပါ။ အလိုအလျောက် အမှတ်ပေးတာမျိုး မရှိပါဘူး။' },
+    { id:'F', title:'ယူနစ်၏အဆုံးတွင် F. Quiz (8 မေးခွန်း)',    desc:'Unit 80 အသိပညာအားလုံးကို အမြန်စစ်ဆေးပါ။' },
+    { id:'G', title:'G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ (ယူနစ် 80 လေ့ကျင့်ခန်းများ)', desc:'သင်ခန်းစာများ 80.1 → 80.3 သော့များဖြင့် Murphy စာအုပ်ရှိ အတိအကျ သင်ခန်းစာပုံစံကို လိုက်နာပါ။' }
+  ];
+
+  var TYPE_LABEL = { mcq:'ရွေးချယ်စရာမျိုးစုံ', fill:'စကားလုံးကိုဖြည့်ပါ။', order:'စီစဉ်ပါ။',
+                     self:'ကိုယ်တိုင်ရေးထားတာပါ။', match:'စာကြောင်းများချိတ်ဆက်ပါ။' };
+
+  var QUESTIONS = [
+
+    /* ===== A. MCQ ===== */
+    { id:'a1', sec:'A', type:'mcq', q:'I need to buy a new ______.',
+      opts:['ball tennis','tennis ball','tennis\'s ball'], a:1,
+      exp:'နာမ် + နာမ်- ပထမနာမ်သည် ဒုတိယနာမ်ကို ပြုပြင်သည် (နာမဝိသေသနကဲ့သို့) တင်းနစ်ဘောလုံး = တင်းနစ်ဘောလုံး။' },
+    { id:'a2', sec:'A', type:'mcq', q:'I\'m thirsty. Can I have ______, please?',
+      opts:['a coffee cup','a cup of coffee'], a:1,
+      exp:'ကော်ဖီတစ်ခွက် = ကော်ဖီတစ်ခွက် (သောက်ရန်)။ a coffee cup = ကော်ဖီသောက်ရန်သုံးသောခွက် (အလွတ်ရနိုင်သည်)။' },
+    { id:'a3', sec:'A', type:'mcq', q:'We stayed in a ______ hotel in Da Nang.',
+      opts:['five-stars','five stars','five-star'], a:2,
+      exp:'နံပါတ် + နာမ် အခြားနာမ်ရှေ့တွင် → တုံးတို၊ အနည်းကိန်းနာမ်- ကြယ်ငါးပွင့်ဟိုတယ်။' },
+    { id:'a4', sec:'A', type:'mcq', q:'It was a ______ journey by train.',
+      opts:['two-hour','two-hours','two hours'], a:0,
+      exp:'နှစ်နာရီခရီး (မထည့်ပါ)။ နှိုင်းယှဉ်- ခရီးက နှစ်နာရီကြာတယ်။' },
+    { id:'a5', sec:'A', type:'mcq', q:'My father is a ______.',
+      opts:['manager bank','banks manager','bank manager'], a:2,
+      exp:'ဘဏ်မန်နေဂျာ → ဘဏ်မန်နေဂျာ (ပင်မနာမ် နောက်တစ်ခု)။' },
+    { id:'a6', sec:'A', type:'mcq', q:'They have a ______ daughter.',
+      opts:['ten-year-old','ten-years-old','ten years old'], a:0,
+      exp:'နာမ်ရှေ့တွင် → ဆယ်နှစ်သမီး (အနည်းကိန်း နှစ်၊ တုံးတုံးထားသော)။ ပြီးနောက် : သူမ အသက် ဆယ်နှစ်။' },
+    { id:'a7', sec:'A', type:'mcq', q:'I woke up with a terrible ______.',
+      opts:['head ache','ache head','headache'], a:2,
+      exp:'အချို့သော ပေါင်းစပ်နာမ်များကို စကားလုံးတစ်လုံးတည်းအဖြစ် ရေးသားကြသည်- ခေါင်းကိုက်ခြင်း၊ သွားတိုက်ဆေး၊ စနေ၊' },
+    { id:'a8', sec:'A', type:'mcq', q:'Someone dropped a ______ note on the floor.',
+      opts:['fifty-pounds','fifty pounds','fifty-pound'], a:2,
+      exp:'ငါးဆယ်ပေါင်မှတ်စု (အနည်းကိန်းပေါင်၊ တုံးတုံးထားသော)။' },
+
+    /*===== B။ ဒြပ်ပေါင်းနာမ်များ ဖန်တီးပါ =====*/
+    { id:'b1', sec:'B', type:'fill', q:'A ticket for a train is a ______.',
+      acc:['train ticket','a train ticket'], ans:'train ticket',
+      exp:'Secondary noun (ရထား) + main noun (လက်မှတ်)။' },
+    { id:'b2', sec:'B', type:'fill', q:'A shop that sells shoes is a ______.',
+      acc:['shoe shop','a shoe shop'], ans:'shoe shop',
+      exp:'ပထမဆုံး ပေါ်လာသော နာမ်သည် အများအားဖြင့် အနည်းကိန်း ဖြစ်သည်- ဖိနပ်ဆိုင် (ဖိနပ်ဆိုင်မဟုတ်)။' },
+    { id:'b3', sec:'B', type:'fill', q:'The manager of a hotel is a ______.',
+      acc:['hotel manager','a hotel manager'], ans:'hotel manager',
+      exp:'ဟိုတယ်မန်နေဂျာ။' },
+    { id:'b4', sec:'B', type:'fill', q:'A course that lasts three weeks is a ______.',
+      acc:['three-week course','a three-week course','three week course','a three week course'], ans:'three-week course',
+      exp:'နံပါတ် + ရှေ့နာမ် → အနည်းကိန်း + တုံးတို- သုံးပတ်သင်တန်း။' },
+    { id:'b5', sec:'B', type:'fill', q:'The keys of a car are the ______.',
+      acc:['car keys'], ans:'car keys',
+      exp:'နာမ် အဓိက (သော့များ) သည် အများကိန်း၊ အရန်နာမ် (ကား) အနည်းကိန်း။' },
+    { id:'b6', sec:'B', type:'fill', q:'A bag that you use for shopping is a ______.',
+      acc:['shopping bag','a shopping bag'], ans:'shopping bag',
+      exp:'V-ing သည် စျေးဝယ်အိတ်၊ ရေကူးကန်ကို နာမ်အဖြစ် ရှေ့တွင် လာနိုင်သည်။' },
+    { id:'b7', sec:'B', type:'fill', q:'A walk that takes ten minutes is a ______.',
+      acc:['ten-minute walk','a ten-minute walk','ten minute walk','a ten minute walk'], ans:'ten-minute walk',
+      exp:'ဆယ်မိနစ် (singular minute) လမ်းလျှောက်ပါ။' },
+    { id:'b8', sec:'B', type:'fill', q:'A building with twenty floors is a ______.',
+      acc:['twenty-storey building','a twenty-storey building','twenty storey building','a twenty storey building','twenty-story building','a twenty-story building'], ans:'twenty-storey building',
+      exp:'အထပ်နှစ်ဆယ် (အနည်းကိန်းအထပ်; AmE: ဇာတ်လမ်း)။' },
+
+    /*===== C. စီစဉ် =====*/
+    { id:'c1', sec:'C', type:'order', q:'အမျိုးအစား- (I / lost / my / car / keys / yesterday)',
+      tokens:['I','lost','my','car','keys','yesterday'],
+      acc:['i lost my car keys yesterday'], ans:'I lost my car keys yesterday.',
+      exp:'ကားသော့များ- ကားသော့များကို ပြုပြင်သည်။' },
+    { id:'c2', sec:'C', type:'order', q:'အမျိုးအစား- (she / works / as / a / hotel / receptionist)',
+      tokens:['She','works','as','a','hotel','receptionist'],
+      acc:['she works as a hotel receptionist'], ans:'She works as a hotel receptionist.',
+      exp:'a hotel receptionist = ဟိုတယ်ဧည့်ခံ။' },
+    { id:'c3', sec:'C', type:'order', q:'အမျိုးအစား- (we / took / a / two-hour / flight)',
+      tokens:['We','took','a','two-hour','flight'],
+      acc:['we took a two-hour flight'], ans:'We took a two-hour flight.',
+      exp:'နှစ်နာရီ ပျံသန်းမှု — နာရီ အနည်းကိန်း၊ တုံးတုံးထားသည်။' },
+    { id:'c4', sec:'C', type:'order', q:'မေးခွန်းအဖြစ် စီရန်- (where / is / the / bus / station)',
+      tokens:['Where','is','the','bus','station'],
+      acc:['where is the bus station'], ans:'Where is the bus station?',
+      exp:'bus station = ကားဂိတ်။' },
+    { id:'c5', sec:'C', type:'order', q:'အမျိုးအစား- (he / is / a / ten-year-old / boy)',
+      tokens:['He','is','a','ten-year-old','boy'],
+      acc:['he is a ten-year-old boy'], ans:'He is a ten-year-old boy.',
+      exp:'ဆယ်နှစ်သားသည် -s မပါသော နာမ်ရှေ့တွင် လာသည်။' },
+
+    /*===== D. စကားဝိုင်း =====*/
+    { id:'d1', sec:'D', type:'fill', q:'A: မင်းဘာလုပ်တာလဲ။  B: ငါ ______ (သင်္ချာဆရာမ)။',
+      acc:['maths teacher','math teacher'], ans:'maths teacher',
+      exp:'သင်္ချာဆရာ (သင်္ချာမွမ်းမံဆရာ)။' },
+    { id:'d2', sec:'D', type:'fill', q:'A: Is the station far?  B: No, it\'s only a ______ (five / minute) walk.',
+      acc:['five-minute','five minute'], ans:'five-minute',
+      exp:'ငါးမိနစ်လမ်းလျှောက်ခြင်း — နာမ်တစ်ခုရှေ့တွင် ထားရှိသည့်အခါ မိနစ်သည် အနည်းကိန်းဖြစ်သည်။' },
+    { id:'d3', sec:'D', type:'fill', q:'A: Have you got any change?  B: Sorry, I\'ve only got a ______ (fifty / pound) note.',
+      acc:['fifty-pound','fifty pound'], ans:'fifty-pound',
+      exp:'ပေါင်ငါးဆယ်မှတ်စု။' },
+    { id:'d4', sec:'D', type:'fill', q:'A: နို့ကို ဘယ်မှာထားတာလဲ။  B: ______ (ရေခဲသေတ္တာတံခါး)။',
+      acc:['fridge door'], ans:'fridge door',
+      exp:'ရေခဲသေတ္တာတံခါး = ရေခဲသေတ္တာတံခါး (အရာဝတ္ထု + ၎င်း၏အစိတ်အပိုင်း)။' },
+
+    /*===== E. ကိုယ်တိုင်ရေးပါ =====*/
+    { id:'e1', sec:'E', type:'self', q:'နာမ် + နာမ်ဖွဲ့စည်းပုံကို အသုံးပြု၍ သင့်အခန်းရှိ အရာဝတ္ထု 5 ခုကို အမည်ပေးပါ။',
+      sample:'There is a coffee table, a desk lamp, a bookshelf, a phone charger and some tennis shoes in my room.',
+      exp:'ပထမဆုံးပေါ်လာသော နာမ်သည် အများအားဖြင့် အနည်းကိန်း (ဖိနပ်ဆိုင်၊ တင်းနစ်ဖိနပ်၊ ဖုန်းအားသွင်းစက်)။' },
+    { id:'e2', sec:'E', type:'self', q:'နံပါတ် + တုံးတုံးထားသော နာမ် (နှစ်နာရီ…၊ ငါးရက်…) ကိုအသုံးပြု၍ အလုပ်/ခရီးကို ဖော်ပြပါ။',
+      sample:'I have a forty-minute drive to work. Next month I\'m going on a five-day business trip.',
+      exp:'နံပတ် + နာမ် အခြားနာမ်ရှေ့တွင် → တုံးတို၊ no -s။' },
+    { id:'e3', sec:'E', type:'self', q:'"a coffee cup" နှင့် "a cup of coffee" (သို့မဟုတ် အလားတူအတွဲ) ကို ခွဲခြားထားသော စာကြောင်းတစ်စုံကိုရေးပါ။',
+      sample:'I broke a wine glass yesterday. Would you like a glass of wine?',
+      exp:'a wine glass = ဖန်အမျိုးအစား၊ a glass of wine = ဝိုင်တစ်ခွက်။' },
+
+    /*ယူနစ်၏အဆုံးတွင် ===== F. Quiz =====*/
+    { id:'f1', sec:'F', type:'fill', q:'အင်္ဂလိပ်ဘာသာသို့ ဘာသာပြန်ဆိုသည်- "သွားတိုက်တံဝယ်ဖို့ လိုတယ်။"',
+      acc:['i need to buy a toothbrush','i need to buy a new toothbrush','i need to buy a tooth brush'], ans:'I need to buy a toothbrush.',
+      exp:'သွားတိုက်တံ (tooth + brush) တွဲရေးလေ့ရှိပါတယ်။' },
+    { id:'f2', sec:'F', type:'mcq', q:'အမှန်အကန်ဝါကျကို ရွေးပါ-',
+      opts:['It\'s a three-hours drive.','It\'s a three-hour drive.'], a:1,
+      exp:'သုံးနာရီ မောင်းနှင်ခြင်း (အနည်းကိန်း တစ်နာရီ)။' },
+    { id:'f3', sec:'F', type:'fill', q:'There are sixty ______ (minute) in an hour.',
+      acc:['minutes'], ans:'minutes',
+      exp:'အခြားနာမ်များရှေ့မရောက်ပါနှင့် → ပုံမှန်နာမ်ကိုသုံးပါ- မိနစ်ခြောက်ဆယ်။' },
+    { id:'f4', sec:'F', type:'mcq', q:'Could you pass me ______? I\'m going to pour some wine.',
+      opts:['a wine glass','a glass of wine'], a:0,
+      exp:'ဖန်ခွက် (ဝိုင်မပါဘဲ) → ဝိုင်တစ်ခွက်။' },
+    { id:'f5', sec:'F', type:'fill', q:'My son is six ______ (year / old).',
+      acc:['years old'], ans:'years old',
+      exp:'အသက် → ခြောက်နှစ်ပြီးနောက် (-s၊ တုံးတိုမပါ)။' },
+    { id:'f6', sec:'F', type:'mcq', q:'You need two ______ for the visa application.',
+      opts:['passports photos','passport photos','passport photo\'s'], a:1,
+      exp:'အရန်နာမ်သည် အနည်းကိန်းဖြစ်ပြီး အဓိကနာမ်မှာ အများကိန်းဖြစ်သည်- နိုင်ငံကူးလက်မှတ်ဓာတ်ပုံများ။' },
+    { id:'f7', sec:'F', type:'fill', q:'A race for cars is a ______.',
+      acc:['car race','a car race'], ans:'car race',
+      exp:'ကားပြိုင်ပွဲတစ်ခု။ နှိုင်းယှဉ်-ပြိုင်ကား/ပြိုင်ကား=ပြိုင်ကား။' },
+    { id:'f8', sec:'F', type:'mcq', q:'FALSE ထုတ်ပြန်ချက်ကို ရွေးပါ-',
+      opts:['I work five days a week.','We have a five-day week.','I work five-day a week.'], a:2,
+      exp:'နောက်တွင် နာမ်မရှိ → ငါးရက် (နာမ်၊ တုံးတိုမရှိ)။' },
+
+    /*===== G. စာအုပ်ထဲက လေ့ကျင့်ခန်းများ =====*/
+    { id:'h1', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'A ticket for a football match is a ______.', acc:['football ticket','a football ticket','match ticket','a match ticket','football match ticket','a football match ticket'], ans:'football ticket',
+      exp:'ဘောလုံးပွဲလက်မှတ်။' },
+    { id:'h2', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'Problems with money are ______.', acc:['money problems'], ans:'money problems',
+      exp:'money problems (singular money, plural problems)။' },
+    { id:'h3', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'A meeting about the budget is a ______.', acc:['budget meeting','a budget meeting'], ans:'budget meeting',
+      exp:'ဘတ်ဂျက်အစည်းအဝေး။' },
+    { id:'h4', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'Photos taken at your wedding are your ______.', acc:['wedding photos','wedding photographs','wedding pictures'], ans:'wedding photos',
+      exp:'သင်၏မင်္ဂလာဆောင်ဓာတ်ပုံများ။' },
+    { id:'h5', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'Ice cream made with chocolate is ______.', acc:['chocolate ice cream'], ans:'chocolate ice cream',
+      exp:'ရှေ့ပစ္စည်း- ချောကလက်ရေခဲမုန့်။' },
+    { id:'h6', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'A person whose job is to inspect schools is a ______.', acc:['school inspector','a school inspector'], ans:'school inspector',
+      exp:'ကျောင်းစစ်ဆေးရေးမှူး။' },
+    { id:'h7', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'Shoes for dancing are ______.', acc:['dancing shoes','dance shoes'], ans:'dancing shoes',
+      exp:'အကဖိနပ် (အပြေးဖိနပ်ကဲ့သို့)။' },
+    { id:'h8', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'The results of an election are the ______.', acc:['election results'], ans:'election results',
+      exp:'ရွေးကောက်ပွဲရလဒ်။' },
+    { id:'h9', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'A trip that lasts three days is a ______.', acc:['three-day trip','a three-day trip','three day trip','a three day trip'], ans:'three-day trip',
+      exp:'သုံးရက်ခရီး (အနည်းကိန်းနေ့)။' },
+    { id:'h10', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.1 – နာမ် + နာမ်ကို အသုံးပြု၍ လူ/အရာများကို အမည်ပေးပါ။',
+      q:'A woman who is forty years old is a ______.', acc:['forty-year-old woman','a forty-year-old woman','forty year old woman','a forty year old woman'], ans:'forty-year-old woman',
+      exp:'အသက်လေးဆယ်အရွယ် အမျိုးသမီးတစ်ဦး။' },
+
+    { id:'h11', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.2 – စကားလုံးနှစ်လုံးကို ယှဉ်တွဲပါ (နှိုးဆော်သံ · ဘတ်စ်ကား · ဘော်ဒါ · နာရီ · မီးချောင်း · နံပါတ် · pass · paste · phone · stop · tooth · traffic)',
+      q:'This wakes you up in the morning. → an ______', acc:['alarm clock'], ans:'alarm clock',
+      exp:'နှိုးစက်နာရီ။' },
+    { id:'h12', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.2 – စကားလုံးနှစ်လုံးကို ယှဉ်တွဲပါ (နှိုးဆော်သံ · ဘတ်စ်ကား · ဘော်ဒါ · နာရီ · မီးချောင်း · နံပါတ် · pass · paste · phone · stop · tooth · traffic)',
+      q:'You wait here to catch a bus. → a ______', acc:['bus stop'], ans:'bus stop',
+      exp:'ဘတ်စ်ကားမှတ်တိုင်။' },
+    { id:'h13', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.2 – စကားလုံးနှစ်လုံးကို ယှဉ်တွဲပါ (နှိုးဆော်သံ · ဘတ်စ်ကား · ဘော်ဒါ · နာရီ · မီးချောင်း · နံပါတ် · pass · paste · phone · stop · tooth · traffic)',
+      q:'You need to know this to call someone. → their ______', acc:['phone number'], ans:'phone number',
+      exp:'သူတို့ရဲ့ဖုန်းနံပါတ်။' },
+    { id:'h14', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.2 – စကားလုံးနှစ်လုံးကို ယှဉ်တွဲပါ (နှိုးဆော်သံ · ဘတ်စ်ကား · ဘော်ဒါ · နာရီ · မီးချောင်း · နံပါတ် · pass · paste · phone · stop · tooth · traffic)',
+      q:'You put this on your toothbrush. → ______', acc:['toothpaste','tooth paste'], ans:'toothpaste',
+      exp:'သွားတိုက်ဆေး (ချက်ချင်းရေးပါ)။' },
+    { id:'h15', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.2 – စကားလုံးနှစ်လုံးကို ယှဉ်တွဲပါ (နှိုးဆော်သံ · ဘတ်စ်ကား · ဘော်ဒါ · နာရီ · မီးချောင်း · နံပါတ် · pass · paste · phone · stop · tooth · traffic)',
+      q:'Cars must stop when these are red. → the ______', acc:['traffic lights'], ans:'traffic lights',
+      exp:'မီးပွိုင့်များ။' },
+    { id:'h16', sec:'G', type:'fill', sub:'သင်ခန်းစာ 80.2 – စကားလုံးနှစ်လုံးကို ယှဉ်တွဲပါ (နှိုးဆော်သံ · ဘတ်စ်ကား · ဘော်ဒါ · နာရီ · မီးချောင်း · နံပါတ် · pass · paste · phone · stop · tooth · traffic)',
+      q:'You show this before you get on a plane. → a ______', acc:['boarding pass'], ans:'boarding pass',
+      exp:'boarding pass တစ်ခု။' },
+
+    { id:'h17', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'I didn\'t have any change. I only had a ______ note.', opts:['twenty-dollar','twenty dollars'], a:0,
+      exp:'မှတ်ချက် → ဒေါ်လာနှစ်ဆယ် (အနည်းကိန်း၊ တုံးတုံးထားသော) မပြုမီ။' },
+    { id:'h18', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'There were two ______ notes in his wallet.', opts:['ten dollars','ten-dollar'], a:1,
+      exp:'ဆယ်ဒေါ်လာမှတ်စုများ — မှတ်စုများသည် အများကိန်းဖြစ်ပြီး၊ ဒေါ်လာသည် အနည်းကိန်းဖြစ်နေသေးသည်။' },
+    { id:'h19', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'At work we have a ______ break at 10.30.', opts:['20 minutes','20-minute'], a:1,
+      exp:'မိနစ် 20 အနားယူပါ။' },
+    { id:'h20', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'There are 24 ______ in a day.', opts:['hours','hour'], a:0,
+      exp:'နာမ် → နာရီ (နာမ်) ရှေ့မရောက်။' },
+    { id:'h21', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'It\'s a ______ flight from Hanoi to Bangkok.', opts:['two-hour','two hours'], a:0,
+      exp:'နှစ်နာရီကြာ လေယာဉ်။' },
+    { id:'h22', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'We live on the top floor of a ______ building.', opts:['thirty-storeys','thirty-storey'], a:1,
+      exp:'အထပ်သုံးဆယ် အဆောက်အဦ။' },
+    { id:'h23', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'She works ______ a week. Fridays are free.', opts:['four-day','four days'], a:1,
+      exp:'Noun သည် အောက်ပါအတိုင်း → လေးရက်။' },
+    { id:'h24', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'______ restaurants are usually very expensive.', opts:['Five-star','Five-stars'], a:0,
+      exp:'ကြယ်ငါးပွင့် စားသောက်ဆိုင်များ။' },
+    { id:'h25', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'My niece is ______.', opts:['eight-year-old','eight years old'], a:1,
+      exp:'ဖြစ်ပြီးနောက် နာမ် → ရှစ်နှစ် ရှိသေးသည် ။' },
+    { id:'h26', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'They live in a ______ house.', opts:['300-years-old','300-year-old'], a:1,
+      exp:'နှစ် 300 သက်တမ်းရှိအိမ်။' },
+    { id:'h27', sec:'G', type:'mcq', sub:'လေ့ကျင့်ခန်း 80.3 - မှန်ကန်သောပုံစံကိုရွေးချယ်ပါ (ဆယ်ပေါင်မှတ်စု / ဆယ်ပေါင်)',
+      q:'Do you prefer the ______ clock or the 24-hour clock?', opts:['12-hours','12-hour'], a:1,
+      exp:'၁၂ နာရီ။' }
+  ];
+
+  /* =========================================================
+     အထောက်အကူ လုပ်ဆောင်ချက်များ
+     ========================================================= */
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function norm(s){return String(s==null?'':s).toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'").replace(/[.,!?;:"“”()\[\]]/g,'').replace(/\s+/g,' ').trim();}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function $(id){return document.getElementById(id);}
+  function findCard(id){return document.querySelector('[data-card="'+id+'"]');}
+
+  /* အပိုင်းအလိုက် မေးခွန်းနံပါတ်- a1 → A1၊ g11 → G1... */
+  (function(){var c={};QUESTIONS.forEach(function(q){c[q.sec]=(c[q.sec]||0)+1;q.no=q.sec+c[q.sec];});})();
+
+  /* =========================================================
+     တိုးတက်မှုကို သိမ်းဆည်းခြင်း (localStorage)
+     ========================================================= */
+  function defProgress(){return {attempts:0,best:0,wrong:[],hist:[]};}
+  var progress;
+  try{ progress = JSON.parse(localStorage.getItem(KEY)) || defProgress(); }
+  catch(e){ progress = defProgress(); }
+  if(!progress.wrong) progress.wrong=[];
+  if(!progress.hist) progress.hist=[];
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(progress)); }catch(e){} }
+  function updateStats(){
+    $('stAttempts').textContent='ပြီးဆုံးပြီ- '+progress.attempts+' ကြိမ်';
+    $('stBest').textContent='အမြင့်ဆုံး ရမှတ်- '+(progress.best?progress.best+'%':'–');
+    $('stWrong').textContent='သိမ်းထားသော မှားနေသော ဝါကျများ- '+progress.wrong.length;
+  }
+
+  /* =========================================================
+     TRẠNG THÁI
+     ========================================================= */
+  var mode='study', current=[], submitted=false, t0=0, tick=null;
+  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s=s%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+  function startTimer(){ stopTimer(); t0=Date.now();
+    tick=setInterval(function(){$('clock').textContent=fmt(Date.now()-t0);},300); }
+  function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
+
+  /* =========================================================
+     RENDER BÀI TẬP
+     ========================================================= */
+  function prep(q){
+    var c={}; for(var k in q){ if(Object.prototype.hasOwnProperty.call(q,k)) c[k]=q[k]; }
+    if(c.type==='mcq') c._opts=shuffle(c.opts.map(function(t,i){return {t:t,ok:i===c.a};}));
+    if(c.type==='match') c._opts=shuffle(c.items.map(function(it){return {letter:it.letter,t:it.o};}));
+    if(c.type==='order') c._toks=shuffle(c.tokens);
+    return c;
+  }
+  function answerBox(q){
+    var right;
+    if(q.type==='mcq') right='ABCD'[q.a]+'. '+q.opts[q.a];
+    else if(q.type==='match') right=q.items.map(function(it,i){return (i+1)+' → '+it.letter;}).join(' · ');
+    else if(q.type==='self') right=q.sample;
+    else right=q.ans;
+    var title=(q.type==='self')?'📝 နမူနာအဖြေ အကြံပြုချက်':'✓ မှန်ကန်သောအဖြေ';
+    return '<div class="answer-box"><div class="ab-title"><b>'+title+':</b> '+esc(right)+
+      '</div><div class="ab-exp">💡 '+esc(q.exp)+'</div></div>';
+  }
+  function renderQ(q,n){
+    var body='';
+    if(q.type==='mcq'){
+      body=q._opts.map(function(o,i){
+        return '<label class="opt"><input type="radio" name="q_'+q.id+'" value="'+i+'"><span>'+esc(o.t)+'</span></label>';
+      }).join('');
+    }else if(q.type==='fill'){
+      body='<input class="ans-input" type="text" autocomplete="off" spellcheck="false" placeholder="သင့်အဖြေကို ရိုက်ထည့်ပါ...">';
+    }else if(q.type==='order'){
+      body='<div class="line"></div><div class="pool">'+q._toks.map(function(w){
+        return '<button type="button" class="tok" data-w="'+esc(w)+'">'+esc(w)+'</button>';}).join('')+
+        '</div><button type="button" class="btn-mini clr">ဖျက်ပါ</button>';
+    }else if(q.type==='match'){
+      body='<div>'+q.items.map(function(it,i){
+        return '<div class="mrow"><span class="mleft">'+(i+1)+'. '+esc(it.t)+'</span>'+
+          '<select class="msel"><option value="">— ရွေးပါ —</option>'+
+          q._opts.map(function(o,j){return '<option value="'+j+'">'+o.letter+'. '+esc(o.t)+'</option>';}).join('')+
+          '</select></div>';}).join('')+'</div>';
+    }else if(q.type==='self'){
+      body='<textarea class="self-text" rows="3" placeholder="သင့်အဖြေကို ဤနေရာတွင် ရေးပါ..."></textarea>'+
+        '<div class="self-btns"><button type="button" class="btn-mini sk" data-v="ok">✓ ကျွန်ုပ် မှန်ကန်စွာ လုပ်ခဲ့သည်</button>'+
+        '<button type="button" class="btn-mini sb" data-v="bad">✎ ပိုကောင်းအောင် လုပ်ရန် လိုသည်</button></div>';
+    }
+    return '<div class="qcard" data-card="'+q.id+'">'+
+      '<div class="qhead"><span class="qno">'+q.no+'</span><span class="qtype">'+
+      (TYPE_LABEL[q.type]||q.type)+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p>'+body+
+      '<div class="qfoot"><button type="button" class="btn-mini check-one">ဤဝါကျကို စစ်ဆေးပါ</button>'+
+      '<span class="vtag"></span></div>'+answerBox(q)+'</div>';
+  }
+  function render(wrongOnly){
+    var pool = wrongOnly ? QUESTIONS.filter(function(q){return progress.wrong.indexOf(q.id)>-1;}) : QUESTIONS;
+    if(!pool.length){ alert('ပြန်လုပ်ရန် မေးခွန်းမရှိပါ (မှားသောမေးခွန်း မရှိသေးပါ)။'); return false; }
+    current=shuffle(pool).map(prep);
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    var html='',sub='';
+    SECTIONS.forEach(function(sec){
+      var items=current.filter(function(q){return q.sec===sec.id;});
+      if(!items.length) return;
+      html+='<div class="sec"><h3>'+sec.title+'</h3><p class="sec-desc">'+sec.desc+'</p>';
+      sub='';
+      items.forEach(function(q){
+        if(q.sub&&q.sub!==sub){sub=q.sub;html+='<div class="sub">'+sub+'</div>';}
+        html+=renderQ(q);
+      });
+      html+='</div>';
+    });
+    $('quiz').innerHTML=html;
+    return true;
+  }
+
+  /* =========================================================
+     အမှတ်ပေးခြင်း
+     ========================================================= */
+  function getRes(q,card){
+    if(q.type==='mcq'){
+      var c=card.querySelector('input[type=radio]:checked');
+      if(!c) return {v:'',ok:false,empty:true};
+      var o=q._opts[+c.value];
+      return {v:o.t,ok:!!o.ok,empty:false};
+    }
+    if(q.type==='fill'){
+      var inp=card.querySelector('.ans-input'),v=inp.value;
+      if(!norm(v)) return {v:'',ok:false,empty:true};
+      return {v:v,ok:q.acc.some(function(a){return norm(a)===norm(v);}),empty:false};
+    }
+    if(q.type==='order'){
+      var toks=[].map.call(card.querySelectorAll('.line .tok'),function(t){return t.getAttribute('data-w');});
+      if(!toks.length) return {v:'',ok:false,empty:true};
+      var s=toks.join(' ');
+      return {v:s,ok:q.acc.some(function(a){return norm(a)===norm(s);}),empty:false};
+    }
+    if(q.type==='match'){
+      var sels=card.querySelectorAll('.msel'),score=0;
+      for(var i=0;i<sels.length;i++){
+        if(sels[i].value==='') continue;
+        var pick=q._opts[+sels[i].value];
+        if(pick&&pick.letter===q.items[i].letter) score++;
+      }
+      return {v:score+'/'+q.w,score:score,total:q.w,ok:score===q.w,empty:false};
+    }
+    if(q.type==='self'){
+      var g=card.getAttribute('data-self')||'';
+      return {v:card.querySelector('textarea').value,self:true,graded:g!=='',ok:g==='ok'};
+    }
+    return {v:'',ok:false,empty:true};
+  }
+  function gradeOne(q){
+    var card=findCard(q.id); if(!card) return null;
+    var res=getRes(q,card);
+    card.classList.remove('ok','bad');
+    var tag=card.querySelector('.vtag');
+    if(res.self){
+      if(res.graded){
+        card.classList.add(res.ok?'ok':'bad');
+        tag.className='vtag '+(res.ok?'ok':'bad');
+        tag.textContent=res.ok?'✓ ကိုယ်တိုင်အမှတ်ပေး- မှန်သည်':'✎ ကိုယ်တိုင်အမှတ်ပေး- ပိုကောင်းအောင် လုပ်ရန် လိုသည်';
+      }else{ tag.className='vtag'; tag.textContent='ကိုယ်တိုင် အမှတ်မပေးရသေးပါ'; }
+      return res;
+    }
+    if(res.ok) card.classList.add('ok'); else card.classList.add('bad');
+    if(q.type==='mcq'){
+      var labels=card.querySelectorAll('.opt');
+      q._opts.forEach(function(o,i){
+        labels[i].classList.remove('correct','wrongpick');
+        if(o.ok) labels[i].classList.add('correct');
+      });
+      var checked=card.querySelector('input:checked');
+      if(checked&&!res.ok) labels[+checked.value].classList.add('wrongpick');
+    }
+    tag.className='vtag '+(res.ok?'ok':'bad');
+    tag.textContent=res.empty?'✕ မဖြေရသေးပါ':(res.ok?'✓ မှန်သည်':'✕ မှားသည်');
+    return res;
+  }
+  function gradeAll(){
+    stopTimer(); submitted=true;
+    var score=0,total=0,wrongIds=[],attempted=[],selfOk=0,selfAll=0;
+    current.forEach(function(q){
+      var res=gradeOne(q); if(!res) return;
+      attempted.push(q.id);
+      if(res.self){
+        selfAll++;
+        if(res.graded&&res.ok) selfOk++;
+        if(res.graded&&!res.ok) wrongIds.push(q.id);
+        return;
+      }
+      var w=(q.type==='match')?q.w:1;
+      total+=w; score+=res.ok?w:0;
+      if(!res.ok) wrongIds.push(q.id);
+    });
+    document.body.classList.add('revealed');
+    /* မှားသော ဝါကျစာရင်းကို အပ်ဒိတ်လုပ်ပါ- ယခုတစ်ကြိမ် ပြန်မလုပ်ရသေးသော ဝါကျများကို ထားရှိပါ */
+    var remain=progress.wrong.filter(function(id){return attempted.indexOf(id)===-1;});
+    progress.wrong=remain.concat(wrongIds);
+    progress.attempts++;
+    var pct=total?Math.round(score/total*100):0;
+    if(pct>progress.best) progress.best=pct;
+    var secs=t0?Math.round((Date.now()-t0)/1000):0;
+    progress.hist.push({pct:pct,sec:secs});
+    if(progress.hist.length>10) progress.hist=progress.hist.slice(-10);
+    save(); updateStats();
+    showResult(score,total,pct,secs,selfOk,selfAll,wrongIds);
+  }
+  function showResult(score,total,pct,secs,selfOk,selfAll,wrongIds){
+    var big=$('rPct');
+    big.textContent=pct+'%';
+    big.className='big '+(pct>=80?'ok':(pct>=50?'mid':'bad'));
+    var m=Math.floor(secs/60),s=secs%60;
+    $('rMeta').textContent='မှန်သည် '+score+'/'+total+' ဝါကျ · မှားသည် '+(total-score)+
+      ' · အချိန် '+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+
+      ' · ကြိမ်ရေ '+progress.attempts+' · စံချိန် '+progress.best+'%';
+    $('rSelf').textContent = selfAll? ('ကိုယ်တိုင်ရေး (ကိုယ်တိုင်အမှတ်ပေး)- '+selfOk+'/'+selfAll) : '';
+    var rw=$('rWrong');
+    if(wrongIds.length){
+      var labels=wrongIds.map(function(id){
+        var q=QUESTIONS.filter(function(x){return x.id===id;})[0];
+        return q?q.no:id;});
+      rw.hidden=false;
+      rw.innerHTML='🎯 မှားသောဝါကျ ('+wrongIds.length+'): <b>'+labels.join(', ')+
+        '</b> — ဤအပိုင်းကို သီးခြားလေ့ကျင့်ရန် "မှားသောဝါကျကို ပြန်လုပ်ပါ" ကို နှိပ်ပါ။';
+    }else{ rw.hidden=true; rw.innerHTML=''; }
+    $('result').hidden=false;
+    if($('result').scrollIntoView) $('result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* =========================================================
+     မုဒ်နှင့် ခလုတ်များ
+     ========================================================= */
+  function clearAnswers(){
+    document.body.classList.remove('revealed');
+    $('result').hidden=true;
+    current.forEach(function(q){
+      var card=findCard(q.id); if(!card) return;
+      card.classList.remove('ok','bad','checked');
+      var tag=card.querySelector('.vtag'); tag.className='vtag'; tag.textContent='';
+      if(q.type==='mcq'){
+        [].forEach.call(card.querySelectorAll('input[type=radio]'),function(r){r.checked=false;});
+        [].forEach.call(card.querySelectorAll('.opt'),function(l){l.classList.remove('correct','wrongpick');});
+      }
+      if(q.type==='fill') card.querySelector('.ans-input').value='';
+      if(q.type==='order'){
+        var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+        [].forEach.call(line.querySelectorAll('.tok'),function(t){pool.appendChild(t);});
+      }
+      if(q.type==='match'){
+        [].forEach.call(card.querySelectorAll('.msel'),function(sel){sel.value='';});
+      }
+      if(q.type==='self'){
+        card.removeAttribute('data-self');
+        card.querySelector('textarea').value='';
+        syncSelf(card);
+      }
+    });
+    $('clock').textContent='00:00'; t0=0;
+  }
+  function syncSelf(card){
+    var g=card.getAttribute('data-self')||'';
+    var ok=card.querySelector('.sk'),bad=card.querySelector('.sb');
+    if(ok) ok.className='btn-mini sk'+(g==='ok'?' on-ok':'');
+    if(bad) bad.className='btn-mini sb'+(g==='bad'?' on-bad':'');
+  }
+  function setMode(m){
+    mode=m;
+    document.body.setAttribute('data-mode',m);
+    $('mStudy').className=(m==='study')?'on':'';
+    $('mTest').className=(m==='test')?'on':'';
+    $('modeName').textContent=(m==='study')?'သင်ယူခြင်း':'စမ်းသပ်ခြင်း';
+    $('modeHint').textContent=(m==='study')
+      ? '📘 သင်ယူမုဒ် — မေးခွန်းတစ်ခုချင်းစီ ဖြေပြီး မှန်/မှား သိရှိရန်နှင့် အဖြေ၊ ရှင်းလင်းချက်ကြည့်ရန် "ဤဝါကျကို စစ်ဆေးပါ" ကို နှိပ်ပါ။'
+      : '⏱️ စမ်းသပ်မုဒ် — အဖြေများကို ဖျောက်ထားသည်၊ အချိန်တိုင်းနေသည်။ ပြီးလျှင် အမှတ်ပေးရန် "အလုပ်တင်ပြပါ" ကို နှိပ်ပါ။';
+    if(m==='test'){ stopTimer(); clearAnswers(); submitted=false; startTimer(); }
+    else { stopTimer(); submitted=false; }
+  }
+  function doSubmit(){ gradeAll(); }
+  function doReveal(){ document.body.classList.add('revealed'); }
+
+  /* =========================================================
+     SỰ KIỆN
+     ========================================================= */
+  /* တက်ဘ် ပြောင်းခြင်း */
+  [].forEach.call(document.querySelectorAll('.tab'),function(t){
+    t.addEventListener('click',function(){
+      [].forEach.call(document.querySelectorAll('.tab'),function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      ['theory','tips','practice'].forEach(function(k){
+        $('tab-'+k).hidden = (k!==t.getAttribute('data-tab'));
+      });
+    });
+  });
+
+  /* မေးခွန်းဧရိယာအတွင်း အပြန်အလှန် လုပ်ဆောင်မှု */
+  $('quiz').addEventListener('click',function(e){
+    var t=e.target;
+    function up(el,sel){while(el&&el!==document){if(el.classList&&el.classList.contains(sel))return el;el=el.parentNode;}return null;}
+    var card=up(t,'qcard');
+    if(!card) return;
+    if(t.classList.contains('tok')){
+      if(t.parentNode.classList.contains('pool')) t.parentNode.previousElementSibling.appendChild(t);
+      else t.parentNode.nextElementSibling.appendChild(t);
+      return;
+    }
+    if(t.classList.contains('clr')){
+      var line=card.querySelector('.line'),pool=card.querySelector('.pool');
+      [].forEach.call(line.querySelectorAll('.tok'),function(x){pool.appendChild(x);});
+      return;
+    }
+    if(t.classList.contains('check-one')){
+      var id=card.getAttribute('data-card');
+      var q=current.filter(function(x){return x.id===id;})[0];
+      if(q){ gradeOne(q); card.classList.add('checked'); }
+      return;
+    }
+    if(t.classList.contains('sk')||t.classList.contains('sb')){
+      var v=t.getAttribute('data-v');
+      var cur=card.getAttribute('data-self')||'';
+      if(cur===v) card.removeAttribute('data-self'); else card.setAttribute('data-self',v);
+      syncSelf(card);
+      var q2=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q2){ gradeOne(q2); card.classList.add('checked'); }
+      return;
+    }
+  });
+  /* ဖြည့်စွက်ကွက်ကို အမြန်စစ်ရန် Enter */
+  $('quiz').addEventListener('keydown',function(e){
+    if(e.key!=='Enter') return;
+    var card=e.target.parentNode;
+    while(card&&!(card.classList&&card.classList.contains('qcard'))) card=card.parentNode;
+    if(card&&e.target.classList.contains('ans-input')){
+      e.preventDefault();
+      var q=current.filter(function(x){return x.id===card.getAttribute('data-card');})[0];
+      if(q) gradeOne(q);
+    }
+  });
+
+  /* မုဒ်ခလုတ် */
+  $('mStudy').addEventListener('click',function(){setMode('study');});
+  $('mTest').addEventListener('click',function(){setMode('test');});
+  /* လုပ်ဆောင်ချက်ခလုတ်များ */
+  $('btnSubmit').addEventListener('click',doSubmit);
+  $('btnSubmit2').addEventListener('click',doSubmit);
+  $('btnReveal').addEventListener('click',doReveal);
+  $('btnReveal2').addEventListener('click',doReveal);
+  $('rReveal').addEventListener('click',doReveal);
+  $('btnAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode==='test'?'test':'study');});
+  $('rAgain').addEventListener('click',function(){stopTimer();render(false);setMode(mode);});
+  $('btnWrong').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('rWrongBtn').addEventListener('click',function(){stopTimer();if(render(true))setMode(mode);});
+  $('btnReset').addEventListener('click',function(){
+    if(!confirm('ဤစက်တွင် သိမ်းထားသော တိုးတက်မှုအားလုံး (ရမှတ်၊ မှားသောဝါကျ) ကို ဖျက်မလား?')) return;
+    progress=defProgress(); save(); updateStats(); stopTimer(); render(false); setMode('study');
+  });
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnSave').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download=FILENAME;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode.removeChild(a);},600);
+  });
+
+  /* =========================================================
+     KHỞI TẠO
+     ========================================================= */
+  updateStats();
+  render(false);
+  setMode('study');
+})();
+</script>
+</body>
+</html>
